@@ -16,7 +16,7 @@ Pattern-Notizen aus 9 Conversations zu Zitierregeln, Kohärenz, Quellenkritik un
 - [[20.studies/wissenschaftliches-schreiben/standards-argumentation-konsistenz|Standards-Check, Argumentations-Kohärenz, Volumen]]
 
 ### Verwandt aus anderen Clustern
-- [[20.studies/Bourdieu-Theorie/wissenschaftliches-schreiben-emisch-etisch]] — Paraphrase-Varianten + emische/etische Sprache
+- [[20.studies/Religionsoekonomie/wissenschaftliches-schreiben-emisch-etisch]] — Paraphrase-Varianten + emische/etische Sprache
 - [[20.studies/Anneliese-Michel/05-Schreibwerkstatt-Konsistenz-Zitate]] — projektbezogene Schreibroutinen
 
 ### Conversation-Index

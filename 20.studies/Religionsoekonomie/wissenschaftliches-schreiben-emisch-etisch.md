@@ -89,7 +89,7 @@ Beispiele:
 
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/religionsoekonomie-homo-oeconomicus]] — Kontext der Sätze
+- [[20.studies/Religionsoekonomie/religionsoekonomie-homo-oeconomicus]] — Kontext der Sätze
 - [[20.studies/wissenschaftliches-schreiben/_README]]
 - [[20.studies/Anneliese-Michel/05-Schreibwerkstatt-Konsistenz-Zitate]] — verwandtes Pattern für andere Disziplin
-- [[20.studies/Bourdieu-Theorie/_conversation-index]]
+- [[20.studies/Religionsoekonomie/_conversation-index]]

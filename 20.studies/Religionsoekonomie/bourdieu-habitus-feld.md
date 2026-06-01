@@ -88,8 +88,21 @@ Mögliche Kritik: zirkuläre Ad-hoc-Erklärungen (z.B. Armut durch *pauvreté*, 
 
 **Habitus als generatives + vereinheitlichendes Prinzip** (S. 165): erfasst Konstanz der Dispositionen, des Geschmacks, der Präferenzen. Verbindet scheinbar disparate Phänomene (sprachliche Überkorrektheit, niedrige Geburtenzahl, Sparneigung etc.).
 
+## Bezug zur Seminararbeit Religionsökonomie
+
+Diese Lektüre-Notiz aus Bourdieus *Praktische Vernunft* dient zwei Kapiteln der Arbeit:
+
+- **Kap. 4 (Begrenzte Rationalität)** — Bourdieus Habitus-Begriff erweitert Simons *bounded rationality* um die soziogenetische Dimension. Die *scholastic fallacy* (S. 156) zielt direkt auf den Rational-Choice-Akteur als „imaginäre Projektion des akademischen Subjekts".
+- **Kap. 5.2 (Soziale Präferenzen)** — Habitus erklärt, warum Präferenzen kein universelles Datum sind, sondern Ergebnis klassenspezifischer Sozialisation. Verschränkung mit Tan (2014) und Benjamin et al. (2016) möglich.
+
+## Verwandte Literatur-Quellen
+
+- [[20.studies/Religionsoekonomie/Literatur/Bourdieu-1998|Bourdieu (1998)]] — die **primäre Quelle**, aus der diese Notiz exzerpiert ist (S. 147–175)
+- [[20.studies/Religionsoekonomie/Literatur/Simon-1997|Simon (1997)]] — methodisch verwandte Rationalitäts-Kritik (bounded rationality)
+- [[20.studies/Religionsoekonomie/Literatur/Mueller-2012|Müller (2012)]] — beide Texte argumentieren gegen Tautologisierung der Modelle
+
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/religionsoekonomie-homo-oeconomicus]] — Bourdieus Kritik trifft Rational-Choice
-- [[20.studies/Bourdieu-Theorie/Hub]]
-- [[20.studies/Bourdieu-Theorie/_conversation-index]]
+- [[20.studies/Religionsoekonomie/religionsoekonomie-homo-oeconomicus]] — Bourdieus Kritik trifft Rational-Choice direkt
+- [[20.studies/Religionsoekonomie/Hub]]
+- [[20.studies/Religionsoekonomie/_conversation-index]]

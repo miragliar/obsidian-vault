@@ -12,14 +12,14 @@ Master-Übersicht aller importierten Themen-Hubs und Pattern-Bibliotheken aus de
 
 ### Projekt-Hubs (Seminararbeiten, Gruppenarbeiten)
 
-- [[20.studies/Anneliese-Michel/Hub|Anneliese Michel — Seminararbeit]] (7 Notizen)
+- [[20.studies/Anneliese-Michel/Hub|Anneliese Michel — Seminararbeit]] (7 Arbeits- + 8 Literatur-Notizen)
+- [[20.studies/Religionsoekonomie/Hub|Religionsökonomie — Seminararbeit]] (4 Arbeits- + 13 Literatur-Notizen, Walthert FS 2026)
 - [[20.studies/Working-Poor-Gesundheit/Hub|Working Poor & Gesundheit — Gruppenarbeit]] (6 Notizen)
 
 ### Studien-Hubs (Vorlesungen, Prüfungen)
 
 - [[20.studies/Organizational-Economics/Hub|Organizational Economics]] (6 Notizen, Prüfung 19. Juni)
 - [[20.studies/Aegyptologie/Hub|Ägyptologie]] (5 Notizen)
-- [[20.studies/Bourdieu-Theorie/Hub|Bourdieu / Theorie / Religion]] (6 Notizen)
 
 ### Studien-Techniken
 
@@ -76,7 +76,7 @@ Master-Übersicht aller importierten Themen-Hubs und Pattern-Bibliotheken aus de
 | working-poor | 16 | 6 | `20.studies/Working-Poor-Gesundheit/` |
 | r-statistik | 14 | 5 | `20.studies/r-statistik/` |
 | org-economics | 14 | 6 | `20.studies/Organizational-Economics/` |
-| bourdieu-theorie | 13 | 6 | `20.studies/Bourdieu-Theorie/` |
+| religionsoekonomie (ehem. bourdieu-theorie) | 13 | 4 Arbeits- + 13 Literatur- | `20.studies/Religionsoekonomie/` (fusioniert mit eigener Seminararbeit) |
 | wiss-schreiben | 9 | 5 | `20.studies/wissenschaftliches-schreiben/` |
 | aegyptologie | 9 | 5 | `20.studies/Aegyptologie/` |
 | video-media | 5 | 3 | `20.studies/video-media/` |

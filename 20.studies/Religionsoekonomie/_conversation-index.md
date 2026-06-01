@@ -2,12 +2,21 @@
 source: claude-import
 imported: 2026-06-01
 type: conversation-index
-tags: [index, bourdieu-theorie]
+tags: [index, religionsoekonomie]
 ---
 
-# Bourdieu / Theorie / Religion — Conversation-Index
+# Religionsökonomie — Conversation-Index
 
-Alle 13 Conversations zu Theorie, Bourdieu, Religionsökonomie und Mindmap-Seminar.
+Alle 13 Conversations rund um die MA-Seminararbeit Religionsökonomie (Walthert, FS 2026) sowie um das parallele Seminar Religion & Ethik (Mindmap-Tool). Sortiert nach Umfang.
+
+Die Conversations gehören thematisch zu **vier Strängen**:
+
+- **Religionsökonomie / Markt** → [[religionsoekonomie-homo-oeconomicus]]
+- **Bourdieu-Lektüre** (Habitus, Feld, illusio) → [[bourdieu-habitus-feld]]
+- **Schreibprozess** (emische/etische Sprache, Paraphrasieren) → [[wissenschaftliches-schreiben-emisch-etisch]]
+- **Mindmap Religion & Ethik** (paralleles Seminar) → [[mindmap-religion-ethik-seminar]]
+
+Sonstige Theorie-Konversationen (Luhmann, Lacan, Bindi, Frauenemanzipation, Textanalyse) sind als Hintergrundlektüre erfasst, aber nicht als eigene Pattern-Notizen ausgekoppelt.
 
 | msgs | Datum | Titel | Pattern |
 |---:|---|---|---|

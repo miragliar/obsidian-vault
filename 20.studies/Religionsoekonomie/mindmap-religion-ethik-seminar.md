@@ -96,6 +96,6 @@ Wenn das Mindmap mit einer KI weitergeführt werden soll, hier die Standard-Übe
 
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/Hub]]
+- [[20.studies/Religionsoekonomie/Hub]]
 - [[40.meta/Claude-Workflows]]
-- [[20.studies/Bourdieu-Theorie/_conversation-index]]
+- [[20.studies/Religionsoekonomie/_conversation-index]]

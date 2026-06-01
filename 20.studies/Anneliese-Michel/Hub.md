@@ -45,5 +45,5 @@ Projekt-Hub für die Seminararbeit zum Fall Anneliese Michel: Exorzismus zwische
 
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/Hub]]
+- [[20.studies/Religionsoekonomie/Hub]]
 - [[20.studies/wissenschaftliches-schreiben/_README]]

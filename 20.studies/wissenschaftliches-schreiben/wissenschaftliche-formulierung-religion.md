@@ -7,7 +7,7 @@ tags: [wiss-schreiben, religion, formulierung, ethik]
 
 # Wissenschaftliche Formulierung in religiöser Forschung
 
-Patterns für präzise Formulierung in Religionssoziologie / Religionsökonomie / Religionswissenschaft. Komplementär zu [[20.studies/Bourdieu-Theorie/wissenschaftliches-schreiben-emisch-etisch]].
+Patterns für präzise Formulierung in Religionssoziologie / Religionsökonomie / Religionswissenschaft. Komplementär zu [[20.studies/Religionsoekonomie/wissenschaftliches-schreiben-emisch-etisch]].
 
 ## Begriffstrias: Ethik / Moral / Religion
 
@@ -84,7 +84,7 @@ Klassische Aristotelische Definition: Gattung + spezifische Differenz. Knapp, pr
 
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/wissenschaftliches-schreiben-emisch-etisch]] — Paraphrase-Varianten
-- [[20.studies/Bourdieu-Theorie/religionsoekonomie-homo-oeconomicus]]
+- [[20.studies/Religionsoekonomie/wissenschaftliches-schreiben-emisch-etisch]] — Paraphrase-Varianten
+- [[20.studies/Religionsoekonomie/religionsoekonomie-homo-oeconomicus]]
 - [[20.studies/Anneliese-Michel/05-Schreibwerkstatt-Konsistenz-Zitate]]
 - [[20.studies/wissenschaftliches-schreiben/_README]]

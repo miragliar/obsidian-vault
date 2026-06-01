@@ -138,5 +138,5 @@ Häufige Frage: "Wie nutze ich Claude als Zusammenfassungs-Bot für eine Vorlesu
 
 - [[40.meta/dokumentenanalyse-vorlesung-zusammenfassen]]
 - [[40.meta/prompt-strukturierte-extraktion]]
-- [[20.studies/Bourdieu-Theorie/mindmap-religion-ethik-seminar]] — Übergabe-Anleitung für KI
+- [[20.studies/Religionsoekonomie/mindmap-religion-ethik-seminar]] — Übergabe-Anleitung für KI
 - [[40.meta/_conversation-index]]

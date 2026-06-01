@@ -4,8 +4,8 @@
   "title": "Erstelle eine Notiz Test mit dem Inhalt Hallo",
   "titleGenerationStatus": "failed",
   "createdAt": 1780293905411,
-  "updatedAt": 1780333208094,
-  "lastResponseAt": 1780333208094,
+  "updatedAt": 1780337911279,
+  "lastResponseAt": 1780336858031,
   "sessionId": "de6bf1e7-5e64-4817-aa74-957a68e27a14",
   "providerState": {
     "providerSessionId": "de6bf1e7-5e64-4817-aa74-957a68e27a14"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 1117,
-    "cacheReadInputTokens": 747130,
+    "cacheCreationInputTokens": 1326,
+    "cacheReadInputTokens": 791147,
     "contextWindow": 1000000,
-    "contextTokens": 748248,
-    "percentage": 75,
+    "contextTokens": 792474,
+    "percentage": 79,
     "contextWindowIsAuthoritative": true
   }
 }

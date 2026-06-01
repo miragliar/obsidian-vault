@@ -45,7 +45,7 @@ Implikation für Kausalanalyse: Aggregate-Variablen sind ggf. analytisch wertlos
 
 ## Anschluss an Bourdieu
 
-Die Bourdieusche Kritik an Rational-Choice (siehe [[20.studies/Bourdieu-Theorie/bourdieu-habitus-feld]]) trifft auch die Religionsökonomie:
+Die Bourdieusche Kritik an Rational-Choice (siehe [[20.studies/Religionsoekonomie/bourdieu-habitus-feld]]) trifft auch die Religionsökonomie:
 
 - Homo oeconomicus = scholastic fallacy auf religiöses Verhalten angewandt
 - Religiöse „Präferenzen" sind sozial konstituiert (Habitus), nicht universell
@@ -53,9 +53,19 @@ Die Bourdieusche Kritik an Rational-Choice (siehe [[20.studies/Bourdieu-Theorie/
 
 → konzeptuelle Brücke: Religionsökonomie + Bourdieu = produktive Spannung, kein direkter Widerspruch. Iannaccone's Modell als **Heuristik** verwendbar, Bourdieu liefert die Soziogenese der Präferenzen.
 
+## Verwandte Literatur-Quellen (in der Seminararbeit verwendet)
+
+- [[20.studies/Religionsoekonomie/Literatur/Iannaccone-1991|Iannaccone (1991)]] — Smith-Rezeption, religiöse Märkte
+- [[20.studies/Religionsoekonomie/Literatur/Iannaccone-1990|Iannaccone (1990)]] · [[20.studies/Religionsoekonomie/Literatur/Iannaccone-1998|Iannaccone (1998)]] — Humankapital + Übersicht
+- [[20.studies/Religionsoekonomie/Literatur/Stark-Finke-2000|Stark & Finke (2000)]] — Marktdynamik
+- [[20.studies/Religionsoekonomie/Literatur/Mueller-2012|Müller (2012)]] — Tautologie-Kritik (Müller-Zitat S. 11–13 stammt hier her)
+- [[20.studies/Religionsoekonomie/Literatur/Leschke-2012|Leschke (2012)]] — Methodologische Verteidigung des Homo oeconomicus (Leschke-Zitat S. 34)
+- [[20.studies/Religionsoekonomie/Literatur/Al-Fozaie-2023|Al Fozaie (2023)]] — Kategorialer Fehler / Endogenität (Al-Fozaie-Zitate S. 6 + S. 7)
+
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/bourdieu-habitus-feld]] — Habitus, scholastic fallacy
-- [[20.studies/Bourdieu-Theorie/wissenschaftliches-schreiben-emisch-etisch]] — wie diese Sätze entstanden
-- [[20.studies/Bourdieu-Theorie/Hub]]
-- [[20.studies/Bourdieu-Theorie/_conversation-index]]
+- [[20.studies/Religionsoekonomie/bourdieu-habitus-feld]] — Habitus, scholastic fallacy → trifft Religionsökonomie inhaltlich
+- [[20.studies/Religionsoekonomie/Literatur/Bourdieu-1998|Bourdieu (1998)]] — primäre Quelle der Habitus-Theorie
+- [[20.studies/Religionsoekonomie/wissenschaftliches-schreiben-emisch-etisch]] — wie diese Sätze entstanden (Drei-Paraphrase-Varianten-Routine)
+- [[20.studies/Religionsoekonomie/Hub]]
+- [[20.studies/Religionsoekonomie/_conversation-index]]

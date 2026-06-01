@@ -34,5 +34,5 @@ Projekt-Hub für die Gruppenarbeit „Gesundheitskapitel Working Poor" (Kapitel 
 
 ## Verwandt
 
-- [[20.studies/Bourdieu-Theorie/Hub]]
+- [[20.studies/Religionsoekonomie/Hub]]
 - [[20.studies/wissenschaftliches-schreiben/_README]]
