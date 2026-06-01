@@ -69,6 +69,21 @@ Projektnotiz zum strukturellen Rahmen der MA-Seminararbeit SWRW. Inhalt verdicht
 
 → Architektur jetzt sauberer und engführender. Risiko: nicht in „Survey aller Quellen" abgleiten.
 
+## Literatur-Anker pro Kapitel
+
+Schnellzugriff auf die ausgearbeiteten Literatur-Notizen pro Gliederungs-Punkt — komplette Quellen-Tabelle in [[02-Quellen-und-Positionen]].
+
+| Kapitel | Hauptquellen | Literatur-Notizen |
+|---|---|---|
+| **1. Einleitung** | Methodische Prämisse Zeitschichtung | [[Literatur/Bauer & Doole 2024 — Possession as Contextual Ascription\|Bauer & Doole 2024]] (Diskursanalyse-Basis), [[Literatur/Dinzelbacher 1994 — Besessenheit (Lexikonartikel, S. 311–314)\|Dinzelbacher 1994]] (Längsperspektive) |
+| **2. Fall-Rekonstruktion** | Ney-Hellmuth 2014, Leimgruber 2010 | [[Literatur/Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus\|Leimgruber 2010]] (Hauptquelle Kap. 2) |
+| **3.1 Psychiatrisch-psychologisch** | Mischo, Niemann, Schrappe | [[Literatur/Niemann 1999 — Großer Exorzismus 1999 (Kritik)\|Niemann 1999]], [[Literatur/Niemann 2005 — Befreiung vom Bösen & Pastorale Hilfen\|Niemann 2005]], [[Literatur/Demmrich 2020 — Oesterreich-Rezeption & Besessenheitspsychologie\|Demmrich 2020]] |
+| **3.2 Anthropologisch** | Goodman 1980 (kritisch) | [[Literatur/Wilkens 2019 — Religionsästhetik, Geister & Materialität\|Wilkens 2019]] (Kontrapunkt), [[Literatur/Bauer & Doole 2024 — Possession as Contextual Ascription\|Bauer & Doole 2024]] (anti-essentialistisch) |
+| **3.3 Religionswiss./kulturpsych.** | Demmrich, Bauer & Doole | [[Literatur/Demmrich 2020 — Oesterreich-Rezeption & Besessenheitspsychologie\|Demmrich 2020]], [[Literatur/Bauer & Doole 2024 — Possession as Contextual Ascription\|Bauer & Doole 2024]], [[Literatur/Dinzelbacher 1994 — Besessenheit (Lexikonartikel, S. 311–314)\|Dinzelbacher 1994]] |
+| **3 (querliegend) — Theol./Reform** | Reform 1999, Pastorale Hilfen | [[Literatur/Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform\|Müller 2002]], [[Literatur/Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus\|Leimgruber 2010]] |
+| **4. Medien (Requiem)** | Schmid 2006a/b | [[03-Filmanalyse-Requiem-2006]], [[Literatur/Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform\|Müller 2002]] (Popkultur-Brücke: *Exorzist* 1973) |
+| **5. Synthese** | — | [[Literatur/Niemann 2005 — Befreiung vom Bösen & Pastorale Hilfen\|Niemann 2005]] (11 Thesen), [[Literatur/Niemann 1999 — Großer Exorzismus 1999 (Kritik)\|Niemann 1999]] (Rahner-Zitat) |
+
 ## Verwandt
 
 - [[02-Quellen-und-Positionen]] — wer sagt was, wer arbeitet in welcher Tradition

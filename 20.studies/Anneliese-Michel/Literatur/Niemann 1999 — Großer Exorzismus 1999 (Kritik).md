@@ -93,3 +93,24 @@ tags:
 „„Wie wir heute auch als ortho doxe Gläubige ohne Hexen ,auskommen', so könnte man in der Praxis auch ohne Besessenheit ,auskommen'." Und weiter: „Für die Praxis des privaten und kirchlichen Handelns bräuchte un ter Christen kein Unterschied zu bestehen, weil der Christ so beten muß, als ob alles von seiner Tat allein abhinge, und so handeln muß, daß Tat und Leiden zusammen der liebenden Verfügung Gottes im Gebet übergeben werden.""
 
 „„Handeln" gilt in dem Sinn, daß mit wissenschaftlich fundierten therapeuti schen Methoden (psychotherapeutisch, psychia trisch-pharmakologisch, parapsychologisch, so zialtherapeutisch und rehabilitativ) die beste menschlich-therapeutische Hilfe versucht wird. Andererseits muß die biographisch gewachsene Glaubens- und Gebetsdimension der Betroffenen ganz ernst genommen werden. Es sollte versucht werden, in einer individuell angemessenen Weise mit dem Betroffenen (con-prekativ) zu beten."
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Niemann 2005 — Befreiung vom Bösen & Pastorale Hilfen|Niemann 2005]] — **Folge-Text desselben Autors** — 2005 erweitert um pastoral-praktische Dimension
+- [[Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus|Leimgruber 2010]] — gemeinsamer Bezug auf Gemischte Arbeitsgruppe 1984 nach Anneliese-Tod
+- [[Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform|Müller 2002]] — gleicher Untersuchungsgegenstand (Reform 1999), unterschiedliche Tonalität
+
+## Bezug zur Seminararbeit
+
+- **Kap. 3.1 Psychiatrisch-psychologisch** — **Mischo-Erbe**: explizite Würdigung von Johannes Mischos parapsychologisch-psychiatrischen Beiträgen für die Gemischte Arbeitsgruppe 1984
+- **Kap. 3.3 Religionswiss./theol.** — Vier Kriterien des Rituale Romanum 1614 (kritisch beurteilt)
+- **Kap. 5 Synthese** — Rahner-Zitat: 'Wie wir heute ohne Hexen auskommen, so könnte man auch ohne Besessenheit auskommen'
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[02-Quellen-und-Positionen]] — als kritisch-pastoraltheologische Stimme einordnen
+- [[05-Schreibwerkstatt-Konsistenz-Zitate]] — Notiz besteht primär aus wörtlichen Exzerpten → Zitierform exakt einhalten
+
+<!-- connections-end -->

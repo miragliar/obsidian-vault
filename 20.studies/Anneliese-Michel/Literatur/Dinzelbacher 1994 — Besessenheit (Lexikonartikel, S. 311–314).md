@@ -88,3 +88,23 @@ B. wurden als Schauspiele gestaltet im Kampf gegen Reformierte und Hugenotten, f
 Bekannte Fälle: Ursulinen in Loudun unter Jeanne des Anges (1632/34); Elisabeth v. Ranfaing (1592–1649), deren sechsjährige Tochter von der Sorbonne als besessen bestätigt; Reformierte und Hugenotten nutzten Exorzismus als Bühneninszenierung.
 
 J. Surins u. Richelieus Aussagen der Besessenen sprachen Exorzisten oft als wahr an; wer diese Deutung als falsch erklärte, wurde z.T. verbrannt (z.B. drei Personen, welche die ehrw. Elisabeth v. Ranfaing (1592–1649) bezichtigten).
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform|Müller 2002]] — Müller behandelt liturgisch-praktische Folgen, Dinzelbacher die religionsphänomenologische Grundlage
+- [[Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus|Leimgruber 2010]] — historische Tiefe für theologische Bewertung; Loudun, Elisabeth v. Ranfaing als Präzedenzfälle
+- [[Bauer & Doole 2024 — Possession as Contextual Ascription|Bauer & Doole 2024]] — Dinzelbacher liefert die historische Variations-Basis, Bauer/Doole die zeitgenössische theoretische Lesart
+
+## Bezug zur Seminararbeit
+
+- **Einleitung — Hinführung & Relevanz** — Religionshistorische Längsperspektive: Phänomen ist alt, kulturspezifisch ausgeformt
+- **Kap. 2 Fallrekonstruktion (Hintergrund)** — Anneliese im Kontext einer langen Tradition (Loudun, Ursulinen)
+- **Kap. 3.3 Religionswiss./kulturpsych.** — Religionsphänomenologische Typologie (zentral/peripher, freiwillig/unfreiwillig)
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[02-Quellen-und-Positionen]] — als Lexikon-/Überblickartikel klar markieren (Sekundärquelle für historischen Kontext)
+
+<!-- connections-end -->

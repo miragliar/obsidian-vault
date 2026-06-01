@@ -106,3 +106,24 @@ tags:
 „Daher wäre es wünschenswert, wenn möglichst bald - einheitlich für den deut schen Sprachbereich - einigermaßen ver bindliche „Pastorale Hilfen" ausgearbeitet und erlassen würden."
 
 „Angesichts des Bösen unserer Tage und der zerstörerischen Ka tastrophen der letzten Jahre brauchen Men schen von heute Hilfen, wenn sie - wie „verlorene Schafe" - nach einem guten Hirten bzw. Männern und Frauen suchen, die einfühlsam und kompetent sind."
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Niemann 1999 — Großer Exorzismus 1999 (Kritik)|Niemann 1999]] — **Vortext desselben Autors** — 2005 baut auf 1999er-Position auf
+- [[Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus|Leimgruber 2010]] — gemeinsame pastoral-praktische Tendenz (psychiatrische Hilfe + Seelsorge)
+- [[Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform|Müller 2002]] — gleicher theologischer Reform-Rahmen, ähnlicher Aktualitäts-Bezug (post-9/11)
+
+## Bezug zur Seminararbeit
+
+- **Kap. 3.1 Psychiatrisch-psychologisch** — Fortsetzung der Mischo-Linie: humanwissenschaftliche Diagnose **vor** theologischer Bewertung
+- **Kap. 5 Synthese** — 11 Thesen pastoraler Handhabung — programmatischer Schlusspunkt
+- **Kap. 4 (Sekundär)** — Post-9/11-Aktualität als Diskurs-Kontextualisierung
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[02-Quellen-und-Positionen]] — Doppelreferenz-Paar mit Leimgruber laut Notiz-Hinweis prüfen (S. 853)
+- [[05-Schreibwerkstatt-Konsistenz-Zitate]] — Notiz besteht primär aus wörtlichen Exzerpten
+
+<!-- connections-end -->

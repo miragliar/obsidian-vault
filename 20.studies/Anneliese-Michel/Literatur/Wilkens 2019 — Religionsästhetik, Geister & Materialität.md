@@ -81,3 +81,23 @@ spiritus = Wahrnehmungsort, Seelen, Engel, Dämomen, Träger von Empfindungen
 die vorgestellten Studien zeigen eine Sensibilität für komplexe Zusammenhänge von Wahrnehnmung, Körper und Wissen.
 
 Zentral ist immer das Medium also die Verbindung von Material mit menschlichen Akteuren
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Bauer & Doole 2024 — Possession as Contextual Ascription|Bauer & Doole 2024]] — moderne anti-essentialistische Linie; Wilkens religionsästhetisch-methodisch, Bauer/Doole theoretisch-übersichtsartig
+- [[Demmrich 2020 — Oesterreich-Rezeption & Besessenheitspsychologie|Demmrich 2020]] — beide arbeiten mit Körperdimension; McCloud bei Wilkens parallelisiert Oesterreichs psychophysische Symptome
+
+## Bezug zur Seminararbeit
+
+- **Kap. 3.2 Anthropologische Brille** — **Kontrapunkt zu Goodman 1980** — religionsästhetischer Zugang statt biologische Konstante
+- **Kap. 3.3 Religionswiss./kulturpsych.** — Religionsästhetik als methodischer Zugang; Materialität, Medium, Trance, McCloud/Bourdieu-Habitus
+- **Einleitung — Methodik** — Bezug zur Diskursanalyse: Religionsästhetik als komparatistischer Forschungszugang
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[04-Methodische-Reflexion]] — Wilkens ist **kein** Anthropologe (anders als Goodman) → relevant für die 'Goodman als Einzelposition'-Klarstellung in der Arbeit
+- [[02-Quellen-und-Positionen]] — bereits gelistet, als Kontrapunkt zu Goodman markieren
+
+<!-- connections-end -->

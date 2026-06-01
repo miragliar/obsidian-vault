@@ -115,3 +115,26 @@ Glaubenswelt des Gläubigen Muss ernst genommen werden. Und so sollte zusätzlic
 Eine Befreiung vom Bösen jenseits des Exorzismus muss in der Kirche von heute möglich sein.
 
 129
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform|Müller 2002]] — beide rekonstruieren Anneliese-Fall + Liturgiereform 1999, unterschiedliche Schwerpunkte
+- [[Niemann 1999 — Großer Exorzismus 1999 (Kritik)|Niemann 1999]] — kritisch-pastoraltheologische Auseinandersetzung mit dem neuen Ritus
+- [[Niemann 2005 — Befreiung vom Bösen & Pastorale Hilfen|Niemann 2005]] — pastoral-praktische Folge-Position desselben Reform-Diskurses
+- [[Demmrich 2020 — Oesterreich-Rezeption & Besessenheitspsychologie|Demmrich 2020]] — religionspsychologisches Komplement zur theologischen Fall-Rekonstruktion
+
+## Bezug zur Seminararbeit
+
+- **Kap. 2 Fall-Rekonstruktion** — **Hauptquelle** neben Ney-Hellmuth — biographischer Hintergrund, Krankheitsverlauf, Prozess, Sühnebesessenheit
+- **Kap. 3.3 Religionswiss./theol. Brille** — Bewertung des Falls: 'Anliegen pervertiert zugunsten wahnhafter Vorstellungen'
+- **Kap. 4 Mediale Nachwirkung** — 'Mittlerweile wird sie in gewissen Kreisen bereits in Gebete aufgenommen' — Heiligen-Diskurs
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[02-Quellen-und-Positionen]] — bereits als Hauptquelle gelistet; Leimgruber 2004/2010 ist die roter-Faden-Quelle für Kap. 2
+- [[03-Filmanalyse-Requiem-2006]] — Hintergrund für die Borchert-Katharina-Sühnebesessenheits-Verknüpfung in Schmid 2006b
+- [[05-Schreibwerkstatt-Konsistenz-Zitate]] — Zahlenangaben gegen Ney-Hellmuth abgleichen (z.B. Bewährungsstrafen, Bischof Stangl)
+
+<!-- connections-end -->

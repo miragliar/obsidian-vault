@@ -99,3 +99,24 @@ Satanic Cult in Johannesburg, Korea, modern Germany
 12
 
 Iowa, Rome
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Wilkens 2019 — Religionsästhetik, Geister & Materialität|Wilkens 2019]] — auch religionswissenschaftlich anti-essentialistisch, ergänzt um Körperdimension und Religionsästhetik
+- [[Demmrich 2020 — Oesterreich-Rezeption & Besessenheitspsychologie|Demmrich 2020]] — psychologisches Komplement: Demmrich rezipiert Oesterreich (1921), Bauer/Doole liefern die zeitgenössische anthropologische Theorie
+- [[Dinzelbacher 1994 — Besessenheit (Lexikonartikel, S. 311–314)|Dinzelbacher 1994]] — religionsphänomenologisch-kulturhistorischer Hintergrund für die kulturelle Vielfalt der Phänomene
+
+## Bezug zur Seminararbeit
+
+- **Kap. 3.2 Anthropologische Brille** — Moderner Kontrapunkt zu Goodmans biologisch-essentialistischer Position (1980)
+- **Kap. 3.3 Religionswiss./kulturpsych.** — Theoretischer Rahmen: 'Besessenheit als kontextuelle Zuschreibung' — Lambek/Boddy/Johnson
+- **Einleitung — methodische Prämisse** — Stützt Diskursanalyse als Methode (Besessenheit als Bedeutungs-Zuschreibung, nicht als Phänomen-an-sich)
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[04-Methodische-Reflexion]] — Bauer/Doole begründet, warum Goodman 1980 als Einzelposition (essentialistisch) behandelt werden muss
+- [[02-Quellen-und-Positionen]] — als zeitgenössische religionswiss./anthropologische Quelle in der Übersicht eintragen
+
+<!-- connections-end -->

@@ -105,3 +105,25 @@ Dass sich Menschen der westlichen Gesellschaft in den letzten Dekaden dem Thema 
 durch den ständigen Fokus eben dieser Kleriker auf das allgegenwärtige Böse und dem gleichzeitigen Bereitstellen von immer mehr Exorzisten verändere sich die Wahrnehmung des Bösen, wodurch die Wahrscheinlichkeit steige, dass ein Gläubiger auch von Besessenheit überzeugt werde, und vermutlich auch, dass sich dadurch immer mehr Personen als besessen wahrnehmen.
 
 80
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Wilkens 2019 — Religionsästhetik, Geister & Materialität|Wilkens 2019]] — beide arbeiten mit Körperdimension; McCloud (bei Wilkens) parallelisiert Oesterreich-Phänomenologie
+- [[Bauer & Doole 2024 — Possession as Contextual Ascription|Bauer & Doole 2024]] — anthropologische Theorie ergänzt religionspsychologische Befunde — Demmrich erklärt das 'Wie', Bauer/Doole das 'Was zählt als'
+- [[Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus|Leimgruber 2010]] — gemeinsame Anwendung auf Anneliese; Leimgruber theologisch, Demmrich religionspsychologisch
+- [[Niemann 1999 — Großer Exorzismus 1999 (Kritik)|Niemann 1999]] — Mischo-Parapsychologie-Erbe: Niemann verweist auf Mischo (Freiburg), Demmrich rezipiert Oesterreich-Linie
+
+## Bezug zur Seminararbeit
+
+- **Kap. 3.1 Psychiatrisch-psychologisch** — Oesterreichs vier Symptome auf Anneliese angewendet (Magersucht, fremdsuggestive Induktion, kulturpsychologisch verstärkt)
+- **Kap. 3.3 Religionswiss./kulturpsych.** — Kulturpsychologische Erklärung des weltweiten Exorzismus-Anstiegs (Demmrich S. 79)
+- **Kap. 4 Mediale Rezeption (sekundär)** — Demmrich: 'Tageszeitungen berichten' — Verbindung zwischen Boulevard-Diskurs und Praxis
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[02-Quellen-und-Positionen]] — Pflicht-Fußnote: Demmrich ist Rezeption von Oesterreich 1921 (siehe Formulierung in [[05-Schreibwerkstatt-Konsistenz-Zitate]])
+- [[04-Methodische-Reflexion]] — Demmrich ist keine Anthropologin (anders als Goodman) → relevant für die 'Anthropologische-Brille'-Klarstellung
+
+<!-- connections-end -->

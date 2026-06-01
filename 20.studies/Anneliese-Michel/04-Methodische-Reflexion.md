@@ -16,7 +16,8 @@ Die methodischen Schwachstellen und ihre Behandlung in der Arbeit. Stammt primä
 | Zeitebene | Funktion | Quellen |
 |---|---|---|
 | **Zeitgenössisch** (1975–1978) | **konstituiert** den Diskurs | Mischo (1975), Aschaffenburger Prozess (1978), zeitgenössische Presse |
-| **Retrospektiv** (1980–heute) | **analysiert** den Diskurs | Goodman (1980), Ney-Hellmuth (2014), Demmrich (2020), Bauer & Doole (2024) |
+| **Retrospektiv** (1980–heute) | **analysiert** den Diskurs | Goodman (1980), [[Literatur/Müller 2002 — Exorzismus zwischen Popkultur & Liturgiereform\|Müller (2002)]], [[Literatur/Niemann 1999 — Großer Exorzismus 1999 (Kritik)\|Niemann (1999)]], [[Literatur/Niemann 2005 — Befreiung vom Bösen & Pastorale Hilfen\|(2005)]], [[Literatur/Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus\|Leimgruber (2010)]], Ney-Hellmuth (2014), [[Literatur/Wilkens 2019 — Religionsästhetik, Geister & Materialität\|Wilkens (2019)]], [[Literatur/Demmrich 2020 — Oesterreich-Rezeption & Besessenheitspsychologie\|Demmrich (2020)]], [[Literatur/Bauer & Doole 2024 — Possession as Contextual Ascription\|Bauer & Doole (2024)]] |
+| **Klassisch** (vor 1980) | wirkt rezipiert in retrospektiver Literatur weiter | Oesterreich (1921) → siehe Demmrich; [[Literatur/Dinzelbacher 1994 — Besessenheit (Lexikonartikel, S. 311–314)\|Dinzelbacher (1994)]] historisch-phänomenologisch |
 
 **Konsequenz für Methodik:** Zeitgenössische Quellen sind *Material*, retrospektive sind *Analyse*. Sie müssen unterschiedlich gewichtet werden — eine retrospektive Quelle (Goodman 1980) kann nicht direkt mit einer zeitgenössischen (Mischo 1975) auf gleicher Ebene verglichen werden.
 
@@ -38,6 +39,15 @@ Die methodischen Schwachstellen und ihre Behandlung in der Arbeit. Stammt primä
 > Goodman muss als **Einzelposition mit kritischem Kontext** behandelt werden. Eine Aussage wie „Die anthropologische Brille wird durch Goodman und Demmrich gestützt" ist methodisch falsch — Demmrich ist keine Anthropologin, und Wilkens als anderer anthropologisch-religionswissenschaftlich arbeitender Autor liefert Kontrapunkt.
 
 **Häufiger eigener Fehler (selbst-korrigiert):** In Argumentations-Konsistenz-Checks ist die Versuchung groß, Goodman als „eine von mehreren" zu rahmen, um die anthropologische Brille balanciert wirken zu lassen. Das verzerrt aber den Forschungsstand.
+
+### Stützende neuere Literatur (Juni 2026)
+
+Die Goodman-als-Einzelposition-Argumentation wird **nicht** durch Demmrich oder Ney-Hellmuth gestützt, sondern durch zwei zeitgenössische Positionen aus der Religionswissenschaft / Anthropologie:
+
+- [[Literatur/Bauer & Doole 2024 — Possession as Contextual Ascription|Bauer & Doole (2024)]]: zeitgenössische **anti-essentialistische** anthropologische Übersicht. Zentrale These (Crapanzano/Lambek/Boddy/Johnson): „possession is not a phenomenon in itself, rather a meaning ascribed to the status or behavior of certain people". → Goodmans biologisch-essentialistische Position (1980) wird damit explizit überschritten.
+- [[Literatur/Wilkens 2019 — Religionsästhetik, Geister & Materialität|Wilkens (2019)]]: religionsästhetischer Zugang, McCloud nach Bourdieu-Habitus. → Religionsästhetik **ersetzt** Goodmans biologische Konstante durch Körper-, Materialitäts- und Medien-Begriffe.
+
+**Wichtig für die methodische Klarstellung:** Beide sind **nicht** Anthropolog:innen wie Goodman, sondern arbeiten **religionswissenschaftlich** mit anthropologischen Anschlüssen. Die Arbeit muss das transparent ausweisen — nicht „Goodman wird durch Bauer/Doole und Wilkens ergänzt", sondern „Goodmans Position ist in der zeitgenössischen religionswissenschaftlich-anthropologischen Diskussion **nicht mehr Mainstream**".
 
 ## 3. Begrenzte Medienanalyse
 

@@ -179,3 +179,25 @@ Salutatio → Gebet (unterschiedliche Inhalte: Heilige, Schöpfer) → 3. Exorzi
 Mögliche Zusatzgebete: Pater Noster, Ave Maria, Credo, Magnificat, Benedictus, Psalmen.
 
 Schlussteil: Gebet um Befreiung.
+
+<!-- connections-start -->
+
+## Verwandte Literatur
+
+- [[Leimgruber 2010 — Fall Klingenberg & neuer Exorzismus|Leimgruber 2010]] — gleicher Untersuchungsgegenstand: Anneliese als Auslöser + 1999er Reform
+- [[Niemann 1999 — Großer Exorzismus 1999 (Kritik)|Niemann 1999]] — Müller deskriptiv-systematisch zur Reform, Niemann pointiert-kritisch
+- [[Dinzelbacher 1994 — Besessenheit (Lexikonartikel, S. 311–314)|Dinzelbacher 1994]] — historische Vorgeschichte der Liturgie (Rituale Romanum 1614)
+- [[Niemann 2005 — Befreiung vom Bösen & Pastorale Hilfen|Niemann 2005]] — pastoral-praktische Vertiefung der Reform-Diskussion
+
+## Bezug zur Seminararbeit
+
+- **Kap. 3.1 Psychiatrisch-psychologisch** — Hinweis auf 1985er-Empfehlung der Bischofskonferenz: Zusammenarbeit Seelsorge/Psychotherapie/Medizin
+- **Kap. 3.3 Religionswiss./theol.** — Liturgiegeschichtliche Tiefe, Kontextualisierung der theologischen Position
+- **Kap. 4 Mediale Rezeption** — **Brücke**: Popkultur (*Der Exorzist* 1973, Metal, Okkultwelle 80er) ↔ kirchliche Reform-Reaktion
+
+## Verknüpfung mit Arbeits-Notizen
+
+- [[03-Filmanalyse-Requiem-2006]] — Müllers Popkultur-Analyse (*Exorzist* 1973) ist der diskursive Vorlauf zu Schmid 2006
+- [[02-Quellen-und-Positionen]] — zentrale theologische Sekundärquelle, in die Übersicht aufnehmen
+
+<!-- connections-end -->
