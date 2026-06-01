@@ -1,0 +1,151 @@
+[
+  {
+    "cluster": "aegyptologie",
+    "conv_count": 9,
+    "status": "done",
+    "notes_created": [
+      "20.studies/Aegyptologie/Hub.md",
+      "20.studies/Aegyptologie/_conversation-index.md",
+      "20.studies/Aegyptologie/01-Quellen-Koenigschronologie.md",
+      "20.studies/Aegyptologie/02-Osiris-Mythos-und-Koenigsideologie.md",
+      "20.studies/Aegyptologie/03-Pruefungsvorbereitung.md"
+    ],
+    "target_dir": "20.studies/Aegyptologie"
+  },
+  {
+    "cluster": "anneliese-michel",
+    "conv_count": 27,
+    "status": "done",
+    "notes_created": [
+      "20.studies/Anneliese-Michel/Hub.md",
+      "20.studies/Anneliese-Michel/_conversation-index.md",
+      "20.studies/Anneliese-Michel/01-Forschungsfrage-und-Architektur.md",
+      "20.studies/Anneliese-Michel/02-Quellen-und-Positionen.md",
+      "20.studies/Anneliese-Michel/03-Filmanalyse-Requiem-2006.md",
+      "20.studies/Anneliese-Michel/04-Methodische-Reflexion.md",
+      "20.studies/Anneliese-Michel/05-Schreibwerkstatt-Konsistenz-Zitate.md"
+    ],
+    "target_dir": "20.studies/Anneliese-Michel"
+  },
+  {
+    "cluster": "bourdieu-theorie",
+    "conv_count": 13,
+    "status": "done",
+    "notes_created": [
+      "20.studies/Bourdieu-Theorie/Hub.md",
+      "20.studies/Bourdieu-Theorie/_conversation-index.md",
+      "20.studies/Bourdieu-Theorie/bourdieu-habitus-feld.md",
+      "20.studies/Bourdieu-Theorie/religionsoekonomie-homo-oeconomicus.md",
+      "20.studies/Bourdieu-Theorie/mindmap-religion-ethik-seminar.md",
+      "20.studies/Bourdieu-Theorie/wissenschaftliches-schreiben-emisch-etisch.md"
+    ],
+    "target_dir": "20.studies/Bourdieu-Theorie"
+  },
+  {
+    "cluster": "claude-meta",
+    "conv_count": 23,
+    "status": "done",
+    "notes_created": [
+      "40.meta/Claude-Workflows.md",
+      "40.meta/_conversation-index.md",
+      "40.meta/dokumentenanalyse-vorlesung-zusammenfassen.md",
+      "40.meta/prompt-strukturierte-extraktion.md",
+      "40.meta/claude-projekte-und-custom-ai.md"
+    ],
+    "target_dir": "40.meta"
+  },
+  {
+    "cluster": "org-economics",
+    "conv_count": 14,
+    "status": "done",
+    "notes_created": [
+      "20.studies/Organizational-Economics/Hub.md",
+      "20.studies/Organizational-Economics/_conversation-index.md",
+      "20.studies/Organizational-Economics/lernstrategie-pruefung-19-juni.md",
+      "20.studies/Organizational-Economics/plattformen-network-effects.md",
+      "20.studies/Organizational-Economics/two-sided-markets-divide-and-conquer.md",
+      "20.studies/Organizational-Economics/identifikationsstrategien.md"
+    ],
+    "target_dir": "20.studies/Organizational-Economics"
+  },
+  {
+    "cluster": "power-platform",
+    "conv_count": 63,
+    "status": "done",
+    "notes_created": [
+      "50.work/power-platform/_README.md",
+      "50.work/power-platform/_conversation-index.md",
+      "50.work/power-platform/powerfx-filter-search-combobox.md",
+      "50.work/power-platform/powerfx-hidden-datacard-submitform.md",
+      "50.work/power-platform/power-automate-invalidopenapiflow.md",
+      "50.work/power-platform/power-automate-string-expressions.md",
+      "50.work/power-platform/ai-prompt-json-output.md",
+      "50.work/power-platform/dataverse-mysterious-deletes.md",
+      "50.work/power-platform/dataverse-offlineprofile.md",
+      "50.work/power-platform/azure-service-principal-billing-rollen.md"
+    ],
+    "target_dir": "50.work/power-platform"
+  },
+  {
+    "cluster": "r-statistik",
+    "conv_count": 14,
+    "status": "done",
+    "notes_created": [
+      "20.studies/r-statistik/_README.md",
+      "20.studies/r-statistik/_conversation-index.md",
+      "20.studies/r-statistik/datensatz-einlesen-bereinigen-uzh.md",
+      "20.studies/r-statistik/plots-base-r-ggplot2.md",
+      "20.studies/r-statistik/tableone-summary-tabellen.md"
+    ],
+    "target_dir": "20.studies/r-statistik"
+  },
+  {
+    "cluster": "text-formatting",
+    "conv_count": 3,
+    "status": "done",
+    "notes_created": [
+      "30.patterns/text-formatting/unicode-subscript-konvertierung.md",
+      "30.patterns/text-formatting/unicode-sub-sup-referenz.md",
+      "30.patterns/text-formatting/docx-subscripts-batch-konvertieren.md"
+    ],
+    "target_dir": "30.patterns/text-formatting"
+  },
+  {
+    "cluster": "video-media",
+    "conv_count": 5,
+    "status": "done",
+    "notes_created": [
+      "20.studies/video-media/_README.md",
+      "20.studies/video-media/_conversation-index.md",
+      "20.studies/video-media/science-to-public-video-strategie.md"
+    ],
+    "target_dir": "20.studies/video-media"
+  },
+  {
+    "cluster": "wiss-schreiben",
+    "conv_count": 9,
+    "status": "done",
+    "notes_created": [
+      "20.studies/wissenschaftliches-schreiben/_README.md",
+      "20.studies/wissenschaftliches-schreiben/_conversation-index.md",
+      "20.studies/wissenschaftliches-schreiben/paper-kritisch-analysieren-fuer-praesentation.md",
+      "20.studies/wissenschaftliches-schreiben/wissenschaftliche-formulierung-religion.md",
+      "20.studies/wissenschaftliches-schreiben/standards-argumentation-konsistenz.md"
+    ],
+    "target_dir": "20.studies/wissenschaftliches-schreiben"
+  },
+  {
+    "cluster": "working-poor",
+    "conv_count": 16,
+    "status": "done",
+    "notes_created": [
+      "20.studies/Working-Poor-Gesundheit/Hub.md",
+      "20.studies/Working-Poor-Gesundheit/_conversation-index.md",
+      "20.studies/Working-Poor-Gesundheit/01-Forschungsfrage-und-Eingrenzung.md",
+      "20.studies/Working-Poor-Gesundheit/02-OKP-Leistungskatalog-und-Luecken.md",
+      "20.studies/Working-Poor-Gesundheit/03-Kapitel-4-Architektur-und-Synthese.md",
+      "20.studies/Working-Poor-Gesundheit/04-Quellen-Working-Poor-Gesundheit.md"
+    ],
+    "target_dir": "20.studies/Working-Poor-Gesundheit"
+  }
+]

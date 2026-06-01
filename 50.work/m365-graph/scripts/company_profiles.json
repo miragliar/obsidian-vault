@@ -1,0 +1,110 @@
+{
+  "Miraglia Business-Intelligence": {
+    "name": "Miraglia Business-Intelligence",
+    "website": {
+      "url": "https://www.miraglia-bi.com",
+      "title": "Power Platform | Miraglia Business-Intelligence",
+      "description": "Miraglia Business-Intelligence kreiert einfache und simple Lösungen mithilfe der Power Platform von Microsoft.",
+      "site_name": "Miraglia BI"
+    }
+  },
+  "Kipfer DP": {
+    "name": "Kipfer DP",
+    "website": {
+      "url": "https://www.kipfer-dp.com",
+      "title": "Start | Kipfer Digital Power",
+      "description": "Kipfer Digital-Power ist eine Unternehmung, die sich auf die Digitalisierung und Automatisierung von Geschäftsprozessen spezialisiert hat. Wir verwenden innovative Technologien mit Unterstützung von künstlicher Intelligenz und Automatisierungstools, um Geschäftsprozesse zu optimieren und zu automatisieren. Unser Ziel ist es, Unternehmen zu helfen, effizienter und produktiver zu arbeiten.",
+      "site_name": "Kipfer Digital Power"
+    }
+  },
+  "Castelli Solutions": {
+    "name": "Castelli Solutions",
+    "website": {
+      "url": "https://www.castelli-solutions.ch",
+      "title": "Castelli Solutions - Power Platform in der Schweiz",
+      "description": "Entdecken Sie massgeschneiderte Lösungen für Microsoft Power BI, Power Apps, Power Automate und mehr bei Castelli Solutions – Ihrem Experten für die Power Platform in der Schweiz. Wir bieten Beratung, Entwicklung und Schulungen zur Optimierung Ihrer Geschäftsprozesse.",
+      "site_name": null
+    }
+  },
+  "MVM AG": {
+    "name": "MVM AG",
+    "website": {
+      "url": "https://www.mvm-ag.ch",
+      "title": "MVM AG, Ihr Maler- & Gipsergeschäft in Zürich, Zug, Sursee, Emmen und Stans",
+      "description": "Mit professionellen Maler- und Gipserarbeiten tragen wir dazu bei, dass die Immobilien unserer Kunden zu einem einzigartigen visuellen Erlebnis werden.",
+      "site_name": "MVM AG"
+    }
+  },
+  "Nahrin AG": {
+    "name": "Nahrin AG",
+    "website": {
+      "url": "https://www.nahrin.ch",
+      "title": "Bouillons, Gewürze & Nahrungsergänzung. Schweizer Qualität",
+      "description": "Nahrin AG - natürlich, gesund, wertvoll. Exklusive Küchen- und Gesundheitsprodukte wie Bouillon, Gewürze oder Nahrungsergänzung. Besuchen Sie unseren Onlineshop.",
+      "site_name": null
+    }
+  },
+  "Obrist Interior": {
+    "name": "Obrist Interior",
+    "website": {
+      "url": "https://www.obrist-interior.ch",
+      "title": "OBRIST-INTERIOR: Ladenbau und Innenausbau sowie Schreinerarbeiten",
+      "description": "Die Obrist interior AG mit Sitz in der Schweiz, Luzern, kreiert weltweit hochwertige Interieurs im Ladenbau sowie Innenausbau.",
+      "site_name": null
+    }
+  },
+  "Bordoni Solutions": {
+    "name": "Bordoni Solutions",
+    "website": {
+      "url": "https://www.bordoni-solutions.com",
+      "title": "bordoni-solutions.com",
+      "description": null,
+      "site_name": "bordoni-solutions.com"
+    }
+  },
+  "Cloud Champion": {
+    "name": "Cloud Champion",
+    "website": {
+      "url": "https://www.cloudchampion.ch",
+      "title": "Switzerland Cloud Champion",
+      "description": null,
+      "site_name": null
+    }
+  },
+  "Koster AG": {
+    "name": "Koster AG",
+    "website": {
+      "url": "https://www.kosterag.ch",
+      "title": "Heizung Lüftung Kälte Sanitär MSRL",
+      "description": "Alles was Haustechnik ausmacht Heizung Lüftung Klima Elektro  Sanitär Service 24Stunden! Oekologische Lösungen Haustechnik Wärmepumpen Solarenergie Luft Lüftungen Sanitär",
+      "site_name": null
+    }
+  },
+  "Hauswäckerling": {
+    "name": "Hauswäckerling",
+    "website": {
+      "url": "https://www.hauswaeckerling.ch",
+      "title": "Betreuungs- und Pflegezentrum",
+      "description": null,
+      "site_name": null
+    }
+  },
+  "DOBI-Inter AG": {
+    "name": "DOBI-Inter AG",
+    "website": {
+      "url": "https://www.dobi.ch",
+      "title": "Grösster Beauty-Fachhandel der Schweiz − DOBI-Inter AG",
+      "description": "DOBI - Beauty-Fachhandel für Profis: ✓ Über 12’000 Produkte ✓ Über 200 Marken ✓ Gratis Versand ✓ 24 h Lieferung ✓ Academy mit Aus- und Weiterbildungen",
+      "site_name": null
+    }
+  },
+  "Hunnenberg": {
+    "name": "Hunnenberg",
+    "website": {
+      "url": "https://www.hunnenberg.de",
+      "title": "Hunnenberg Düsseldorf: Bodenbeläge & Kettelei",
+      "description": "Hunnenberg in Düsseldorf – Großhandel für Bodenbeläge & Zubehör, Teppich-Kettelei mit Beratung, Lager & Lieferservice sowie Kettel-Sofort-Service.",
+      "site_name": null
+    }
+  }
+}
