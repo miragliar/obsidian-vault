@@ -282,7 +282,15 @@ Aus Giovannis MVM-Hub bereits evaluiert (Backlog «Ausschreibungs-/Devis-Copilot
 
 ## Log
 
-- **2026-06-04** — Raoul: Trainingsdaten von Reto erhalten (6 Projekte, 4.78 GB). Erstanalyse durch Claudian: 7 Projekt-Ordner, 372 PDFs, 17 Original-Mails, 16 strukturierte SIA-Files, 7 ausgefüllte Messerli-ESO-Files. Format vollständig reverse-engineered. Diese Projekt-Notiz erstellt.
+- **2026-06-04 (Nachmittag)** — Phase-1-Smoke-Test gebaut (5 h fokussiert). Repo unter `MVM/Ausmass/code/`. Erst-Commit `13bc08b` mit kompletter Pipeline:
+  - **SIA-451-Parser** (`parser/sia451.py`): liest 9/9 CRBX, Encoding-Heuristik UTF-8/CP1252, GP-Mengen mit variabler Feldbreite
+  - **Plan-Extraktor** (`extractor/plan_text.py`): PyMuPDF + asymmetrische Cluster-Box um BF-Anker → 200 Räume mit BF/RH/Material-Tags aus 10 Cerutti-Plänen
+  - **Excel-Goldstandard** (`excel_builder/goldstandard.py`): Mike-Kipfer-Format 1:1 (14 Spalten A-N, Annahmen P-Q, Konfidenz-Klassifikation, Frozen panes D5, Korrektur-Log-Sheet)
+  - **CRBX-Round-Trip-Writer** (`eso_writer/crbx_round_trip.py`): Mengen-Mutation in SIA-Fixed-Width-Format, Round-Trip-Test grün (49 → 281.9 → wieder eingelesen)
+  - **End-to-End-Demo** (`examples/demo_2100_bleicherstrasse.py`): druckt alle Zwischenschritte für Live-Demo, Output in `output/demo/`
+  - **Docs**: Kickoff-Agenda für Reto (`docs/kickoff-agenda-reto.md`), Mail-Entwurf an Mike Kipfer (`docs/mail-mike-kipfer.md`), Status (`docs/status-2026-06-04.md`)
+  - **Quantitatives Ergebnis**: 200 Räume / 3'017 m² BF / 5'732 m² Wand geschätzt; 4 NPK-Pos. im CRBX mutiert (Demo-Regeln, mit Reto zu validieren)
+- **2026-06-04 (Vormittag)** — Trainingsdaten von Reto erhalten (6 Projekte, 4.78 GB). Erstanalyse durch Claudian: 7 Projekt-Ordner, 372 PDFs, 17 Original-Mails, 16 strukturierte SIA-Files, 7 ausgefüllte Messerli-ESO-Files. Format vollständig reverse-engineered. Diese Projekt-Notiz erstellt.
 - 2026-06-02 (Mail) — Giovanni an Reto: Präzisierung der gewünschten Trainingsdaten + SharePoint-Upload-Link
 - 2026-06-01 — Raoul übernimmt Lead, Anfrage 10 Offerten an Reto
 - 2026-04-29 — Sascha leitet Mike's Test-Mail an Reto weiter
