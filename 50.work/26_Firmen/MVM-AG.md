@@ -106,11 +106,11 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 | Projekt | Status | Hub |
 |---|---|---|
-| Regie-Rapport-App (Neubau) | Rollout / Live | [[50.work/projekte/Regieapp-Neubau-MVM|Hub]] |
-| 🆕 Magazin-App MVM | Wartung + Erweiterung | [[50.work/projekte/Magazin-App-MVM|Hub]] |
-| 🆕 Mahnprozess MVM | Live | [[50.work/projekte/Mahnprozess-MVM|Hub]] |
-| 🆕 Zeugnis-App MVM | Live + Bugfixes | [[50.work/projekte/Zeugnis-App-MVM|Hub]] |
-| KI-Ausmass MVM (Devis-Copilot) | Daten-Analyse → Prototyp | [[50.work/projekte/KI-Ausmass-MVM|Hub]] |
+| Regie-Rapport-App (Neubau) | Rollout / Live | [[Regieapp-Neubau-MVM|Hub]] |
+| 🆕 Magazin-App MVM | Wartung + Erweiterung | [[Magazin-App-MVM|Hub]] |
+| 🆕 Mahnprozess MVM | Live | [[Mahnprozess-MVM|Hub]] |
+| 🆕 Zeugnis-App MVM | Live + Bugfixes | [[Zeugnis-App-MVM|Hub]] |
+| KI-Ausmass MVM (Devis-Copilot) | Daten-Analyse → Prototyp | [[KI-Ausmass-MVM|Hub]] |
 
 ## Verwandt
 

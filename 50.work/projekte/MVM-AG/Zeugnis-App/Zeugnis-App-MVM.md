@@ -17,7 +17,7 @@ created: 2026-06-04
 **Klient:** [[50.work/26_Firmen/MVM-AG|MVM AG]] · HR-Bereich
 **Status:** Live + laufende Bugfixes
 
-> Verwandt mit [[50.work/projekte/Zeugnis-App-Obrist|Zeugnis-Test-App Obrist Interior]]. Beide Tools sind **„Zeugnis-Tools"** für die Verwaltung von Mitarbeiter-Zeugnissen — ob es sich um die gleiche Lösung (multi-tenant) oder zwei eigenständige Implementierungen handelt, ist offen und sollte beim nächsten Touch geklärt werden.
+> Verwandt mit [[Zeugnis-App-Obrist|Zeugnis-Test-App Obrist Interior]]. Beide Tools sind **„Zeugnis-Tools"** für die Verwaltung von Mitarbeiter-Zeugnissen — ob es sich um die gleiche Lösung (multi-tenant) oder zwei eigenständige Implementierungen handelt, ist offen und sollte beim nächsten Touch geklärt werden.
 
 ## Worum geht es
 
@@ -77,8 +77,8 @@ Die App verwendet **zwei separate Prompts**, abhängig vom `Typ`-Feld im Input:
 
 | Typ-Feld | Prompt | Use-Case |
 |---|---|---|
-| Zwischenzeugnis / Abschlusszeugnis | 🆕 [[50.work/projekte/Zeugnis-App-MVM-prompt\|Zeugnis-Prompt v2]] | volles Zeugnis mit 4 Kompetenz-Sektionen + Tätigkeitsbeschrieb + Austrittsnotiz |
-| Arbeitsbestätigung | 🆕 [[50.work/projekte/Zeugnis-App-MVM-prompt-arbeitsbestaetigung\|Arbeitsbestätigung-Prompt v2]] | knappe Bestätigung bei Austritt innerhalb Probezeit (3 Sektionen, Rating-Templates) |
+| Zwischenzeugnis / Abschlusszeugnis | 🆕 [[Zeugnis-App-MVM-prompt\|Zeugnis-Prompt v2]] | volles Zeugnis mit 4 Kompetenz-Sektionen + Tätigkeitsbeschrieb + Austrittsnotiz |
+| Arbeitsbestätigung | 🆕 [[Zeugnis-App-MVM-prompt-arbeitsbestaetigung\|Arbeitsbestätigung-Prompt v2]] | knappe Bestätigung bei Austritt innerhalb Probezeit (3 Sektionen, Rating-Templates) |
 
 Beide v2-Versionen 2026-06-04 überarbeitet wegen Nicole Lötschers ß→ss-Anliegen. Gemeinsame Verbesserungen:
 - Priority Rule 1: **kein „ß" mehr** (Swiss-German de-CH, mit Beispiel-Tabelle + Self-Check)
@@ -101,8 +101,8 @@ Spezifisch für den Arbeitsbestätigung-Prompt:
 
 ## Verwandt
 
-- [[50.work/projekte/_Index|Projekt-Index]]
-- [[50.work/projekte/Zeugnis-App-Obrist|Zeugnis-Test-App Obrist Interior]] — verwandte Lösung (möglicherweise gleiche Solution)
+- [[_Index|Projekt-Index]]
+- [[Zeugnis-App-Obrist|Zeugnis-Test-App Obrist Interior]] — verwandte Lösung (möglicherweise gleiche Solution)
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
 - [[50.work/25_People/Nicole-Lötscher|Nicole Lötscher]]
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04]] — ToDo #8

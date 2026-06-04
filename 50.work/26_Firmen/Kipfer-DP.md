@@ -47,8 +47,8 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/PowerTeam-intern|PowerTeam (Partner-Kollaboration)]]
-- [[50.work/projekte/RPA-Monitoring-intern|RPA-Monitoring]]
+- [[PowerTeam-intern|PowerTeam (Partner-Kollaboration)]]
+- [[RPA-Monitoring-intern|RPA-Monitoring]]
 
 ## Verwandt
 

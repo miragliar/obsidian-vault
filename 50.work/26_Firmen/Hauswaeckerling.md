@@ -44,7 +44,7 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/Averecura-Hauswaeckerling|Averecura (Pflegezentrum-Lösung)]]
+- [[Averecura-Hauswaeckerling|Averecura (Pflegezentrum-Lösung)]]
 
 ## Verwandt
 

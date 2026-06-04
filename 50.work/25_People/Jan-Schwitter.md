@@ -26,5 +26,5 @@ _Manuelle Notizen kommen hier hin._
 ## Verwandt
 
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
-- [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App]]
-- [[50.work/projekte/Mahnprozess-MVM|Mahnprozess MVM]]
+- [[Regieapp-Neubau-MVM|Regie-Rapport-App]]
+- [[Mahnprozess-MVM|Mahnprozess MVM]]

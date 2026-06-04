@@ -1,7 +1,7 @@
 ---
 name: Arbeitsbestätigung-Prompt MVM
 slug: Zeugnis-App-MVM-prompt-arbeitsbestaetigung
-projekt: "[[50.work/projekte/Zeugnis-App-MVM|Zeugnis-App MVM]]"
+projekt: "[[Zeugnis-App-MVM|Zeugnis-App MVM]]"
 klient: MVM AG
 type: prompt
 tags: [miraglia, projekt, mvm-ag, zeugnis, arbeitsbestaetigung, ai-prompt, swiss-german]
@@ -15,7 +15,7 @@ Sie können die Inhaltsmoderationsebene des Prompts in den Prompteinstellungen k
 
 > Zweiter Prompt im Zeugnis-Tool — wird angesteuert wenn der `Typ = "Arbeitsbestätigung"` ist (nicht volles Zeugnis, sondern Bestätigung bei Austritt **innerhalb der Probezeit**).
 >
-> Geschwister-Prompt: [[50.work/projekte/Zeugnis-App-MVM-prompt|Zeugnis-Prompt v2]]
+> Geschwister-Prompt: [[Zeugnis-App-MVM-prompt|Zeugnis-Prompt v2]]
 
 ## Diff zur v1 (Kurzfassung)
 
@@ -361,7 +361,7 @@ Den **Zeugnis-Prompt** (Geschwister) wirst du beim Re-Deploy vermutlich gleich f
 
 ## Verwandt
 
-- [[50.work/projekte/Zeugnis-App-MVM|Zeugnis-App MVM (Projekt-Hub)]]
-- [[50.work/projekte/Zeugnis-App-MVM-prompt|Zeugnis-Prompt v2 (Geschwister) — vmtl. auch v2.1 nötig]]
+- [[Zeugnis-App-MVM|Zeugnis-App MVM (Projekt-Hub)]]
+- [[Zeugnis-App-MVM-prompt|Zeugnis-Prompt v2 (Geschwister) — vmtl. auch v2.1 nötig]]
 - [[50.work/25_People/Nicole-Lötscher|Nicole Lötscher]] — Auslöserin der ß→ss-Anforderung
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04 — ToDo #8]]

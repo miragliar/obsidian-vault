@@ -1,7 +1,7 @@
 ---
 name: Zeugnis-Generator-Prompt MVM
 slug: Zeugnis-App-MVM-prompt
-projekt: "[[50.work/projekte/Zeugnis-App-MVM|Zeugnis-App MVM]]"
+projekt: "[[Zeugnis-App-MVM|Zeugnis-App MVM]]"
 klient: MVM AG
 type: prompt
 tags: [miraglia, projekt, mvm-ag, zeugnis, ai-prompt, claude, swiss-german]
@@ -218,7 +218,7 @@ Die anderen Punkte aus Nicole Lötschers Mails sind **nicht** durch den Prompt l
 
 ## Verwandt
 
-- [[50.work/projekte/Zeugnis-App-MVM|Zeugnis-App MVM (Projekt-Hub)]]
+- [[Zeugnis-App-MVM|Zeugnis-App MVM (Projekt-Hub)]]
 - [[50.work/25_People/Nicole-Lötscher|Nicole Lötscher]] (Auslöserin der v2-Anforderung)
 - [[40.meta/prompt-strukturierte-extraktion]] — verwandte Prompt-Pattern
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04 — ToDo #8]]

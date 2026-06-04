@@ -44,8 +44,8 @@ Master-Übersicht aller importierten Themen-Hubs und Pattern-Bibliotheken aus de
 - [[50.work/26_Firmen/_Index|Firmen-Index]] (**12 Firmen** mit Steckbrief, Statistik, Projekt-Mapping)
 
 ### Projekte (9 Hubs)
-- [[50.work/projekte/_Index|Projekt-Index]]
-- Top-Aktiv: [[50.work/projekte/Subunternehmerprozess-Koster|Subunternehmer-Koster]] · [[50.work/projekte/Regieapp-Neubau-MVM|Regieapp-MVM]] · [[50.work/projekte/Telemarketing-App-Nahrin|Telemarketing-Nahrin]]
+- [[_Index|Projekt-Index]]
+- Top-Aktiv: [[Subunternehmerprozess-Koster|Subunternehmer-Koster]] · [[Regieapp-Neubau-MVM|Regieapp-MVM]] · [[Telemarketing-App-Nahrin|Telemarketing-Nahrin]]
 - Weitere Kunden-Projekte: Averecura (Hauswäckerling), Zeugnis-App (Obrist), Einfassbänder (Hunnenberg), Support Powerplattform (Nahrin)
 - Intern/Partner: PowerTeam, RPA-Monitoring
 

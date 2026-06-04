@@ -37,14 +37,14 @@ _Manuelle Notizen zur Firma (Vertragsstand, Ansprechpartner-Wechsel, …)._
 
 ## Offene ToDos
 
-- [ ] Materialkosten-Import-Flow prüfen (siehe [[50.work/projekte/Magazin-App-MVM|Magazin-App MVM]] — warum nicht gestartet / Datei korrupt?)
+- [ ] Materialkosten-Import-Flow prüfen (siehe [[Magazin-App-MVM|Magazin-App MVM]] — warum nicht gestartet / Datei korrupt?)
 - [ ] Manuell-Fallback unterstützen
 - [ ] Rückmeldung Kanita — Donnerstag, da Fr. weg
 
 ## Projekte
 
-- [[50.work/projekte/Magazin-App-MVM|Magazin-App MVM]] — Import-Datei-Pfad
-- [[50.work/projekte/Mahnprozess-MVM|Mahnprozess MVM]] — vermutlich auch Berührungspunkte über BRZ
+- [[Magazin-App-MVM|Magazin-App MVM]] — Import-Datei-Pfad
+- [[Mahnprozess-MVM|Mahnprozess MVM]] — vermutlich auch Berührungspunkte über BRZ
 
 ## Verwandt
 

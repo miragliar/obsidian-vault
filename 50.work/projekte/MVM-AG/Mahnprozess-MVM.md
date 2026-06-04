@@ -67,8 +67,8 @@ Für zukünftige Mitarbeiter, die in den Mahnprozess aufgenommen werden sollen:
 
 ## Verwandt
 
-- [[50.work/projekte/_Index|Projekt-Index]]
-- [[50.work/projekte/Magazin-App-MVM|Magazin-App MVM]] — Rechnungs-Ausgang
-- [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App]] — auch für Hybrid-Mitarbeiter (Christoph Räber)
+- [[_Index|Projekt-Index]]
+- [[Magazin-App-MVM|Magazin-App MVM]] — Rechnungs-Ausgang
+- [[Regieapp-Neubau-MVM|Regie-Rapport-App]] — auch für Hybrid-Mitarbeiter (Christoph Räber)
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04]] — ToDo #2 (erledigt)

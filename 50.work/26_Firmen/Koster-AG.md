@@ -53,7 +53,7 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/Subunternehmerprozess-Koster|Subunternehmer-Dokumentenverwaltung]]
+- [[Subunternehmerprozess-Koster|Subunternehmer-Dokumentenverwaltung]]
 
 ## Verwandt
 

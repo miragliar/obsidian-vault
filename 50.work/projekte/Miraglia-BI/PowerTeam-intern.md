@@ -52,4 +52,4 @@ _Manuelle Notizen, Aufgaben, Ideen, Risiken kommen hier hin._
 
 ## Verwandt
 
-- [[50.work/projekte/_Index|Projekt-Index]]
+- [[_Index|Projekt-Index]]

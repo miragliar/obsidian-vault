@@ -3,7 +3,7 @@ source: chat-context 2026-06-04
 imported: 2026-06-04
 type: pattern
 tags: [power-platform, power-automate, sharepoint, berechtigung, flow-save, troubleshooting]
-related_projects: ["[[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App MVM]]"]
+related_projects: ["[[Regieapp-Neubau-MVM|Regie-Rapport-App MVM]]"]
 trigger_case: "Rapport 26-1039 / Christoph Räber (MVM AG, 2026-06-03)"
 ---
 
@@ -68,6 +68,6 @@ Wenn Bug-Reports kommen mit Muster:
 
 ## Verwandt
 
-- [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App MVM]] — Trigger-Case
-- [[50.work/projekte/Magazin-App-MVM|Magazin-App MVM]] — analoges Pattern (Materialkosten-Importdatei, Filliger)
+- [[Regieapp-Neubau-MVM|Regie-Rapport-App MVM]] — Trigger-Case
+- [[Magazin-App-MVM|Magazin-App MVM]] — analoges Pattern (Materialkosten-Importdatei, Filliger)
 - [[50.work/power-platform/_README|Power Platform Pattern-Bibliothek]]

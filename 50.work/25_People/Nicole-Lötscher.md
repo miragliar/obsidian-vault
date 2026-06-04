@@ -47,5 +47,5 @@ _Manuelle Notizen kommen hier hin._
 ## Verwandt
 
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
-- [[50.work/projekte/Zeugnis-App-MVM|Zeugnis-App MVM]]
+- [[Zeugnis-App-MVM|Zeugnis-App MVM]]
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04 — ToDo #8]]

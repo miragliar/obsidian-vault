@@ -49,8 +49,8 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/Telemarketing-App-Nahrin|Telemarketing-App]]
-- [[50.work/projekte/Support-Powerplattform-Nahrin|Support Powerplattform]]
+- [[Telemarketing-App-Nahrin|Telemarketing-App]]
+- [[Support-Powerplattform-Nahrin|Support Powerplattform]]
 
 ## Verwandt
 

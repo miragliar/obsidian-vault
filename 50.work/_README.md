@@ -18,7 +18,7 @@ Komplette Arbeits-Ebene des Vaults. Vier Bereiche:
 
 ## Projekte
 
-- **[[50.work/projekte/_Index|projekte]]** — 9 Projekt-Hubs
+- **[[_Index|projekte]]** — 9 Projekt-Hubs
   (7 Kunden-Projekte + 2 interne Kollaborationen)
   - Aus Claude-Conversation-Index + Teams-Gruppenchats + Mail-Aggregation destilliert
   - Pro Projekt: Klient · Beteiligte · Quellen · Verwandte Pattern-Notizen · Lessons Learned
@@ -45,7 +45,7 @@ Person  ─►  Firma  ─►  Projekt
 - Eine **Firmen-Notiz** listet alle Personen + alle Projekte des Klienten
 - Ein **Projekt-Hub** listet Klient + Beteiligte + Quell-Conversations + Verwandte Patterns
 
-Beispiel-Pfad: [[50.work/25_People/Remo-Pfister|Remo Pfister]] → [[50.work/26_Firmen/MVM-AG|MVM AG]] → [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App-Neubau]] → [[50.work/power-platform/dataverse-offlineprofile|Mobile Offline-Profile]] (Pattern)
+Beispiel-Pfad: [[50.work/25_People/Remo-Pfister|Remo Pfister]] → [[50.work/26_Firmen/MVM-AG|MVM AG]] → [[Regieapp-Neubau-MVM|Regie-Rapport-App-Neubau]] → [[50.work/power-platform/dataverse-offlineprofile|Mobile Offline-Profile]] (Pattern)
 
 ## Generatoren in `_imports/`
 

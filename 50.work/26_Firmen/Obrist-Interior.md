@@ -47,7 +47,7 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/Zeugnis-App-Obrist|Zeugnis-Test-App]]
+- [[Zeugnis-App-Obrist|Zeugnis-Test-App]]
 
 ## Verwandt
 

@@ -34,10 +34,10 @@ _Manuelle Notizen kommen hier hin._
 ### Mahnprozess (ab Juni 2026)
 - Christoph ist im **Mahnprozess** hinterlegt (zusammen mit Richy Schön und Jan Schwitter).
 - Workflow: BRZ-Mahnungs-Entscheidung → Mail-Benachrichtigung → Berechtigung Teams-Registerkarte.
-- → Projekt: [[50.work/projekte/Mahnprozess-MVM|Mahnprozess MVM]]
+- → Projekt: [[Mahnprozess-MVM|Mahnprozess MVM]]
 
 ## Verwandt
 
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
-- [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App]]
-- [[50.work/projekte/Mahnprozess-MVM|Mahnprozess MVM]]
+- [[Regieapp-Neubau-MVM|Regie-Rapport-App]]
+- [[Mahnprozess-MVM|Mahnprozess MVM]]

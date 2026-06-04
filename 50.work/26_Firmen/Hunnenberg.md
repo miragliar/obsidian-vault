@@ -44,7 +44,7 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/Einfassbaender-Hunnenberg|Einfassbänder / AI-Prompt-Auftragserstellung]]
+- [[Einfassbaender-Hunnenberg|Einfassbänder / AI-Prompt-Auftragserstellung]]
 
 ## Verwandt
 

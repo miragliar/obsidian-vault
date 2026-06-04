@@ -50,9 +50,9 @@ _Manuelle Notizen zur Firma (Vertragsstand, Lieblings-Treffpunkt, Account-Manage
 
 ## Projekte
 
-- [[50.work/projekte/PowerTeam-intern|PowerTeam (Partner-Kollaboration)]]
-- [[50.work/projekte/Support-Powerplattform-Nahrin|Support Powerplattform (Nahrin)]]
-- [[50.work/projekte/Averecura-Hauswaeckerling|Averecura]]
+- [[PowerTeam-intern|PowerTeam (Partner-Kollaboration)]]
+- [[Support-Powerplattform-Nahrin|Support Powerplattform (Nahrin)]]
+- [[Averecura-Hauswaeckerling|Averecura]]
 
 ## Verwandt
 

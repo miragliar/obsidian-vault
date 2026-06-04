@@ -82,9 +82,9 @@ Materialbezug erfassen ────► tbl_Materialbezug ──┬──► KANB
 
 ## Verwandt
 
-- [[50.work/projekte/_Index|Projekt-Index]]
-- [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App]] — verwandt (gleiches Dataverse-Env, gleiche User)
-- [[50.work/projekte/Mahnprozess-MVM|Mahnprozess MVM]] — Rechnungs-Ausgang → Mahnstrecke
+- [[_Index|Projekt-Index]]
+- [[Regieapp-Neubau-MVM|Regie-Rapport-App]] — verwandt (gleiches Dataverse-Env, gleiche User)
+- [[Mahnprozess-MVM|Mahnprozess MVM]] — Rechnungs-Ausgang → Mahnstrecke
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
 - [[50.work/26_Firmen/Filliger-Partner|Filliger & Partner AG]] — Kreditoren-Empfänger
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04]] — ToDos 9 + 10

@@ -3,7 +3,7 @@ source: chat-context 2026-06-04
 imported: 2026-06-04
 type: pattern
 tags: [m365, microsoft-graph, outlook, drafts, signatur, automation]
-related_projects: ["[[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App MVM]]", "[[50.work/projekte/Magazin-App-MVM|Magazin-App MVM]]", "[[50.work/projekte/Mahnprozess-MVM|Mahnprozess MVM]]"]
+related_projects: ["[[Regieapp-Neubau-MVM|Regie-Rapport-App MVM]]", "[[Magazin-App-MVM|Magazin-App MVM]]", "[[Mahnprozess-MVM|Mahnprozess MVM]]"]
 ---
 
 # M365 Graph Pattern: Antwort-Entwürfe mit Inline-Signatur

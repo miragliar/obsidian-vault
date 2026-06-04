@@ -34,5 +34,5 @@ _Manuelle Notizen kommen hier hin._
 ## Verwandt
 
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
-- [[50.work/projekte/Regieapp-Neubau-MVM|Regie-Rapport-App]]
+- [[Regieapp-Neubau-MVM|Regie-Rapport-App]]
 - [[50.work/25_People/Stefanie-Furrer|Stefanie Furrer]] (Vorgesetzte / PL Meggen)

@@ -22,7 +22,7 @@ _Manuelle Notizen kommen hier hin._
 ## Kontext
 
 - Verantwortlich für Rechnungs-Prüfung und Materialbezug-Verarbeitung.
-- Kommuniziert konkrete Anpassungswünsche für die [[50.work/projekte/Magazin-App-MVM|Magazin-App]] (Rechnungs-Workflow).
+- Kommuniziert konkrete Anpassungswünsche für die [[Magazin-App-MVM|Magazin-App]] (Rechnungs-Workflow).
 
 ## Mail-Verlauf (Auszug)
 
@@ -40,5 +40,5 @@ _Manuelle Notizen kommen hier hin._
 ## Verwandt
 
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
-- [[50.work/projekte/Magazin-App-MVM|Magazin-App MVM]]
+- [[Magazin-App-MVM|Magazin-App MVM]]
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04 — ToDo #10]]

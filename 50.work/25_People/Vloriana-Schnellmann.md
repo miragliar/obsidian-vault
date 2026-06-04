@@ -35,7 +35,7 @@ source: m365-graph + chat-context 2026-06-04 (Mail-Body 2026-06-03)
 
 ## Anliegen / Bearbeitungsstand
 
-- [x] **Scharfes S → ss** in Zeugnis-Generation prüfen — [[50.work/projekte/Zeugnis-App-MVM-prompt|Zeugnis-Prompt v2]] + [[50.work/projekte/Zeugnis-App-MVM-prompt-arbeitsbestaetigung|Arbeitsbestätigung-Prompt v2]] entsprechend angepasst, Belt-and-Suspenders-Replace im Power-Automate-Flow als Backup empfohlen
+- [x] **Scharfes S → ss** in Zeugnis-Generation prüfen — [[Zeugnis-App-MVM-prompt|Zeugnis-Prompt v2]] + [[Zeugnis-App-MVM-prompt-arbeitsbestaetigung|Arbeitsbestätigung-Prompt v2]] entsprechend angepasst, Belt-and-Suspenders-Replace im Power-Automate-Flow als Backup empfohlen
 - [x] Antwort-Entwurf in Outlook → „RE: Abschlusszeugnis für Kunz Max"
 
 ## Lessons Learned (intern, für M365-Graph-Pattern)
@@ -45,6 +45,6 @@ Bei geteilten Postfächern wie `personal@mvm-ag.ch` ist die **From-Adresse irref
 ## Verwandt
 
 - [[50.work/26_Firmen/MVM-AG|MVM AG]]
-- [[50.work/projekte/Zeugnis-App-MVM|Zeugnis-App MVM]]
+- [[Zeugnis-App-MVM|Zeugnis-App MVM]]
 - [[50.work/25_People/Nicole-Lötscher|Nicole Lötscher]] (gleiche Mailbox-Kollegin, längere Tenure)
 - [[60.daily/2026-06-04|Tagesnotiz 2026-06-04 — ToDo #8]]
