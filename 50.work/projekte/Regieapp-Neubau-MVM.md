@@ -73,6 +73,32 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 - Lookup-Filter ohne `.Id`-Suffix verwenden: `Baustellelookup in ComboBox1.SelectedItems` ist delegierbar und sauberer.
 - `Search()` außen, `Filter()` innen — UI-Pattern für Combobox + Volltext.
 - Hidden Datacards mit `Visible = false` schreiben NICHT in Dataverse → stattdessen `Height: 0, Visible: true`.
+- 🆕 **SharePoint-Berechtigung auf Speicherort = Pflicht-Voraussetzung** für jeden User der Rapporte erfasst. Wenn der Flow das PDF dort nicht ablegen kann, schlägt Save+Send fehl — und es entsteht eine irreführende „an ihn selbst gesendet"-Bestätigung. → Pattern: [[50.work/power-platform/sharepoint-berechtigung-flow-save|SharePoint-Berechtigung als Flow-Save-Voraussetzung]]
+- 🆕 **User-Onboarding-Checkliste:** (a) Aufnahme in Entra-Gruppe „Power Apps PL", (b) SharePoint-Speicherort-Berechtigung, (c) Bei Mitarbeitern eines Standorts: Baustellen-Freischaltung am Mandanten (Meggen / Emmen / Cham).
+- 🆕 **Hybrid-Mitarbeiter** (selbständige Annahme + Rechnungsstellung an Kunden — z.B. Christoph Räber): brauchen identisches PDF/Mail-Setup wie PL.
+
+## Onboarding-Log (User-Liste Stand Juni 2026)
+
+| Datum | Aktion | User | Quelle |
+|---|---|---|---|
+| 06.2026 | + Richy Schön → PL-Gruppe | [[50.work/25_People/Richy-Schön\|Richy Schön]] | Remo 2026-06-01 |
+| 06.2026 | + Jan Schwitter → PL-Gruppe | [[50.work/25_People/Jan-Schwitter\|Jan Schwitter]] | Remo 2026-06-01 |
+| 06.2026 | – Reto Limacher → raus PL-Gruppe | [[50.work/25_People/Reto-Limacher\|Reto Limacher]] | Remo 2026-06-01 |
+| 06.2026 | + Antonio De Finis → User, Baustellen Meggen pending | [[50.work/25_People/Antonio-De-Finis\|Antonio De Finis]] | Remo 2026-05-29 |
+| 06.2026 | + Christoph Räber → SharePoint-Permission Fix | [[50.work/25_People/Christoph-Räber\|Christoph Räber]] | Remo 2026-06-03 |
+
+## Bekannte Bugs / Resolutions
+
+### Rapport Nr. 26-1039 — „an ihn selbst gesendet" (gelöst 06.2026)
+- **Symptom:** Christoph Räber finalisierte Rapport am Laptop in PDF-Ansicht (Button „Beendet" rechts unten). Bestätigungsmeldung: „Rapport an ihn selbst gesendet".
+- **Root Cause:** Christoph hatte zu dem Zeitpunkt **keine SharePoint-Berechtigung** auf den Ziel-Speicherort. Flow rechnete korrekt, PDF wurde generiert — Save-Step schlug fehl → daraus folgend kein Mail-Versand möglich → Bestätigung war falsch.
+- **Fix:** Berechtigung nachgetragen. Rapport lief sauber durch.
+- → Pattern dokumentiert: [[50.work/power-platform/sharepoint-berechtigung-flow-save]]
+
+### PDF-Generation Manuel Schärli (05.2026, Stabilisierung)
+- Symptom: „Heute Morgen hat es wieder nicht funktioniert" + keine Produktnamen (nur Menge/Einheit/Preis).
+- Fix: Solution nochmals neu eingespielt, in eine konsistente Version gebracht.
+- Stand 06.2026: stabil, abschließende Bestätigung von Manu ausstehend.
 
 ## Persönliche Notizen
 

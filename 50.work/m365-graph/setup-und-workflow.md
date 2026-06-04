@@ -37,7 +37,8 @@ teams_digest.py   ─────►     teams_digest.json  ─────►  
   - `User.Read` (Standard)
   - `Mail.Read` (für mail_digest.py)
   - `Chat.Read` (für teams_digest.py)
-- Admin-Consent für die App-Registrierung — **bereits erteilt** von Giovanni
+  - 🆕 `Mail.ReadWrite` (für `draft_replies_mvm.py` — Reply-Drafts erstellen + Body patchen + Inline-Attachments)
+- Admin-Consent für die App-Registrierung — **bereits erteilt** von Giovanni (alle obigen Scopes, inkl. Mail.ReadWrite, Stand 2026-06-04 verifiziert)
 
 ## Einmalige Einrichtung
 

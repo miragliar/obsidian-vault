@@ -22,7 +22,30 @@ Top humane Kontakte aus dem M365-Graph-Scan vom 01.06.2026 (2'500 Mails / 1'621 
 
 ## Kunden
 
-- [[Remo-Pfister|Remo Pfister]] · MVM AG · Mail 28 · Teams 102 · letzter 2026-06-01
+### MVM AG
+
+#### Geschäftsleitung / Schlüssel-Ansprechpartner
+- [[Remo-Pfister|Remo Pfister]] · Mitglied GL, Leiter Finanzen + Power Platform · Mail 28 · letzter 2026-06-03
+- [[M.-Schärli|Manuel Schärli]] („Manu") · Mitglied GL, Abteilungsleiter Gipserei · Mail 16 · letzter 2026-05-11
+
+#### Sachbearbeitung (🆕 2026-06-04)
+- 🆕 [[Nicole-Scherrer|Nicole Scherrer]] · Sachbearbeiterin Rechnungswesen · letzter 2026-06-02
+- 🆕 [[Nicole-Lötscher|Nicole Lötscher]] · Sachbearbeiterin HR · letzter 2026-06-03
+
+#### Offertwesen
+- 🆕 [[Reto-Limacher|Reto Limacher]] · Offertwesen Lead (KI-Ausmass-Sparringpartner)
+
+#### Projektleitung
+- 🆕 [[Richy-Schön|Richy Schön]] · PL
+- 🆕 [[Jan-Schwitter|Jan Schwitter]] · PL
+- 🆕 [[Stefanie-Furrer|Stefanie Furrer]] · PL MVM Meggen
+
+#### Mitarbeitende (operativ)
+- 🆕 [[Christoph-Räber|Christoph Räber]] · Kundendienst Fassade, Hybrid-Mitarbeiter
+- 🆕 [[Antonio-De-Finis|Antonio De Finis]] · Maler MVM Meggen, seit 01.05.2026
+
+### Andere Kunden
+
 - [[Stefanie-Ringwald|Stefanie Ringwald]] · Nahrin AG · Mail 11 · Teams 86 · letzter 2026-05-27
 - [[Christoph-Kübler|Christoph Kübler]] · Nahrin AG · Mail 0 · Teams 36 · letzter 2026-05-27
 - [[Barbara-Gilli|Barbara Gilli]] · Obrist Interior · Mail 0 · Teams 35 · letzter 2025-10-08
@@ -30,7 +53,6 @@ Top humane Kontakte aus dem M365-Graph-Scan vom 01.06.2026 (2'500 Mails / 1'621 
 - [[Tobias-Lamprecht|Tobias Lamprecht]] · Obrist Interior · Mail 0 · Teams 16 · letzter 2025-10-08
 - [[Bianca-Tschuppert|Bianca Tschuppert]] · Obrist Interior · Mail 0 · Teams 5 · letzter 2025-10-09
 - [[Monika-Kuhn|Monika Kuhn]] · Koster AG · Mail 0 · Teams 9 · letzter 2026-03-05
-- [[M.-Schärli|M. Schärli]] · MVM AG · Mail 16 · Teams 0 · letzter —
 - [[Andreas-Funke|Andreas Funke]] · Hauswäckerling · Mail 0 · Teams 11 · letzter 2026-05-07
 - [[Nenad-Stojanovic|Nenad Stojanovic]] · DOBI-Inter AG · Mail 0 · Teams 15 · letzter 2025-09-04
 - [[Saveen-Manocha|Saveen Manocha]] · DOBI-Inter AG · Mail 0 · Teams 7 · letzter 2025-02-13
@@ -39,4 +61,4 @@ Top humane Kontakte aus dem M365-Graph-Scan vom 01.06.2026 (2'500 Mails / 1'621 
 
 ---
 
-_Generiert von `_imports/build_people_notes.py` aus den `mail_digest.json` + `teams_digest.json` Outputs._
+_Generiert von `_imports/build_people_notes.py` aus den `mail_digest.json` + `teams_digest.json` Outputs. Manuelle Ergänzungen 🆕 aus Chat-Sitzung 2026-06-04._

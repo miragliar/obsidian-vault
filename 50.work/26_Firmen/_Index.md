@@ -22,7 +22,8 @@ Alle 12 bekannten Firmen aus dem M365-Graph-Scan vom 01.06.2026.
 
 ## Kunden
 
-- [[MVM-AG|MVM AG]] · Maler- und Gipserarbeiten / Bau · 2 Person(en) · Mail 44 · Teams 102
+- [[MVM-AG|MVM AG]] · Maler- und Gipserarbeiten / Bau · **10+ Person(en) (🆕 2026-06-04)** · Mail 44+ · Teams 102
+  - 🆕 [[Filliger-Partner|Filliger & Partner AG]] · Treuhand/Kreditoren · **Tochter MVM AG** · Mail 1
 - [[Nahrin-AG|Nahrin AG]] · Lebensmittel / Bouillon / Nahrungsergänzung · 2 Person(en) · Mail 11 · Teams 122
 - [[Obrist-Interior|Obrist Interior]] · Interior Design / Hochwertige Innenausstattung · 3 Person(en) · Mail 0 · Teams 56
 - [[Koster-AG|Koster AG]] · Haustechnik (Heizung, Lüftung, Klima, Elektro, Sanitär) · 3 Person(en) · Mail 41 · Teams 22
@@ -32,4 +33,4 @@ Alle 12 bekannten Firmen aus dem M365-Graph-Scan vom 01.06.2026.
 
 ---
 
-_Generiert via Wrapper-Skript aus `company_profiles.json`, `teams_digest.json`, `mail_digest.json` und `25_People/`._
+_Generiert via Wrapper-Skript aus `company_profiles.json`, `teams_digest.json`, `mail_digest.json` und `25_People/`. Manuelle Ergänzung 🆕 (Filliger-Partner als MVM-Tochter, MVM-Personenliste) aus Chat-Sitzung 2026-06-04._

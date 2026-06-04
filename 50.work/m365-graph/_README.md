@@ -17,16 +17,38 @@ Tooling zur automatischen Anreicherung von Personen-/Klienten-Notizen mit Outloo
 - [[02-zugangsdaten-secrets|Zugangsdaten — CLIENT_ID / TENANT_ID]] (intern, nicht extern teilen)
 - [[03-personen-notiz-vorlage|Personen-Notiz-Vorlage]] für `25_People/`
 - [[04-company-enrich-workflow|Firmen-Steckbrief Workflow (Webseite + Zefix)]]
+- 🆕 [[05-draft-replies-pattern|Antwort-Entwürfe mit Inline-Signatur Pattern]] (createReply + Logo-Inline-Attachment, Scope `Mail.ReadWrite`)
 
 ## Scripts
 
 ```
 scripts/
-├─ mail_digest.py        — Outlook-Mails (Scope Mail.Read)
-├─ teams_digest.py       — Teams-Chats 1:1 + Gruppen (Scope Chat.Read)
-├─ company_enrich.py     — Webseite + Zefix Firmen-Steckbrief
-├─ .env.example          — Vorlage für Umgebungsvariablen
-└─ .gitignore            — schließt .token_cache.bin + *.json + .env aus
+├─ mail_digest.py          — Outlook-Mails (Scope Mail.Read)
+├─ teams_digest.py         — Teams-Chats 1:1 + Gruppen (Scope Chat.Read)
+├─ company_enrich.py       — Webseite + Zefix Firmen-Steckbrief
+├─ 🆕 mvm_extras.py        — Fokus-Suche letzte 500 Mails: @mvm-ag.ch / Filliger /
+│                            Subject-Keyword / Personen-Namen (für Fälle wo keine
+│                            Personen-Notiz existiert)
+├─ 🆕 inspect_signature.py — speichert jüngste HTML-Mail einer Person als Sample
+├─ 🆕 extract_logo.py      — extrahiert Inline-Attachment per contentId
+├─ 🆕 draft_replies_mvm.py — batch Reply-Drafts mit Signatur + Inline-Logo
+│                            (Scope Mail.ReadWrite!)
+├─ 🆕 preview_draft.py     — Debug: HTML eines Drafts als preview_draft.html
+├─ 🆕 list_drafts.py       — Debug: Drafts-Übersicht mit Subject + Empfänger
+├─ .env.example            — Vorlage für Umgebungsvariablen
+└─ .gitignore              — schließt .token_cache.bin + *.json + .env + Samples aus
+```
+
+### Beim Re-Run der Drafts-Pipeline
+
+```bash
+# 1× pro Tenant / pro Update der Signatur
+python3 inspect_signature.py     # → giovanni_sample.html
+python3 extract_logo.py          # → miraglia_logo.png
+
+# Pro Antwort-Batch
+python3 draft_replies_mvm.py     # ggf. DRAFTS-Liste in der Datei anpassen
+python3 list_drafts.py           # Sichtkontrolle
 ```
 
 Wrapper-Skripte in `_imports/`:
@@ -68,6 +90,8 @@ Erstes Mal: Device-Code → `https://microsoft.com/devicelogin` → mit `raoul@m
 - [x] 10 Personen-Notizen in `25_People/` erstellt + befüllt (Metadaten-Modus)
 - [x] `company_enrich.py` getestet (Nahrin → ok)
 - [x] Batch-Anreicherung 9 Firmen → Personen-Notizen erweitert um `<!-- firmenprofil -->` Block
+- [x] **2026-06-04:** Draft-Replies-Pipeline produktiv (createReply + Inline-Logo) — Scope `Mail.ReadWrite` ergänzt
+- [x] **2026-06-04:** `mvm_extras.py` zur Fokus-Suche (Domain/Keyword/Name) — fand 3 zusätzliche MVM-Quellen (Personal-Gruppe, Filliger Partner, Nicole Scherrer)
 - [ ] Zefix-API-Account anlegen (https://www.zefix.ch → API) + Profile mit UID/Rechtsform ergänzen
 - [ ] Feedback an Giovanni gegeben
 - [ ] In Standard-Setup integriert
