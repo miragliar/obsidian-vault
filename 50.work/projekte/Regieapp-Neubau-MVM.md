@@ -3,20 +3,21 @@ name: Regie-Rapport-App (Neubau)
 slug: Regieapp-Neubau-MVM
 klient: MVM AG
 klient_link: "[[50.work/26_Firmen/MVM-AG|MVM AG]]"
-status: Test- / Rollout-Phase
-zeitraum: April 2026 — Mai 2026
+status: Live / Wartung
+zeitraum: April 2026 — Juni 2026 Live-Schaltung
 kategorie: kunde
-tags: [miraglia, projekt, mvm-ag, power-apps, dataverse, offline]
+tags: [miraglia, projekt, mvm-ag, power-apps, dataverse, offline, sharepoint]
 type: projekt-hub
-source: claude-import + m365-graph
+source: claude-import + m365-graph + chat-context 2026-06-04
 created: 2026-06-01
+updated: 2026-06-04
 ---
 
 # Regie-Rapport-App (Neubau)
 
 **Klient:** [[50.work/26_Firmen/MVM-AG|MVM AG]]  
-**Status:** Test- / Rollout-Phase  
-**Zeitraum:** April 2026 — Mai 2026
+**Status:** Live / Wartung (produktiv aufgeschaltet 01.06.2026)
+**Zeitraum:** April 2026 — Juni 2026 Live-Schaltung
 
 ## Worum geht es
 
@@ -24,8 +25,21 @@ Neukonzeption und Aufbau einer Power-Apps-Regie-Rapport-App für die mobile Erfa
 
 ## Beteiligte
 
-- [[50.work/25_People/Remo-Pfister|Remo Pfister]]
-- [[50.work/25_People/M.-Schärli|M. Schärli]]
+### Geschäftsleitung / Ansprechpartner
+- [[50.work/25_People/Remo-Pfister|Remo Pfister]] — Power-Platform-Lead, Mitglied GL
+- [[50.work/25_People/M.-Schärli|Manuel Schärli]] — Test-/Live-Feedback Gipserei
+
+### PL-Gruppe „Power Apps PL" (Entra-Gruppe `2effe64a-6339-4c83-bfef-663590883137`)
+- [[50.work/25_People/Richy-Schön|Richy Schön]] — rein 06.2026
+- [[50.work/25_People/Jan-Schwitter|Jan Schwitter]] — rein 06.2026
+- [[50.work/25_People/Reto-Limacher|Reto Limacher]] — raus 06.2026 (bleibt aber Offertwesen Lead)
+
+### Standort Meggen
+- [[50.work/25_People/Stefanie-Furrer|Stefanie Furrer]] — PL Meggen
+- [[50.work/25_People/Antonio-De-Finis|Antonio De Finis]] — Maler Meggen, seit 01.05.2026
+
+### Hybrid-Mitarbeiter
+- [[50.work/25_People/Christoph-Räber|Christoph Räber]] — Kundendienst Fassade
 
 ## Kontext / Architektur
 

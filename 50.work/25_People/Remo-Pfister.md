@@ -4,20 +4,32 @@ email: r.pfister@mvm-ag.ch
 firma: "[[50.work/26_Firmen/MVM-AG|MVM AG]]"
 domain: mvm-ag.ch
 typ: kunde
-rolle: Power Platform Ansprechperson
-tags: [miraglia, kunde, mvm-ag]
+rolle: Mitglied der Geschäftsleitung, Leiter Finanzen und Administration / Power Platform Ansprechperson
+tags: [miraglia, kunde, mvm-ag, geschaeftsleitung]
 status: aktiv
 created: 2026-06-01
-source: m365-graph + claude-import
+updated: 2026-06-04
+source: m365-graph + claude-import + chat-context 2026-06-04
 ---
 
 # Remo Pfister
 
-**MVM AG — Power Platform Ansprechperson**
+**MVM AG — Mitglied der Geschäftsleitung · Leiter Finanzen und Administration · Power Platform Ansprechperson**
+
+> Auch zuständig für SPZ AG (Strahltechnik, gleiche Adresse Kirchfeldstrasse 44, Emmen) und MVM AG ZG (Cham, Gewerbestrasse).
 
 ## Persönliche Notizen
 
 _Manuelle Notizen kommen hier hin._
+
+## Aktive Vorgänge (Stand 2026-06-04)
+
+- ✅ **Rapport 26-1039 / Christoph Räber** — SharePoint-Permission-Fix
+- ✅ **Mahnprozess** für Räber / Schön / Schwitter implementiert
+- ✅ **Magazin-Rechnung** — Preislogik geklärt (aktuell EP, neue Verkaufspreis-Spalte wird in KANBAN ergänzt, dann Umbau)
+- ✅ **User-Liste Regie App** — Schön + Schwitter rein, Limacher raus
+- ✅ **Antonio De Finis** — Setup in neuer Regie-App
+- ⏳ Baustellen Meggen (Stefanie Furrer) für Antonio noch freischalten
 
 ## Mail- & Chat-Verlauf
 

@@ -1,23 +1,30 @@
 ---
-name: M. Schärli
+name: Manuel Schärli
 email: m.schaerli@mvm-ag.ch
 firma: "[[50.work/26_Firmen/MVM-AG|MVM AG]]"
 domain: mvm-ag.ch
 typ: kunde
-rolle: Mail-Kontakt
-tags: [miraglia, kunde, mvm-ag]
+rolle: Mitglied der Geschäftsleitung, Abteilungsleiter Gipserei und Kundenservice Gipserei
+tags: [miraglia, kunde, mvm-ag, gipserei, geschaeftsleitung]
 status: aktiv
 created: 2026-06-01
-source: m365-graph + claude-import
+updated: 2026-06-04
+source: m365-graph + claude-import + chat-context 2026-06-04
 ---
 
-# M. Schärli
+# Manuel Schärli („Manu")
 
-**MVM AG — Mail-Kontakt**
+**MVM AG — Mitglied der Geschäftsleitung · Abteilungsleiter Gipserei und Kundenservice Gipserei**
+
+> Im KI-Ausmass-MVM-Projekt zusätzlich genannt als **Abteilungsleiter Trockenbau/Nassgips** (Fach-Review-Rolle bei Offerten).
 
 ## Persönliche Notizen
 
 _Manuelle Notizen kommen hier hin._
+
+## Aktive Vorgänge (Stand 2026-06-04)
+
+- 🟢 **PDF-Generation Regie-App** — letzter Stand Mai 2026: nach Neu-Einspielen der Solution stabil. Kein neues Mail dazu — kurz abfragen.
 
 ## Mail- & Chat-Verlauf
 
