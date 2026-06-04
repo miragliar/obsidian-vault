@@ -1,0 +1,23 @@
+{
+  "id": "conv-1780552277213-rhb405r7m",
+  "providerId": "claude",
+  "title": "Summarize 2026 AI measurement goal email",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780552277213,
+  "updatedAt": 1780553357057,
+  "lastResponseAt": 1780553357057,
+  "sessionId": "eaf76db2-8cf7-4d20-8839-564247fc9234",
+  "providerState": {
+    "providerSessionId": "eaf76db2-8cf7-4d20-8839-564247fc9234"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 622,
+    "cacheReadInputTokens": 172673,
+    "contextWindow": 1000000,
+    "contextTokens": 173296,
+    "percentage": 17,
+    "contextWindowIsAuthoritative": true
+  }
+}
