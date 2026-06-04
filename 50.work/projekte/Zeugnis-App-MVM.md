@@ -71,14 +71,29 @@ HR „verschickt"     (Status soll zurück, bleibt aber „in Bearbeitung bei PL
 - **Mail:** Nicole Lötscher · 2026-05-15
 - Manuelle Umschreibung durch Raoul war OK. „Weitere störende Punkte" folgen separat.
 
-## Generator-Prompt (LLM)
+## Generator-Prompts (LLM)
 
-- 🆕 [[50.work/projekte/Zeugnis-App-MVM-prompt|Prompt v2 (2026-06-04)]] — überarbeitete Version mit:
-  - Priority Rule 1: **kein „ß" mehr** (Swiss-German de-CH, mit Beispiel-Tabelle + Self-Check)
-  - Priority Rule 2: Tense gemäß `Typ` (Zwischen-/Abschluss-)
-  - Priority Rule 3: Name/Geschlecht-Ersetzung mit Edge-Cases
-  - Explizites JSON-Schema (6 Keys) — vor Einsatz mit Power-Automate-Parser abgleichen
-  - Verpflichtende Verification-Checklist vor Output
+Die App verwendet **zwei separate Prompts**, abhängig vom `Typ`-Feld im Input:
+
+| Typ-Feld | Prompt | Use-Case |
+|---|---|---|
+| Zwischenzeugnis / Abschlusszeugnis | 🆕 [[50.work/projekte/Zeugnis-App-MVM-prompt\|Zeugnis-Prompt v2]] | volles Zeugnis mit 4 Kompetenz-Sektionen + Tätigkeitsbeschrieb + Austrittsnotiz |
+| Arbeitsbestätigung | 🆕 [[50.work/projekte/Zeugnis-App-MVM-prompt-arbeitsbestaetigung\|Arbeitsbestätigung-Prompt v2]] | knappe Bestätigung bei Austritt innerhalb Probezeit (3 Sektionen, Rating-Templates) |
+
+Beide v2-Versionen 2026-06-04 überarbeitet wegen Nicole Lötschers ß→ss-Anliegen. Gemeinsame Verbesserungen:
+- Priority Rule 1: **kein „ß" mehr** (Swiss-German de-CH, mit Beispiel-Tabelle + Self-Check)
+- Korrekte Umlaute im Body (ä/ö/ü), ASCII-only nur im JSON-Keys
+- Explizites JSON-Schema (vor Einsatz mit Power-Automate-Parser abgleichen)
+- Verpflichtende Verification-Checklist vor Output
+
+Spezifisch für den Zeugnis-Prompt:
+- Priority Rule 2: Tense gemäß `Typ` (Zwischen-/Abschluss-)
+- Priority Rule 3: Name/Geschlecht-Ersetzung mit Edge-Cases
+
+Spezifisch für den Arbeitsbestätigung-Prompt:
+- Explizite Templates für Rating 1–5 (M und F separat) — keine vagen „slightly reduce enthusiasm"-Anweisungen mehr
+- Eindeutige Gender-Templating-Tabelle (Anrede, Pronomen, Adjektiv-Endungen)
+- Grammar-Fix im Austritts-Satz („für seine/ihre berufliche Zukunft" statt vorher falsch „sein/ihr berufliche")
 
 ## Verwandte Pattern-Notizen
 
