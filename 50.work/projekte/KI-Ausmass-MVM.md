@@ -44,17 +44,17 @@ MVM erhält Offertanfragen für Maler-, Gipser- und Fassadenarbeiten als SIA-kon
 
 ### Dateitypen (483 Einträge total)
 
-| Typ | Anzahl | Bedeutung |
-|---:|---:|---|
-| **.pdf** | 372 | Pläne (Grundrisse, Schnitte, Ansichten), Devis-Print, Angebote, Abgebote |
-| **.jpg / .png** | 28 | Eingebettete Bilder, Visualisierungen, Materialmuster |
-| **.xlsx / .xlsm / .xls** | 31 | Terminprogramme, Tariflisten, eigene Kalkulationen |
-| **.msg** | 17 | Original-Outlook-E-Mails (Offertanfrage, Abgebot-Runde, Präzisierung) |
-| **.crbx** | 9 | **CRB-/NPK-Format (ZIP enthält `SIAFILE.e1s`)** — Input vom Architekt |
-| **.eso** | 7 | **Messerli BAUAD Soumission (ZIP mit `content.xml` + `file.pdf`)** — Output von MVM |
-| **.01S (SIA451)** | 4 | Plain-Text SIA-451-Schnittstelle (identisch mit CRBX-Inhalt) |
-| **.dppx** | 3 | Plancal nova / CAD (zu prüfen) |
-| **.psb** | 1 | Adobe Photoshop Big (3.75 GB Tapeten-Visualisierung Ameron — irrelevant für KI) |
+|                      Typ | Anzahl | Bedeutung                                                                           |
+| -----------------------: | -----: | ----------------------------------------------------------------------------------- |
+|                 **.pdf** |    372 | Pläne (Grundrisse, Schnitte, Ansichten), Devis-Print, Angebote, Abgebote            |
+|          **.jpg / .png** |     28 | Eingebettete Bilder, Visualisierungen, Materialmuster                               |
+| **.xlsx / .xlsm / .xls** |     31 | Terminprogramme, Tariflisten, eigene Kalkulationen                                  |
+|                 **.msg** |     17 | Original-Outlook-E-Mails (Offertanfrage, Abgebot-Runde, Präzisierung)               |
+|                **.crbx** |      9 | **CRB-/NPK-Format (ZIP enthält `SIAFILE.e1s`)** — Input vom Architekt               |
+|                 **.eso** |      7 | **Messerli BAUAD Soumission (ZIP mit `content.xml` + `file.pdf`)** — Output von MVM |
+|        **.01S (SIA451)** |      4 | Plain-Text SIA-451-Schnittstelle (identisch mit CRBX-Inhalt)                        |
+|                **.dppx** |      3 | Plancal nova / CAD (zu prüfen)                                                      |
+|                 **.psb** |      1 | Adobe Photoshop Big (3.75 GB Tapeten-Visualisierung Ameron — irrelevant für KI)     |
 
 ### Anatomie einer Offertanfrage (Standard)
 

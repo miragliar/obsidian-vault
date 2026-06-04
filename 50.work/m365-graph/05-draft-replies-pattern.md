@@ -56,6 +56,16 @@ Pattern für das **batchweise Erstellen von Antwort-Entwürfen (Drafts)** im eig
 - Admin-Consent bereits erteilt (war bei Miraglia BI Public Client der Fall).
 - Logo / Inline-Image als PNG/JPG aus einer existierenden Mail des Kollegen extrahierbar (siehe `extract_logo.py`).
 
+## ✅ Verifiziert: Outlook-Auto-Signatur greift bei Graph-Drafts NICHT
+
+**Test 2026-06-04** (`draft_test_giovanni_signature.py`, Giovanni hat empfangen, einfach-Signatur bestätigt):
+
+- Outlook-Auto-Signatur (über Settings → Mail → Signatur konfiguriert) wird **nur** bei Mails injiziert, die in Outlook selbst gestartet werden (Neue E-Mail / Antworten via UI / Weiterleiten).
+- Bei via Graph erstellten Drafts (`POST /me/messages`, `createReply`, `createReplyAll`, `createForward`) bleibt Outlook passiv — die Signatur wird **nicht** nachträglich dazugesetzt.
+- → Konsequenz: die im Skript hardcoded `SIGNATURE_HTML` + Inline-Logo bleibt die einzige Signatur. Kein Doppel-Risiko.
+
+Das heißt auch: wenn du die Signatur in Outlook-Settings änderst (z.B. Telefonnummer aktualisierst), musst du sie **parallel im Skript anpassen** (`SIGNATURE_HTML` in den `draft_*.py`-Scripts). Outlook und Skript halten sich nicht automatisch synchron.
+
 ## HTML-Signatur-Aufbau (am Beispiel Giovanni → Raoul)
 
 Giovannis Signatur (`giovanni_sample.html`) verwendet:
@@ -139,8 +149,36 @@ Im Verzeichnis `50.work/m365-graph/scripts/`:
 
 ## Sicherheitshinweise
 
-- `mail_digest.json`, `mvm_extras.json`, `giovanni_sample.html`, `preview_draft.html` enthalten echte Mail-Inhalte → liegen unter `.gitignore`, nicht extern teilen.
-- Logo-Bytes (`miraglia_logo.png`) sind nicht sensitiv (öffentliches Firmen-Logo) — könnten committed werden; Aktuelle `.gitignore` lässt sie aber raus.
+- `mail_digest.json`, `mvm_extras.json`, `giovanni_sample.html`, `preview_draft.html`, `vloriana_mail.html` enthalten echte Mail-Inhalte → liegen unter `.gitignore`, nicht extern teilen.
+- Logo-Bytes (`miraglia_logo.png`) sind nicht sensitiv (öffentliches Firmen-Logo) — könnten committed werden; aktuelle `.gitignore` lässt sie aber raus.
+
+## ⚠️ Lessons Learned — Geteilte Postfächer (Shared Mailboxes)
+
+**Trigger-Case 2026-06-04:** Draft an `personal@mvm-ag.ch` mit „Hallo Nicole" adressiert, weil Nicole Lötscher in den vorigen 4 Mails dieselbe Mailbox genutzt hatte. Geschrieben hatte aber **Vloriana Schnellmann** (neue HR-Kollegin im selben Sammelpostfach).
+
+**Was die Mail-Datenstruktur via Graph liefert:**
+
+| Feld | Inhalt bei Shared Mailbox | Verlässlich für Identifikation? |
+|---|---|---|
+| `from.emailAddress.address` | `personal@mvm-ag.ch` (Mailbox) | ❌ identifiziert nur die Mailbox |
+| `from.emailAddress.name` | „Personal MVM-Gruppe" (Display-Name) | ❌ identifiziert nur die Mailbox |
+| `body.content` (HTML/Text) | Anrede + Inhalt + **Signatur** | ✅ einzige verlässliche Quelle |
+
+**Konsequenz für die Draft-Pipeline:**
+
+Vor `createReply` an eine Shared-Mailbox-Adresse:
+
+1. **Body holen** (`$select=body` oder Folgerequest auf die Message) und Signatur am Ende parsen
+2. Den **tatsächlichen Schreiber-Namen** in der Anrede des Drafts verwenden, nicht den Display-Namen aus `from`
+3. Optional: in der Personen-Notiz-Konvention den Mailbox-Eintrag von der Personen-Identifikation entkoppeln (mehrere Personen können dieselbe `email`-Mailbox haben — z.B. via Frontmatter-Feld `shared_mailbox` neben `email`)
+
+**Erkennungsmerkmale für Shared Mailboxes (Heuristik):**
+
+- Mailbox-Adresse-Stamm ist eine Funktion, kein Name (`personal@`, `offerte@`, `kreditoren@`, `magazin@`, `info@`, `support@`)
+- `from.emailAddress.name` enthält Wörter wie „Gruppe", „Team", „Postfach"
+- Verschiedene Signaturen im Body-Verlauf bei gleicher `from`-Adresse
+
+**Mitigation im Code:** ein zusätzlicher Helper `extract_writer_from_body(html)` der die letzte Signatur vor dem Quote-Block extrahiert und Namen + Rolle zurückgibt. Backlog-ToDo.
 
 ## Wann nicht
 

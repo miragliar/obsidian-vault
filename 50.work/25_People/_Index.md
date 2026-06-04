@@ -30,7 +30,8 @@ Top humane Kontakte aus dem M365-Graph-Scan vom 01.06.2026 (2'500 Mails / 1'621 
 
 #### Sachbearbeitung (🆕 2026-06-04)
 - 🆕 [[Nicole-Scherrer|Nicole Scherrer]] · Sachbearbeiterin Rechnungswesen · letzter 2026-06-02
-- 🆕 [[Nicole-Lötscher|Nicole Lötscher]] · Sachbearbeiterin HR · letzter 2026-06-03
+- 🆕 [[Nicole-Lötscher|Nicole Lötscher]] · Sachbearbeiterin HR (über `personal@mvm-ag.ch`) · letzter 2026-05-27
+- 🆕 [[Vloriana-Schnellmann|Vloriana Schnellmann]] · Sachbearbeiterin HR (über `personal@mvm-ag.ch`, neu seit Mai 2026) · letzter 2026-06-03
 
 #### Offertwesen
 - 🆕 [[Reto-Limacher|Reto Limacher]] · Offertwesen Lead (KI-Ausmass-Sparringpartner)

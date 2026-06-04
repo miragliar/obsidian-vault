@@ -57,7 +57,8 @@ Zürich · Zug · Sursee · Emmen · Stans · Meggen · Cham
 ### Sachbearbeitung
 
 - 🆕 [[50.work/25_People/Nicole-Scherrer|Nicole Scherrer]] · **Sachbearbeiterin Rechnungswesen** (`n.scherrer@mvm-ag.ch`)
-- 🆕 [[50.work/25_People/Nicole-Lötscher|Nicole Lötscher]] · **Sachbearbeiterin HR** (über `personal@mvm-ag.ch`, seit Mai 2026)
+- 🆕 [[50.work/25_People/Nicole-Lötscher|Nicole Lötscher]] · **Sachbearbeiterin HR** (über `personal@mvm-ag.ch`)
+- 🆕 [[50.work/25_People/Vloriana-Schnellmann|Vloriana Schnellmann]] · **Sachbearbeiterin HR** (über `personal@mvm-ag.ch`, neu seit Mai 2026, Direkt-Tel +41 79 349 72 86)
 - Yvonne Kiser · Sekretariat (Erstempfang Offerten)
 
 ### Projektleitung / Standorte
