@@ -4,20 +4,20 @@
   "title": "Explain KI-Ausmass MVM and Messerli requirements",
   "titleGenerationStatus": "success",
   "createdAt": 1780576472248,
-  "updatedAt": 1780580306625,
-  "lastResponseAt": 1780580306625,
+  "updatedAt": 1780582329657,
+  "lastResponseAt": 1780582329657,
   "sessionId": "66c0d63e-932d-4dbb-8129-b058b3999240",
   "providerState": {
     "providerSessionId": "66c0d63e-932d-4dbb-8129-b058b3999240"
   },
   "usage": {
     "model": "opus",
-    "inputTokens": 1,
-    "cacheCreationInputTokens": 1944,
-    "cacheReadInputTokens": 168112,
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 2923,
+    "cacheReadInputTokens": 449318,
     "contextWindow": 1000000,
-    "contextTokens": 170057,
-    "percentage": 17,
+    "contextTokens": 452247,
+    "percentage": 45,
     "contextWindowIsAuthoritative": true
   }
 }
