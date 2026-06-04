@@ -15,6 +15,7 @@ Hub für Meta-Notizen aus 23 Conversations: Claude-Projekte, Prompts, Custom AI,
 - [[40.meta/dokumentenanalyse-vorlesung-zusammenfassen|Workflow — Vorlesungs-/Dokumenten-Zusammenfassung per Screenshot-Stream]]
 - [[40.meta/prompt-strukturierte-extraktion|Prompt-Pattern — Strukturierte JSON-Extraktion aus Geschäfts-Dokumenten]]
 - [[40.meta/claude-projekte-und-custom-ai|Claude Projects & Custom AI — Setup, Knowledge Base, Teilen]]
+- [[40.meta/obsidian-mcp-setup-parallels-windows|Obsidian MCP — Setup & Windows-Zugriff via Parallels]] (Netz-Bind, Firewall, Troubleshooting)
 
 ### Conversation-Index
 - [[40.meta/_conversation-index|alle 23 Conversations]]

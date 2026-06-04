@@ -122,6 +122,9 @@ claude mcp add --transport http <name> http://localhost:<port>/mcp \
 
 → Verbindet Claude direkt mit lokalem Obsidian-Vault o.ä. Bedingung: lokaler Server läuft + Token gültig.
 
+> [!info] Ausführliches Setup + Windows-Parallels-Zugriff
+> Siehe **[[40.meta/obsidian-mcp-setup-parallels-windows|Obsidian MCP — Setup & Windows-Zugriff via Parallels]]** für die komplette Schritt-für-Schritt-Anleitung inkl. Bind-Adress-Konfiguration (`10.211.55.2`), macOS-Firewall, PowerShell-Test, `mcp-remote --allow-http` und Troubleshooting-Tabelle.
+
 ## Zusammenfassungs-Bot für Vorlesungen (Pattern)
 
 Häufige Frage: "Wie nutze ich Claude als Zusammenfassungs-Bot für eine Vorlesung mit Übungen?"

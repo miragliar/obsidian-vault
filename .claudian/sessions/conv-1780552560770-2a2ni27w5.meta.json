@@ -4,8 +4,8 @@
   "title": "Create to-dos from recent MVM AG emails",
   "titleGenerationStatus": "success",
   "createdAt": 1780552560770,
-  "updatedAt": 1780562707950,
-  "lastResponseAt": 1780562707950,
+  "updatedAt": 1780563201032,
+  "lastResponseAt": 1780563201032,
   "sessionId": "37b4cc39-8554-4f63-81df-5c54c028cf2b",
   "providerState": {
     "providerSessionId": "37b4cc39-8554-4f63-81df-5c54c028cf2b"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 1552,
-    "cacheReadInputTokens": 369911,
+    "cacheCreationInputTokens": 5701,
+    "cacheReadInputTokens": 385287,
     "contextWindow": 1000000,
-    "contextTokens": 371464,
-    "percentage": 37,
+    "contextTokens": 390989,
+    "percentage": 39,
     "contextWindowIsAuthoritative": true
   }
 }

@@ -9,8 +9,8 @@
     "autoGenerate": true,
     "minTLSVersion": "TLSv1.2"
   },
-  "bindMode": "loopback",
-  "customBindHost": "",
+  "bindMode": "custom",
+  "customBindHost": "10.211.55.2",
   "hasShownBindMigrationNotice": true,
   "debugLogging": false,
   "showConnectionStatus": true,
