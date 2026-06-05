@@ -8,8 +8,13 @@
       {
         "tabId": "tab-1780642873631-tes619v",
         "conversationId": "conv-1780642908426-fy8imnm8w"
+      },
+      {
+        "draftModel": "opus",
+        "tabId": "tab-1780650156543-azteqv8",
+        "conversationId": null
       }
     ],
-    "activeTabId": "tab-1780642873631-tes619v"
+    "activeTabId": "tab-1780650156543-azteqv8"
   }
 }
