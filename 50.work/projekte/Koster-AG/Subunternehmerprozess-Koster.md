@@ -53,12 +53,18 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 - [[50.work/power-platform/powerfx-filter-search-combobox|Filter+Search Combobox]]
 - [[50.work/power-platform/power-automate-string-expressions|String-Expressions]]
 - [[50.work/power-platform/powerfx-hidden-datacard-submitform|Hidden Datacard SubmitForm]]
+- [[50.work/power-platform/mail-attachment-pipeline-fallen|Mail-Attachment-Pipeline — Encoding-, Counter- und Pfad-Sync-Fallen]] — Trigger-Case 2026-06-05
 
 ## Erkenntnisse / Lessons Learned
 
 - Deklarations-IDs mit Unterstrich brauchen besondere Behandlung — Display vs. Internal Name (siehe Pattern Power-Automate-String).
 - Wöchentliche Reminder als scheduled Flow, mit Filter auf säumige Dokumente.
 - JSON-Schema fix halten — bei Datentyp-Drift schlägt Parse-JSON-Action fehl (siehe AI-Prompt-Pattern).
+- **Bug-Analyse 2026-06-05** (Flow 02 — eingehende Mail verarbeiten):
+  - **Leere PDFs**: heißester Verdacht ist der nicht-resettete `PDF`-Counter zwischen Iterationen des äußeren `For_each` (über Mail-Attachments). Bei Mails mit mehreren Multi-Doc-Anhängen läuft der Index out-of-bounds → leere Files mit korrekter Header-Struktur. Sekundär: `base64ToBinary()`-Wrap am Create_file fehlt.
+  - **Pfad „nicht passt"**: Es ist **by design**, dass `ks_eq_dateipfad_manuell` im Erfolgsfall leer bleibt — der finale Pfad lebt in `ks_deklarationens.ks_antwort_sp_pfad`. Wenn ein User trotzdem einen Pfad in der EQ sieht, der nicht stimmt, ist der **Top-Verdacht Duplicate-Trigger**: Outlook-V2-Connector feuert denselben Trigger mehrfach (Forwards, Re-Delivery), ein Run klassifiziert erfolgreich + moved, ein zweiter Run schreibt einen Manuell-Eintrag mit stale `03_Eingang_Temp`-Pfad. Fix: Dedup via `ks_eq_mailid`-Lookup vor `Add_a_new_row`.
+  - **Latentes Risiko**: Move-Destination via `split(ks_versendet_sp_pfad, '/K20')[0]` ist fragil (bricht beim Jahreswechsel auf K27 und bei Pfaden ohne K20-Prefix). Ersetzen durch expliziten Subunternehmer-Folder-Lookup.
+  - Siehe [[50.work/power-platform/mail-attachment-pipeline-fallen|Pattern-Notiz Mail-Attachment-Pipeline]] für vollständige Lösungs-Snippets und Diagnose-Reihenfolge.
 
 ## Persönliche Notizen
 

@@ -20,6 +20,8 @@ Pattern-Notizen aus 63 Conversations rund um die Power Platform im Arbeitskontex
 - [[50.work/power-platform/power-automate-invalidopenapiflow|InvalidOpenApiFlow beim Speichern diagnostizieren]]
 - [[50.work/power-platform/power-automate-string-expressions|String-Expressions & Locale-Fallen]]
 - [[50.work/power-platform/ai-prompt-json-output|AI Builder Prompts — strukturierte JSON-Ausgabe]]
+- [[50.work/power-platform/mail-attachment-pipeline-fallen|Mail-Attachment-Pipeline — Encoding-, Counter- und Pfad-Sync-Fallen]]
+- [[50.work/power-platform/sharepoint-berechtigung-flow-save|SharePoint-Berechtigung als Flow-Save-Voraussetzung]]
 
 ### Dataverse
 - [[50.work/power-platform/dataverse-mysterious-deletes|Unerklärte Datenverluste systematisch diagnostizieren]]
