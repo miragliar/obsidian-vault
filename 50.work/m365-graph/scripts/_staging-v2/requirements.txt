@@ -1,0 +1,5 @@
+msal>=1.29
+msal-extensions>=1.1   # Token-Cache verschlüsselt im macOS-Keychain (auth_common.py) statt Klartext im Vault
+requests>=2.31
+markdownify>=1.2      # OneNote-HTML → Markdown (onenote_export.py)
+beautifulsoup4>=4.12  # HTML-Parsing für OneNote-Export

@@ -17,21 +17,44 @@ import sys
 import time
 from pathlib import Path
 
+import msal
 import requests
 
+CLIENT_ID = os.environ.get("M365_CLIENT_ID", "<<HIER_APPLICATION_CLIENT_ID>>")
+TENANT_ID = os.environ.get("M365_TENANT_ID", "<<HIER_DIRECTORY_TENANT_ID>>")
 GRAPH = "https://graph.microsoft.com/v1.0"
 SCOPES = ["User.Read", "Mail.Read"]
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 VAULT_ROOT = Path(os.environ.get("VAULT_ROOT", SCRIPT_DIR.parent.parent))
 PEOPLE = VAULT_ROOT / "25_People"
+CACHE_FILE = SCRIPT_DIR / ".token_cache.bin"
 OUT = SCRIPT_DIR / "mail_digest.json"
 
 
 def get_token():
-    # Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr im Vault/Dropbox.
-    from auth_common import get_token as _ac_get_token
-    return _ac_get_token(SCOPES)
+    cache = msal.SerializableTokenCache()
+    if CACHE_FILE.exists():
+        cache.deserialize(CACHE_FILE.read_text())
+    app = msal.PublicClientApplication(
+        CLIENT_ID, authority=f"https://login.microsoftonline.com/{TENANT_ID}",
+        token_cache=cache)
+    result = None
+    for acc in app.get_accounts():
+        result = app.acquire_token_silent(SCOPES, account=acc)
+        if result:
+            break
+    if not result:
+        flow = app.initiate_device_flow(scopes=SCOPES)
+        if "user_code" not in flow:
+            sys.exit(f"Device-Flow fehlgeschlagen: {flow.get('error_description')}")
+        print("\n" + "═" * 60 + f"\n{flow['message']}\n" + "═" * 60 + "\n", flush=True)
+        result = app.acquire_token_by_device_flow(flow)
+    if cache.has_state_changed:
+        CACHE_FILE.write_text(cache.serialize())
+    if "access_token" not in result:
+        sys.exit(f"Login fehlgeschlagen: {result.get('error_description')}")
+    return result["access_token"]
 
 
 def me_email(token):
@@ -101,6 +124,9 @@ def main():
     ap.add_argument("--min-sent", type=int, default=0, help="nur Kontakte, denen du >= so oft geantwortet hast")
     ap.add_argument("--sort", choices=["total", "sent"], default="total")
     args = ap.parse_args()
+
+    if "<<HIER" in CLIENT_ID:
+        sys.exit("CLIENT_ID/TENANT_ID nicht gesetzt.")
 
     token = get_token()
     me = me_email(token)

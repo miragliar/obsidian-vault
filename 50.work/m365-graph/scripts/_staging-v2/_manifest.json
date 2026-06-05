@@ -1,0 +1,177 @@
+{
+  "message_id": "AAMkADk0MGEzNTIyLTdjZTEtNDg2ZC1hNGI3LTNlNjM2ZTc1MzA0MgBGAAAAAAA2GQ2gIf84T4a4S81U95yYBwBJgNCqgUEbQZaib-fPiwWlAAAAAAEMAABJgNCqgUEbQZaib-fPiwWlAAgAeiY2AAA=",
+  "subject": "M365-Toolkit v2 — erweiterte Berechtigungen + alle Skripte (für Claudian-Import)",
+  "received": "2026-06-04T14:33:41Z",
+  "from": "giovanni@miraglia-bi.com",
+  "attachments": [
+    {
+      "name": "miraglia-bi.png",
+      "size": 41755,
+      "sha256_16": "034ee498947e95dd",
+      "contentType": "image/png"
+    },
+    {
+      "name": "IMPORT-ANLEITUNG-Michael.md",
+      "size": 5686,
+      "sha256_16": "05b77b79e071912a",
+      "contentType": "text/markdown"
+    },
+    {
+      "name": "ANLEITUNG.md",
+      "size": 18977,
+      "sha256_16": "81e91ba9f88443ce",
+      "contentType": "text/markdown"
+    },
+    {
+      "name": "README.md",
+      "size": 1731,
+      "sha256_16": "2f3daac9961762d1",
+      "contentType": "text/markdown"
+    },
+    {
+      "name": "requirements.txt",
+      "size": 264,
+      "sha256_16": "0b5cad52cf797c19",
+      "contentType": "text/plain"
+    },
+    {
+      "name": "_distill_playbook.md",
+      "size": 3955,
+      "sha256_16": "33f0fc872d8ca438",
+      "contentType": "text/markdown"
+    },
+    {
+      "name": "auth_common.py",
+      "size": 4718,
+      "sha256_16": "236667216b44a665",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "live_search.py",
+      "size": 2144,
+      "sha256_16": "04da79eb67b4e00a",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "fetch_body.py",
+      "size": 1342,
+      "sha256_16": "6d3b418adaaa1307",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "draft_mail.py",
+      "size": 5981,
+      "sha256_16": "051f6092b6ae3aab",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "draft_with_attach.py",
+      "size": 2417,
+      "sha256_16": "5c9e8deb53ccf834",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "mail_digest.py",
+      "size": 5910,
+      "sha256_16": "cbdab609d6d8501a",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "apply_mail_summaries.py",
+      "size": 2766,
+      "sha256_16": "f2d572e8b48c410a",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "first_contact.py",
+      "size": 5092,
+      "sha256_16": "2863b24e1457b897",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "teams_digest.py",
+      "size": 7438,
+      "sha256_16": "0bd61f19a2174576",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "create_teams_people.py",
+      "size": 3129,
+      "sha256_16": "2afa0799b686fddf",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "teams_first_contact.py",
+      "size": 4858,
+      "sha256_16": "411653173e3f3d92",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "m365_people_sync.py",
+      "size": 11858,
+      "sha256_16": "d81a5d420b7d58ed",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "link_people_to_clients.py",
+      "size": 5975,
+      "sha256_16": "745dc22ab10e70f5",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "fill_stakeholders.py",
+      "size": 4034,
+      "sha256_16": "05f79984de0fe026",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "contact_stats.py",
+      "size": 7340,
+      "sha256_16": "c0d00480c2f14ee0",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "apply_firmenprofile.py",
+      "size": 3603,
+      "sha256_16": "c89ed95107e5c7c3",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "create_event.py",
+      "size": 2584,
+      "sha256_16": "8070a44313fdbee9",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "onenote_export.py",
+      "size": 16186,
+      "sha256_16": "ce50ff90abffd035",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "onenote_batch_export.py",
+      "size": 3793,
+      "sha256_16": "02c6d7773a37a522",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "dataverse_query.py",
+      "size": 4051,
+      "sha256_16": "4725b14896a17cfd",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "weekly_report.py",
+      "size": 4965,
+      "sha256_16": "0781c5d5f421d9ef",
+      "contentType": "text/x-python"
+    },
+    {
+      "name": "weekly_refresh.sh",
+      "size": 1703,
+      "sha256_16": "8ada52dfa57fd6a5",
+      "contentType": "application/x-sh"
+    }
+  ],
+  "staging_dir": "/Users/raouleliasmiraglia/Library/CloudStorage/Dropbox/Miraglia-BI/0_Internal/Obsidian Raoul/50.work/m365-graph/scripts/_staging-v2"
+}
