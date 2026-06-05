@@ -4,20 +4,20 @@
   "title": "Read Giovanni's feedback on MVM AI Ausmass tool",
   "titleGenerationStatus": "success",
   "createdAt": 1780642908426,
-  "updatedAt": 1780644718420,
-  "lastResponseAt": 1780644718420,
+  "updatedAt": 1780646273224,
+  "lastResponseAt": 1780646273224,
   "sessionId": "3a2f019e-3d94-4e5f-950b-dd3274cebf51",
   "providerState": {
     "providerSessionId": "3a2f019e-3d94-4e5f-950b-dd3274cebf51"
   },
   "usage": {
     "model": "opus",
-    "inputTokens": 6,
-    "cacheCreationInputTokens": 5997,
-    "cacheReadInputTokens": 142413,
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 553,
+    "cacheReadInputTokens": 206984,
     "contextWindow": 1000000,
-    "contextTokens": 148416,
-    "percentage": 15,
+    "contextTokens": 207538,
+    "percentage": 21,
     "contextWindowIsAuthoritative": true
   }
 }
