@@ -63,15 +63,29 @@ Typische Quellen:
 
 Symptom: User-Report sagt „die Datei sollte in `03_Eingang_Temp` sein (Status `Manuell`), liegt aber in `02_Kunden/<Sub>/...`". Die Eingangsqueue zeigt einen `_manuell`-Pfad, der ins Leere führt.
 
-Zwei wahrscheinlichste Ursachen:
+Zwei wahrscheinlichste Ursachen (in der Reihenfolge der Wahrscheinlichkeit):
 
-1. **Duplicate-Trigger** vom Outlook-V2-Connector — **Top-Verdacht**
-   Bei Forwards/Replys/Re-Delivery feuert der Mail-Trigger denselben `internetMessageId` mehrmals. Ohne Dedup landen **zwei `ks_eingangsqueues`-Einträge** mit derselben MailID:
-   - Run #1: KI klassifiziert erfolgreich → `Move_file` nach `02_Kunden/<Sub>/...` → EQ-Eintrag mit Status `Verarbeitet` (kein `_manuell`-Pfad, by design).
-   - Run #2: gleiche Mail, KI-Output diesmal anders (Custom Prompts sind nicht deterministisch) → kein Match → kein Move → EQ-Eintrag mit Status `Manuell` + `_manuell`-Pfad = `03_Eingang_Temp` (Create_file-Output, aber die Datei wurde von Run #1 schon weggemoved → der Pfad ist **stale**).
-   - User sieht Run #2's Eintrag → klickt → 404.
+1. **Multi-Iteration-Update-Override im inneren For_each** — **Top-Verdacht**
+   `Add_a_new_row` läuft **außerhalb** der inneren Loops (`For_each_-_Document_in_Prompt` / `Apply_to_each`). Das heißt: pro Mail-Attachment gibt es **genau einen** `ks_eingangsqueues`-Eintrag — auch wenn PDF4me-Split daraus N Sub-Dokumente macht.
+   
+   Alle inneren Update-Actions referenzieren denselben Record via `recordId = outputs('Add_a_new_row')?['body/ks_eingangsqueueid']`. Sie überschreiben sich also gegenseitig — **der letzte Update gewinnt.**
 
-2. **Falsches Move-Ziel durch fragiles `split('/K20')[0]`**
+   Wenn ein Anhang mehrere Sub-Docs mit gemischten Klassifikations-Ergebnissen produziert:
+   - Sub-Doc 1: Klassifikation erfolgreich → `Move_file` nach `02_Kunden/<Sub>/...` → EQ-Update mit Status `Verarbeitet` (kein `_manuell`-Pfad).
+   - Sub-Doc 2: Klassifikation fehlgeschlagen → kein Move → EQ-Update mit Status `Manuell` + `_manuell` = `03_Eingang_Temp/<Sub-Doc-2-Name>`.
+   
+   Resultat: EQ zeigt `Manuell` + `03_Eingang_Temp/...`. **Die Datei aus Sub-Doc 1 ist aber real im Kundenordner** — und bei kollidierenden Filenames (gleicher `vorgeschlagener_dateiname` aus dem Prompt-Output) sieht der User dieselbe Datei an beiden Orten.
+   
+   Architektureller Fix: pro Sub-Doc einen eigenen EQ-Eintrag erzeugen (`Add_a_new_row` **innerhalb** der inneren Loops), nicht pro Mail-Attachment.
+
+2. **Content-Dedup-Lücke** (verträglich mit eindeutigen MessageIDs)
+   Wenn dieselbe Mail forwarded / mehrfach zugestellt wird, hat sie **unterschiedliche** `internetMessageId`s — der MessageID-Filter aus klassischen Duplicate-Schemen greift nicht. Der gleiche PDF-Anhang wird zweimal verarbeitet, Custom Prompts sind nicht deterministisch:
+   - Run #1: erfolgreiche Klassifikation → Move nach `02_Kunden/<Sub>/...` → EQ mit Status `Verarbeitet`.
+   - Run #2: fehlgeschlagene Klassifikation → Manuell-Eintrag mit `03_Eingang_Temp`-Pfad. Datei lag aber durch Run #1 schon im Kundenordner.
+   
+   User sieht beide Einträge oder nur den zweiten — und ein stale Pfad. Defense: Hash-basierter Dedup über `sha256(item()?['contentBytes'])`.
+
+3. **Falsches Move-Ziel durch fragiles `split('/K20')[0]`** (latentes Risiko, nicht Trigger-Case 2026-06)
    ```
    "destinationFolderPath": "@split(items('For_each')?['ks_versendet_sp_pfad'], '/K20')[0]"
    ```
@@ -125,24 +139,30 @@ Wenn `head` etwas anderes ist → Variable ist null/leer/falsch befüllt.
 
 ### Cluster B
 
-**B1 — Duplicate-Detection direkt nach Trigger:**
+**B1 — EQ-Eintrag pro Sub-Doc, nicht pro Mail-Attachment:**
 
-Vor `Add_a_new_row`:
+`Add_a_new_row` in den inneren Loop (`For_each_-_Document_in_Prompt` bzw. `Apply_to_each`) verschieben — direkt vor `Create_file_-_in_03_temp`. Dann hat jedes Sub-Doc seinen eigenen EQ-Eintrag mit eigenem Status und eigenem Pfad. Kein Override-Problem mehr.
+
+Erforderliche Anpassungen:
+- Initiale Felder (`ks_eq_attachmentname`, `ks_eq_mailid`, `ks_eq_erstellt_am`) bleiben gleich pro Iteration; `ks_eq_attachmentname` ergänzen um den Split-Suffix.
+- Den **initialen** EQ-Eintrag (vom alten `Add_a_new_row` außerhalb) entweder weglassen oder am Ende des Scopes löschen (falls die Power App ihn als „in Verarbeitung"-Indicator anzeigt — dann lieber Status auf `Aufgeteilt` setzen und die Sub-Doc-Einträge als Kinder per Lookup verknüpfen).
+
+**B2 — Content-Hash für Cross-Mail-Dedup:**
+
+Vor `Add_a_new_row` zusätzlich zur (jetzt: optionalen) MessageID-Prüfung einen Content-Hash-Lookup:
 
 ```
+Compose_content_hash: @{base64(sha256(item()?['contentBytes']))}
+
 List_rows
   entityName: ks_eingangsqueues
-  $filter: ks_eq_mailid eq '@{triggerOutputs()?['body/internetMessageId']}'
+  $filter: ks_eq_attachmenthash eq '@{outputs('Compose_content_hash')}'
   $top: 1
-
-Condition: length(outputs('List_rows')?['body/value']) eq 0
-  IF: weiter mit Add_a_new_row + ganzer Verarbeitung
-  ELSE: Terminate (Cancelled) mit Nachricht „bereits verarbeitet"
 ```
 
-Schließt **Duplicate-Trigger, Mail-Forward, Re-Delivery** in einem aus.
+Wenn Treffer → Mail wurde inhaltlich schon mal verarbeitet (Forward, Re-Delivery mit neuer MessageID) → Terminate oder Verknüpfung statt Neu-Verarbeitung. Setzt voraus, dass `ks_eq_attachmenthash` echte Hashes enthält (siehe Cluster C).
 
-**B2 — Move-Destination via Lookup, nicht via `split`:**
+**B3 — Move-Destination via Lookup, nicht via `split`:**
 
 Statt aus `ks_versendet_sp_pfad` einer Deklaration zu splitten: expliziter `Get_a_row_by_ID` auf die Subunternehmer-Entity, mit einer Spalte `ks_root_folder` (= `/02_Kunden/<Sub>/`). Der Auftrag-Sub-Folder kommt aus dem Auftrag-Lookup. Robust gegen Jahres-Wechsel und Strukturänderungen.
 
@@ -163,13 +183,12 @@ Mit echtem Hash wird inhalts-basierte Dedup möglich (gleicher Anhang, andere Me
 
 Wenn der Report lautet „Datei nicht da wo der EQ-Eintrag sagt" oder „PDF ist leer":
 
-1. **Dataverse-Query auf `ks_eq_mailid`** des betroffenen Eintrags → wie viele Treffer?
-   - `>1` = Duplicate-Trigger bestätigt → Cluster B1
-   - `==1` → weiter mit 2.
-2. **Flow-Run-History** nach `internetMessageId` filtern → wie viele Runs?
-   - `>1` ohne Duplicate-EQ → ein Run hat `Add_a_new_row` failed, der nächste erfolgreich; trotzdem könnten beide ein Move ausgeführt haben → Race-Analyse.
-3. **`ks_deklarationens` mit `ks_antwort_sp_pfad like '%<filename>%'`** → wenn Treffer → Datei wurde gemoved (Cluster B1 oder B2 hat zugeschlagen).
-4. **File-Size-Vergleich** Original-Anhang ↔ SharePoint-Datei →
+1. **Multi-Doc-Check für den betroffenen Anhang:**
+   Ist `length(structuredOutput/result)` (bzw. `Parse_JSON?['result']`) der Klassifikations-Antwort > 1? Wenn ja → Multi-Iteration-Override (Cluster B1) ist sehr wahrscheinlich. Hat der Flow-Run mehrere `Update_a_row`-Calls auf dieselbe `ks_eingangsqueueid` gemacht? Letzter überschreibt vorherige.
+2. **Dataverse-Query auf `ks_eq_mailid`** des betroffenen Eintrags → wie viele Treffer? `>1` würde Re-Trigger oder mehrfache Verarbeitung der gleichen MessageID anzeigen (selten, aber prüfen).
+3. **Content-Hash-Check** für Cross-Mail-Dedup: gibt es weitere EQ-Einträge mit demselben Anhangsnamen oder ähnlicher Größe und gleicher Zeitspanne? → Cluster B2 (Forward / Re-Delivery mit neuer MessageID).
+4. **`ks_deklarationens` mit `ks_antwort_sp_pfad like '%<filename>%'`** → wenn Treffer → Datei wurde gemoved (einer der Move-Branches hat zugeschlagen, EQ wurde überschrieben).
+5. **File-Size-Vergleich** Original-Anhang ↔ SharePoint-Datei →
    - identisch → eher Pfad-/Verwirrungs-Problem (Cluster B)
    - deutlich kleiner / ähnliche Header → Encoding-Bug (Cluster A2)
    - 0 Bytes / Default-Größe → Variable war null (Cluster A1: Counter-Bug)
