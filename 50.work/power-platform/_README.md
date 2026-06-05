@@ -20,7 +20,9 @@ Pattern-Notizen aus 63 Conversations rund um die Power Platform im Arbeitskontex
 - [[50.work/power-platform/power-automate-invalidopenapiflow|InvalidOpenApiFlow beim Speichern diagnostizieren]]
 - [[50.work/power-platform/power-automate-string-expressions|String-Expressions & Locale-Fallen]]
 - [[50.work/power-platform/ai-prompt-json-output|AI Builder Prompts — strukturierte JSON-Ausgabe]]
-- [[50.work/power-platform/mail-attachment-pipeline-fallen|Mail-Attachment-Pipeline — Encoding-, Counter- und Pfad-Sync-Fallen]]
+- [[50.work/power-platform/ai-builder-doppel-branch-vermeiden|AI Builder — Doppel-Branch bei nicht-deterministischem Output vermeiden]]
+- [[50.work/power-platform/power-automate-variable-binary-damage|Power Automate — Variablen sind nicht binary-safe (UTF-8-Damage)]]
+- [[50.work/power-platform/mail-attachment-pipeline-fallen|Mail-Attachment-Pipeline — Komplette Bug-Klasse]]
 - [[50.work/power-platform/sharepoint-berechtigung-flow-save|SharePoint-Berechtigung als Flow-Save-Voraussetzung]]
 
 ### Dataverse
@@ -39,4 +41,4 @@ Jede Notiz folgt: **Problem / Lösung / Wann nicht / Verwandt**.
 
 ## Quellen-Hinweis
 
-Die 8 Pattern-Notizen wurden aus den 13 umfangreichsten Conversations des Clusters destilliert (zusammen >400 Nachrichten). Die übrigen 50 Conversations sind im [[50.work/power-platform/_conversation-index|Conversation-Index]] mit Kurzbeschreibung katalogisiert und bei Bedarf per UUID im Original-Export nachschlagbar.
+Ursprünglich 8 Pattern-Notizen aus den 13 umfangreichsten Conversations des Clusters destilliert (zusammen >400 Nachrichten). Seitdem ergänzt um Live-Debug-Sessions (z.B. Trigger-Case Koster-Subunternehmer 2026-06-05 → drei Pattern-Notizen). Die übrigen 50 Original-Conversations sind im [[50.work/power-platform/_conversation-index|Conversation-Index]] mit Kurzbeschreibung katalogisiert und bei Bedarf per UUID im Original-Export nachschlagbar.

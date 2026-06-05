@@ -1,208 +1,358 @@
 ---
 source: chat-context 2026-06-05
 imported: 2026-06-05
+updated: 2026-06-05
 type: pattern
-tags: [power-platform, power-automate, sharepoint, dataverse, pdf, base64, ai-builder, troubleshooting]
+tags: [power-platform, power-automate, sharepoint, dataverse, pdf, base64, ai-builder, pdf4me, outlook, troubleshooting]
 related_projects: ["[[50.work/projekte/Koster-AG/Subunternehmerprozess-Koster|Subunternehmerprozess Koster]]"]
 trigger_case: "Subunternehmerflow 02 / H. Baumann (Koster AG, 2026-06-05)"
+related_patterns: ["[[50.work/power-platform/power-automate-variable-binary-damage]]", "[[50.work/power-platform/ai-builder-doppel-branch-vermeiden]]"]
 ---
 
-# Mail-Attachment-Pipeline — Counter-, Encoding- und Duplicate-Fallen
+# Mail-Attachment-Pipeline — Komplette Bug-Klasse
 
-Power-Automate-Flows, die **eingehende Mail-Anhänge** durch eine KI-Klassifikation schicken, in **SharePoint** ablegen und in **Dataverse** referenzieren, haben eine wiederkehrende Klasse von Bugs. Die hier dokumentierten stammen aus dem Koster-„Subunternehmerflow 02" — die Pattern sind aber generisch.
+Power-Automate-Flows, die **eingehende Mail-Anhänge** durch eine KI-Klassifikation schicken, in **SharePoint** ablegen und in **Dataverse** referenzieren, haben eine wiederkehrende Klasse von Bugs. Diese Notiz dokumentiert die komplette Reise einer Debugging-Session am Koster-Subunternehmer-Flow 02 — mit allen Sackgassen, finalen Lösungen und Diagnose-Reihenfolgen.
 
-Pipeline-Skelett:
+Pipeline-Skelett (final, nach allen Fixes):
 
 ```
 Mail-Trigger (Outlook V2)
-  For_each Attachment
-    Add_a_new_row     →  ks_eingangsqueues (initialer Eintrag, Status = "Neu")
-    Run_a_prompt      →  AI Builder Custom Prompt (mal structured, mal raw text)
-    Condition         →  structured vs. raw Branch
-    PDF_-_Split       →  PDF4me (bei Multi-Doc-PDFs)
-    Set variable      →  File Content (string, base64)
-    Create_file       →  SP /03_Eingang_Temp (initial-Ablage)
-    [optional] Move_file  →  SP /02_Kunden/<Sub>/<Auftrag>/  (bei Erfolg)
-    Update_a_row      →  ks_eingangsqueues (Status) + ks_deklarationens (final-Pfad)
+  For_each Attachment                              ← iteriert über E-Mail-Anhänge
+    Condition - PNG Filter
+      Run a prompt                                 ← AI Builder Custom Prompt (raw text)
+      Bereich (Scope)
+        [Compose_clean_json — Markdown-Fence-Strip]
+        Parse_JSON                                  ← gegen predictionOutput/text
+        Condition_Split
+          IF: PDF4me Split_Document_2              ← bei Multi-Doc-PDFs
+      Apply_to_each (über Parse_JSON?['result'])    ← iteriert über KI-Sub-Docs
+        Add_a_new_row                              ← EQ-Eintrag PRO Sub-Doc
+        Condition 2 (length(result) > 1?)
+          IF (Multi-Doc):
+            Create_file_Multi
+              body: @outputs('PDF_-_Split_Document_2')?['body/splitedDocuments']?[iterationIndexes('Apply_to_each')]?['streamFile']
+          ELSE (Single-Doc):
+            Create_file_Single
+              body: @items('For_each')?['contentBytes']
+        Compose_SP_File_Id      ← URL-encoded für Move_file
+        Compose_SP_File_ItemId  ← numeric für Dataverse
+        Compose_SP_File_Path    ← lesbarer Pfad für Display
+        Condition - hat Deklaration ID?
+          → 4 Endzustände, 4 Updates (siehe unten)
+      [Failure-Branch wenn Parse_JSON failt: separater Add_a_new_row mit Status "Verarbeiten fehlgeschlagen"]
 ```
 
-## Was das **nicht** ist (Diagnose-Hygiene)
+---
 
-Zwei Verdachtsmomente, die naheliegen, aber im echten Setup **kein** Bug sind:
+## Was es nicht ist (Diagnose-Hygiene)
 
-1. **`@{...}`-String-Interpolation vs. `@...`-Expression** im exportierten Solution-JSON
-   Im **Designer** sieht die Expression korrekt aus. Der Solution-Export-ZIP rendert manche Expressions inkonsistent (mit/ohne Curly Braces). Vor einer Hypothese auf Basis des exportierten JSON **immer** im Designer die tatsächliche Expression verifizieren. Sonst jagt man Export-Artefakte statt Bugs.
+**Diese Verdachtsmomente wurden geprüft und ausgeschlossen** — nicht erneut verfolgen, wenn ein ähnlicher Bug-Report kommt:
 
-2. **`ks_eq_dateipfad_manuell` ist leer bei erfolgreichem Move** — by design
-   Das `_manuell`-Feld ist **nur** für den Fall gedacht, dass der User manuell taggen muss (Status `Manuell`). Im Erfolgsfall (Klassifikation gelingt, Datei wandert in den Kunden-Ordner) liegt der finale SP-Pfad in `ks_deklarationens.ks_antwort_sp_pfad`. Die Eingangsqueue ist eine **Bearbeitungs-Queue**, kein Archiv-Index. Wer die Datei sucht, geht über die Deklaration.
+1. **Duplicate-Trigger vom Outlook-V2-Connector** — bei eindeutigen `internetMessageId`s pro Mail ist es das nicht. Selbst bei Forwards/Re-Delivery feuert der Connector mit jeweils unterschiedlichen MessageIDs.
 
-→ Wenn ein User-Report behauptet „Pfad in Eingangsqueue stimmt nicht mit SP überein", ist das **nicht** Schema-Lücke, sondern ein Hinweis auf eine **andere** Ursache (siehe Cluster B).
+2. **PDF4me-Quota** — würde einen HTTP-Error werfen (`429 Too Many Requests` o.ä.), nicht stillschweigend strukturell intakte aber leere PDFs liefern. Bei sichtbaren DEBUG-Längen im Multi-KB-Range ist das Quota nicht das Problem.
 
-## Problem
+3. **Solution-Export-Artefakte ≠ Designer-Realität** — der Solution-Export rendert manche Expressions inkonsistent (z.B. mit/ohne Curly Braces). **ABER**: wenn ein User sagt „im Designer sieht es normal aus", trotzdem die **roh kopierte Expression** aus dem Designer-Eingabefeld sehen lassen. Die Designer-UI rendert visuell ohne Braces, aber das Token kann sie tragen. Beim Koster-Case **war** das `@{...}` real und KEIN Export-Artefakt.
 
-### Cluster A — Leere PDFs (korrekte Seitenanzahl, weiße Seiten)
+4. **`ks_eq_dateipfad_manuell` leer im Erfolgsfall** ist **by design** — die Eingangsqueue ist eine Bearbeitungs-Queue, kein Archiv-Index. Im Erfolgsfall lebt der finale Pfad in `ks_deklarationens.ks_antwort_sp_pfad`. Wer die Datei sucht, geht über die Deklaration.
 
-Symptom: das resultierende PDF in SharePoint hat die **richtige Seitenzahl**, jede Seite ist **leer**. Schließt aus: „Variable war null" (dann wäre das File 0 Bytes oder nicht erstellt). Bestätigt: **Page-Catalog intakt, Page-Streams beschädigt**.
+---
 
-Typische Quellen:
+## Cluster A — Encoding & Binary-Damage
 
-1. **Counter-Variable nicht resettet** zwischen Iterationen des **äußeren** `For_each` (über alle Attachments einer Mail).
-   Beispiel: `PDF` (integer-Counter für den Split-Index) wird via `Initialize_variable` einmalig auf 0 gesetzt — am **Flow-Start**, nicht pro Attachment. Im Inner-Loop wird er via `Increment_variable` hochgezählt (`splitedDocuments[0..n]`). Wenn die Mail mehrere Attachments hat, beginnt die zweite Iteration mit dem **alten** Wert. → `splitedDocuments[3]` für ein PDF mit nur 2 Sub-Docs = `null` → leere Datei mit korrektem Header.
+### A1 — `@{expression}` mit Curly Braces zerstört Base64/Binary
 
-2. **`base64ToBinary()` Fehl-Wrap im Create_file body**
-   PDF4me's `streamFile` ist ein base64-String. SharePoint `Create_file` akzeptiert beide Formate — aber nicht über alle Encoding-Pfade hinweg konsistent. Wenn die Variable als `type: string` deklariert ist und der String durch eine `if()`-Branch-Auswahl geht, ist das Verhalten implementation-defined. Sicheres Pattern: **base64-String halten**, am Create_file explizit dekodieren.
+**Symptom**: leere PDFs mit korrekter Page-Count, oder `base64ToBinary` Error „cannot be decoded from base64 representation".
 
-3. **`if()` mit Typ-Mismatch zwischen den Branches**
-   ```
-   "body": "@if(<cond>, variables('File Content'), variables('File Content Binary'))"
-   //                    ↑ type: string              ↑ type: object
-   ```
-   Power Automate evaluiert beide Branches. Wenn eine string und die andere object ist, kann die nicht-gewählte Variable trotzdem einen Type-Cast triggern, der die gewählte beeinflusst. Sauber: **beide Variablen denselben Typ**.
+**Ursache**: `@{...}` forciert String-Interpolation. Bei langen Base64-Werten (>100 KB) injiziert das Linefeeds/Whitespace/Escape-Artefakte → Base64-Parser steigt aus oder dekodiert zu beschädigtem Binary.
 
-### Cluster B — Datei landet im falschen Ordner
+**Fix**: `@{expression}` → `@expression` (ohne Curly Braces).
 
-Symptom: User-Report sagt „die Datei sollte in `03_Eingang_Temp` sein (Status `Manuell`), liegt aber in `02_Kunden/<Sub>/...`". Die Eingangsqueue zeigt einen `_manuell`-Pfad, der ins Leere führt.
+```
+// FALSCH:
+"value": "@{outputs('PDF_-_Split_Document_2')?['body/splitedDocuments']?[variables('PDF')]?['streamFile']}"
 
-Zwei wahrscheinlichste Ursachen (in der Reihenfolge der Wahrscheinlichkeit):
+// RICHTIG:
+"value": "@outputs('PDF_-_Split_Document_2')?['body/splitedDocuments']?[variables('PDF')]?['streamFile']"
+```
 
-1. **Multi-Iteration-Update-Override im inneren For_each** — **Top-Verdacht**
-   `Add_a_new_row` läuft **außerhalb** der inneren Loops (`For_each_-_Document_in_Prompt` / `Apply_to_each`). Das heißt: pro Mail-Attachment gibt es **genau einen** `ks_eingangsqueues`-Eintrag — auch wenn PDF4me-Split daraus N Sub-Dokumente macht.
-   
-   Alle inneren Update-Actions referenzieren denselben Record via `recordId = outputs('Add_a_new_row')?['body/ks_eingangsqueueid']`. Sie überschreiben sich also gegenseitig — **der letzte Update gewinnt.**
+### A2 — Variablen sind NICHT binary-safe (auch nicht als `object`)
 
-   Wenn ein Anhang mehrere Sub-Docs mit gemischten Klassifikations-Ergebnissen produziert:
-   - Sub-Doc 1: Klassifikation erfolgreich → `Move_file` nach `02_Kunden/<Sub>/...` → EQ-Update mit Status `Verarbeitet` (kein `_manuell`-Pfad).
-   - Sub-Doc 2: Klassifikation fehlgeschlagen → kein Move → EQ-Update mit Status `Manuell` + `_manuell` = `03_Eingang_Temp/<Sub-Doc-2-Name>`.
-   
-   Resultat: EQ zeigt `Manuell` + `03_Eingang_Temp/...`. **Die Datei aus Sub-Doc 1 ist aber real im Kundenordner** — und bei kollidierenden Filenames (gleicher `vorgeschlagener_dateiname` aus dem Prompt-Output) sieht der User dieselbe Datei an beiden Orten.
-   
-   Architektureller Fix: pro Sub-Doc einen eigenen EQ-Eintrag erzeugen (`Add_a_new_row` **innerhalb** der inneren Loops), nicht pro Mail-Attachment.
+**Symptom**: PDF strukturell ok (Header, Catalog, Page-Tree, EOF), aber alle Seiten visuell leer. `pdftotext` zeigt:
+```
+Syntax Error: Illegal character <ef> <bf> <bd> in hex string
+Bad FCHECK in flate stream
+```
 
-2. **Content-Dedup-Lücke** (verträglich mit eindeutigen MessageIDs)
-   Wenn dieselbe Mail forwarded / mehrfach zugestellt wird, hat sie **unterschiedliche** `internetMessageId`s — der MessageID-Filter aus klassischen Duplicate-Schemen greift nicht. Der gleiche PDF-Anhang wird zweimal verarbeitet, Custom Prompts sind nicht deterministisch:
-   - Run #1: erfolgreiche Klassifikation → Move nach `02_Kunden/<Sub>/...` → EQ mit Status `Verarbeitet`.
-   - Run #2: fehlgeschlagene Klassifikation → Manuell-Eintrag mit `03_Eingang_Temp`-Pfad. Datei lag aber durch Run #1 schon im Kundenordner.
-   
-   User sieht beide Einträge oder nur den zweiten — und ein stale Pfad. Defense: Hash-basierter Dedup über `sha256(item()?['contentBytes'])`.
+**Diagnostischer Goldstandard**: `EF BF BD` ist die UTF-8-Sequenz für das Unicode-Replacement-Character (U+FFFD). Sobald du diese Bytes in einem geschriebenen Binary-File siehst, **war ein UTF-8-Roundtrip dazwischen**.
 
-3. **Falsches Move-Ziel durch fragiles `split('/K20')[0]`** (latentes Risiko, nicht Trigger-Case 2026-06)
-   ```
-   "destinationFolderPath": "@split(items('For_each')?['ks_versendet_sp_pfad'], '/K20')[0]"
-   ```
-   Nimmt den Pfad einer **Deklaration**, splittet am Auftrags-Prefix (`/K20...`), nimmt Teil [0]. Bricht:
-   - Bei Pfaden ohne `/K20` → `split()[0]` = ganzer Pfad inkl. Dateinamen → Move-Ziel = unsinniger Ordner (oder Move schlägt fehl).
-   - **Beim Jahres-Wechsel auf K27** (2027): splittet plötzlich an einer Stelle, die nicht mehr existiert.
-   - Wenn `ks_versendet_sp_pfad` der Deklaration **stale** ist (z.B. vom Vorjahres-Auftrag) → Move-Ziel ist ein alter Ordner.
+**Ursache**: Power Automate hält Variablen intern als UTF-8-Strings. Sobald Binary-Content (PDF page streams, ZIP-Header etc.) durch eine Variable wandert, werden alle Bytes ≥ `0x80` (die kein gültiges UTF-8-Startbyte sind) durch `EF BF BD` ersetzt. **Auch der Variable-Type `object` schützt nicht** — er ist ein JSON-Object-Container, kein Binary-Container.
 
-### Cluster C — `attachmenthash` ist kein Hash
+**Fix**: Variablen für Binary-Content **komplett vermeiden**. Connector-Output direkt in den nächsten Connector-Input durchschleifen.
 
-Kosmetisch, aber irreführend bei Debug-Reports:
+Statt:
+```
+Set variable: File Content = @outputs('PDF4me_Split')?['body/splitedDocuments']?[...]?['streamFile']
+Create_file body: @variables('File Content')
+```
+
+Direkt:
+```
+Create_file body: @outputs('PDF4me_Split')?['body/splitedDocuments']?[...]?['streamFile']
+```
+
+Power Automate erkennt Connector-zu-Connector-Pass-Through und behält die internen Binary-Wrapper-Referenzen bei. Kein String-Cast, kein UTF-8-Damage.
+
+### A3 — Diagnose-Composes (vor jedem Create_file einbauen)
+
+```
+DEBUG_length: @length(<file content expr>)
+DEBUG_head:   @substring(<file content expr>, 0, 12)
+DEBUG_tail:   @substring(<file content expr>, sub(length(<file content expr>), 12), 12)
+```
+
+Erwartung:
+| `head` | `tail` | Interpretation |
+|---|---|---|
+| `%PDF-1.4` / `%PDF-1.7` | `%%EOF\n` | Binary PDF — direkt in Create_file, kein decode |
+| `JVBERi0xLjQK` | endet auf `=` oder `==` | Base64 PDF — `base64ToBinary()` nötig |
+| `{"$content"` | endet auf `}` | Object/JSON gewrappt — `?['$content']` zugreifen oder Connector-Output direkt |
+| `null` (literal 4 Bytes) | — | Variable war undefiniert — siehe Cluster B |
+
+---
+
+## Cluster B — Index- und Reference-Falle
+
+### B1 — `items('Apply_to_each')` vs `items('For_each')`
+
+**Symptom**: Single-Doc-Files in SharePoint sind 4 Bytes groß, Inhalt ist literal `null` (ASCII n-u-l-l).
+
+**Ursache**: Im inneren `Apply_to_each` iterierst du über `body('Parse_JSON')?['result']` — das sind **KI-Klassifikations-Objects** mit Feldern wie `deklaration_id`, `dokumententyp`, `firmenname`. Es gibt da kein `contentBytes`.
+
+```
+// FALSCH (im inneren Loop):
+@items('Apply_to_each')?['contentBytes']   ← greift auf KI-Object, kein contentBytes → null
+
+// RICHTIG:
+@items('For_each')?['contentBytes']         ← greift auf das äußere Mail-Attachment
+```
+
+**Regel**: `items('<loopname>')` greift IMMER auf das aktuelle Item des **benannten** Loops. In Nested-Loops muss man den richtigen Loop-Namen referenzieren — `items('For_each')` für Attachments, `items('Apply_to_each')` für KI-Sub-Docs.
+
+### B2 — PDF-Split-Counter Off-by-One
+
+**Symptom**: Bei gesplitteten PDFs sind Filename und Content vertauscht. Beispiel: Rahmenvertrag (RV)-Inhalt wird mit MINARB-Filename gespeichert, MINARB-Datei ist null/kaputt.
+
+**Ursache**: `Increment variable` läuft vor `Create_file`. Sequenz:
+- Iteration 1: PDF=0 → Increment → PDF=1 → Create_file mit `splitedDocuments[1]` (= RV-Content) aber Filename aus `result[0]` (= MINARB) → Vertauschung
+- Iteration 2: PDF=1 → Increment → PDF=2 → `splitedDocuments[2]` ist out-of-bounds → null
+
+Im Original-Flow fiel das nicht auf, weil dort `Set variable 3` **vor** `Increment` lief und den richtigen Wert (PDF=0) schnappte. Nach Variable-Elimination wandert der Index-Lookup hinter den Increment.
+
+**Fix — minimal**: Increment-Action nach Create_file verschieben (`runAfter: Create_file: Succeeded`).
+
+**Fix — sauber**: Counter-Variable komplett raus, `iterationIndexes('Apply_to_each')` verwenden:
+
+```
+Create_file_Multi body:
+  @outputs('PDF_-_Split_Document_2')?['body/splitedDocuments']?[iterationIndexes('Apply_to_each')]?['streamFile']
+```
+
+Damit fallen weg:
+- `Initialize variable - PDF`
+- `Set variable - PDF auf 0` (Counter-Reset im outer For_each)
+- `Increment variable 2`
+
+Voraussetzung: die Reihenfolge in `Parse_JSON?['result']` muss mit der Reihenfolge in `splitedDocuments` übereinstimmen. Das ist der Fall, wenn `Seite_von_bis_concat` (der splitRanges-Input für PDF4me) in derselben Reihenfolge generiert wird wie `result` — im AI-Prompt explizit fordern: „`Seite_von_bis_concat` enthält die Page-Ranges in derselben Reihenfolge wie die Dokumente in `result`".
+
+### B3 — Counter-Reset zwischen Attachment-Iterationen
+
+**Nur relevant wenn man trotzdem einen Counter behalten muss** (z.B. weil mehrere Apply_to_each parallel laufen):
+
+`Initialize variable: PDF = 0` läuft **einmal** beim Flow-Start, nicht pro Attachment. Im outer `For_each` (über Attachments) wandert der Counter-Wert in die nächste Attachment-Iteration → bei zweitem Multi-Doc-PDF läuft der Index out-of-bounds.
+
+Fix: `Set variable PDF = 0` direkt nach Beginn jeder outer-For_each-Iteration.
+
+---
+
+## Cluster C — Architektur-Falle: Add_a_new_row außerhalb innerer Loops
+
+### C1 — Multi-Iteration-Update-Override
+
+**Symptom**: User sieht in der EQ einen Status/Pfad, der nicht zur physischen Datei passt. Bei Multi-Doc-PDF sieht die EQ `Manuell` + `03_Eingang_Temp/...`, obwohl die Datei real in `02_Kunden/<Sub>/...` liegt.
+
+**Ursache**: `Add_a_new_row` läuft **außerhalb** der inneren Loops (`For_each_-_Document_in_Prompt` bzw. `Apply_to_each`) → pro Mail-Attachment gibt es **einen** EQ-Eintrag, auch wenn PDF4me daraus N Sub-Docs macht. Alle N Iterationen updaten denselben Record (`recordId = outputs('Add_a_new_row')?['body/ks_eingangsqueueid']`) — **der letzte gewinnt**.
+
+Wenn ein Anhang gemischte Klassifikations-Ergebnisse produziert (Sub-Doc 1 erfolgreich, Sub-Doc 2 fehlgeschlagen), zeigt der EQ-Eintrag am Ende den Status von Sub-Doc 2 — aber Sub-Doc 1's Datei liegt real im Kundenordner.
+
+**Fix**: `Add_a_new_row` **in den inneren Loop verschieben** → ein EQ-Eintrag pro Sub-Doc. Jede Iteration hat ihren eigenen Record, kein Override.
+
+### C2 — Status-Matrix pro Endzustand
+
+Nach C1-Fix gibt es pro Iteration vier mögliche Endzustände, also 4-5 Update-Aktionen pro Branch:
+
+| # | Klassifikations-Ergebnis | Status-Code | `ks_eq_dateipfad_manuell` | `ks_eq_fehlertext` |
+|---|---|---|---|---|
+| 1 | Deklaration-ID gefunden + in DB → Move erfolgreich | `124080001` Verarbeitet | — (leer, by design) | — |
+| 2 | Deklaration-ID gefunden, aber NICHT in DB | `124080003` Manuell | `Compose_SP_File_Path` | `"Deklaration-ID '<id>' nicht in Dataverse"` |
+| 3 | Keine ID, aber Sub-Name → Move erfolgreich | `124080001` Verarbeitet | — | — |
+| 3b | Keine ID, Sub-Name, aber Scope failed | `124080003` Manuell | `Compose_SP_File_Path` | `"Sub-Name-Verarbeitung fehlgeschlagen"` |
+| 4 | Weder ID noch Sub-Name | `124080003` Manuell | `Compose_SP_File_Path` | `"Kein Subunternehmer und keine DeklarationsID erkannt"` |
+
+Plus außerhalb der Loops bei komplettem KI-Fail:
+
+| # | Wann | Status | Notiz |
+|---|---|---|---|
+| 5 | `Parse_JSON` failed oder `result` leer | `124080002` Verarbeiten fehlgeschlagen | Separater `Add_a_new_row` mit fehlertext "KI hat weder structured noch raw output geliefert" |
+
+---
+
+## Cluster D — Single-Path statt Doppel-Branch
+
+### D1 — Doppel-Branch (structured + raw) bei nicht-deterministischem AI-Output vermeiden
+
+**Symptom**: Custom Prompts liefern mal `structuredOutput`, mal nur `text`. Der ursprüngliche Flow hatte zwei parallele Branches — strukturell identisch, aber doppelt zu pflegen.
+
+**Fix**: Den **Lowest-Common-Denominator** wählen — bei AI Builder Custom Prompts ist das immer `predictionOutput/text` (= roher LLM-Output, immer gefüllt). Über `Parse_JSON` aus dem text-Feld bekommt man identische Daten, egal ob structured kam oder nicht.
+
+Vorteile:
+- Bug-Surface halbiert
+- Single-Path-Diagnose statt verzweigt
+- Multi-Iteration-Override-Risiko (Cluster C) bleibt strukturell unter Kontrolle
+- Alle `_1`, `_V2_1`, `_3_3` Duplikate kollabieren auf eine Version
+
+Voraussetzung: **Parse_JSON-Härtung** — siehe [[50.work/power-platform/ai-prompt-json-output]]:
+- Prompt schreibt „NUR JSON, kein Markdown-Fence, kein Erklärtext"
+- Cleanup-Compose vor Parse_JSON: extrahiert Substring zwischen erstem `{` und letztem `}` (fängt Präambeln und Trailing-Whitespace ab)
+- Schema mit `["string", "null"]` für alle optionalen Felder
+
+---
+
+## Cluster E — SharePoint-Identifier-Verwirrung
+
+### E1 — Drei verschiedene IDs aus Create_file
+
+SharePoint Create_file Output enthält drei verschiedene Identifier, die verschiedene nachgelagerte Connector-Calls erwarten:
+
+| Feld | Beispiel | Wofür |
+|---|---|---|
+| `body/Id` | `%252fFreigegebene%2bDokumente%252f03_Eingang_Temp%252fdatei.pdf` | URL-encoded File-Identifier — für `Move_file.sourceFileId` |
+| `body/ItemId` | `630` | Numerische SP Item-ID — für Dataverse-Lookups, REST APIs |
+| `body/Path` | `/Freigegebene Dokumente/03_Eingang_Temp/datei.pdf` | Lesbarer Pfad — für Display, `ks_eq_dateipfad_manuell` |
+
+**Pattern**: nach Create_file drei Compose-Bridges, die per `iterationIndexes` oder Condition den richtigen Wert liefern. Folge-Actions referenzieren die Composes, nicht die Create_file-Outputs direkt — das macht den Wechsel zwischen mehreren Create_file Branches transparent.
+
+### E2 — Move vs. Create-File-Output für Dataverse
+
+| Folge-Action | Feld | Quelle |
+|---|---|---|
+| `Move_file` | `sourceFileId` | `Compose_SP_File_Id` (URL-encoded vom Create_file) |
+| `Update_a_row` mapped via ID (Deklaration) | `ks_antwort_sp_id` | `outputs('Move_file_X')?['body/ItemId']` (nach Move!) |
+| `Update_a_row` mapped via ID (Deklaration) | `ks_antwort_sp_pfad` | `outputs('Move_file_X')?['body/Path']` (NEUER Pfad nach Move) |
+| `Update_a_row` EQ Manuell-Pfade | `ks_eq_dateipfad_manuell` | `Compose_SP_File_Path` (Initial-Pfad in 03_Eingang_Temp, kein Move) |
+
+ItemId bleibt typischerweise stabil beim Move innerhalb derselben SP-Library, aber **`body/Path` ändert sich** beim Move. Im Erfolgsfall die Move-Outputs nehmen — sicherer und semantisch korrekt.
+
+---
+
+## Cluster F — Pfad-Sync (Latente Risiken)
+
+### F1 — Move-Destination via `split('/K20')[0]`
+
+**Symptom**: Aktuell funktioniert es, könnte aber zukünftig brechen.
+
+```
+"destinationFolderPath": "@split(items('For_each')?['ks_versendet_sp_pfad'], '/K20')[0]"
+```
+
+Bricht:
+- Beim Jahres-Wechsel auf K27 (2027) — splittet plötzlich an einer Stelle, die nicht existiert
+- Bei Pfaden ohne `/K20` — gibt ganzen Pfad zurück, Move ins Leere
+- Wenn `ks_versendet_sp_pfad` stale ist (Vorjahres-Auftrag) — falsches Ziel
+
+**Fix**: Subunternehmer-Folder-Lookup. Expliziter `Get_a_row_by_ID` auf `crb4b_subunternehmers` mit einer Spalte `ks_root_folder` (= `/02_Kunden/<Sub>/`). Auftrag-Sub-Folder kommt aus dem Auftrag-Lookup.
+
+### F2 — `ks_eq_attachmenthash` ist kein Hash
 
 ```
 "item/ks_eq_attachmenthash": "@item()?['contentType']"
 ```
 
-Schreibt `application/pdf` ins Hash-Feld. Wer auf Hash-Basis dedupen will (gleicher Anhang, andere MailID), hat hier nichts.
+Schreibt MIME-Type (`application/pdf`) ins Hash-Feld. Kosmetisch, aber irreführend bei Debug — und blockiert echten Content-Hash-Dedup (z.B. für Forwards/Re-Delivery mit unterschiedlichen MessageIDs).
 
-## Lösung
-
-### Cluster A
-
-**A1 — Counter-Reset am Anfang jeder äußeren Iteration:**
-
-Direkt nach `Add_a_new_row` (also für jedes Mail-Attachment einmal) einen `Set variable PDF = 0` einbauen. Sonst wandert der Index in die nächste Attachment-Iteration.
-
-**A2 — Create_file body explizit dekodieren:**
-
+**Fix**: Echten Hash schreiben oder Feld umbenennen:
 ```
-"body": "@base64ToBinary(
-  if(
-    greater(length(outputs('Run_a_prompt')?['body/responsev2/predictionOutput/structuredOutput/result']), 1),
-    variables('File Content'),
-    base64(string(variables('File Content Binary')))
-  )
-)"
-```
-
-Sauberer: beide Variablen als `type: string` (base64) halten, am Create_file einmal `base64ToBinary()`.
-
-**A3 — Diagnostik vor jedem Create_file:**
-
-Compose-Steps mit:
-
-| Compose | Wert | Erwartet |
-|---|---|---|
-| `DEBUG_length` | `length(<file content expr>)` | ~30k+ für mehrseitige PDFs |
-| `DEBUG_head` | `substring(<expr>, 0, 8)` | `JVBERi0x` (base64-PDF) oder `%PDF-1.x` (binary) |
-
-Wenn `head` etwas anderes ist → Variable ist null/leer/falsch befüllt.
-
-### Cluster B
-
-**B1 — EQ-Eintrag pro Sub-Doc, nicht pro Mail-Attachment:**
-
-`Add_a_new_row` in den inneren Loop (`For_each_-_Document_in_Prompt` bzw. `Apply_to_each`) verschieben — direkt vor `Create_file_-_in_03_temp`. Dann hat jedes Sub-Doc seinen eigenen EQ-Eintrag mit eigenem Status und eigenem Pfad. Kein Override-Problem mehr.
-
-Erforderliche Anpassungen:
-- Initiale Felder (`ks_eq_attachmentname`, `ks_eq_mailid`, `ks_eq_erstellt_am`) bleiben gleich pro Iteration; `ks_eq_attachmentname` ergänzen um den Split-Suffix.
-- Den **initialen** EQ-Eintrag (vom alten `Add_a_new_row` außerhalb) entweder weglassen oder am Ende des Scopes löschen (falls die Power App ihn als „in Verarbeitung"-Indicator anzeigt — dann lieber Status auf `Aufgeteilt` setzen und die Sub-Doc-Einträge als Kinder per Lookup verknüpfen).
-
-**B2 — Content-Hash für Cross-Mail-Dedup:**
-
-Vor `Add_a_new_row` zusätzlich zur (jetzt: optionalen) MessageID-Prüfung einen Content-Hash-Lookup:
-
-```
-Compose_content_hash: @{base64(sha256(item()?['contentBytes']))}
-
-List_rows
-  entityName: ks_eingangsqueues
-  $filter: ks_eq_attachmenthash eq '@{outputs('Compose_content_hash')}'
-  $top: 1
-```
-
-Wenn Treffer → Mail wurde inhaltlich schon mal verarbeitet (Forward, Re-Delivery mit neuer MessageID) → Terminate oder Verknüpfung statt Neu-Verarbeitung. Setzt voraus, dass `ks_eq_attachmenthash` echte Hashes enthält (siehe Cluster C).
-
-**B3 — Move-Destination via Lookup, nicht via `split`:**
-
-Statt aus `ks_versendet_sp_pfad` einer Deklaration zu splitten: expliziter `Get_a_row_by_ID` auf die Subunternehmer-Entity, mit einer Spalte `ks_root_folder` (= `/02_Kunden/<Sub>/`). Der Auftrag-Sub-Folder kommt aus dem Auftrag-Lookup. Robust gegen Jahres-Wechsel und Strukturänderungen.
-
-### Cluster C
-
-**C1 — Echten Hash schreiben oder Feld umbenennen:**
-
-```
-// Variante 1: Hash für Inhalts-Dedup
 "item/ks_eq_attachmenthash": "@{base64(sha256(item()?['contentBytes']))}"
-
-// Variante 2: Feld umbenennen zu ks_eq_contenttype
 ```
 
-Mit echtem Hash wird inhalts-basierte Dedup möglich (gleicher Anhang, andere MessageID — auch nützlich gegen Re-Delivery, falls B1 mal Subject-statt-MessageID nimmt).
+---
 
 ## Diagnose-Reihenfolge bei Bug-Report
 
-Wenn der Report lautet „Datei nicht da wo der EQ-Eintrag sagt" oder „PDF ist leer":
+Wenn der Report lautet „Datei nicht da wo der EQ-Eintrag sagt", „PDF ist leer", oder „Filename passt nicht zum Inhalt":
 
-1. **Multi-Doc-Check für den betroffenen Anhang:**
-   Ist `length(structuredOutput/result)` (bzw. `Parse_JSON?['result']`) der Klassifikations-Antwort > 1? Wenn ja → Multi-Iteration-Override (Cluster B1) ist sehr wahrscheinlich. Hat der Flow-Run mehrere `Update_a_row`-Calls auf dieselbe `ks_eingangsqueueid` gemacht? Letzter überschreibt vorherige.
-2. **Dataverse-Query auf `ks_eq_mailid`** des betroffenen Eintrags → wie viele Treffer? `>1` würde Re-Trigger oder mehrfache Verarbeitung der gleichen MessageID anzeigen (selten, aber prüfen).
-3. **Content-Hash-Check** für Cross-Mail-Dedup: gibt es weitere EQ-Einträge mit demselben Anhangsnamen oder ähnlicher Größe und gleicher Zeitspanne? → Cluster B2 (Forward / Re-Delivery mit neuer MessageID).
-4. **`ks_deklarationens` mit `ks_antwort_sp_pfad like '%<filename>%'`** → wenn Treffer → Datei wurde gemoved (einer der Move-Branches hat zugeschlagen, EQ wurde überschrieben).
-5. **File-Size-Vergleich** Original-Anhang ↔ SharePoint-Datei →
-   - identisch → eher Pfad-/Verwirrungs-Problem (Cluster B)
-   - deutlich kleiner / ähnliche Header → Encoding-Bug (Cluster A2)
-   - 0 Bytes / Default-Größe → Variable war null (Cluster A1: Counter-Bug)
+1. **EF-BF-BD-Check für leere PDFs**: `pdftotext <file>` ausführen. Wenn `Illegal character <ef> <bf> <bd> in hex string` und `Bad FCHECK in flate stream` → **Cluster A2** (Variable-Roundtrip mit Binary-Damage). Variablen für Content rauswerfen.
+2. **`null`-Body-Check für 4-Byte-Files**: `xxd <file>` ausführen. Wenn `6e75 6c6c` (= „null") → **Cluster B1** (falsche Loop-Reference). `items('For_each')` statt `items('Apply_to_each')` verwenden.
+3. **Filename-Content-Mismatch**: wenn ein PDF öffnet aber den falschen Inhalt zeigt, plus ein anderes File ist kaputt → **Cluster B2** (Counter Off-by-One). `iterationIndexes('Apply_to_each')` statt manuellem Counter.
+4. **Pfad-vs-Lage-Diskrepanz** ohne der obigen Symptome: **Cluster C1** (Multi-Iteration-Override). Add_a_new_row in den inneren Loop verschieben.
+5. **EQ-Eintrag fehlt komplett**: wahrscheinlich Parse_JSON gescheitert → Failure-Branch fehlt. Cluster C2 Punkt 5 einbauen.
+6. **Multi-Doc-Check als Sanity**: ist `length(Parse_JSON?['result'])` > 1? Dann mehr Diagnostik nötig, weil mehrere Iterationen interagieren.
+
+---
+
+## Test-Setup für Mail-Attachment-Pipeline
+
+Minimum-Test-Suite, die alle Cluster abdeckt:
+
+| Test-Mail | Anhänge | Was getestet wird |
+|---|---|---|
+| (1) Single PDF (1 Sub-Doc) | 1 PDF, 1-5 Seiten | Single-Doc-Branch, Apply_to_each mit 1 Iteration |
+| (2) Multi-PDF (1 Anhang, 2 Sub-Docs) | 1 PDF, 6-15 Seiten | Multi-Doc-Branch, PDF4me-Split, iterationIndexes |
+| (3) Multi-Attachment | 2-3 PDFs | Counter-Reset im outer For_each, items('For_each')-Reference |
+| (4) Mixed | 1 PDF Single + 1 PDF Multi-Doc | Beide Branches in einem Run, Variable-State zwischen Iterationen |
+| (5) PNG | 1 PNG | PNG-Filter |
+| (6) Korrupte/leere PDF | 1 leeres PDF | Failure-Branch (Parse_JSON failed) |
+
+Pro Test verifizieren:
+- Anzahl EQ-Einträge stimmt mit Anzahl Sub-Docs
+- Jede SP-Datei öffnet sich als gültiges PDF
+- Filename und Inhalt passen zusammen
+- EQ-Pfad zeigt auf die echte Datei (bei Manuell-Status) bzw. ist leer (bei Verarbeitet-Status)
+- Bei Multi-Doc: kein Update-Override zwischen Iterationen
+
+---
 
 ## Wann nicht relevant
 
-- **Nur ein Eingangs-Mail-Postfach pro Mandant, keine Forwards**: dann ist Cluster B1 (Duplicate-Detection) optional. Trotzdem empfehlenswert als Defense-in-Depth.
-- **Wenn kein PDF-Split nötig** (jeder Anhang = ein Dokument): dann reicht eine einzige `File Content`-Variable als `type: string` mit dem base64 direkt aus `item()?['contentBytes']`. Kein Counter, kein Cluster A1.
-- **Wenn der KI-Output deterministisch structured ist** (z.B. AI Builder Classification statt Custom Prompt): dann fällt der gesamte Raw-Text-Fallback-Branch weg → das Doppel-Branch-Pattern (For_each_-_Document_in_Prompt vs. Apply_to_each) verschwindet → weniger Stellen, wo Cluster A zuschlagen kann.
+- **Single-Path-Flows ohne KI-Klassifikation** (z.B. „Mail-Anhang direkt in SharePoint speichern"): kein Loop, kein Counter, keine Variable nötig. `Create_file` body direkt mit `@triggerOutputs()?['body/attachments'][0]?['contentBytes']`.
+- **Wenn der KI-Output deterministisch structured ist** (z.B. AI Builder Classification statt Custom Prompt): kein Doppel-Branch-Pattern nötig (Cluster D entfällt).
+- **Wenn keine Multi-Doc-PDFs vorkommen**: kein PDF4me-Split, kein Counter (Cluster B2/B3 entfällt).
+- **Wenn nur ein Anhang pro Mail garantiert ist**: kein outer `For_each` über Attachments → einige Bug-Klassen entfallen, aber das Pattern für Architektur (Add_a_new_row pro Sub-Doc) bleibt.
+
+---
+
+## Trigger-Case 2026-06-05 — Was real bestätigt wurde
+
+Im Koster-Subunternehmer-Flow 02:
+- **Cluster A2 bestätigt** durch `EF BF BD` in `pdftotext`-Output der gesplitteten PDFs → Variablen für Content entfernt
+- **Cluster B1 bestätigt** durch 4-Byte `null`-File beim Single-Doc → `items('For_each')` Reference-Fix
+- **Cluster B2 bestätigt** durch RV-Content mit MINARB-Filename + kaputte zweite Split-Datei → `iterationIndexes` statt manuellem Counter
+- **Cluster C1 bestätigt** durch Multi-Doc-PDF mit gemischten Klassifikations-Ergebnissen → Add_a_new_row im inneren Loop
+- **Cluster D umgesetzt** (Doppel-Branch entfernt, nur noch raw-text-path)
+- **Cluster A1 bestätigt** als realer Bug — `@{...}` war im Designer wirklich da, kein Export-Artefakt
+
+Was als latent identifiziert wurde aber nicht akut war:
+- **Cluster F1**: `split('/K20')` läuft, wird aber beim Jahres-Wechsel auf K27 brechen
+- **Cluster F2**: `attachmenthash` schreibt MIME-Type statt Hash
+
+---
 
 ## Verwandt
 
 - [[50.work/projekte/Koster-AG/Subunternehmerprozess-Koster|Subunternehmerprozess Koster]] — Trigger-Case
-- [[50.work/power-platform/ai-prompt-json-output|AI Builder Prompts — JSON-Output]] — warum der Custom Prompt mal structured, mal raw liefert
-- [[50.work/power-platform/power-automate-string-expressions|String-Expressions & Locale-Fallen]] — Pfad-Split-Patterns mit `split()`/`indexOf`
+- [[50.work/power-platform/power-automate-variable-binary-damage|Power Automate Variable Binary Damage]] — universelles Pattern, abgeleitet aus Cluster A2
+- [[50.work/power-platform/ai-builder-doppel-branch-vermeiden|AI Builder — Doppel-Branch vermeiden]] — universelles Pattern, abgeleitet aus Cluster D
+- [[50.work/power-platform/ai-prompt-json-output|AI Builder Prompts — JSON-Output]] — Prompt-Härtung für Parse_JSON-Robustheit
+- [[50.work/power-platform/power-automate-string-expressions|String-Expressions & Locale-Fallen]] — Pfad-Split-Patterns
 - [[50.work/power-platform/sharepoint-berechtigung-flow-save|SharePoint-Berechtigung als Save-Voraussetzung]] — verwandtes Symptom „File scheinbar nicht da"
 - [[50.work/power-platform/_README|Power Platform Pattern-Bibliothek]]
