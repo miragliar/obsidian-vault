@@ -4,6 +4,20 @@
   "title": "Summarize email about Azure app toolkit update",
   "titleGenerationStatus": "success",
   "createdAt": 1780640295029,
-  "updatedAt": 1780640299266,
-  "sessionId": null
+  "updatedAt": 1780642640256,
+  "lastResponseAt": 1780642640256,
+  "sessionId": "146c9c86-67cc-490b-ae1d-fe08b5739d52",
+  "providerState": {
+    "providerSessionId": "146c9c86-67cc-490b-ae1d-fe08b5739d52"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 2212,
+    "cacheReadInputTokens": 176499,
+    "contextWindow": 1000000,
+    "contextTokens": 178712,
+    "percentage": 18,
+    "contextWindowIsAuthoritative": true
+  }
 }

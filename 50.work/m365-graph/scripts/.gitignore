@@ -1,9 +1,14 @@
 # Local token cache — bleibt lokal, niemals committen
-.token_cache.bin
+# Glob deckt .token_cache.bin und .token_cache.bin.legacy ab.
+.token_cache.bin*
 
 # Output-JSONs enthalten echte Mail- & Chat-Inhalte — Privatsphäre
 mail_digest.json
 teams_digest.json
+mail_summaries*.json
+teams_summaries*.json
+firmenprofile.json
+batch_export.log
 
 # Python venv
 .venv/
@@ -13,3 +18,7 @@ __pycache__/
 # Environment variables (falls als .env gespeichert)
 .env
 .env.local
+
+# v2-Staging und alte Backups
+_staging-v2/
+*.v1.*.bak
