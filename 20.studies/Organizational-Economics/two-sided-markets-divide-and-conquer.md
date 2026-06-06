@@ -1,11 +1,14 @@
 ---
-source: claude-import
+source: claude-import + 2026-06-06 notes
 imported: 2026-06-01
+updated: 2026-06-06
 conv_uuids: [c64ee9d8-3770-4fe2-9111-0851866733df, e4dd2cab-a348-4a94-a9a2-57fd4c6a0174, c7dfb788-465f-421f-8e0c-1171cb2ca585, 7168948c-3faa-41d2-abf1-7c6124bd9495]
 tags: [organizational-economics, two-sided-markets, hotelling, pricing, divide-and-conquer]
 ---
 
 # Two-Sided Markets — Pricing, Divide-and-Conquer, Hotelling
+
+> **2026-06-06 Note:** Diese Notiz deckt die *grundlegende* Modell-Logik von Set 2 (Hotelling) und Set 3 (D&C). Für **Schritt-für-Schritt-Rezepte** zu jeder Aufgabe → siehe [[20.studies/Organizational-Economics/problem-set-recipes]]. Für die **ökonomische Intuition** → siehe [[20.studies/Organizational-Economics/intuitionen-und-mechanismen]].
 
 ## Problem
 

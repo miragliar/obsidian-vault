@@ -1,6 +1,7 @@
 ---
-source: claude-import
+source: claude-import + 2026-06-06 updates
 imported: 2026-06-01
+updated: 2026-06-06
 type: conversation-index
 tags: [index, organizational-economics]
 ---
@@ -8,6 +9,26 @@ tags: [index, organizational-economics]
 # Organizational Economics — Conversation-Index
 
 Alle 14 Conversations aus dem Kurs ME 3 (Aguiar, UZH), Prüfung 19.6.
+
+## 2026-06-06 — Major Knowledge Update (aus VL Slides + Exercise Sets)
+
+Quelle: Externe Files in `Dropbox/UZH/.../FS26/Organizational Economics/`:
+- `One Note Exports/` (alle 5 VL-Sections, 1–2 Parts je Section)
+- `Tutorials/` mit Exercise Sets 1–4 und Solutions
+- `ZF/` mit Section-Summaries
+
+Neue Notizen:
+
+| Notiz | Zweck |
+|---|---|
+| `intuitionen-und-mechanismen` | Story hinter den Modellen; Roter-Faden-Übersicht |
+| `problem-set-recipes` | Schritt-für-Schritt für jeden Übungstyp |
+| `formelsammlung-cheatsheet` | Alle Formeln, Komparative Statik |
+| `section3-launching-platforms` | VL Section 3 Deep Dive |
+| `section4-pricing-disintermediation` | VL Section 4 Deep Dive |
+| `section5-ratings-reviews` | VL Section 5 Deep Dive |
+
+## Vorherige Conversations
 
 | msgs | Datum | Titel | Pattern |
 |---:|---|---|---|
