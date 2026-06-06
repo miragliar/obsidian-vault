@@ -20,8 +20,9 @@ Für die Klausur-Vorbereitung in dieser Reihenfolge durcharbeiten:
 
 1. **[[20.studies/Organizational-Economics/intuitionen-und-mechanismen|🧠 Intuitionen und Mechanismen]]** — die *Story* hinter allen Modellen. Lies das ZUERST.
 2. **[[20.studies/Organizational-Economics/problem-set-recipes|📝 Problem-Set Recipes]]** — "Wenn die Aufgabe X fragt, mach Y." Step-by-step für jedes Exercise-Set.
-3. **[[20.studies/Organizational-Economics/formelsammlung-cheatsheet|🔢 Formelsammlung Cheatsheet]]** — alle Formeln auf einen Blick.
-4. **[[20.studies/Organizational-Economics/lernstrategie-pruefung-19-juni|📅 Lernstrategie 19. Juni]]** — 3-Phasen-Plan, NotebookLM-Prompts.
+3. **[[20.studies/Organizational-Economics/paper-tables-guide|📊 Paper-Tables-Guide]]** — Wie liest man empirische Tabellen (DiD, RDD, IV, FE, RCT) + Prozent vs. Prozentpunkte + Log vs. Levels.
+4. **[[20.studies/Organizational-Economics/formelsammlung-cheatsheet|🔢 Formelsammlung Cheatsheet]]** — alle Formeln auf einen Blick.
+5. **[[20.studies/Organizational-Economics/lernstrategie-pruefung-19-juni|📅 Lernstrategie 19. Juni]]** — 3-Phasen-Plan, NotebookLM-Prompts.
 
 ---
 
@@ -29,12 +30,16 @@ Für die Klausur-Vorbereitung in dieser Reihenfolge durcharbeiten:
 
 | Section | Inhalt | Notiz |
 |---|---|---|
-| 1 | Plattformen-Definition, Network Effects-Taxonomie, Typologie | [[20.studies/Organizational-Economics/plattformen-network-effects]] |
-| 2 (a) | Demand für 1 Network Good (Set 1) | siehe [[20.studies/Organizational-Economics/problem-set-recipes#SET 1 — One-Sided Platform mit WGNE\|Problem Set 1 Rezept]] |
-| 2 (b) | Plattform-Wettbewerb (Hotelling, Set 2) | [[20.studies/Organizational-Economics/two-sided-markets-divide-and-conquer]] (deckt Hotelling + D&C) |
+| 1 | Plattformen-Definition, Network Effects-Taxonomie, Typologie | [[20.studies/Organizational-Economics/section1-platforms-foundations]] |
+| 2 | Demand für Network Goods, Hotelling-Wettbewerb, Compatibility, Defensibility, Data NE | [[20.studies/Organizational-Economics/section2-demand-competition]] |
 | 3 | Launching: Chicken-and-Egg, D&C, Seeding (Set 3) | [[20.studies/Organizational-Economics/section3-launching-platforms]] |
 | 4 | Pricing & Disintermediation (Set 4) | [[20.studies/Organizational-Economics/section4-pricing-disintermediation]] |
 | 5 | Ratings & Reviews, Reputation | [[20.studies/Organizational-Economics/section5-ratings-reviews]] |
+
+### Komplementäre Notizen
+
+- [[20.studies/Organizational-Economics/plattformen-network-effects]] — Ergänzende WGNE/CGNE-Details aus früheren Sessions
+- [[20.studies/Organizational-Economics/two-sided-markets-divide-and-conquer]] — Ergänzende Hotelling- und D&C-Modell-Details aus früheren Sessions
 
 ---
 
@@ -111,16 +116,19 @@ Für die Klausur-Vorbereitung in dieser Reihenfolge durcharbeiten:
 
 ## 🧭 Letzte Update-Info (2026-06-06)
 
-**Neu erstellt:**
+**Neu erstellt (2026-06-06):**
 - `intuitionen-und-mechanismen.md` — die zentrale Lern-Story
 - `problem-set-recipes.md` — Schritt-für-Schritt-Rezepte für jeden Exercise-Typ
 - `formelsammlung-cheatsheet.md` — komplette Formel-Referenz
+- `paper-tables-guide.md` — Wie liest man empirische Result-Tabellen (DiD, RDD, IV, FE, RCT)
+- `section1-platforms-foundations.md` — VL Section 1 Deep Dive
+- `section2-demand-competition.md` — VL Section 2 Deep Dive (inkl. Defensibility & Data NE)
 - `section3-launching-platforms.md` — VL Section 3 Deep Dive
 - `section4-pricing-disintermediation.md` — VL Section 4 Deep Dive
 - `section5-ratings-reviews.md` — VL Section 5 Deep Dive
 
-**Beibehalten (decken VL Sections 1–2 ab):**
-- `plattformen-network-effects.md` — Section 1 Definitionen und Taxonomie
-- `two-sided-markets-divide-and-conquer.md` — Sections 2–3 Modelle (Hotelling + D&C)
+**Beibehalten (ergänzend zu den neuen Deep-Dives):**
+- `plattformen-network-effects.md` — frühere Session-Notizen zu Network Effects
+- `two-sided-markets-divide-and-conquer.md` — frühere Session-Notizen zu Hotelling + D&C
 - `identifikationsstrategien.md` — Methoden für Paper-Analysen
 - `lernstrategie-pruefung-19-juni.md` — Lern-Plan
