@@ -4,20 +4,20 @@
   "title": "Update Organizational Economics knowledge base",
   "titleGenerationStatus": "success",
   "createdAt": 1780737140552,
-  "updatedAt": 1780821448223,
-  "lastResponseAt": 1780821448223,
+  "updatedAt": 1780822191865,
+  "lastResponseAt": 1780822191865,
   "sessionId": "3e60be32-b706-411a-9731-291446dd89d3",
   "providerState": {
     "providerSessionId": "3e60be32-b706-411a-9731-291446dd89d3"
   },
   "usage": {
     "model": "opus",
-    "inputTokens": 6,
-    "cacheCreationInputTokens": 1939,
-    "cacheReadInputTokens": 449517,
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 457,
+    "cacheReadInputTokens": 478257,
     "contextWindow": 1000000,
-    "contextTokens": 451462,
-    "percentage": 45,
+    "contextTokens": 478715,
+    "percentage": 48,
     "contextWindowIsAuthoritative": true
   }
 }

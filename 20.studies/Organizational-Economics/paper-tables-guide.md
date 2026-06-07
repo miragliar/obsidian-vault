@@ -213,15 +213,32 @@ Y_it = α + β₁·Treat_i + β₂·Post_t + β₃·(Treat_i × Post_t) + ε_it
 
 → Die **Interaktion** ist das, was zählt. Die anderen Koeffizienten sind "Bausteine", die du brauchst, um die Interaktion korrekt zu interpretieren.
 
-### Common-Trends-Annahme
+### Common-Trends-Annahme (CTA) — präzise
 
-DiD basiert auf der Annahme: **Ohne Treatment hätten beide Gruppen parallel verlaufen**.
+**Die Annahme** (was DiD verlangt):
+> In Abwesenheit des Treatments hätten Treatment- und Control-Gruppe **parallele counterfactual post-treatment Trends** gehabt.
+
+→ Das ist eine **counterfactual** Annahme — sie ist per Definition **nicht direkt testbar**, weil wir die hypothetische Welt "Treated ohne Treatment in der Post-Phase" nie sehen.
+
+**Der Test** (was man empirisch prüfen kann):
+> **Parallel pre-trends** — vor dem Treatment liefen beide Gruppen parallel.
+
+→ **Notwendige, aber nicht hinreichende** Bedingung. Suggestive Evidenz für die CTA, kein Beweis.
 
 In Tabellen sieht man das oft als:
-- Pre-Trends-Test
-- Event-Study-Plots (Lead-Lag-Coefficients vor Treatment alle ~0)
+- **Pre-Trends-Test** (Tabellen-Zeile oder F-Test)
+- **Event-Study-Plots** (Lead-Lag-Coefficients vor Treatment alle ~0)
+- **Placebo-Tests** (fake Treatment-Datum, kein Effekt erwartet)
 
-**Wenn das nicht erfüllt ist → DiD bricht zusammen.**
+**Wenn die Pre-Trends nicht parallel sind → DiD ist verdächtig** (CTA wahrscheinlich verletzt). Aber: auch wenn Pre-Trends parallel sind, **garantiert das nicht** die Post-CTA — zusätzliche ökonomische Argumentation nötig.
+
+### Die zwei Differenzen — woher der Name kommt
+
+Die "Difference-in-Differences" sind:
+1. **Über Zeit:** ΔT = Y_T,post − Y_T,pre und ΔC = Y_C,post − Y_C,pre
+2. **Zwischen Gruppen:** DiD = ΔT − ΔC
+
+Die kausale Story: Wir vergleichen die **actual** Treated-Trajektorie mit der **counterfactual** Treated-Trajektorie. Der Counterfactual wird gebaut als `Y_T,pre + ΔC` — wir nutzen Control's Trend als Proxy.
 
 ### Event-Study-Tabellen
 

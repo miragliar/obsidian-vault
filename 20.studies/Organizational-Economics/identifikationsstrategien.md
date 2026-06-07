@@ -76,19 +76,55 @@ $$
 
 → δ ist der Treatment-Effekt.
 
-**Common-Trends-Annahme:** In Abwesenheit des Treatments hätten Treatment- und Control-Gruppe **parallele** Trends. Nicht die *Niveaus*, sondern die *Trends*.
+### Die zwei Differenzen (Mechanik des Namens)
+
+DiD heißt wörtlich "Difference-in-Differences" — zwei Differenzen werden gebildet:
+
+|  | **Pre** | **Post** | **1. Diff (Post − Pre)** |
+|---|---|---|---|
+| **Treated** | Y_T,pre | Y_T,post | ΔT |
+| **Control** | Y_C,pre | Y_C,post | ΔC |
+
+**2. Differenz** = `DiD = ΔT − ΔC` (mathematisch equivalent zu `(Y_T,post − Y_C,post) − (Y_T,pre − Y_C,pre)`).
+
+### Kausale Interpretation (was wir eigentlich vergleichen)
+
+Der DiD-Schätzer misst:
+```
+DiD = Y_T,post (actual) − Y_T,post (counterfactual)
+```
+- **Y_T,post(actual)** = beobachtete Treated-Gruppe nach Treatment
+- **Y_T,post(counterfactual)** = `Y_T,pre + ΔC` (hypothetisch: Treated hätte den Trend der Control gefolgt)
+
+→ Die **Control-Gruppe ist das Werkzeug**, um den Counterfactual zu *bauen*, nicht das, womit verglichen wird.
+
+### Common-Trends-Annahme (CTA) — präzise
+
+**Die Annahme:** In Abwesenheit des Treatments hätten Treatment- und Control-Gruppe **parallele post-treatment Trends** gehabt (counterfactual). → Nicht direkt testbar (counterfactual).
+
+**Der Test:** **Parallel pre-trends** prüfen (vor dem Treatment). Notwendige, aber **nicht hinreichende** Bedingung. Parallele Pre-Trends sind suggestive Evidenz für die CTA, **kein Beweis**.
+
+**Was du in der Klausur sagen solltest:**
+
+| Frage | Korrekte Antwort |
+|---|---|
+| "Was ist die DiD-Annahme?" | Parallel **counterfactual post-trends** (nicht direkt prüfbar) |
+| "Wie testet man DiD?" | Parallel **pre-trends** im Event-Study (indirekte Evidenz) + Placebo-Tests |
 
 **Tests/Robustness:**
 
-- Pre-Treatment-Trends visualisieren (Event Study, Leads + Lags)
-- Placebo-Tests (fake Treatment-Datum)
-- Synthetic Control als Alternative
+- **Event Study** (Pre-Trends visualisieren mit Leads + Lags, alle ~0 vor Treatment)
+- **Placebo-Tests** (fake Treatment-Datum, sollte keinen Effekt zeigen)
+- **Synthetic Control** als Alternative für kleine Treatment-Gruppen
+- **Robustness gegen alternative Specifications** (FE-Variationen, Sub-Samples)
 
 **Verbreitete Distraktoren:**
 
 - „DiD verlangt gleiche Niveaus vor Treatment" — Nein, nur parallele Trends
+- „Parallele Pre-Trends ⇒ DiD valide" — Nein! Pre-Trends sind notwendig, nicht hinreichend. Die eigentliche Annahme ist über *counterfactual* post-trends.
 - „Wenn Trends im Plot parallel aussehen, ist es OK" — visuell ≠ statistisch (CIs!)
-- „DiD funktioniert immer wenn Pre-Post-Daten da sind" — Anticipation, Spillover, differential trends können brechen
+- „DiD funktioniert immer wenn Pre-Post-Daten da sind" — Anticipation, Spillover, differential post-treatment trends können brechen
+- „Wir vergleichen Treated mit Control" — kausal vergleichen wir Treated *actual* mit Treated *counterfactual*
 
 **Seamans & Zhu (Klausur-relevantes Paper):** Klassisches 2×2-DiD, oft mit log-spezifizierten Outcomes → Koeffizient β interpretieren als „treatment führt zu (e^β − 1) × 100 % Veränderung", grob ≈ β·100 % für kleine β.
 
