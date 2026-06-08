@@ -9,6 +9,9 @@ mail_summaries*.json
 teams_summaries*.json
 firmenprofile.json
 batch_export.log
+ppweekly_digest.json
+ppweekly_analysis.json
+ppweekly_releases.json
 
 # Python venv
 .venv/

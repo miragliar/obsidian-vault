@@ -4,8 +4,8 @@
   "title": "Analyze Power Platform newsletters and create n...",
   "titleGenerationStatus": "success",
   "createdAt": 1780910458992,
-  "updatedAt": 1780910527514,
-  "lastResponseAt": 1780910527514,
+  "updatedAt": 1780912230287,
+  "lastResponseAt": 1780912230287,
   "sessionId": "530d3cfa-a23f-4e66-ada1-6a0a97bb99f1",
   "providerState": {
     "providerSessionId": "530d3cfa-a23f-4e66-ada1-6a0a97bb99f1"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 416,
-    "cacheReadInputTokens": 28266,
+    "cacheCreationInputTokens": 609,
+    "cacheReadInputTokens": 128932,
     "contextWindow": 1000000,
-    "contextTokens": 28683,
-    "percentage": 3,
+    "contextTokens": 129542,
+    "percentage": 13,
     "contextWindowIsAuthoritative": true
   }
 }

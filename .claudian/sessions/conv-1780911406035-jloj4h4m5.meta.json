@@ -1,0 +1,23 @@
+{
+  "id": "conv-1780911406035-jloj4h4m5",
+  "providerId": "claude",
+  "title": "Audit Regie app and flows for weaknesses",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780911406035,
+  "updatedAt": 1780912349521,
+  "lastResponseAt": 1780912349521,
+  "sessionId": "baf4a5a6-52ca-40ff-b757-a1f245f8e42a",
+  "providerState": {
+    "providerSessionId": "baf4a5a6-52ca-40ff-b757-a1f245f8e42a"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 131,
+    "cacheReadInputTokens": 259160,
+    "contextWindow": 1000000,
+    "contextTokens": 259292,
+    "percentage": 26,
+    "contextWindowIsAuthoritative": true
+  }
+}
