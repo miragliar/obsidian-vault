@@ -4,8 +4,8 @@
   "title": "Debug Dataverse file path mismatch in SharePoin...",
   "titleGenerationStatus": "success",
   "createdAt": 1780650371191,
-  "updatedAt": 1780899168737,
-  "lastResponseAt": 1780899168736,
+  "updatedAt": 1780909281692,
+  "lastResponseAt": 1780909281692,
   "sessionId": "e874c80a-55e0-4795-bfd6-d1c7e1a7f559",
   "providerState": {
     "providerSessionId": "e874c80a-55e0-4795-bfd6-d1c7e1a7f559"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 1764,
-    "cacheReadInputTokens": 418242,
+    "cacheCreationInputTokens": 5813,
+    "cacheReadInputTokens": 430405,
     "contextWindow": 1000000,
-    "contextTokens": 420007,
-    "percentage": 42,
+    "contextTokens": 436219,
+    "percentage": 44,
     "contextWindowIsAuthoritative": true
   }
 }
