@@ -13,51 +13,26 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
-import os
 import sys
 from pathlib import Path
 
-import msal
 import requests
 
-CLIENT_ID = os.environ["M365_CLIENT_ID"]
-TENANT_ID = os.environ["M365_TENANT_ID"]
-GRAPH = "https://graph.microsoft.com/v1.0"
+# Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr als
+# Klartext-.bin im Vault/Dropbox. Regel: Tokens IMMER verschlüsselt im Keystore.
+from auth_common import GRAPH, get_token as _ac_get_token
+
 SCOPES = ["User.Read", "Mail.Read"]
 SUBJECT_NEEDLE = "M365-Toolkit v2"
 SENDER_HINT = "giovanni@miraglia-bi.com"
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-CACHE_FILE = SCRIPT_DIR / ".token_cache.bin"
 STAGING = SCRIPT_DIR / "_staging-v2"
 STAGING.mkdir(exist_ok=True)
 
 
 def get_token() -> str:
-    cache = msal.SerializableTokenCache()
-    if CACHE_FILE.exists():
-        cache.deserialize(CACHE_FILE.read_text())
-    app = msal.PublicClientApplication(
-        CLIENT_ID,
-        authority=f"https://login.microsoftonline.com/{TENANT_ID}",
-        token_cache=cache,
-    )
-    result = None
-    for acc in app.get_accounts():
-        result = app.acquire_token_silent(SCOPES, account=acc)
-        if result:
-            break
-    if not result:
-        flow = app.initiate_device_flow(scopes=SCOPES)
-        if "user_code" not in flow:
-            sys.exit(f"Device-Flow fehlgeschlagen: {flow.get('error_description')}")
-        print("\n" + "=" * 60 + f"\n{flow['message']}\n" + "=" * 60 + "\n", flush=True)
-        result = app.acquire_token_by_device_flow(flow)
-    if cache.has_state_changed:
-        CACHE_FILE.write_text(cache.serialize())
-    if "access_token" not in result:
-        sys.exit(f"Login fehlgeschlagen: {result.get('error_description')}")
-    return result["access_token"]
+    return _ac_get_token(SCOPES)
 
 
 def find_message(token: str) -> dict:

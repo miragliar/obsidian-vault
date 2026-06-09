@@ -23,21 +23,19 @@ Aufruf:
   python3 draft_replies_mvm.py
 """
 import base64
-import os
 import sys
 from pathlib import Path
 from urllib.parse import quote
 
-import msal
 import requests
 
-CLIENT_ID = os.environ.get("M365_CLIENT_ID", "")
-TENANT_ID = os.environ.get("M365_TENANT_ID", "")
-GRAPH = "https://graph.microsoft.com/v1.0"
+# Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr als
+# Klartext-.bin im Vault/Dropbox. Regel: Tokens IMMER verschlüsselt im Keystore.
+from auth_common import GRAPH, get_token as _ac_get_token
+
 SCOPES = ["User.Read", "Mail.Read", "Mail.ReadWrite"]
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-CACHE_FILE = SCRIPT_DIR / ".token_cache.bin"
 LOGO_FILE = SCRIPT_DIR / "miraglia_logo.png"
 LOGO_CID = "miragliabi-logo"
 
@@ -149,35 +147,11 @@ DRAFTS = [
 ]
 
 
-# ─── Auth ─────────────────────────────────────────────────────────────
+# ─── Auth: über auth_common (Keychain), nicht mehr Klartext-.bin ─────────
 
 
 def get_token():
-    cache = msal.SerializableTokenCache()
-    if CACHE_FILE.exists():
-        cache.deserialize(CACHE_FILE.read_text())
-    app = msal.PublicClientApplication(
-        CLIENT_ID, authority=f"https://login.microsoftonline.com/{TENANT_ID}",
-        token_cache=cache,
-    )
-    result = None
-    for acc in app.get_accounts():
-        result = app.acquire_token_silent(SCOPES, account=acc)
-        if result:
-            break
-    if not result:
-        flow = app.initiate_device_flow(scopes=SCOPES)
-        if "user_code" not in flow:
-            sys.exit(f"Device-Flow fehlgeschlagen: {flow.get('error_description')}")
-        print("\n" + "=" * 60)
-        print(flow["message"])
-        print("=" * 60 + "\n", flush=True)
-        result = app.acquire_token_by_device_flow(flow)
-    if cache.has_state_changed:
-        CACHE_FILE.write_text(cache.serialize())
-    if "access_token" not in result:
-        sys.exit(f"Login fehlgeschlagen: {result.get('error_description')}")
-    return result["access_token"]
+    return _ac_get_token(SCOPES)
 
 
 # ─── Graph-Helpers ─────────────────────────────────────────────────────
@@ -310,8 +284,7 @@ def attach_inline_logo(token: str, draft_id: str, logo_bytes: bytes):
 
 
 def main():
-    if not CLIENT_ID or not TENANT_ID:
-        sys.exit("M365_CLIENT_ID / M365_TENANT_ID nicht gesetzt.")
+    # CLIENT_ID/TENANT_ID werden in auth_common.py mit Defaults + Env-Overrides geprüft.
     if not LOGO_FILE.exists():
         sys.exit(f"Logo fehlt: {LOGO_FILE}. Vorher extract_logo.py laufen lassen.")
     logo_bytes = LOGO_FILE.read_bytes()

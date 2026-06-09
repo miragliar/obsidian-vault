@@ -20,6 +20,7 @@ Einmalige Migration / Self-Test:
     ./.venv/bin/python auth_common.py --test     # nur Funktionstest (kein Device-Flow)
 """
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -53,6 +54,43 @@ def _persistence():
 def build_cache():
     """Persistenter MSAL-Token-Cache im macOS Keychain."""
     return PersistedTokenCache(_persistence())
+
+
+# --- Power BI / Multi-Tenant: pro (Kunden-)Tenant ein eigenes Keychain-Item ---
+# Damit landen Power-BI-Refresh-Tokens NICHT mehr als Klartext-.bin im
+# Dropbox-synchronisierten Vault, sondern verschlüsselt im macOS Keychain.
+_PBI_SERVICE = "MiragliaBI-PowerBI"
+
+
+def _slug(s):
+    return re.sub(r"[^a-z0-9]", "_", s.lower())
+
+
+def build_pbi_persistence(tenant):
+    """KeychainPersistence für einen Power-BI-Tenant (Account = Tenant-Slug)."""
+    _SIGNAL_DIR.mkdir(parents=True, exist_ok=True)
+    signal = _SIGNAL_DIR / f"pbi_{_slug(tenant)}.signal"
+    return KeychainPersistence(str(signal), _PBI_SERVICE, _slug(tenant))
+
+
+def build_pbi_cache(tenant):
+    """Persistenter MSAL-Token-Cache im Keychain, eindeutig pro Power-BI-Tenant."""
+    return PersistedTokenCache(build_pbi_persistence(tenant))
+
+
+def migrate_pbi_bin(tenant, script_dir):
+    """Einmalig: Alt-Cache .pbi_token_cache_<tenant>.bin → Keychain übernehmen.
+    Verifiziert den Transfer. Löscht die .bin NICHT (Aufrufer entscheidet).
+    Gibt True zurück, wenn migriert wurde, sonst False."""
+    bin_path = Path(script_dir) / f".pbi_token_cache_{_slug(tenant)}.bin"
+    if not bin_path.exists():
+        return False
+    data = bin_path.read_text()
+    persistence = build_pbi_persistence(tenant)
+    persistence.save(data)
+    if persistence.load() != data:
+        sys.exit("❌ PBI-Migration: Keychain-Inhalt ≠ Quelldatei.")
+    return True
 
 
 def build_app(cache=None):

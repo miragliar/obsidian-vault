@@ -15,20 +15,18 @@ die From-Adresse.
 Verwendet die bewährten Helpers aus draft_replies_mvm.py.
 """
 import base64
-import os
 import sys
 from pathlib import Path
 
-import msal
 import requests
 
-CLIENT_ID = os.environ.get("M365_CLIENT_ID", "")
-TENANT_ID = os.environ.get("M365_TENANT_ID", "")
-GRAPH = "https://graph.microsoft.com/v1.0"
+# Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr als
+# Klartext-.bin im Vault/Dropbox. Regel: Tokens IMMER verschlüsselt im Keystore.
+from auth_common import GRAPH, get_token as _ac_get_token
+
 SCOPES = ["User.Read", "Mail.Read", "Mail.ReadWrite"]
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-CACHE_FILE = SCRIPT_DIR / ".token_cache.bin"
 LOGO_FILE = SCRIPT_DIR / "miraglia_logo.png"
 LOGO_CID = "miragliabi-logo"
 
@@ -89,20 +87,7 @@ REPLY = {
 
 
 def get_token():
-    cache = msal.SerializableTokenCache()
-    if CACHE_FILE.exists():
-        cache.deserialize(CACHE_FILE.read_text())
-    app = msal.PublicClientApplication(
-        CLIENT_ID, authority=f"https://login.microsoftonline.com/{TENANT_ID}",
-        token_cache=cache,
-    )
-    for acc in app.get_accounts():
-        r = app.acquire_token_silent(SCOPES, account=acc)
-        if r:
-            if cache.has_state_changed:
-                CACHE_FILE.write_text(cache.serialize())
-            return r["access_token"]
-    sys.exit("Kein Token im Cache.")
+    return _ac_get_token(SCOPES)
 
 
 def find_msg(token, subject, from_addr, after):
@@ -186,8 +171,7 @@ def attach_inline_logo(token, draft_id, logo_bytes):
 
 
 def main():
-    if not CLIENT_ID or not TENANT_ID:
-        sys.exit("M365_CLIENT_ID / M365_TENANT_ID nicht gesetzt.")
+    # CLIENT_ID/TENANT_ID werden in auth_common.py mit Defaults + Env-Overrides geprüft.
     if not LOGO_FILE.exists():
         sys.exit(f"Logo fehlt: {LOGO_FILE}.")
     logo_bytes = LOGO_FILE.read_bytes()

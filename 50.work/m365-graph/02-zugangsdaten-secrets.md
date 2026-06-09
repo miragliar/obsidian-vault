@@ -107,8 +107,32 @@ export ZEFIX_PASS="<dein-zefix-passwort>"
 
 → noch nicht angelegt (Stand 01.06.2026). Für reine Webseite-Lookups nicht nötig.
 
+## 🔐 Token-Storage-Regel (Giovanni 2026-06-09)
+
+> **Tokens IMMER verschlüsselt im OS-Keystore, NIE als Klartext im Vault.**
+>
+> Mail-Referenz: Giovanni Miraglia → Raoul/Ale, 2026-06-09:
+> „Wichtig: Tokens immer verschlüsselt (Keychain/DPAPI) — nie als Klartext in unseren Skripten"
+>
+> Voll-Dokumentation der Regel und Umsetzung: [[09-regel-tokens-verschluesselt-keystore]]
+
+**Umsetzung in Kürze:**
+- macOS → **Keychain** via `msal_extensions.KeychainPersistence` + `PersistedTokenCache`
+- Windows → **DPAPI** via `msal_extensions.build_encrypted_persistence()` (automatische Wahl)
+- M365-Token: `auth_common.build_cache()` (Service `MiragliaBI-M365`, Account `graph-token-cache`)
+- Power-BI Multi-Tenant: `auth_common.build_pbi_cache(tenant)` (Service `MiragliaBI-PowerBI`, Account = Tenant-Slug)
+- MVM-AG Tenant: `auth_mvm.build_cache()` (Service `MVM-Offerte-Scan`)
+- `.gitignore` deckt `*.bin`, `.token_cache*`, `.pbi_token_cache_*` als Defense-in-Depth
+
+**Verboten:**
+- `msal.SerializableTokenCache()` → `.token_cache.bin`-Datei im Vault
+- `cache.serialize()` / `cache.deserialize()` in eigene Datei
+- Token in Env-Vars oder `.env` ablegen
+- Token in Logs / Output committen
+
 ## Verwandt
 
 - [[setup-und-workflow]]
 - [[01-chef-mail-juni-2026]]
 - [[04-company-enrich-workflow]]
+- [[09-regel-tokens-verschluesselt-keystore]] — Token-Verschlüsselungs-Regel (Detail)

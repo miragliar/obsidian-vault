@@ -4,6 +4,20 @@
   "title": "Implement encrypted token storage per Giovanni'...",
   "titleGenerationStatus": "success",
   "createdAt": 1781003516842,
-  "updatedAt": 1781003520922,
-  "sessionId": null
+  "updatedAt": 1781005232032,
+  "lastResponseAt": 1781005003760,
+  "sessionId": "b3618cad-77c4-4fe4-a10a-c1b2d7f9734a",
+  "providerState": {
+    "providerSessionId": "b3618cad-77c4-4fe4-a10a-c1b2d7f9734a"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 539,
+    "cacheReadInputTokens": 198470,
+    "contextWindow": 1000000,
+    "contextTokens": 199010,
+    "percentage": 20,
+    "contextWindowIsAuthoritative": true
+  }
 }

@@ -35,8 +35,12 @@ scripts/
 │                            (Scope Mail.ReadWrite!)
 ├─ 🆕 preview_draft.py     — Debug: HTML eines Drafts als preview_draft.html
 ├─ 🆕 list_drafts.py       — Debug: Drafts-Übersicht mit Subject + Empfänger
+├─ auth_common.py          — gemeinsame Auth, Token-Cache im **macOS Keychain**
+│                            (`MiragliaBI-M365` / `graph-token-cache`); zusätzlich
+│                            `build_pbi_cache(tenant)` für Power-BI-Multi-Tenant
 ├─ .env.example            — Vorlage für Umgebungsvariablen
-└─ .gitignore              — schließt .token_cache.bin + *.json + .env + Samples aus
+└─ .gitignore              — schließt *.bin / .token_cache* / .pbi_token_cache_* /
+                             *.json / .env / Samples aus (Defense-in-Depth)
 ```
 
 ### Beim Re-Run der Drafts-Pipeline
@@ -62,11 +66,19 @@ _imports/
 Beim Lauf erstellt:
 
 ```
-scripts/.token_cache.bin       — lokaler MSAL-Token-Cache
+macOS Keychain (verschlüsselt!)
+  Service=MiragliaBI-M365 / Account=graph-token-cache   — MSAL-Token-Cache
+  Service=MiragliaBI-PowerBI / Account=<tenant-slug>    — pro PBI-Tenant
 scripts/mail_digest.json       — Mail-Aggregation pro Kontakt
 scripts/teams_digest.json      — Teams-Aggregation pro Kontakt
 scripts/company_profiles.json  — Webseiten-/Zefix-Steckbriefe pro Firma
 ```
+
+> 🔐 **Token-Regel (Giovanni 2026-06-09):** Tokens IMMER verschlüsselt im
+> OS-Keystore (macOS Keychain / Windows DPAPI), NIE als Klartext-`.bin`-Datei
+> im Vault/Dropbox. Implementiert via `msal_extensions` (`PersistedTokenCache`
+> + `KeychainPersistence`). Siehe `02-zugangsdaten-secrets` für die Regel im
+> Detail.
 
 ## Quickstart
 

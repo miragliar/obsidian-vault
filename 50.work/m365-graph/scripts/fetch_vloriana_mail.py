@@ -1,31 +1,18 @@
 #!/usr/bin/env python3
 """Holt den vollen Body von Vlorianas Mail (personal@mvm-ag.ch, 2026-06-03)."""
-import os, sys
+import sys
 from pathlib import Path
-import msal, requests
 
-CLIENT_ID = os.environ.get("M365_CLIENT_ID", "")
-TENANT_ID = os.environ.get("M365_TENANT_ID", "")
-GRAPH = "https://graph.microsoft.com/v1.0"
+import requests
+
+# Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr als
+# Klartext-.bin im Vault/Dropbox. Regel: Tokens IMMER verschlüsselt im Keystore.
+from auth_common import GRAPH, get_token
+
 SCOPES = ["User.Read", "Mail.Read"]
-CACHE = Path(__file__).resolve().parent / ".token_cache.bin"
 OUT = Path(__file__).resolve().parent / "vloriana_mail.html"
 
-
-def tok():
-    c = msal.SerializableTokenCache()
-    if CACHE.exists():
-        c.deserialize(CACHE.read_text())
-    app = msal.PublicClientApplication(
-        CLIENT_ID, authority=f"https://login.microsoftonline.com/{TENANT_ID}", token_cache=c)
-    for a in app.get_accounts():
-        r = app.acquire_token_silent(SCOPES, account=a)
-        if r:
-            return r["access_token"]
-    sys.exit("kein cache")
-
-
-t = tok()
+t = get_token(SCOPES)
 h = {"Authorization": f"Bearer {t}"}
 # Letzte 100 Mails durchgehen, Mail von personal@mvm-ag.ch am 2026-06-03 finden
 url = (

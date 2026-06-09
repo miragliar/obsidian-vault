@@ -12,35 +12,21 @@ mail_digest.json auftauchen, weil dort kein Personen-Notiz-Match war:
 Speichert nach mvm_extras.json.
 """
 import json
-import os
-import sys
 from pathlib import Path
 
-import msal
 import requests
 
-CLIENT_ID = os.environ.get("M365_CLIENT_ID", "")
-TENANT_ID = os.environ.get("M365_TENANT_ID", "")
-GRAPH = "https://graph.microsoft.com/v1.0"
+# Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr als
+# Klartext-.bin im Vault/Dropbox. Regel: Tokens IMMER verschlüsselt im Keystore.
+from auth_common import GRAPH, get_token
+
 SCOPES = ["User.Read", "Mail.Read"]
 SCRIPT_DIR = Path(__file__).resolve().parent
-CACHE = SCRIPT_DIR / ".token_cache.bin"
 OUT = SCRIPT_DIR / "mvm_extras.json"
 
 
 def token():
-    c = msal.SerializableTokenCache()
-    if CACHE.exists():
-        c.deserialize(CACHE.read_text())
-    app = msal.PublicClientApplication(
-        CLIENT_ID, authority=f"https://login.microsoftonline.com/{TENANT_ID}", token_cache=c)
-    for a in app.get_accounts():
-        r = app.acquire_token_silent(SCOPES, account=a)
-        if r:
-            if c.has_state_changed:
-                CACHE.write_text(c.serialize())
-            return r["access_token"]
-    sys.exit("kein cache")
+    return get_token(SCOPES)
 
 
 MVM_DOMAINS = {"mvm-ag.ch"}

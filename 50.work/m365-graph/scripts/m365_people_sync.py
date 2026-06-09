@@ -12,7 +12,8 @@ Quellen:
   - /me/messages   -> (optional, --with-mail) letzter Kontakt + Häufigkeit
 
 Login: MSAL Device-Code-Flow (kein Client-Secret nötig, Public Client).
-Der Token wird lokal gecacht (.token_cache.bin) -> kein Re-Login bei Folgeläufen.
+Der Token wird verschlüsselt im macOS Keychain gecacht (via auth_common.py) -> kein
+Re-Login bei Folgeläufen. NIE als Klartext-.bin im Vault/Dropbox.
 
 Aufruf-Beispiele:
   python3 m365_people_sync.py                 # People + Contacts

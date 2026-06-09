@@ -28,7 +28,9 @@ _imports/   — Wrapper-Skripte & Manifest
 ## Quellen
 
 - **Claude-Export** (10.03. – 01.06.2026, 196 Conversations destilliert)
-- **M365 Graph** (Mail + Teams Digest, 2'500 Mails / 1'621 Chat-Nachrichten)
+- **M365 Graph** (Mail + Teams Digest, 2'500 Mails / 1'621 Chat-Nachrichten — ausschließlich aus `raoul@miraglia-bi.com`)
 - **Webseiten** (Firmen-Steckbriefe via `company_enrich.py`)
 
 Alles importierte Material trägt `source: claude-import` oder `source: m365-graph` im Frontmatter.
+
+> 📧 **Hinweis für Claude/Claudian:** „Mail" = immer `raoul@miraglia-bi.com` (Microsoft 365). Kein Gmail, keine anderen Provider. Siehe [[CLAUDE.md]] für Details.

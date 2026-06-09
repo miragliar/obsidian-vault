@@ -85,7 +85,7 @@ Beim ersten Lauf:
 2. URL im Browser öffnen, Code eingeben
 3. Mit **eigenem M365-Konto** anmelden (Raoul, `raoul@miraglia-bi.com`)
 4. Permissions bestätigen (Mail.Read bzw. Chat.Read)
-5. Token wird lokal gecacht in `.token_cache.bin` → folgende Aufrufe ohne erneutes Login
+5. Token wird verschlüsselt im **macOS Keychain** gecacht (`MiragliaBI-M365` / `graph-token-cache`, via `msal_extensions.KeychainPersistence`) → folgende Aufrufe ohne erneutes Login. **NICHT** mehr als Klartext-`.bin`-Datei im Vault.
 
 Bei `teams_digest.py` erscheint ein **separater** Device-Code, weil andere Scopes (`Chat.Read`) gebraucht werden.
 
@@ -227,15 +227,23 @@ Existierende Notizinhalte außerhalb der Marker bleiben unverändert.
 
 ## Sicherheit & Datenschutz
 
+> 🔐 **Regel (Giovanni 2026-06-09):** Tokens IMMER verschlüsselt im OS-Keystore
+> (macOS Keychain / Windows DPAPI), NIE als Klartext-`.bin` im Vault/Dropbox.
+> Implementiert via `auth_common.build_cache()` (M365) und
+> `auth_common.build_pbi_cache(tenant)` (Power BI multi-tenant). Beides nutzt
+> `msal_extensions.PersistedTokenCache` mit `KeychainPersistence`. Auf Windows
+> wählt `msal_extensions.build_encrypted_persistence()` automatisch DPAPI.
+
 | Risiko | Mitigation |
 |---|---|
-| `.token_cache.bin` enthält Access Token | `.gitignore` (bereits gesetzt), niemals committen |
+| Access-/Refresh-Token könnte als Klartext im Vault landen | **Keychain-Cache** via `auth_common.py` (Service `MiragliaBI-M365`, Account `graph-token-cache`). Klartext-`.bin` ist im Repo verboten. |
+| Falls doch eine `.bin` entsteht (alter Skript-Stand) | `.gitignore` blockiert `*.bin`, `.token_cache*`, `.pbi_token_cache_*` — Defense-in-Depth. Vor jedem Commit `git status` checken. |
 | `mail_digest.json` / `teams_digest.json` enthalten echte Mail-/Chat-Inhalte | `.gitignore`, **bleiben lokal**, kein Cloud-Sync außerhalb Dropbox-Privatordner |
 | `M365_CLIENT_ID` / `M365_TENANT_ID` | Public Client (kein Secret), aber Tenant-Identifier — nicht öffentlich teilen |
 | Sensitive Mails versehentlich von Claude/KI verarbeitet | Vor Anreicherung prüfen, ob jeder Kontakt für KI-Zusammenfassung geeignet ist |
-| Token-Cache überlebt Logout | Bei Bedarf `rm scripts/.token_cache.bin` |
+| Token-Cache zurücksetzen | macOS: Schlüsselbund.app → Eintrag `MiragliaBI-M365` löschen (nicht `rm .token_cache.bin` — die Datei gibt es nicht mehr). |
 
-**Wichtig:** Der Vault liegt in Dropbox-Sync (`Miraglia-BI/0_Internal/`). Die `.gitignore` hilft nur, wenn der Vault auch in einem Git-Repo läge — der Dropbox-Sync ist davon nicht betroffen. Das ist akzeptabel, weil Dropbox als interner Storage gilt; aber die JSONs gehören nicht in externe Repos oder geteilte Ordner.
+**Wichtig:** Der Vault liegt in Dropbox-Sync (`Miraglia-BI/0_Internal/`). Genau darum sind Klartext-Token-Caches im Vault verboten — sie würden über Dropbox effektiv in die Cloud kopiert. Der Keychain-Cache lebt außerhalb von Dropbox/iCloud/OneDrive (verschlüsselt, ACL-geschützt).
 
 ## Troubleshooting
 
@@ -247,7 +255,7 @@ Existierende Notizinhalte außerhalb der Marker bleiben unverändert.
 | `429` (Rate Limit) | zu viele Requests | Skript wartet automatisch; im Notfall `--max` reduzieren |
 | Login schlägt wiederholt fehl | falsches Konto verwendet (z.B. privates Outlook) | nur mit `raoul@miraglia-bi.com` anmelden |
 | Wenige Kontakte gefunden | `--max` zu niedrig oder lange keine neuen Mails | `--max 5000` + Filterung über `--min-total` |
-| Token-Cache korrupt | Cache überlebt App-Reg-Änderungen nicht | `rm .token_cache.bin` und neu anmelden |
+| Token-Cache korrupt | Cache überlebt App-Reg-Änderungen nicht | macOS: Schlüsselbund-Eintrag `MiragliaBI-M365` löschen + neu anmelden (`./.venv/bin/python live_search.py test`) |
 
 ## Wann nicht
 

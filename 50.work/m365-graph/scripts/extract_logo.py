@@ -6,44 +6,20 @@ Sucht die jüngste Mail von Giovanni mit Inline-Bild contentId 'miragliabi-logo'
 und speichert die Bytes als miraglia_logo.<ext> im Script-Verzeichnis.
 """
 import base64
-import os
-import sys
 from pathlib import Path
 
-import msal
 import requests
 
-CLIENT_ID = os.environ.get("M365_CLIENT_ID", "")
-TENANT_ID = os.environ.get("M365_TENANT_ID", "")
-GRAPH = "https://graph.microsoft.com/v1.0"
+# Token-Cache liegt im macOS Keychain (siehe auth_common.py), nicht mehr als
+# Klartext-.bin im Vault/Dropbox. Regel: Tokens IMMER verschlüsselt im Keystore.
+from auth_common import GRAPH, get_token
+
 SCOPES = ["User.Read", "Mail.Read"]
-
 SCRIPT_DIR = Path(__file__).resolve().parent
-CACHE_FILE = SCRIPT_DIR / ".token_cache.bin"
-
-
-def get_token():
-    cache = msal.SerializableTokenCache()
-    if CACHE_FILE.exists():
-        cache.deserialize(CACHE_FILE.read_text())
-    app = msal.PublicClientApplication(
-        CLIENT_ID, authority=f"https://login.microsoftonline.com/{TENANT_ID}",
-        token_cache=cache,
-    )
-    result = None
-    for acc in app.get_accounts():
-        result = app.acquire_token_silent(SCOPES, account=acc)
-        if result:
-            break
-    if not result:
-        sys.exit("Kein Token im Cache — vorher inspect_signature.py / mail_digest.py laufen lassen.")
-    if "access_token" not in result:
-        sys.exit(f"Login fehlgeschlagen: {result.get('error_description')}")
-    return result["access_token"]
 
 
 def main():
-    token = get_token()
+    token = get_token(SCOPES)
     headers = {"Authorization": f"Bearer {token}"}
 
     # Letzte 50 Mails durchsuchen, Mails von Giovanni mit Anhang

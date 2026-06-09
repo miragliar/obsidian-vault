@@ -1,6 +1,15 @@
-# Local token cache — bleibt lokal, niemals committen
-# Glob deckt .token_cache.bin und .token_cache.bin.legacy ab.
-.token_cache.bin*
+# =====================================================================
+# Token-Cache & Secrets — NIEMALS committen
+# Regel (Giovanni 2026-06-09): Tokens IMMER verschlüsselt im OS-Keystore
+# (macOS Keychain / Windows DPAPI), nie als Klartext-.bin im Vault/Dropbox.
+# Diese Patterns sind die Defense-in-Depth-Schicht: falls doch mal eine
+# .bin-Datei entsteht (alter Skript-Stand, Migration), darf sie wenigstens
+# nicht ins Git/GitHub. Vor jedem Commit `git status` + Diff prüfen.
+# =====================================================================
+*.bin
+.token_cache*
+.pbi_token_cache_*
+# (Glob .token_cache* deckt auch .token_cache.bin, .token_cache.bin.legacy ab.)
 
 # Output-JSONs enthalten echte Mail- & Chat-Inhalte — Privatsphäre
 mail_digest.json

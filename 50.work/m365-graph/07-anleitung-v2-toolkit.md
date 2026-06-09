@@ -76,7 +76,7 @@ Ohne Handarbeit entsteht:
 Microsoft 365  ──(Graph, delegiert: du meldest dich selbst an)──►  Python-Scripts  ──►  Obsidian-Vault
   Kontakte · People · Mails · Teams-Chats                                                 25_People/ · 20_Clients/
 ```
-**Kein Client-Secret, kein Server.** Login per Geräte-Code (MSAL), Token wird lokal gecacht (`.token_cache.bin`).
+**Kein Client-Secret, kein Server.** Login per Geräte-Code (MSAL), Token wird **verschlüsselt im OS-Keystore** gecacht (macOS Keychain via `msal_extensions.KeychainPersistence`; Windows DPAPI via `build_encrypted_persistence()`). **Nie als Klartext-`.bin` im Vault!**
 
 ---
 
@@ -245,9 +245,20 @@ Kunden-Notizbücher sind meist **Journale** (chronologisch) + wenige **Wissens-S
 ---
 
 # 🔒 Sicherheit & .gitignore
+
+> **Token-Regel (Giovanni 2026-06-09):** Tokens **immer verschlüsselt** im OS-Keystore
+> (macOS Keychain / Windows DPAPI), **nie** als Klartext-`.bin`-Datei im Vault.
+> Implementiert in `auth_common.py` (`build_cache()` für M365, `build_pbi_cache(tenant)`
+> für Power BI). Falls doch mal eine `.bin` auftaucht: in den Keystore migrieren →
+> Klartext löschen → aus der Git-Historie purgen.
+
 Diese Dateien bleiben **lokal** und gehören in die `.gitignore` (enthalten Token bzw. Mail-/Chat-Inhalte):
 ```
-40_Resources/scripts/.token_cache.bin
+# Defense-in-Depth: falls doch mal eine Klartext-Token-Datei entsteht,
+# darf sie wenigstens nicht ins Git/GitHub.
+40_Resources/scripts/*.bin
+40_Resources/scripts/.token_cache*
+40_Resources/scripts/.pbi_token_cache_*
 40_Resources/scripts/.venv/
 40_Resources/scripts/mail_digest.json
 40_Resources/scripts/teams_digest.json
@@ -313,7 +324,7 @@ Die Codebase ist self-contained und kann weitergegeben werden — **jede Person 
 3. Ordner als ZIP / via Dropbox übergeben.
 
 > [!warning] Was NICHT mitschicken
-> Niemals den **`.token_cache.bin`** oder persönliche **Daten-/Digest-Dateien** weitergeben (siehe .gitignore). Übergeben werden nur **Code + Anleitung + `signatur.html`/Logo**; die Empfänger:in erzeugt ihre **eigenen** Daten und meldet sich mit ihrem **eigenen** Konto an.
+> Token-Caches liegen ohnehin im Keychain/DPAPI, **nicht** mehr als Datei im Vault — entsprechend gibt es nichts zu „versehentlich mitschicken". Zusätzlich filtert `.gitignore` `*.bin`/`.token_cache*`/`.pbi_token_cache_*` als Defense-in-Depth. Persönliche **Daten-/Digest-Dateien** (siehe .gitignore) ebenfalls **nicht** weitergeben. Übergeben werden nur **Code + Anleitung + `signatur.html`/Logo**; die Empfänger:in erzeugt ihre **eigenen** Daten und meldet sich mit ihrem **eigenen** Konto an.
 
 ---
 
