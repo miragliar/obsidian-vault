@@ -4,20 +4,20 @@
   "title": "Review MVM KI Ausmass status and test setup",
   "titleGenerationStatus": "success",
   "createdAt": 1781005272033,
-  "updatedAt": 1781012300020,
-  "lastResponseAt": 1781012300020,
+  "updatedAt": 1781014056462,
+  "lastResponseAt": 1781014056462,
   "sessionId": "b713776e-c385-43a7-b598-6c9b941b4892",
   "providerState": {
     "providerSessionId": "b713776e-c385-43a7-b598-6c9b941b4892"
   },
   "usage": {
     "model": "opus",
-    "inputTokens": 1,
-    "cacheCreationInputTokens": 1062,
-    "cacheReadInputTokens": 359102,
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
     "contextWindow": 1000000,
-    "contextTokens": 360165,
-    "percentage": 36,
+    "contextTokens": 0,
+    "percentage": 0,
     "contextWindowIsAuthoritative": true
   }
 }
