@@ -4,20 +4,20 @@
   "title": "Extract order positions and delivery info to JSON",
   "titleGenerationStatus": "success",
   "createdAt": 1780985178594,
-  "updatedAt": 1780986320833,
-  "lastResponseAt": 1780986320833,
+  "updatedAt": 1780991488847,
+  "lastResponseAt": 1780991488847,
   "sessionId": "9333a44e-4ba5-4852-9572-e733986fab5d",
   "providerState": {
     "providerSessionId": "9333a44e-4ba5-4852-9572-e733986fab5d"
   },
   "usage": {
     "model": "opus",
-    "inputTokens": 1,
-    "cacheCreationInputTokens": 770,
-    "cacheReadInputTokens": 46339,
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 1908,
+    "cacheReadInputTokens": 77630,
     "contextWindow": 1000000,
-    "contextTokens": 47110,
-    "percentage": 5,
+    "contextTokens": 79544,
+    "percentage": 8,
     "contextWindowIsAuthoritative": true
   }
 }

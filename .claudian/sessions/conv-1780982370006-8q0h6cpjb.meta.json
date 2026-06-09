@@ -4,8 +4,8 @@
   "title": "Analyze and critique Einordnung_Videobeitrag do...",
   "titleGenerationStatus": "success",
   "createdAt": 1780982370006,
-  "updatedAt": 1780983045760,
-  "lastResponseAt": 1780983045760,
+  "updatedAt": 1780990441920,
+  "lastResponseAt": 1780990441920,
   "sessionId": "3e5f8e00-eef9-4c4b-ba47-fbd1570f2e6b",
   "providerState": {
     "providerSessionId": "3e5f8e00-eef9-4c4b-ba47-fbd1570f2e6b"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 6,
-    "cacheCreationInputTokens": 5972,
-    "cacheReadInputTokens": 43952,
+    "cacheCreationInputTokens": 39345,
+    "cacheReadInputTokens": 16819,
     "contextWindow": 1000000,
-    "contextTokens": 49930,
-    "percentage": 5,
+    "contextTokens": 56170,
+    "percentage": 6,
     "contextWindowIsAuthoritative": true
   }
 }
