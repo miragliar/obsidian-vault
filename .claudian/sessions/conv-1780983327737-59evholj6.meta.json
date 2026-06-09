@@ -1,0 +1,23 @@
+{
+  "id": "conv-1780983327737-59evholj6",
+  "providerId": "claude",
+  "title": "Fix Power Query capacity admin error",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780983327737,
+  "updatedAt": 1780983352801,
+  "lastResponseAt": 1780983352801,
+  "sessionId": "dc4bc3e4-203d-44a0-a56f-dc4dd57ddf4d",
+  "providerState": {
+    "providerSessionId": "dc4bc3e4-203d-44a0-a56f-dc4dd57ddf4d"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 2212,
+    "cacheReadInputTokens": 16819,
+    "contextWindow": 1000000,
+    "contextTokens": 19037,
+    "percentage": 2,
+    "contextWindowIsAuthoritative": true
+  }
+}

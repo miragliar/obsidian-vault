@@ -1,0 +1,23 @@
+{
+  "id": "conv-1780984404685-owpak0uns",
+  "providerId": "claude",
+  "title": "Explain Dynamics CRM invalid character error",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780984404685,
+  "updatedAt": 1780984559155,
+  "lastResponseAt": 1780984559155,
+  "sessionId": "318126d3-82e8-4735-99ad-1c0ffe6a7337",
+  "providerState": {
+    "providerSessionId": "318126d3-82e8-4735-99ad-1c0ffe6a7337"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 1807,
+    "cacheReadInputTokens": 19208,
+    "contextWindow": 1000000,
+    "contextTokens": 21021,
+    "percentage": 2,
+    "contextWindowIsAuthoritative": true
+  }
+}
