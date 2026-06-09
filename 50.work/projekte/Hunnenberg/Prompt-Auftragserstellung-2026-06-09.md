@@ -277,8 +277,65 @@ replace(body('Create_CSV_table'), ' | ', decodeUriComponent('%0D%0A'))
 3. CSV nach Step 6 anschauen: Pipe ersetzt durch CRLF (in Notepad++ mit „Show All Characters" sichtbar)?
 4. In Sage importieren, Memo-Feld einer Position öffnen → mehrzeilig?
 
+## Bekannte Fallstricke / Power Automate
+
+Im Laufe der Inbetriebnahme aufgetretene Bugs — hier dokumentiert damit sie nicht zweimal weh tun.
+
+### 1. Parse JSON: `integer` vs. `number` + Null-Safety
+
+**Symptom:** `Parse JSON` failed mit „InvalidTemplate", wenn ein Feld eine Dezimalzahl liefert, aber im Schema als `integer` deklariert ist (z.B. `Einfassbreite: 2.5` mit `"type": "integer"`).
+
+**Lösung:** Für ALLE Zahl-Felder im Schema `"number"` statt `"integer"` verwenden, und für ALLE Felder zusätzlich `null` erlauben (AI Builder liefert bei „nichts gefunden" gerne `null`):
+
+```json
+"Artikel[Einfassbreite]": { "type": ["number", "null"] },
+"Artikel[Bezeichnung1]":  { "type": ["string", "null"] }
+```
+
+**Faustregel:** `integer` nur dann, wenn der Wert garantiert ganzzahlig ist (z.B. `position`, `menge`). Alle Maße (`breite_m`, `laenge_m`, `einfassungsbreite_cm`, `Masse*`) → `"number"`.
+
+### 2. `float()` crasht bei leerem String
+
+**Symptom:** „The template language function 'float' was invoked with a parameter that is not valid. The value cannot be converted to the target type."
+
+**Ursache:** AI Builder liefert `Resultat: ""` (leerer String), wenn er die Berechnung nicht durchführen konnte (z.B. Durchmesser fehlt im Input). `replace("", ",", ".")` → `""` → `float("")` → ❌.
+
+**Defensive Lösung in der Power-Automate-Expression:**
+
+```
+if(empty(<feld>), '0,00', formatNumber(mul(1.01, float(replace(<feld>, ',', '.'))), 'F2', 'de-DE'))
+```
+
+- `empty()` prüft auf leeren String (NICHT `coalesce()` — das prüft nur auf `null`)
+- Fallback `'0,00'` statt `'0.00'` wegen Locale (siehe Fallstrick #3)
+
+**Nachhaltige Lösung (am AI-Prompt davor):**
+
+Im Formelberechnungs-Prompt explizit garantieren:
+> „Wenn die Berechnung nicht möglich ist (fehlender Wert, leere Eingabe, Division durch Null), gib `Resultat` immer als `"0"` zurück. NIEMALS leerer String, NIEMALS `null`."
+
+### 3. Locale-Falle bei Zahlen-Export ins CSV (Sage)
+
+**Symptom:** Wert `1.01` aus Power Automate kommt in Sage als `101,00` an. Wert `1247.01` würde als `124701` ankommen.
+
+**Ursache:** Sage importiert mit deutscher Locale (`de-DE`/`de-CH`/`de-AT`): `,` = Dezimaltrenner, `.` = Tausendertrenner. Der Punkt im CSV wird beim Parse einfach entfernt.
+
+**Lösung — jede Zahl, die ins CSV geht, MUSS Komma als Dezimaltrenner haben:**
+
+```
+formatNumber(float(replace(<feld>, ',', '.')), 'F2', 'de-DE')
+```
+
+- Format `'F2'` (Fixed-Point) statt `'N2'` — kein Tausendertrenner. `N2` würde bei `1247.01` → `'1.247,01'` produzieren; der Tausendertrenner-Punkt verwirrt Sage erneut.
+- Locale `'de-DE'` statt `'de-CH'` — `de-DE` ist eindeutig Komma. `de-CH` ist in Power Automate inkonsistent (mal Punkt, mal Komma).
+
+**Wo prüfen:** Alle Number-Felder vor `Create CSV table` — `breite_m`, `laenge_m`, `einfassungsbreite_cm`, `Masse*`, alle berechneten Werte (`Berechnung`-Ergebnisse).
+
+**Quick-Test:** Im Sage-Import-Mapping eine Zahl mit Wert `9.99` durchschicken; kommt sie als `9,99` an → OK, als `999` → Bug.
+
 ## Changelog
 
+- **2026-06-09 (Update 5)** — Neuer Abschnitt „Bekannte Fallstricke / Power Automate" mit drei aufgetretenen Bugs: (1) Parse JSON `integer` vs. `number` + Null-Safety, (2) `float()`-Crash bei leerem String, (3) Locale-Falle Sage-CSV (`1.01` → `101,00`). Empfehlung: `formatNumber(..., 'F2', 'de-DE')` für alle Number-Felder ins CSV.
 - **2026-06-09 (Update 4)** — Pipe ` | ` ist nur Transport-Format. Neuer Abschnitt „Pipeline / Nachbearbeitung" mit Power-Automate-Replace-Expression (`replace(body('Create_CSV_table'), ' | ', decodeUriComponent('%0D%0A'))`) und Caveats — am Ende soll Sage echte CRLF im Memo sehen.
 - **2026-06-09 (Update 3)** — `beschreibung` umgestellt von `\n`-Newlines auf Pipe-Trenner ` | ` (Single-Line-String). Grund: CSV-Pipeline („Create CSV table" → Sage) verträgt keine echten Newlines in Feldern; Pipe ist robuster und in Sage als visueller Trenner sichtbar. Update 2 (Newlines) damit revidiert.
 - **2026-06-09 (Update 2)** — ~~`beschreibung` MUSS echte Zeilenumbrüche (`\n`) enthalten.~~ **Revidiert in Update 3** (siehe oben).
