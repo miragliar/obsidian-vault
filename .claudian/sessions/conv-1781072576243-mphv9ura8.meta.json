@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781072576243-mphv9ura8",
+  "providerId": "claude",
+  "title": "Analyze German docx for grammar errors",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781072576244,
+  "updatedAt": 1781073607331,
+  "lastResponseAt": 1781073607331,
+  "sessionId": "98477b04-be81-452f-9c48-b2717c3ccacd",
+  "providerState": {
+    "providerSessionId": "98477b04-be81-452f-9c48-b2717c3ccacd"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 16499,
+    "cacheReadInputTokens": 32776,
+    "contextWindow": 1000000,
+    "contextTokens": 49281,
+    "percentage": 5,
+    "contextWindowIsAuthoritative": true
+  }
+}
