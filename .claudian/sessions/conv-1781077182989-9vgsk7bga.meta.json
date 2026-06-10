@@ -4,8 +4,8 @@
   "title": "Prepare mock exam grading for digital platforms",
   "titleGenerationStatus": "success",
   "createdAt": 1781077182989,
-  "updatedAt": 1781083692749,
-  "lastResponseAt": 1781083692749,
+  "updatedAt": 1781085097236,
+  "lastResponseAt": 1781085070635,
   "sessionId": "806af665-84c5-457f-a838-3ae9b7e450bf",
   "providerState": {
     "providerSessionId": "806af665-84c5-457f-a838-3ae9b7e450bf"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 1319,
-    "cacheReadInputTokens": 56498,
+    "cacheCreationInputTokens": 1484,
+    "cacheReadInputTokens": 65242,
     "contextWindow": 1000000,
-    "contextTokens": 57818,
-    "percentage": 6,
+    "contextTokens": 66727,
+    "percentage": 7,
     "contextWindowIsAuthoritative": true
   }
 }

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781085407361-e1hpb1och",
+  "providerId": "claude",
+  "title": "Revise Anneliese Michel seminar paper with feed...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781085407361,
+  "updatedAt": 1781085802337,
+  "lastResponseAt": 1781085802337,
+  "sessionId": "673468b4-c13f-4ae5-bff1-49d0af0c1f2d",
+  "providerState": {
+    "providerSessionId": "673468b4-c13f-4ae5-bff1-49d0af0c1f2d"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1346,
+    "cacheReadInputTokens": 113900,
+    "contextWindow": 1000000,
+    "contextTokens": 115247,
+    "percentage": 12,
+    "contextWindowIsAuthoritative": true
+  }
+}
