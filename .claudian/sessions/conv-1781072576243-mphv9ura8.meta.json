@@ -4,8 +4,8 @@
   "title": "Analyze German docx for grammar errors",
   "titleGenerationStatus": "success",
   "createdAt": 1781072576244,
-  "updatedAt": 1781073607331,
-  "lastResponseAt": 1781073607331,
+  "updatedAt": 1781074500229,
+  "lastResponseAt": 1781074500229,
   "sessionId": "98477b04-be81-452f-9c48-b2717c3ccacd",
   "providerState": {
     "providerSessionId": "98477b04-be81-452f-9c48-b2717c3ccacd"
@@ -13,10 +13,10 @@
   "usage": {
     "model": "opus",
     "inputTokens": 6,
-    "cacheCreationInputTokens": 16499,
-    "cacheReadInputTokens": 32776,
+    "cacheCreationInputTokens": 4112,
+    "cacheReadInputTokens": 49275,
     "contextWindow": 1000000,
-    "contextTokens": 49281,
+    "contextTokens": 53393,
     "percentage": 5,
     "contextWindowIsAuthoritative": true
   }
