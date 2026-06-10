@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781095706234-9weuzrvjq",
+  "providerId": "claude",
+  "title": "Analyze Exercise 2.1 solution discrepancy",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781095706234,
+  "updatedAt": 1781097263358,
+  "lastResponseAt": 1781097263358,
+  "sessionId": "5ed30944-54ab-4c80-9506-7de0f8485224",
+  "providerState": {
+    "providerSessionId": "5ed30944-54ab-4c80-9506-7de0f8485224"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 4288,
+    "cacheReadInputTokens": 69067,
+    "contextWindow": 1000000,
+    "contextTokens": 73361,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}
