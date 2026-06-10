@@ -31,6 +31,7 @@ Projekt-Hub für die Seminararbeit zum Fall Anneliese Michel: Exorzismus zwische
 ### Methodik & Schreibprozess
 - [[20.studies/Anneliese-Michel/04-Methodische-Reflexion|Methodische Reflexion]] — Zeitschichtung, Goodman-Position, Machtkonfigurationen
 - [[20.studies/Anneliese-Michel/05-Schreibwerkstatt-Konsistenz-Zitate|Schreibwerkstatt — Konsistenz, Zitate, Formulierungs-Varianten]]
+- [[20.studies/Anneliese-Michel/06-Review-Seminararbeit-2026-06-10|Review Seminararbeit (2026-06-10)]] — Abgleich mit Einordnung, 11 Korrekturen priorisiert
 
 ### Literatur (8 ausgearbeitete Literatur-Notizen)
 - [[20.studies/Anneliese-Michel/Literatur/_Index|Literatur-Index]] — Übersicht aller Excerpte mit Querverlinkung
