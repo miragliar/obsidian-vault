@@ -13,6 +13,8 @@ Pattern-Notizen aus 63 Conversations rund um die Power Platform im Arbeitskontex
 ## Pattern-Notizen (destilliert)
 
 ### PowerFx / Power Apps
+- [[50.work/power-platform/powerfx-deutsche-lokalisierung|PowerFx — Deutsche Lokalisierung (Semikolon-Syntax)]]
+- [[50.work/power-platform/powerfx-disambiguation-und-as-operator|PowerFx — Disambiguation [@…] und As-Operator (Master-Detail)]]
 - [[50.work/power-platform/powerfx-filter-search-combobox|Filter + Search + Combobox kombinieren]]
 - [[50.work/power-platform/powerfx-hidden-datacard-submitform|Hidden Datacard speichert nicht beim SubmitForm]]
 

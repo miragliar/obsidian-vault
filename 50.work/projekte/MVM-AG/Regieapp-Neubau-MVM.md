@@ -10,7 +10,7 @@ tags: [miraglia, projekt, mvm-ag, power-apps, dataverse, offline, sharepoint]
 type: projekt-hub
 source: claude-import + m365-graph + chat-context 2026-06-04
 created: 2026-06-01
-updated: 2026-06-04
+updated: 2026-06-11
 ---
 
 # Regie-Rapport-App (Neubau)
@@ -62,10 +62,13 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 
 ## Verwandte Pattern-Notizen
 
+- [[50.work/power-platform/powerfx-deutsche-lokalisierung|PowerFx — Deutsche Lokalisierung (`;` / `;;`)]]
+- [[50.work/power-platform/powerfx-disambiguation-und-as-operator|PowerFx — Disambiguation `[@…]` + `As`-Operator]] 🆕 aus Kopierfunktion 2026-06-11
 - [[50.work/power-platform/powerfx-filter-search-combobox|Filter + Search + Combobox kombinieren]]
 - [[50.work/power-platform/powerfx-hidden-datacard-submitform|Hidden Datacard SubmitForm]]
 - [[50.work/power-platform/dataverse-offlineprofile|Mobile Offline-Profile]]
 - [[50.work/power-platform/dataverse-mysterious-deletes|Cascade-Delete-Diagnose]]
+- [[50.work/power-platform/sharepoint-berechtigung-flow-save|SharePoint-Berechtigung als Flow-Save-Voraussetzung]]
 
 ## Erkenntnisse / Lessons Learned
 
@@ -116,19 +119,136 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 ### Kopierfunktion für Regie-Rapporte (Remo, 10.06.2026)
 - **Use-Case:** Rapport 1:1 duplizieren, danach in der neuen Instanz anpassen (z.B. Folge-Auftrag, ähnliches Setup).
 - **Priorität (Raoul, 11.06.2026):** Variante A zuerst (vor Wochentage-Plus / Variante B).
-- **Konzept:** Icon-Button auf Home-Galerie-Item → Confirmation → Patch neuer Regiekopf (Status=Entwurf) → ForAll über Detail-Tabellen (Arbeitsbeschriebzeile, Personenzeile, Materialzeile).
-- **Was wird NICHT kopiert:**
-  - Status (immer Entwurf, vermeidet K15)
-  - Rapport-ID (neue Auto-Increment-Sequenz)
-  - Unterschrift / Unterschreiber (rechtlich problematisch)
-  - Fotos (SharePoint-Liste, datums-/situationsspezifisch)
-- **Risiken-Mitigation:**
-  - K2 (Doppelklick) → `varDuplicating`-Lock
-  - K15 (PL-Status direkt) → Hardcode auf Entwurf
-  - Offline → `IfError`-Wrap
-- **Code-Snippets:** siehe Chat 2026-06-11 (deutsche PowerFx-Syntax!).
-- **Aufwand:** 3–4h
-- **ToDo:** ⏳ Implementierung.
+- **Konzept:** Icon-Button auf Home-Galerie-Item → Confirmation → Patch neuer Regiekopf (Status=Entwurf) → ForAll über Detail-Tabellen (Arbeitsbeschriebzeilen, Personenzeilen, Materialzeile).
+- **Status:** Implementiert + lauffähig nach Disambiguation-Fix (siehe unten).
+
+#### Was wird NICHT kopiert
+- Status (immer Entwurf, vermeidet K15-Falle)
+- Rapport-ID (neue Auto-Increment-Sequenz, Dataverse generiert)
+- Unterschrift / Unterschreiber (rechtlich problematisch, werden im Abschluss-Screen neu erfasst)
+- Fotos (SharePoint-Liste, datums-/situationsspezifisch)
+- `Personentotal` / `Stunden Total` (Formel-Spalten — Dataverse berechnet automatisch)
+- System-Felder (`createdon`, `createdby`, `modifiedon`, `modifiedby`)
+
+#### Risiken-Mitigation
+- K2 (Doppelklick) → `varDuplicating`-Lock am Anfang
+- K15 (PL-Status direkt) → Hardcode auf `'Status (Regiekopf)'.Entwurf`
+- Offline → `IfError`-Wrap mit user-friendly Notify
+
+#### 🪲 Compiler-Falle: GUID/Table-Fehler bei ForAll auf Detail-Tabellen
+
+Erster Code-Versuch warf "Ungültiger Argumenttyp (GUID). Stattdessen wird ein Table-Wert erwartet" auf den `ForAll(Filter(Detailtabelle; …))`-Blöcken.
+
+**Ursache:** Schatten-Konflikt zwischen Datenquelle und 1:N-Navigation-Property. Vollständig dokumentiert in [[50.work/power-platform/powerfx-disambiguation-und-as-operator|PowerFx Disambiguation `[@…]` und `As`-Operator]].
+
+**Fix:**
+1. Datenquellen-Referenzen mit `[@TableName]` (z.B. `Patch([@Personenzeilen]; …)`)
+2. Iteration-Variable mit `As src` benennen (`ForAll(varSource As src; …)`)
+3. Master-side Navigation-Property statt Reverse-Lookup-Filter (`Master.Details` statt `Filter(Details; Master = X)`)
+
+#### Schema-Mapping pro Detail-Tabelle (Stand 2026-06-11)
+
+| Tabelle | Felder die kopiert werden | Bemerkung |
+|---|---|---|
+| `Regiekopf` (Master) | Baustellenbezeichnung, Baustellelookup, Kalenderwoche (=heute), Empfänger, 'Zuständiger PL Email', 'Zuständiger PL Name', 'Status (rrpt_status)' = Entwurf, Datum = Today(), Rapportnummer = Year(Today()), 'Erstellt Von Name' | Status hardcoded auf Entwurf |
+| `Arbeitsbeschriebzeilen` | Regiekopf, 'Original Text', 'Übersetzter Text' | Falls weitere Spalten existieren — ergänzen |
+| `Personenzeilen` | Regiekopf, Mitarbeiter, Mitarbeitertypen, Regieansatz, Mo, Di, Mi, Do, Fr, Sa, So | Personentotal + Stunden Total: NICHT (Formel-Spalten) |
+| `Materialzeile` | Regiekopf, 'Material Name', Materialkatalog, Einheitspreis, Einheit, Menge, Bemerkung | Einheitspreis als Snapshot (Magaziner kann angepasst haben) |
+
+#### Finaler funktionsfähiger Code
+
+OnSelect von `btnDuplicate` (im Home-Galerie-Item):
+```powerfx
+If(varDuplicating;
+    Notify("Duplikation läuft bereits …"; NotificationType.Warning);;
+    Exit()
+);;
+Set(varDuplicating; true);;
+Set(varConfirmDuplicateSource; ThisItem);;
+Set(varShowDuplicateConfirm; true)
+```
+
+OnSelect von `btnConfirmDuplicateYes` (im Confirm-Dialog):
+```powerfx
+IfError(
+    Set(varNewKopf;
+        Patch([@Regiekopf]; Defaults([@Regiekopf]); {
+            Baustellenbezeichnung: varConfirmDuplicateSource.Baustellenbezeichnung;
+            Baustellelookup: varConfirmDuplicateSource.Baustellelookup;
+            Kalenderwoche: Text(WeekNum(Today()));
+            Empfänger: varConfirmDuplicateSource.Empfänger;
+            'Zuständiger PL Email': varConfirmDuplicateSource.'Zuständiger PL Email';
+            'Zuständiger PL Name': varConfirmDuplicateSource.'Zuständiger PL Name';
+            'Status (rrpt_status)': 'Status (Regiekopf)'.Entwurf;
+            Datum: Today();
+            Rapportnummer: Year(Today());
+            'Erstellt Von Name': varusername
+        })
+    );;
+    ForAll(
+        varConfirmDuplicateSource.Arbeitsbeschriebzeilen As src;
+        Patch([@Arbeitsbeschriebzeilen]; Defaults([@Arbeitsbeschriebzeilen]); {
+            Regiekopf: varNewKopf;
+            'Original Text': src.'Original Text';
+            'Übersetzter Text': src.'Übersetzter Text'
+        })
+    );;
+    ForAll(
+        varConfirmDuplicateSource.Personenzeilen As src;
+        Patch([@Personenzeilen]; Defaults([@Personenzeilen]); {
+            Regiekopf: varNewKopf;
+            Mitarbeiter: src.Mitarbeiter;
+            Mitarbeitertypen: src.Mitarbeitertypen;
+            Regieansatz: src.Regieansatz;
+            Mo: src.Mo;
+            Di: src.Di;
+            Mi: src.Mi;
+            Do: src.Do;
+            Fr: src.Fr;
+            Sa: src.Sa;
+            So: src.So
+        })
+    );;
+    ForAll(
+        varConfirmDuplicateSource.Materialzeile As src;
+        Patch([@Materialzeile]; Defaults([@Materialzeile]); {
+            Regiekopf: varNewKopf;
+            'Material Name': src.'Material Name';
+            Materialkatalog: src.Materialkatalog;
+            Einheitspreis: src.Einheitspreis;
+            Einheit: src.Einheit;
+            Menge: src.Menge;
+            Bemerkung: src.Bemerkung
+        })
+    );;
+    Notify("Rapport dupliziert: " & varNewKopf.'MVM-Rapportnummer' &
+           " · Fotos und Unterschrift wurden nicht mitkopiert.";
+           NotificationType.Success);;
+    Set(currentitem; varNewKopf);;
+    Set(varShowDuplicateConfirm; false);;
+    Set(varDuplicating; false);;
+    Navigate(Personen; ScreenTransition.Fade);
+    Notify("Duplizieren fehlgeschlagen — bitte mit Internet verbinden und erneut versuchen.";
+           NotificationType.Error);;
+    Set(varDuplicating; false);;
+    Set(varShowDuplicateConfirm; false)
+)
+```
+
+OnSelect von `btnConfirmDuplicateNo`:
+```powerfx
+Set(varShowDuplicateConfirm; false);;
+Set(varDuplicating; false)
+```
+
+#### Lessons Learned (für nächste Master-Detail-Patches)
+- **Immer `[@TableName]` verwenden**, wenn Datenquelle gleichzeitig als Navigation-Property eines im Scope sichtbaren Records existiert
+- **`As src` setzen**, sobald der ForAll-Body Felder referenziert, die sowohl auf Source als auch auf Ziel-Tabelle existieren könnten
+- **Navigation-Property bevorzugen** (`Master.Details`) vor reverse Lookup-Filter
+- Diese drei Patterns kombiniert ergeben den robusten Code
+
+> **Code in deutscher PowerFx-Syntax** (`;` / `;;`). Siehe [[50.work/power-platform/powerfx-deutsche-lokalisierung]].
+> **Disambiguation-Pattern** im Detail: [[50.work/power-platform/powerfx-disambiguation-und-as-operator]].
 
 ### Wochentage + Datums-Plus bei Personen (Remo, 10.06.2026) — Variante B
 - **Use-Case (Remo):** „EINE Arbeit, EINEN Regierapport" — Auftrag zieht sich über mehrere Datumsschienen.
