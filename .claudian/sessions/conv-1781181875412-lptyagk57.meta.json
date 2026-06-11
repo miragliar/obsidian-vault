@@ -4,6 +4,20 @@
   "title": "Plan demo video showcasing Claude in Obsidian",
   "titleGenerationStatus": "success",
   "createdAt": 1781181875412,
-  "updatedAt": 1781181881444,
-  "sessionId": null
+  "updatedAt": 1781183476465,
+  "lastResponseAt": 1781183476465,
+  "sessionId": "fc6f1541-4cdd-4f15-81a8-4dd94d25ef7d",
+  "providerState": {
+    "providerSessionId": "fc6f1541-4cdd-4f15-81a8-4dd94d25ef7d"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 12952,
+    "cacheReadInputTokens": 120451,
+    "contextWindow": 1000000,
+    "contextTokens": 133404,
+    "percentage": 13,
+    "contextWindowIsAuthoritative": true
+  }
 }

@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="rrpt_SharepointLibrary">
+  <defaultvalue>b!v9qW6riscUaRL3WR_QCEhJuDGfXR11NCgGtVrzVDJSS5vmLXnL62So-d0F3k5qlG</defaultvalue>
+  <description default="Prod: b!3shW9UYukEK-kboW7jY1h7PamA7hN_dHsWU78mTK_UsBRJokZ1dVQ7ShTlhJ-TOD">
+    <label description="Prod: b!3shW9UYukEK-kboW7jY1h7PamA7hN_dHsWU78mTK_UsBRJokZ1dVQ7ShTlhJ-TOD" languagecode="1031" />
+  </description>
+  <displayname default="Sharepoint Library">
+    <label description="Sharepoint Library" languagecode="1031" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

@@ -1,0 +1,163 @@
+<ImportExportXml version="9.2.26052.150" SolutionPackageVersion="9.2" languagecode="1031" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26052.150" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26052.00150">
+  <SolutionManifest>
+    <UniqueName>RegieRapportProzess</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Regie Rapport Prozess" languagecode="1031" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.26</Version>
+    <Managed>1</Managed>
+    <Publisher>
+      <UniqueName>Regierapport</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Regierapport" languagecode="1031" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>rrpt</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>14228</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="environmentvariablevalue" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_arbeitsbeschriebzeilen" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_baustelle" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_foto" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_materialkatalog" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_materialzeile" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_mitarbeitertypen" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_personenzeilen" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_regiekopf" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_ubersetzungstabelle" behavior="0" />
+      <RootComponent type="1" schemaName="rrpt_zeitachse" behavior="0" />
+      <RootComponent type="20" id="{1adebefb-ae43-f111-88b5-002248a05689}" behavior="0" />
+      <RootComponent type="20" id="{6bb8236c-ae43-f111-88b4-7ced8d40c600}" behavior="0" />
+      <RootComponent type="29" id="{064c8164-95ec-2bf5-7f7e-c4a80f310b7c}" behavior="0" />
+      <RootComponent type="29" id="{37d3c7dd-b404-b0f1-edbf-7184e5277982}" behavior="0" />
+      <RootComponent type="29" id="{ddadf862-985a-f111-bec6-7ced8d40c600}" behavior="0" />
+      <RootComponent type="29" id="{f5ba74cc-975a-f111-bec7-002248a05689}" behavior="0" />
+      <RootComponent type="161" id="{21c075e3-1b54-f111-bec6-7ced8d40c600}" behavior="0" />
+      <RootComponent type="300" schemaName="cr19a_regierapportapp_d4239" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdby" displayName="Created By" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdonbehalfby" displayName="Created By (Delegate)" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedby" displayName="Modified By" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedonbehalfby" displayName="Modified By (Delegate)" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningteam" displayName="Owning Team" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="owninguser" displayName="Owning User" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="versionnumber" displayName="Version Number" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="300" schemaName="cr19a_regierapportapp_d4239" displayName="Regie Rapport App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="ownerid" displayName="Owner" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" solution="EnvironmentVariablesV2 (1.0.2408.1)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="ownerid" displayName="Owner" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

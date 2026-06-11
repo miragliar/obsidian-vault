@@ -1,0 +1,1 @@
+cr19a_mvmrapportnummer: =Right(Text(rrpt_rapportnummer,"0000"),2) & "-" & Text(cr19a_autoincrementrapportnummer)

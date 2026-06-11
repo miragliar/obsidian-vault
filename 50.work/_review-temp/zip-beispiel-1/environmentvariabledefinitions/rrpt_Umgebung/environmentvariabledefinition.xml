@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="rrpt_Umgebung">
+  <defaultvalue>Sandbox</defaultvalue>
+  <description default="Sandbox oder Produktion">
+    <label description="Sandbox oder Produktion" languagecode="1031" />
+  </description>
+  <displayname default="Umgebung">
+    <label description="Umgebung" languagecode="1031" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

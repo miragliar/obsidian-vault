@@ -1,0 +1,186 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "rrpt_sharedcommondataserviceforapps_ea3e3"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_office365": {
+        "api": {
+          "name": "shared_office365"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "rrpt_sharedoffice365_d4beb"
+        },
+        "runtimeSource": "invoker"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "undefined",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Umgebung (rrpt_Umgebung)": {
+          "defaultValue": "Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "rrpt_Umgebung",
+            "description": "Sandbox oder Produktion"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Geben Sie Ihre Eingabe ein.",
+                  "title": "RegiekopfID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "f414e491-38c6-4434-8bd7-96ea3fd43ad1"
+          }
+        }
+      },
+      "actions": {
+        "Bedingung": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@parameters('Umgebung (rrpt_Umgebung)')",
+                    "Sandbox"
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Variable_festlegen": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "MailPL",
+                "value": "@outputs('Zeile_nach_ID_abrufen')?['body/rrpt_zustandigerplemail']"
+              },
+              "metadata": {
+                "operationMetadataId": "598683be-89ad-495b-b46a-506cb0a92132"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Variable_festlegen_1": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "MailPL",
+                  "value": "raoul@miraglia-bi.com"
+                },
+                "metadata": {
+                  "operationMetadataId": "56651c88-05eb-4b2b-95ba-e0866df89cc7"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "MailPL": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "cd8721c6-d63f-49ac-8ef0-549a8afc9458"
+          }
+        },
+        "MailPL": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "MailPL",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {
+            "Zeile_nach_ID_abrufen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "021d1de2-a657-4b7f-a357-b258c8604e02"
+          }
+        },
+        "Zeile_nach_ID_abrufen": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "rrpt_regiekopfs",
+              "recordId": "@triggerBody()?['text']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "61a2d9ef-ef01-4d18-972b-8495f01041bf"
+          }
+        },
+        "E-Mail_senden_(V2)": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "@variables('MailPL')",
+              "emailMessage/Subject": "Regie-App: Regie-Rapport @{outputs('Zeile_nach_ID_abrufen')?['body/cr19a_mvmrapportnummer']} liegt bereit",
+              "emailMessage/Body": "<p class=\"editor-paragraph\">Guten Tag lieber Projektleiter</p><p class=\"editor-paragraph\">Ein neuer Rapport zur Baustelle @{outputs('Zeile_nach_ID_abrufen')?['body/cr19a_baustellenbezeichnung']} liegt für dich in der <a href=\"https://apps.powerapps.com/play/e/7b1a7c1a-efba-e4b4-8666-97c3fe33ab4a/a/ef423c5c-24af-445c-8a48-f5bddda953fe?tenantId=3becd9bb-f602-4c6b-8e86-f1e42db365ea&amp;hint=af3ad94e-9f58-4e0a-9961-d2aaa9d16cfb&amp;sourcetime=1778661997987&amp;source=portal\" class=\"editor-link\">Regie-App</a> bereit.</p><p class=\"editor-paragraph\">KW: @{outputs('Zeile_nach_ID_abrufen')?['body/rrpt_kalenderwoche']}</p><p class=\"editor-paragraph\">MA: @{outputs('Zeile_nach_ID_abrufen')?['body/rrpt_erstelltvonname']}</p><p class=\"editor-paragraph\">Empfänger: @{outputs('Zeile_nach_ID_abrufen')?['body/rrpt_empfanger']}</p><br><p class=\"editor-paragraph\">Mit freundlichen Grüssen</p><p class=\"editor-paragraph\">powerplatform</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "operationId": "SendEmailV2",
+              "connectionName": "shared_office365"
+            }
+          },
+          "runAfter": {
+            "Bedingung": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "88c31a0d-d5ac-4680-8be9-6b99dc10f808"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

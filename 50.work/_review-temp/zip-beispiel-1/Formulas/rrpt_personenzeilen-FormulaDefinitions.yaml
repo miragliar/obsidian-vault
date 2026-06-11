@@ -1,0 +1,2 @@
+cr19a_stundentotal: =(rrpt_mo + rrpt_di + rrpt_mi + rrpt_do + rrpt_fr + rrpt_sa + rrpt_so) * rrpt_anzahl
+rrpt_personentotal: =cr19a_stundentotal * Decimal(rrpt_regieansatz)

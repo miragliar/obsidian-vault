@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="rrpt_SharepointRegieListe">
+  <defaultvalue>562838b9-8612-45e3-81d8-63e3aa201757</defaultvalue>
+  <description default="Prod: 2eaad531-fa00-459c-9c93-67b2185181f6">
+    <label description="Prod: 2eaad531-fa00-459c-9c93-67b2185181f6" languagecode="1031" />
+  </description>
+  <displayname default="Sharepoint RegieListe">
+    <label description="Sharepoint RegieListe" languagecode="1031" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

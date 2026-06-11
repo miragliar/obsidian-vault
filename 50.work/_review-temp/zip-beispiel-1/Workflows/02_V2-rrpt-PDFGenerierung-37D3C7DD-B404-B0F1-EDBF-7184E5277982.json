@@ -1,0 +1,1646 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps-1": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "rrpt_sharedcommondataserviceforapps_ea3e3"
+        },
+        "runtimeSource": "embedded",
+        "impersonation": {
+          "source": "invoker"
+        }
+      },
+      "shared_wordonlinebusiness-2": {
+        "api": {
+          "name": "shared_wordonlinebusiness"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedwordonlinebusiness_c3785"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_sharepointonline-1": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedsharepointonline_160e1"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_pdf4meconnect": {
+        "api": {
+          "name": "shared_pdf4meconnect"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedpdf4meconnect_b0491"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_office365": {
+        "api": {
+          "name": "shared_office365"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "rrpt_sharedoffice365_d4beb"
+        },
+        "runtimeSource": "invoker"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "undefined",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Umgebung (rrpt_Umgebung)": {
+          "defaultValue": "Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "rrpt_Umgebung",
+            "description": "Sandbox oder Produktion"
+          }
+        },
+        "Sharepoint Site (rrpt_SharepointSite)": {
+          "defaultValue": "https://mvmag.sharepoint.com/sites/MVMProzesseSandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "rrpt_SharepointSite"
+          }
+        },
+        "Sharepoint RegieListe (rrpt_SharepointRegieListe)": {
+          "defaultValue": "562838b9-8612-45e3-81d8-63e3aa201757",
+          "type": "String",
+          "metadata": {
+            "schemaName": "rrpt_SharepointRegieListe",
+            "description": "Prod: 2eaad531-fa00-459c-9c93-67b2185181f6"
+          }
+        },
+        "Sharepoint Library (rrpt_SharepointLibrary)": {
+          "defaultValue": "b!v9qW6riscUaRL3WR_QCEhJuDGfXR11NCgGtVrzVDJSS5vmLXnL62So-d0F3k5qlG",
+          "type": "String",
+          "metadata": {
+            "schemaName": "rrpt_SharepointLibrary",
+            "description": "Prod: b!3shW9UYukEK-kboW7jY1h7PamA7hN_dHsWU78mTK_UsBRJokZ1dVQ7ShTlhJ-TOD"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Geben Sie Ihre Eingabe ein.",
+                  "title": "RegiekopfID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_1": {
+                  "description": "Geben Sie Ihre Eingabe ein.",
+                  "title": "BaustelleID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_2": {
+                  "description": "Geben Sie Ihre Eingabe ein.",
+                  "title": "ArbeitsbeschriebID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "f45d75c3-0a51-4ee9-b8b6-77ceb140baee"
+          }
+        }
+      },
+      "actions": {
+        "Variable_initialisieren_-_Ablagestruktur_Ordner": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Ablagestruktur Ordner",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "1585d791-f763-4164-a223-8be360c5fe69"
+          }
+        },
+        "Regiekopf_holen": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "rrpt_regiekopfs",
+              "recordId": "@triggerBody()?['text']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_email": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f8512721-9205-4094-8969-bddf5b08f143"
+          }
+        },
+        "Baustelle_holen": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "rrpt_baustelles",
+              "recordId": "@triggerBody()?['text_1']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Regiekopf_holen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "76dbb228-6151-4c05-b038-0724d342899f"
+          }
+        },
+        "Variable_initialisieren_-_HTML": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "HTML String",
+                "type": "string",
+                "value": "<html>\n  <head>\n  </head>\n  <body>\n<h2>Anhang: Bilder</h2>\n<p>&nbsp;</p>\n  <table>"
+              }
+            ]
+          },
+          "runAfter": {
+            "Bedingung_-_Umgebung": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1dfdccb5-c38c-485d-b9fe-eceecf45c9fc"
+          }
+        },
+        "Variable_initialisieren_-_Filename": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Filename_V2",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_HTML": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e4d0fc4a-e2e7-46f4-a87c-ab3c500990fe"
+          }
+        },
+        "Variable_initialisieren_-_Check_Kleinauftrag": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "CheckKleinauftrag",
+                "type": "string",
+                "value": "@outputs('Baustelle_holen')?['body/rrpt_bezeichnung']"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_Filename": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c92a1cd7-f3e8-4344-8b3e-0b30874b29c8"
+          }
+        },
+        "Variable_initialisieren": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "PDFCONTENT",
+                "type": "boolean"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_Check_Kleinauftrag": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0e49eacd-e55f-4d02-a193-a28b87c15ea0"
+          }
+        },
+        "Bedingung_-_Kleinauftrag": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "contains": [
+                  "@outputs('Baustelle_holen')?['body/rrpt_bezeichnung']",
+                  "Kleinauf"
+                ]
+              }
+            ]
+          },
+          "actions": {
+            "Variable_festlegen_-_Kleinauftrag": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "Filename_V2",
+                "value": "@{outputs('Baustelle_holen')?['body/cr19a_baustellennummer']}-@{outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']}-@{replace(outputs('Regiekopf_holen')?['body/cr19a_baustellenbezeichnung'], '/', '_')\n\n}.pdf"
+              },
+              "metadata": {
+                "operationMetadataId": "3a4934f3-c7ff-46d2-9fff-d58c32388f63"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Variable_festlegen_-_no_Kleinauftrag": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "Filename_V2",
+                  "value": "@{outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']}-@{replace(outputs('Baustelle_holen')?['body/rrpt_bezeichnung'], '/', '_')}.pdf"
+                },
+                "metadata": {
+                  "operationMetadataId": "f0f6eb49-e251-4130-816b-301bf2c526e0"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_Total_Rapport": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8c9e6179-001c-4dee-8c49-b2e9009237bf"
+          }
+        },
+        "Rapportpositionen_holen": {
+          "type": "Scope",
+          "actions": {
+            "Personenzeile": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "rrpt_personenzeilens",
+                  "$filter": "_rrpt_regiekopf_value eq '@{triggerBody()?['text']}'"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "d20c4796-fdd9-450b-a6ef-8d32d05d363e"
+              }
+            },
+            "Select_-_Personen": {
+              "type": "Select",
+              "inputs": {
+                "from": "@outputs('Personenzeile')?['body/value']",
+                "select": {
+                  "Person": "@item()?['rrpt_mitarbeiter']",
+                  "Anzahl": "@item()?['rrpt_anzahl']",
+                  "Mo": "@item()?['rrpt_mo']",
+                  "Ansatz": "@float(formatNumber(item()?['rrpt_regieansatz'], 'N2'))",
+                  "Total": "@float(formatNumber(item()?['rrpt_personentotal'], 'N2'))",
+                  "Dienstag": "@item()?['rrpt_di']",
+                  "Mittwoch": "@item()?['rrpt_mi']",
+                  "Do": "@item()?['rrpt_do']",
+                  "Fr": "@item()?['rrpt_fr']",
+                  "Sa": "@item()?['rrpt_sa']",
+                  "So": "@item()?['rrpt_so']",
+                  "Total Stunden": "@item()?['cr19a_stundentotal']"
+                }
+              },
+              "runAfter": {
+                "Personenzeile": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "88283905-91d4-4ed5-93f9-1fada703be85"
+              }
+            },
+            "Materialzeile": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "rrpt_materialzeiles",
+                  "$filter": "_rrpt_regiekopf_value eq '@{triggerBody()?['text']}'"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "runAfter": {
+                "Select_-_Personen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a46a1774-456a-418c-a08f-ca4311dacc3a"
+              }
+            },
+            "Select_-_Material": {
+              "type": "Select",
+              "inputs": {
+                "from": "@outputs('Materialzeile')?['body/value']",
+                "select": {
+                  "Material": "@item()?['rrpt_materialname']",
+                  "Menge": "@item()?['rrpt_menge']",
+                  "Materialpreis": "@float(formatNumber(item()?['rrpt_einheitspreis'], 'N2'))",
+                  "Total Material": "@float(formatNumber(item()?['rrpt_materialtotal'], 'N2'))",
+                  "Einheit": "@item()?['rrpt_einheit']"
+                }
+              },
+              "runAfter": {
+                "Materialzeile": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e867bf87-a3b2-46be-8d24-6beaec330d6f"
+              }
+            },
+            "Arbeitsbeschrieb": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "rrpt_arbeitsbeschriebzeilens",
+                  "recordId": "@triggerBody()?['text_2']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "runAfter": {
+                "Select_-_Material": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ee184dcf-90c7-47f2-b2e3-f45459019526"
+              }
+            },
+            "Datei_oder_Bild_herunterladen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "rrpt_regiekopfs",
+                  "recordId": "@triggerBody()?['text']",
+                  "fileImageFieldName": "cr19a_unterschrift"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetEntityFileImageFieldContent",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "runAfter": {
+                "Arbeitsbeschrieb": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c254b9bd-6ac7-4f66-b354-c2953d742109"
+              }
+            },
+            "Unterschriftsbild": {
+              "type": "Compose",
+              "inputs": {
+                "$content-type": "image/png",
+                "$content": "@outputs('Datei_oder_Bild_herunterladen')?['body/$content']"
+              },
+              "runAfter": {
+                "Datei_oder_Bild_herunterladen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a7dbed2e-6445-4aaa-9ab0-1fa3f8a1b72e"
+              }
+            },
+            "Total_-_Berechnung": {
+              "type": "Scope",
+              "actions": {
+                "Auf_alle_anwenden_-_Person": {
+                  "type": "Foreach",
+                  "foreach": "@body('Select_-_Personen')",
+                  "actions": {
+                    "Variable_festlegen": {
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "temp",
+                        "value": "@add(float(variables('total_pers')),item()?['Total'])"
+                      },
+                      "metadata": {
+                        "operationMetadataId": "ff339aeb-8c63-435d-a767-d7196901421f"
+                      }
+                    },
+                    "Variable_festlegen_1": {
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "total_pers",
+                        "value": "@variables('temp')"
+                      },
+                      "runAfter": {
+                        "Variable_festlegen": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "1daadf94-f0e9-4af4-aef6-badc07f69ff8"
+                      }
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d49c6f4b-e3eb-423f-8b01-a2da6da7dac2"
+                  }
+                },
+                "Total_Person": {
+                  "type": "Compose",
+                  "inputs": "@variables('total_pers')",
+                  "runAfter": {
+                    "Auf_alle_anwenden_-_Person": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "caadc051-6da7-45ea-af6d-fefa687fd9fc"
+                  }
+                },
+                "Variable_festlegen_-_temp_auf_null": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "temp",
+                    "value": 0
+                  },
+                  "runAfter": {
+                    "Total_Person": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8abdc0e0-caec-42f2-82c3-1f349773a2e3"
+                  }
+                },
+                "Auf_alle_anwenden_-_Material": {
+                  "type": "Foreach",
+                  "foreach": "@body('Select_-_Material')",
+                  "actions": {
+                    "Variable_festlegen_2": {
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "temp",
+                        "value": "@add(float(variables('total_mat')),item()?['Total Material'])"
+                      },
+                      "metadata": {
+                        "operationMetadataId": "dba678e1-9921-48ca-a55e-f64561d75964"
+                      }
+                    },
+                    "Variable_festlegen_4": {
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "total_mat",
+                        "value": "@variables('temp')"
+                      },
+                      "runAfter": {
+                        "Variable_festlegen_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "1dc8afcd-dc5f-4b2a-9800-fdbb37ad99b5"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Variable_festlegen_-_temp_auf_null": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d13af2ab-596f-4c29-b4ad-85280acb9e57"
+                  }
+                },
+                "Total_Material": {
+                  "type": "Compose",
+                  "inputs": "@variables('total_mat')",
+                  "runAfter": {
+                    "Auf_alle_anwenden_-_Material": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "0f0b5c23-1abd-4263-982f-e25bb19acae1"
+                  }
+                },
+                "Variable_festlegen_Total_rap": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "total_rap",
+                    "value": "@add(variables('total_pers'),variables('total_mat'))"
+                  },
+                  "runAfter": {
+                    "Total_Material": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1603dd69-e5a1-4c59-a606-d1091a026162"
+                  }
+                }
+              },
+              "runAfter": {
+                "Unterschriftsbild": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "009d087c-a980-4aff-80c2-c36efa6ecd6b"
+              }
+            }
+          },
+          "runAfter": {
+            "Bedingung_-_Kleinauftrag": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1fa7fd16-623d-4a18-940e-a5b5fe9a3653"
+          }
+        },
+        "Wochentage": {
+          "type": "Scope",
+          "actions": {
+            "Zeitachse_holen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "rrpt_zeitachses",
+                  "$filter": "rrpt_wochejahr eq '@{outputs('Regiekopf_holen')?['body/rrpt_kalenderwoche']}'",
+                  "$orderby": "rrpt_wochentagno asc"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "ec18df8d-4218-45b4-87c2-6842a990fce0"
+              }
+            },
+            "Montag": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][0]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Zeitachse_holen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c48eafa6-db44-4d99-b4b7-4edc56f8975a"
+              }
+            },
+            "Dienstag": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][1]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Montag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "7c6c4d04-86d0-45ae-a0f7-ec5f64ce2a69"
+              }
+            },
+            "Mittwoch": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][2]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Dienstag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "4ae95c1c-330b-4f70-b410-29f14a9b2d19"
+              }
+            },
+            "Donnerstag": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][3]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Mittwoch": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "9cfeb7ed-5905-4da7-8bad-6f7d45c8a034"
+              }
+            },
+            "Freitag": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][4]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Donnerstag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e181f30a-2ecf-4560-b024-1565fec57b1e"
+              }
+            },
+            "Samstag": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][5]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Freitag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "97e0a336-cd37-4617-844e-b7af0eec668f"
+              }
+            },
+            "Sonntag": {
+              "type": "Compose",
+              "inputs": "@formatDateTime(body('Zeitachse_holen')?['value'][6]?['rrpt_datum'],'dd.MM')",
+              "runAfter": {
+                "Samstag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "cc8f912c-d9e3-4bfa-8234-9a7e0dd76ff3"
+              }
+            }
+          },
+          "runAfter": {
+            "Rapportpositionen_holen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "51a8da63-0e47-4ff5-a780-2c7d3d9720a7"
+          }
+        },
+        "Rapport_erstellen_-_docx_und_pdf": {
+          "type": "Scope",
+          "actions": {
+            "Microsoft_Word-Vorlage_auffüllen_-_Emmen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "sites/mvmag.sharepoint.com,ea96dabf-acb8-4671-912f-7591fd008484,f519839b-d7d1-4253-806b-55af35432524",
+                  "drive": "b!v9qW6riscUaRL3WR_QCEhJuDGfXR11NCgGtVrzVDJSS5vmLXnL62So-d0F3k5qlG",
+                  "file": "01NRJS47AUOMM5YBSADFEKN7ZO6REIOTGH",
+                  "dynamicFileSchema/44493837": "@outputs('Montag')",
+                  "dynamicFileSchema/83967465": "@outputs('Samstag')",
+                  "dynamicFileSchema/600534402": "@formatNumber(variables('total_pers'), 'N2')",
+                  "dynamicFileSchema/922606280": "@outputs('Baustelle_holen')?['body/cr19a_baustellennummer']",
+                  "dynamicFileSchema/986129942": "@outputs('Regiekopf_holen')?['body/cr19a_baustellenbezeichnung']",
+                  "dynamicFileSchema/1768269059": "@body('Select_-_Personen')",
+                  "dynamicFileSchema/1785690929": "@body('Select_-_Material')",
+                  "dynamicFileSchema/1930997716": "@outputs('Donnerstag')",
+                  "dynamicFileSchema/-372930751": "@outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']",
+                  "dynamicFileSchema/-766460536": "@outputs('Regiekopf_holen')?['body/rrpt_kalenderwoche']",
+                  "dynamicFileSchema/-1039435655": "@outputs('Regiekopf_holen')?['body/rrpt_empfanger']",
+                  "dynamicFileSchema/-1884158171": "@outputs('Dienstag')",
+                  "dynamicFileSchema/-307247045": "@outputs('Mittwoch')",
+                  "dynamicFileSchema/-1395739583": "@outputs('Freitag')",
+                  "dynamicFileSchema/-1206553912": "@outputs('Sonntag')",
+                  "dynamicFileSchema/-458024808": "@formatNumber(variables('total_mat'), 'N2')",
+                  "dynamicFileSchema/-1464261213": "@formatNumber(variables('total_rap'), 'N2')",
+                  "dynamicFileSchema/-1461263867": "@outputs('Arbeitsbeschrieb')?['body/rrpt_originaltext']",
+                  "dynamicFileSchema/-824505211": "@outputs('Unterschriftsbild')"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                  "operationId": "CreateFileItem",
+                  "connectionName": "shared_wordonlinebusiness-2"
+                }
+              },
+              "metadata": {
+                "01NRJS47AUOMM5YBSADFEKN7ZO6REIOTGH": "/01_Vorlagen/Regie-Rapport MVM AG Emmen[52].docx",
+                "operationMetadataId": "270e55fc-228f-4dd0-a995-0c90902ecd62"
+              }
+            },
+            "Datei_erstellen_-_Emmen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "folderPath": "/Freigegebene Dokumente/02_temp",
+                  "name": "@{outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']}-@{outputs('Regiekopf_holen')?['body/cr19a_baustellenbezeichnung']}.docx",
+                  "body": "@body('Microsoft_Word-Vorlage_auffüllen_-_Emmen')"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "CreateFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Microsoft_Word-Vorlage_auffüllen_-_Emmen": [
+                  "Succeeded"
+                ]
+              },
+              "runtimeConfiguration": {
+                "contentTransfer": {
+                  "transferMode": "Chunked"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "614d964a-7fa5-47d6-ad5b-308a93b2e94c"
+              }
+            },
+            "Word-Dokument_in_PDF_konvertieren": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "drive": "@parameters('Sharepoint Library (rrpt_SharepointLibrary)')",
+                  "file": "02_Temp/@{outputs('Datei_erstellen_-_Emmen')?['body/Name']}"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                  "operationId": "GetFilePDF",
+                  "connectionName": "shared_wordonlinebusiness-2"
+                }
+              },
+              "runAfter": {
+                "Datei_erstellen_-_Emmen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e5275f2a-bade-4b15-922f-9b1c3759f911"
+              }
+            },
+            "Datei_löschen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "id": "@outputs('Datei_erstellen_-_Emmen')?['body/Id']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "DeleteFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Word-Dokument_in_PDF_konvertieren": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6b86d587-2e49-468a-aa00-f2dcd1f08af7"
+              }
+            },
+            "Elemente_abrufen_-_Bilder": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "table": "@parameters('Sharepoint RegieListe (rrpt_SharepointRegieListe)')",
+                  "$filter": "Rapport_x002d_ID eq '@{outputs('Regiekopf_holen')?['body/rrpt_rapportid']}'"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "GetItems",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Datei_löschen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "079ccdec-4525-4a32-ad89-a3609a94b888"
+              }
+            }
+          },
+          "runAfter": {
+            "Wochentage": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "46323d22-3dff-4f6e-8549-e4467ebed0ef"
+          }
+        },
+        "Bedingung_-_Merge": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@length(outputs('Elemente_abrufen_-_Bilder')?['body/value'])",
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Bereich_-_Bilder": {
+              "type": "Scope",
+              "actions": {
+                "For_each": {
+                  "type": "Foreach",
+                  "foreach": "@outputs('Elemente_abrufen_-_Bilder')?['body/value']",
+                  "actions": {
+                    "Anlagen_abrufen": {
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                          "table": "@parameters('Sharepoint RegieListe (rrpt_SharepointRegieListe)')",
+                          "itemId": "@items('For_each')?['ID']"
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                          "operationId": "GetItemAttachments",
+                          "connectionName": "shared_sharepointonline-1"
+                        }
+                      },
+                      "metadata": {
+                        "operationMetadataId": "a6798533-1af3-414a-8139-5803d11cde4f"
+                      }
+                    },
+                    "For_each_2": {
+                      "type": "Foreach",
+                      "foreach": "@outputs('Anlagen_abrufen')?['body']",
+                      "actions": {
+                        "Anlageninhalt_abrufen": {
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "parameters": {
+                              "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                              "table": "@parameters('Sharepoint RegieListe (rrpt_SharepointRegieListe)')",
+                              "itemId": "@items('For_each')?['ID']",
+                              "attachmentId": "@items('For_each_2')?['Id']"
+                            },
+                            "host": {
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                              "operationId": "GetAttachmentContent",
+                              "connectionName": "shared_sharepointonline-1"
+                            }
+                          },
+                          "metadata": {
+                            "operationMetadataId": "845eeb4c-84fd-439f-8bca-a30858660bbb"
+                          }
+                        },
+                        "An_Zeichenfolgenvariable_anfügen": {
+                          "type": "AppendToStringVariable",
+                          "inputs": {
+                            "name": "HTML String",
+                            "value": "<tr>\n<td><img src='data:image/jpeg;base64,@{base64(body('Anlageninhalt_abrufen'))\n\n}' width=\"300px\" height=\"200px\" /></td>\n</tr>"
+                          },
+                          "runAfter": {
+                            "Anlageninhalt_abrufen": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "eb4ccead-2ee9-4dc7-8b06-9f8ee9c450e6"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Anlagen_abrufen": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "d75e63a4-a75c-49fb-a3ea-49e355306231"
+                      }
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "c3deede2-971e-4956-8395-00a2d12b3bc8"
+                  }
+                },
+                "End_HTML": {
+                  "type": "AppendToStringVariable",
+                  "inputs": {
+                    "name": "HTML String",
+                    "value": "</table>\n  </body>\n</html>"
+                  },
+                  "runAfter": {
+                    "For_each": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "43ffe70e-607d-46fe-a1cf-f86a33447963"
+                  }
+                }
+              },
+              "runAfter": {
+                "Variable_festlegen_-_PDF_mit_merge": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "416c06d2-42db-4a36-bcff-01565878733f"
+              }
+            },
+            "Variable_festlegen_-_PDF_mit_merge": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "PDFCONTENT",
+                "value": true
+              },
+              "metadata": {
+                "operationMetadataId": "4a8f8228-8e2f-4f45-8316-5c2e95e5e8d1"
+              }
+            },
+            "Aktuelle_Uhrzeit": {
+              "type": "Expression",
+              "kind": "CurrentTime",
+              "inputs": {},
+              "runAfter": {
+                "Bereich_-_Bilder": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ba72b2c7-28a1-4a2c-a0b8-5a10c0d4414d"
+              }
+            },
+            "Datei_erstellen_-_HTML": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "folderPath": "/Freigegebene Dokumente/02_temp",
+                  "name": "@{outputs('Regiekopf_holen')?['body/rrpt_kalenderwoche']}-@{outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']}-@{outputs('Regiekopf_holen')?['body/cr19a_baustellenbezeichnung']}.html",
+                  "body": "@variables('HTML String')"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "CreateFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Aktuelle_Uhrzeit": [
+                  "Succeeded"
+                ]
+              },
+              "runtimeConfiguration": {
+                "contentTransfer": {
+                  "transferMode": "Chunked"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "79797fdd-69fe-4001-b8ad-2ee74780f778"
+              }
+            },
+            "Dateiinhalt_abrufen_-_HTML": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "id": "@outputs('Datei_erstellen_-_HTML')?['body/Id']",
+                  "inferContentType": true
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "GetFileContent",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Datei_erstellen_-_HTML": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "4120dce5-b7e5-4022-8d20-c75673b72f01"
+              }
+            },
+            "HTML_in_PDF_konvertieren": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "body/docContent": "@body('Dateiinhalt_abrufen_-_HTML')",
+                  "body/docName": "@outputs('Datei_erstellen_-_HTML')?['body/Name']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_pdf4meconnect",
+                  "operationId": "ConvertHtmlToPdf_V1",
+                  "connectionName": "shared_pdf4meconnect"
+                }
+              },
+              "runAfter": {
+                "Dateiinhalt_abrufen_-_HTML": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "95fa53de-c097-45a8-a466-1a2a4d785151"
+              }
+            },
+            "Datei_erstellen_-_PDF": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "folderPath": "/Freigegebene Dokumente/02_temp",
+                  "name": "@variables('Filename_V2')",
+                  "body": "@body('HTML_in_PDF_konvertieren')"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "CreateFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "HTML_in_PDF_konvertieren": [
+                  "Succeeded"
+                ]
+              },
+              "runtimeConfiguration": {
+                "contentTransfer": {
+                  "transferMode": "Chunked"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "d626dcbd-be46-4a51-8172-e4ae2bb7969d"
+              }
+            },
+            "Dateiinhalt_abrufen_-_PDF": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "id": "@outputs('Datei_erstellen_-_PDF')?['body/Id']",
+                  "inferContentType": true
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "GetFileContent",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Datei_erstellen_-_PDF": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "f1134c18-6432-4b74-8fa0-bd4864d3e8fa"
+              }
+            },
+            "Mehrere_PDF-Dateien_in_einer_einzelnen_PDF-Datei_zusammenführen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "body/docContent": [
+                    "@base64(body('Word-Dokument_in_PDF_konvertieren'))",
+                    "@base64(body('Dateiinhalt_abrufen_-_PDF'))"
+                  ],
+                  "body/document/Name": "@variables('Filename_V2')"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_pdf4meconnect",
+                  "operationId": "Merge_V1",
+                  "connectionName": "shared_pdf4meconnect"
+                }
+              },
+              "runAfter": {
+                "Dateiinhalt_abrufen_-_PDF": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "fe7398b2-db84-4e49-bbd2-b80db891b9cf"
+              }
+            },
+            "PDF_komprimieren": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "body/docContent": "@body('Mehrere_PDF-Dateien_in_einer_einzelnen_PDF-Datei_zusammenführen')",
+                  "body/document/Name": "@outputs('Datei_erstellen_-_PDF')?['body/Name']",
+                  "body/optimizeProfile": "WebMax"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_pdf4meconnect",
+                  "operationId": "Optimize_V1",
+                  "connectionName": "shared_pdf4meconnect"
+                }
+              },
+              "runAfter": {
+                "Mehrere_PDF-Dateien_in_einer_einzelnen_PDF-Datei_zusammenführen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3acac358-d91c-4ee7-bb21-d91fb464f71a"
+              }
+            },
+            "Datei_löschen_-_PDF": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "id": "@outputs('Datei_erstellen_-_PDF')?['body/Id']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "DeleteFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "PDF_komprimieren": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "eeb10a2c-4d22-4f90-94aa-e9d49818e9a5"
+              }
+            },
+            "Datei_löschen_-_HTML": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "@parameters('Sharepoint Site (rrpt_SharepointSite)')",
+                  "id": "@outputs('Datei_erstellen_-_HTML')?['body/Id']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "DeleteFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Datei_löschen_-_PDF": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c8a7758d-2f10-4318-aa49-01d67887f55d"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Variable_festlegen_-_PDF_ohne_merge": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "PDFCONTENT",
+                  "value": false
+                },
+                "metadata": {
+                  "operationMetadataId": "e5a91587-19b6-45ad-a8ea-81668b3526eb"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Rapport_erstellen_-_docx_und_pdf": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a5185f2f-9fc3-4652-b269-8d8bae1eb307"
+          }
+        },
+        "Bedingung_links_=_PDF_erstellen_in_Ablagestruktur_ohne_merge": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@variables('PDFCONTENT')",
+                  "@false"
+                ]
+              }
+            ]
+          },
+          "actions": {
+            "E-Mail_senden_(V2)": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "emailMessage/To": "@variables('E-Mail PL')",
+                  "emailMessage/Subject": "ANHANG: Regie-Rapport ",
+                  "emailMessage/Body": "<p class=\"editor-paragraph\">Anbei der angeforderte Regie-Rapport:</p><br><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Nummer: </strong></b>@{outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Baustelle:</strong></b> @{outputs('Regiekopf_holen')?['body/cr19a_baustellenbezeichnung']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">KW:</strong></b> @{outputs('Regiekopf_holen')?['body/rrpt_kalenderwoche']}</p>",
+                  "emailMessage/Attachments": [
+                    {
+                      "Name": "@variables('Filename_V2')",
+                      "ContentBytes": "@body('Word-Dokument_in_PDF_konvertieren')"
+                    }
+                  ],
+                  "emailMessage/Importance": "Normal"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "operationId": "SendEmailV2",
+                  "connectionName": "shared_office365"
+                }
+              },
+              "runAfter": {
+                "Datei_verschieben": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "23e41be3-dd57-4149-b73b-be83389a5f6d"
+              }
+            },
+            "Datei_erstellen_in_neuer_Ablagestruktur": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "https://mvmag.sharepoint.com/sites/PowerApps",
+                  "folderPath": "/Freigegebene Dokumente/WorkFlow RegieRapport/RegieRapporteTempMove",
+                  "name": "@variables('Filename_V2')",
+                  "body": "@body('Word-Dokument_in_PDF_konvertieren')"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "CreateFile",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runtimeConfiguration": {
+                "contentTransfer": {
+                  "transferMode": "Chunked"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "04a72689-64b0-4ffc-a57b-63c8be797d9d"
+              }
+            },
+            "Datei_verschieben": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "https://mvmag.sharepoint.com/sites/PowerApps",
+                  "parameters/sourceFileId": "@outputs('Datei_erstellen_in_neuer_Ablagestruktur')?['body/Id']",
+                  "parameters/destinationDataset": "https://mvmag.sharepoint.com/sites/PowerApps",
+                  "parameters/destinationFolderPath": "/Freigegebene Dokumente/WorkFlow RegieRapport/@{variables('Ablagestruktur Ordner')}",
+                  "parameters/nameConflictBehavior": 1
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "MoveFileAsync",
+                  "connectionName": "shared_sharepointonline-1"
+                }
+              },
+              "runAfter": {
+                "Datei_erstellen_in_neuer_Ablagestruktur": [
+                  "Succeeded"
+                ]
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "E-Mail_senden_(V2)_1": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "emailMessage/To": "@variables('E-Mail PL')",
+                    "emailMessage/Subject": "ANHANG: Regie-Rapport ",
+                    "emailMessage/Body": "<p class=\"editor-paragraph\">Anbei der angeforderte Regie-Rapport:</p><br><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Nummer: </strong></b>@{outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Baustelle:</strong></b> @{outputs('Regiekopf_holen')?['body/cr19a_baustellenbezeichnung']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">KW:</strong></b> @{outputs('Regiekopf_holen')?['body/rrpt_kalenderwoche']}</p>",
+                    "emailMessage/Attachments": [
+                      {
+                        "Name": "@variables('Filename_V2')",
+                        "ContentBytes": "@body('PDF_komprimieren')"
+                      }
+                    ],
+                    "emailMessage/Importance": "Normal"
+                  },
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                    "operationId": "SendEmailV2",
+                    "connectionName": "shared_office365"
+                  }
+                },
+                "runAfter": {
+                  "Datei_verschieben_1": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "ceaacc68-2e08-44f1-a5c8-3a261378566a"
+                }
+              },
+              "Datei_erstellen_in_neuer_Ablagestruktur_-_gemerged": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "dataset": "https://mvmag.sharepoint.com/sites/PowerApps",
+                    "folderPath": "/Freigegebene Dokumente/WorkFlow RegieRapport/RegieRapporteTempMove",
+                    "name": "@variables('Filename_V2')",
+                    "body": "@body('PDF_komprimieren')"
+                  },
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                    "operationId": "CreateFile",
+                    "connectionName": "shared_sharepointonline-1"
+                  }
+                },
+                "runtimeConfiguration": {
+                  "contentTransfer": {
+                    "transferMode": "Chunked"
+                  }
+                },
+                "metadata": {
+                  "operationMetadataId": "3a781e38-7ec0-44e8-8f2f-28366f291cd0"
+                }
+              },
+              "Datei_verschieben_1": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "dataset": "https://mvmag.sharepoint.com/sites/PowerApps",
+                    "parameters/sourceFileId": "@outputs('Datei_erstellen_in_neuer_Ablagestruktur_-_gemerged')?['body/Id']",
+                    "parameters/destinationDataset": "https://mvmag.sharepoint.com/sites/PowerApps",
+                    "parameters/destinationFolderPath": "/Freigegebene Dokumente/WorkFlow RegieRapport/@{variables('Ablagestruktur Ordner')}",
+                    "parameters/nameConflictBehavior": 1
+                  },
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                    "operationId": "MoveFileAsync",
+                    "connectionName": "shared_sharepointonline-1"
+                  }
+                },
+                "runAfter": {
+                  "Datei_erstellen_in_neuer_Ablagestruktur_-_gemerged": [
+                    "Succeeded"
+                  ]
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Bedingung_-_Merge": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fd07ff3a-9019-4e4c-8b4f-54c2791521ab"
+          }
+        },
+        "Variable_initialisieren_-_email": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "E-Mail PL",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_Ablagestruktur_Ordner": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "57dfa2ab-d722-43cf-ba8a-aaa59d472891"
+          }
+        },
+        "Bedingung_-_Umgebung": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@parameters('Umgebung (rrpt_Umgebung)')",
+                    "Sandbox"
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Variable_festlegen_-_RegieRapporteTemp": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "Ablagestruktur Ordner",
+                "value": "RegieRapporteTemp"
+              },
+              "metadata": {
+                "operationMetadataId": "be4d64c4-966f-4d66-8bf3-0ec6172a204f"
+              }
+            },
+            "Variable_festlegen_-_raoul_1": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "E-Mail PL",
+                "value": "@outputs('Regiekopf_holen')?['body/rrpt_zustandigerplemail']"
+              },
+              "runAfter": {
+                "Variable_festlegen_-_RegieRapporteTemp": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3e127bf4-e667-46e5-a1a1-771e4f4d207f"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Variable_festlegen_-_RegieRapporteTempTest": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "Ablagestruktur Ordner",
+                  "value": "RegieRapporteTempTest"
+                },
+                "metadata": {
+                  "operationMetadataId": "38f722ff-cf25-4c9c-a750-41f27e88d5f7"
+                }
+              },
+              "Variable_festlegen_-_raoul": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "E-Mail PL",
+                  "value": "raoul@miraglia-bi.com"
+                },
+                "runAfter": {
+                  "Variable_festlegen_-_RegieRapporteTempTest": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "3e127bf4-e667-46e5-a1a1-771e4f4d207f"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Baustelle_holen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "dbe346a1-4f52-430a-b8f1-14d4ef3805f3"
+          }
+        },
+        "Auf_eine_Power_App_oder_einen_Flow_reagieren": {
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {}
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "955f5ff8-c26d-4da6-812b-681eb3ded4da"
+          }
+        },
+        "Variable_initialisieren_-_temp": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "temp",
+                "type": "float"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "2413d56f-8687-4ada-b4d9-108ccf43f171"
+          }
+        },
+        "Variable_initialisieren_-_total_mat": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "total_mat",
+                "type": "float"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_temp": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0f61b090-c4dc-4b7f-8a20-f7f44fd4f097"
+          }
+        },
+        "Variable_initialisieren_-_total_pers": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "total_pers",
+                "type": "float"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_total_mat": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "33d8f7d2-7c36-435d-883f-dd84a1ea352c"
+          }
+        },
+        "Variable_initialisieren_-_Total_Rapport": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "total_rap",
+                "type": "float"
+              }
+            ]
+          },
+          "runAfter": {
+            "Variable_initialisieren_-_total_pers": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8f91b4b1-188b-4f2f-811e-4304a0b21695"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
