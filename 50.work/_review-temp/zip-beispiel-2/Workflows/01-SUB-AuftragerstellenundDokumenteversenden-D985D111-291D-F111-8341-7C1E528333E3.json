@@ -1,0 +1,1930 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps-1": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_db7d5"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_sharepointonline": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedsharepointonline_dcc63"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_wordonlinebusiness": {
+        "api": {
+          "name": "shared_wordonlinebusiness"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedwordonlinebusiness_118f1"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_office365": {
+        "api": {
+          "name": "shared_office365"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedoffice365_cd9af"
+        },
+        "runtimeSource": "invoker"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "SP_Kundenpfad (ks_SP_Kundenpfad)": {
+          "defaultValue": "02_Kunden",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_SP_Kundenpfad"
+          }
+        },
+        "SP_SiteURL (ks_SP_SiteURL)": {
+          "defaultValue": "https://kosterag.sharepoint.com/sites/Subunternehmer_Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_SP_SiteURL"
+          }
+        },
+        "SP_Library (ks_SP_Library)": {
+          "defaultValue": "59a1d5db-13fe-4eec-93f9-f131bfa2bdf6",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_SP_Library"
+          }
+        },
+        "Environment (ks_Environment)": {
+          "defaultValue": "Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_Environment",
+            "description": "Sandbox or Production"
+          }
+        },
+        "SP_Library_Text (ks_SP_Library_Text)": {
+          "defaultValue": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_SP_Library_Text",
+            "description": "Prod: b!sT0FUceMjUybEBiNzlM8SjKGK4JnSGRPgvzjeD_j3zZ6KcfbxDSeTr1FJQPWob-g"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Dataverse-ID",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Eingabe eingeben",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "Jahr",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Eingabe eingeben",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text",
+                "text_1"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "c1791c78-58cc-4978-9fc1-808718727abb"
+          }
+        }
+      },
+      "actions": {
+        "Subunternehmer_Infos_holen": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "crb4b_subunternehmers",
+              "recordId": "@triggerBody()['text']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Initialize_variable_Prefix": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8282e616-a234-408c-b302-2184da1e1b48"
+          }
+        },
+        "Neuen_Auftrag_erstellen": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_auftrages",
+              "item/ks_anzahl_ausstehend": 11,
+              "item/ks_jahr": "@variables('Jahr')",
+              "item/ks_letzterkontaktam": "@utcNow()",
+              "item/ks_LookUpSubunternehmer@odata.bind": "/crb4b_subunternehmers(@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_subunternehmerid']})",
+              "item/ks_status_auftrag": "Offen",
+              "item/ks_subunternehmer": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "CreateRecord",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Condition_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b987773f-14ee-413d-b99e-f5573203cc88"
+          }
+        },
+        "Create_new_folder": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+              "table": "@parameters('SP_Library (ks_SP_Library)')",
+              "parameters/path": "@{parameters('SP_Kundenpfad (ks_SP_Kundenpfad)')}/@{variables('Jahr')}/@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']}"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateNewFolder",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Neuen_Auftrag_erstellen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "545da9ea-de2f-48b9-bc85-de967acf121c"
+          }
+        },
+        "Initialize_variable": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Jahr",
+                "type": "integer",
+                "value": "@int(triggerBody()['text_1'])"
+              }
+            ]
+          },
+          "runAfter": {
+            "Initialize_variable_1": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1074c959-a38a-43ae-a3d5-4ea979e89537"
+          }
+        },
+        "Scope": {
+          "type": "Scope",
+          "actions": {
+            "Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": {
+              "type": "Scope",
+              "actions": {
+                "Populate_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+                      "file": "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ",
+                      "dynamicFileSchema/332649695": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrort']",
+                      "dynamicFileSchema/1312284269": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrkontmail1']",
+                      "dynamicFileSchema/1397400398": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/1492603077": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrstrasse']",
+                      "dynamicFileSchema/-1055471406": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrplz']",
+                      "dynamicFileSchema/-135733956": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrort']",
+                      "dynamicFileSchema/-1227069153": "@formatDateTime(utcNow(), 'dd.MM.yyyy')",
+                      "dynamicFileSchema/-218279489": "@variables('Prefix')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "CreateFileItem",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "61367cdb-9b2f-4401-a529-395e29896536",
+                    "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3": "/01_Vorlagen/Vorlagen_Live/Deklaration zur Einhaltung der minimalen Lohnbedingungen.docx",
+                    "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS": "/01_Vorlagen/Vorlagen_Live/Dekl. Lohn Mitarbeiter.docx",
+                    "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ": "/01_Vorlagen/Vorlagen_Live/Deklarationen zur Einhaltung der minimalen Arbeitsbedingungen.docx"
+                  }
+                },
+                "Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VORLAGE.docx",
+                      "body": "@body('Populate_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "Populate_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": {
+                  "type": "OpenApiConnection",
+                  "description": "funktioniert noch nicht weil \"Freigegebene Dokumente\" im Path drin steht... ",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "@parameters('SP_Library_Text (ks_SP_Library_Text)')",
+                      "file": "@{split(outputs('Create_new_folder')?['body/{FullPath}'],\n\n'Freigegebene Dokumente/')[1]}/@{outputs('Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/Name']}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "GetFilePDF",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Delay": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d7e01ad-2c2a-4c68-a3a8-34b011a13012"
+                  }
+                },
+                "Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VERSENDET.pdf",
+                      "body": "@body('PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "Set_variable": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_1"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/Name']",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080003",
+                      "item/ks_dokumententyp_text": "Deklaration zur Einhaltung der minimalen Arbeitsbedingungen",
+                      "item/ks_ist_outgoing": true,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_id": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/ItemId']",
+                      "item/ks_versendet_sp_pfad": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/Path']",
+                      "item/ks_vorlage_sp_id": "@outputs('Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/ItemId']",
+                      "item/ks_vorlage_sp_pfad": "@outputs('Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/Path']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1f4c6d03-2b60-47ff-82d8-d8e3bb72ee74"
+                  }
+                },
+                "Delay": {
+                  "type": "Wait",
+                  "inputs": {
+                    "interval": {
+                      "count": 5,
+                      "unit": "Second"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "1e84425c-4e37-4a99-b653-f473741e1b73"
+              }
+            },
+            "Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": {
+              "type": "Scope",
+              "actions": {
+                "Populate_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+                      "file": "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3",
+                      "dynamicFileSchema/68614559": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrplz']",
+                      "dynamicFileSchema/418830602": "@variables('Prefix')",
+                      "dynamicFileSchema/682791802": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrkontmail1']",
+                      "dynamicFileSchema/1672758657": "@formatDateTime(utcNow(), 'dd.MM.yyyy')",
+                      "dynamicFileSchema/-1089387733": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/-2138938281": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrstrasse']",
+                      "dynamicFileSchema/-357429939": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrort']",
+                      "dynamicFileSchema/-1974199889": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrort']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "CreateFileItem",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_1": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "61367cdb-9b2f-4401-a529-395e29896536",
+                    "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3": "/01_Vorlagen/Vorlagen_Live/Deklaration zur Einhaltung der minimalen Lohnbedingungen.docx",
+                    "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS": "/01_Vorlagen/Vorlagen_Live/Dekl. Lohn Mitarbeiter.docx",
+                    "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ": "/01_Vorlagen/Vorlagen_Live/Deklarationen zur Einhaltung der minimalen Arbeitsbedingungen.docx"
+                  }
+                },
+                "Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VORLAGE.docx",
+                      "body": "@body('Populate_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "Populate_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": {
+                  "type": "OpenApiConnection",
+                  "description": "funktioniert noch nicht weil \"Freigegebene Dokumente\" im Path drin steht... ",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "@parameters('SP_Library_Text (ks_SP_Library_Text)')",
+                      "file": "@{split(outputs('Create_new_folder')?['body/{FullPath}'],\n\n'Freigegebene Dokumente/')[1]}/@{outputs('Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')?['body/Name']}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "GetFilePDF",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Delay_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d7e01ad-2c2a-4c68-a3a8-34b011a13012"
+                  }
+                },
+                "Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VERSENDET.pdf",
+                      "body": "@body('PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "Add_a_new_row_-_Deklaration_zur_Einhaltung_der_minimalen_Lohnbedingungen": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')?['body/Name']",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080004",
+                      "item/ks_dokumententyp_text": "Deklaration zur Einhaltung der minimalen Lohnbedingungen",
+                      "item/ks_ist_outgoing": true,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_id": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')?['body/ItemId']",
+                      "item/ks_versendet_sp_pfad": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')?['body/Path']",
+                      "item/ks_vorlage_sp_id": "@outputs('Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')?['body/ItemId']",
+                      "item/ks_vorlage_sp_pfad": "@outputs('Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')?['body/Path']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "6304fcb9-1a17-47c7-aa0a-6163804b024f"
+                  }
+                },
+                "Set_variable_1": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_3"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Delay_2": {
+                  "type": "Wait",
+                  "inputs": {
+                    "interval": {
+                      "count": 5,
+                      "unit": "Second"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "runAfter": {
+                "Deklaration_Lohn_Mitarbeiter": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1e84425c-4e37-4a99-b653-f473741e1b73"
+              }
+            },
+            "Deklaration_Lohn_Mitarbeiter": {
+              "type": "Scope",
+              "actions": {
+                "Populate_-_Deklaration_Lohn": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+                      "file": "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS",
+                      "dynamicFileSchema/-1819878165": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/-1976129469": "@variables('Prefix')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "CreateFileItem",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "61367cdb-9b2f-4401-a529-395e29896536",
+                    "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3": "/01_Vorlagen/Vorlagen_Live/Deklaration zur Einhaltung der minimalen Lohnbedingungen.docx",
+                    "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS": "/01_Vorlagen/Vorlagen_Live/Dekl. Lohn Mitarbeiter.docx",
+                    "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ": "/01_Vorlagen/Vorlagen_Live/Deklarationen zur Einhaltung der minimalen Arbeitsbedingungen.docx"
+                  }
+                },
+                "Create_file_-_Deklaration_Lohn": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VORLAGE.docx",
+                      "body": "@body('Populate_-_Deklaration_Lohn')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "Populate_-_Deklaration_Lohn": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "PDF_-_Deklaration_Lohn": {
+                  "type": "OpenApiConnection",
+                  "description": "funktioniert noch nicht weil \"Freigegebene Dokumente\" im Path drin steht... ",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "@parameters('SP_Library_Text (ks_SP_Library_Text)')",
+                      "file": "@{split(outputs('Create_new_folder')?['body/{FullPath}'],\n\n'Freigegebene Dokumente/')[1]}/@{outputs('Create_file_-_Deklaration_Lohn')?['body/Name']}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "GetFilePDF",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Delay_1": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d7e01ad-2c2a-4c68-a3a8-34b011a13012"
+                  }
+                },
+                "Create_file_PDF_-_Deklaration_Lohn": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VERSENDET.pdf",
+                      "body": "@body('PDF_-_Deklaration_Lohn')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "PDF_-_Deklaration_Lohn": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "Add_a_new_row_-_Deklaration_Lohn_Mitarbeiter": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "@outputs('Create_file_PDF_-_Deklaration_Lohn')?['body/Name']",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080005",
+                      "item/ks_dokumententyp_text": "Deklaration Lohn",
+                      "item/ks_ist_outgoing": true,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_id": "@outputs('Create_file_PDF_-_Deklaration_Lohn')?['body/ItemId']",
+                      "item/ks_versendet_sp_pfad": "@outputs('Create_file_PDF_-_Deklaration_Lohn')?['body/Path']",
+                      "item/ks_vorlage_sp_id": "@outputs('Create_file_-_Deklaration_Lohn')?['body/ItemId']",
+                      "item/ks_vorlage_sp_pfad": "@outputs('Create_file_-_Deklaration_Lohn')?['body/Path']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_PDF_-_Deklaration_Lohn": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "e26e1764-f46e-4e36-b4cf-0259c89b9d30"
+                  }
+                },
+                "Set_variable_2": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_2"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Delay_1": {
+                  "type": "Wait",
+                  "inputs": {
+                    "interval": {
+                      "count": 5,
+                      "unit": "Second"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_-_Deklaration_Lohn": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "runAfter": {
+                "Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1e84425c-4e37-4a99-b653-f473741e1b73"
+              }
+            },
+            "Rahmenvertrag": {
+              "type": "Scope",
+              "actions": {
+                "Populate_-_Rahmenvertrag": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+                      "file": "01JZG2FXAZJCNNTDRMXFD2C4MDTLY5MFDJ",
+                      "dynamicFileSchema/737902705": "Franc Lechthaler",
+                      "dynamicFileSchema/1881657577": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrplz']",
+                      "dynamicFileSchema/-1018081604": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/-465124639": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrstrasse']",
+                      "dynamicFileSchema/-1145051614": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrort']",
+                      "dynamicFileSchema/-898588964": "Roger Kränzlin",
+                      "dynamicFileSchema/-1892792172": "@variables('Prefix')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "CreateFileItem",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "61367cdb-9b2f-4401-a529-395e29896536",
+                    "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3": "/01_Vorlagen/Vorlagen_Live/Deklaration zur Einhaltung der minimalen Lohnbedingungen.docx",
+                    "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS": "/01_Vorlagen/Vorlagen_Live/Dekl. Lohn Mitarbeiter.docx",
+                    "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ": "/01_Vorlagen/Vorlagen_Live/Deklarationen zur Einhaltung der minimalen Arbeitsbedingungen.docx",
+                    "01JZG2FXAZJCNNTDRMXFD2C4MDTLY5MFDJ": "/01_Vorlagen/Vorlagen_Live/3.1.2-02 Rahmenvereinbarung Subunternehmer-Offen.docx"
+                  }
+                },
+                "Create_file_-_Rahmenvertrag": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VORLAGE.docx",
+                      "body": "@body('Populate_-_Rahmenvertrag')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "Populate_-_Rahmenvertrag": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "PDF_-_Rahmenvertrag": {
+                  "type": "OpenApiConnection",
+                  "description": "funktioniert noch nicht weil \"Freigegebene Dokumente\" im Path drin steht... ",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "@parameters('SP_Library_Text (ks_SP_Library_Text)')",
+                      "file": "@{split(outputs('Create_new_folder')?['body/{FullPath}'],\n\n'Freigegebene Dokumente/')[1]}/@{outputs('Create_file_-_Rahmenvertrag')?['body/Name']}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "GetFilePDF",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Delay_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d7e01ad-2c2a-4c68-a3a8-34b011a13012"
+                  }
+                },
+                "Create_file_PDF_-_Rahmenvertrag": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VERSENDET.pdf",
+                      "body": "@body('PDF_-_Rahmenvertrag')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "PDF_-_Rahmenvertrag": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "Add_a_new_row_-_Rahmenvertrag": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "@outputs('Create_file_PDF_-_Rahmenvertrag')?['body/Name']",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080006",
+                      "item/ks_dokumententyp_text": "Rahmenvertrag",
+                      "item/ks_ist_outgoing": true,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_id": "@outputs('Create_file_PDF_-_Rahmenvertrag')?['body/ItemId']",
+                      "item/ks_versendet_sp_pfad": "@outputs('Create_file_PDF_-_Rahmenvertrag')?['body/Path']",
+                      "item/ks_vorlage_sp_id": "@outputs('Create_file_-_Rahmenvertrag')?['body/ItemId']",
+                      "item/ks_vorlage_sp_pfad": "@outputs('Create_file_-_Rahmenvertrag')?['body/Path']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_PDF_-_Rahmenvertrag": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "84646fb9-01b8-4f98-b73b-3563d50a83c5"
+                  }
+                },
+                "Set_variable_3": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_4"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Delay_3": {
+                  "type": "Wait",
+                  "inputs": {
+                    "interval": {
+                      "count": 5,
+                      "unit": "Second"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_-_Rahmenvertrag": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "runAfter": {
+                "Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1e84425c-4e37-4a99-b653-f473741e1b73"
+              }
+            },
+            "Weisung_Arbeitssicherheit": {
+              "type": "Scope",
+              "actions": {
+                "Populate_-_Weisung_Arbeitssicherheit": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+                      "file": "01JZG2FXBG5XDCIZKK7JFKS5UROIYE4CGV",
+                      "dynamicFileSchema/110939844": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/469720646": "@variables('Prefix')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "CreateFileItem",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_4": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "61367cdb-9b2f-4401-a529-395e29896536",
+                    "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3": "/01_Vorlagen/Vorlagen_Live/Deklaration zur Einhaltung der minimalen Lohnbedingungen.docx",
+                    "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS": "/01_Vorlagen/Vorlagen_Live/Dekl. Lohn Mitarbeiter.docx",
+                    "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ": "/01_Vorlagen/Vorlagen_Live/Deklarationen zur Einhaltung der minimalen Arbeitsbedingungen.docx",
+                    "01JZG2FXBG5XDCIZKK7JFKS5UROIYE4CGV": "/01_Vorlagen/Vorlagen_Live/3.1.2-04 Weisung Arbeitssicherheit_Akkordant.docx"
+                  }
+                },
+                "Create_file_-_Weisung_Arbeitssicherheit": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VORLAGE.docx",
+                      "body": "@body('Populate_-_Weisung_Arbeitssicherheit')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "Populate_-_Weisung_Arbeitssicherheit": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "PDF_-_Weisung_Arbeitssicherheit": {
+                  "type": "OpenApiConnection",
+                  "description": "funktioniert noch nicht weil \"Freigegebene Dokumente\" im Path drin steht... ",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "@parameters('SP_Library_Text (ks_SP_Library_Text)')",
+                      "file": "@{split(outputs('Create_new_folder')?['body/{FullPath}'],\n\n'Freigegebene Dokumente/')[1]}/@{outputs('Create_file_-_Weisung_Arbeitssicherheit')?['body/Name']}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "GetFilePDF",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Delay_4": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d7e01ad-2c2a-4c68-a3a8-34b011a13012"
+                  }
+                },
+                "Create_file_PDF_-_Weisung_Arbeitssicherheit": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VERSENDET.pdf",
+                      "body": "@body('PDF_-_Weisung_Arbeitssicherheit')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "PDF_-_Weisung_Arbeitssicherheit": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "Set_variable_4": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_6"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_Weisung_Arbeitssicherheit": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "@outputs('Create_file_PDF_-_Weisung_Arbeitssicherheit')?['body/Name']",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080007",
+                      "item/ks_dokumententyp_text": "Weisung Arbeitssicherheit",
+                      "item/ks_ist_outgoing": true,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_id": "@outputs('Create_file_PDF_-_Weisung_Arbeitssicherheit')?['body/ItemId']",
+                      "item/ks_versendet_sp_pfad": "@outputs('Create_file_PDF_-_Weisung_Arbeitssicherheit')?['body/Path']",
+                      "item/ks_vorlage_sp_id": "@outputs('Create_file_-_Weisung_Arbeitssicherheit')?['body/ItemId']",
+                      "item/ks_vorlage_sp_pfad": "@outputs('Create_file_-_Weisung_Arbeitssicherheit')?['body/Path']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_PDF_-_Weisung_Arbeitssicherheit": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d087372-6e76-434e-86c0-41f12999bfb3"
+                  }
+                },
+                "Delay_4": {
+                  "type": "Wait",
+                  "inputs": {
+                    "interval": {
+                      "count": 5,
+                      "unit": "Second"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_-_Weisung_Arbeitssicherheit": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "runAfter": {
+                "Rahmenvertrag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1e84425c-4e37-4a99-b653-f473741e1b73"
+              }
+            },
+            "Brief": {
+              "type": "Scope",
+              "actions": {
+                "Populate_-_Brief": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "b!9-WDOBk4-kmzneZIA-6tXoedMeUrAy1BrO62VB7aDejb1aFZ_hPsTpP58TG_or32",
+                      "file": "01JZG2FXGMRK7NSWKHZNFYWPVWZL2TKRFZ",
+                      "dynamicFileSchema/206613893": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrstrasse']",
+                      "dynamicFileSchema/276234260": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/391086542": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrplz']",
+                      "dynamicFileSchema/816534971": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']",
+                      "dynamicFileSchema/1008254427": "@formatDateTime(utcNow(), 'dd.MM.yyyy')",
+                      "dynamicFileSchema/1670752244": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrort']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "CreateFileItem",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "61367cdb-9b2f-4401-a529-395e29896536",
+                    "01JZG2FXC4VBQRYBRBTZA36LNRRLTA37U3": "/01_Vorlagen/Vorlagen_Live/Deklaration zur Einhaltung der minimalen Lohnbedingungen.docx",
+                    "01JZG2FXHAHSJ25ENSMNAJMOWT4UC52MAS": "/01_Vorlagen/Vorlagen_Live/Dekl. Lohn Mitarbeiter.docx",
+                    "01JZG2FXCLZYNLYI43BZAJLBFX2GICWPLJ": "/01_Vorlagen/Vorlagen_Live/Deklarationen zur Einhaltung der minimalen Arbeitsbedingungen.docx",
+                    "01JZG2FXGMRK7NSWKHZNFYWPVWZL2TKRFZ": "/01_Vorlagen/Vorlagen_Live/Sub_Brief.bestehender Akkordantdoc.docx"
+                  }
+                },
+                "Create_file_-_Brief": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VORLAGE.docx",
+                      "body": "@body('Populate_-_Brief')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "Populate_-_Brief": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "PDF_-_Brief": {
+                  "type": "OpenApiConnection",
+                  "description": "funktioniert noch nicht weil \"Freigegebene Dokumente\" im Path drin steht... ",
+                  "inputs": {
+                    "parameters": {
+                      "source": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "drive": "@parameters('SP_Library_Text (ks_SP_Library_Text)')",
+                      "file": "@{split(outputs('Create_new_folder')?['body/{FullPath}'],\n\n'Freigegebene Dokumente/')[1]}/@{outputs('Create_file_-_Brief')?['body/Name']}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness",
+                      "operationId": "GetFilePDF",
+                      "connectionName": "shared_wordonlinebusiness"
+                    }
+                  },
+                  "runAfter": {
+                    "Delay_5": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3d7e01ad-2c2a-4c68-a3a8-34b011a13012"
+                  }
+                },
+                "Create_file_PDF_-_Brief": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+                      "folderPath": "@outputs('Create_new_folder')?['body/{FullPath}']",
+                      "name": "@{variables('Prefix')}_VERSENDET.pdf",
+                      "body": "@body('PDF_-_Brief')"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  },
+                  "runAfter": {
+                    "PDF_-_Brief": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1d8f8b38-96ff-4cb6-ab34-663ad7745ecf"
+                  }
+                },
+                "Set_variable_5": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_5"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_Brief": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "@outputs('Create_file_PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')?['body/Name']",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": false,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080012",
+                      "item/ks_dokumententyp_text": "Brief",
+                      "item/ks_ist_outgoing": true,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_id": "@outputs('Create_file_PDF_-_Brief')?['body/ItemId']",
+                      "item/ks_versendet_sp_pfad": "@outputs('Create_file_PDF_-_Brief')?['body/Path']",
+                      "item/ks_vorlage_sp_id": "@outputs('Create_file_-_Brief')?['body/ItemId']",
+                      "item/ks_vorlage_sp_pfad": "@outputs('Create_file_-_Brief')?['body/Path']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_PDF_-_Brief": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1155a0bd-51f6-47cc-96f3-fc9db0c87f19"
+                  }
+                },
+                "Delay_5": {
+                  "type": "Wait",
+                  "inputs": {
+                    "interval": {
+                      "count": 5,
+                      "unit": "Second"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file_-_Brief": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "runAfter": {
+                "Weisung_Arbeitssicherheit": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1e84425c-4e37-4a99-b653-f473741e1b73"
+              }
+            },
+            "Scope_-_restliche_Dataverse_Einträge": {
+              "type": "Scope",
+              "actions": {
+                "Set_variable_5_1": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_7"
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_Betreibungsauszug": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "-",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080008",
+                      "item/ks_dokumententyp_text": "Betreibungsauszug",
+                      "item/ks_ist_outgoing": false,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_pfad": "@{split(outputs('Create_file_PDF_-_Brief')?['body/Path'],'/K20')[0]}/@{variables('Prefix')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5_1": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "2ea957ae-3e89-4ccc-9a38-462df887e808"
+                  }
+                },
+                "Set_variable_5_2": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_8"
+                  },
+                  "runAfter": {
+                    "Add_a_new_row_-_Betreibungsauszug": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_BVG": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "-",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080002",
+                      "item/ks_dokumententyp_text": "BVG",
+                      "item/ks_ist_outgoing": false,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_pfad": "@{split(outputs('Create_file_PDF_-_Brief')?['body/Path'],'/K20')[0]}/@{variables('Prefix')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8c363d7e-1c8d-48ab-8c12-4fefcc9964c4"
+                  }
+                },
+                "Set_variable_5_3": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_9"
+                  },
+                  "runAfter": {
+                    "Add_a_new_row_-_BVG": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_Handelsregisterauszug": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "-",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080009",
+                      "item/ks_dokumententyp_text": "Handelsregisterauszug",
+                      "item/ks_ist_outgoing": false,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_pfad": "@{split(outputs('Create_file_PDF_-_Brief')?['body/Path'],'/K20')[0]}/@{variables('Prefix')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ebb948f3-251f-49fc-9e7c-8da1bde9ad9e"
+                  }
+                },
+                "Set_variable_5_4": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_10"
+                  },
+                  "runAfter": {
+                    "Add_a_new_row_-_Handelsregisterauszug": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_Police_Betriebshaftpflicht": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "-",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080010",
+                      "item/ks_dokumententyp_text": "Police Betriebshaftpflicht",
+                      "item/ks_ist_outgoing": false,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_pfad": "@{split(outputs('Create_file_PDF_-_Brief')?['body/Path'],'/K20')[0]}/@{variables('Prefix')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5_4": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "24f506c5-91bb-4681-a707-eb2a3dc4823b"
+                  }
+                },
+                "Set_variable_5_5": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_11"
+                  },
+                  "runAfter": {
+                    "Add_a_new_row_-_Police_Betriebshaftpflicht": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_SUVA": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "-",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080001",
+                      "item/ks_dokumententyp_text": "SUVA",
+                      "item/ks_ist_outgoing": false,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_pfad": "@{split(outputs('Create_file_PDF_-_Brief')?['body/Path'],'/K20')[0]}/@{variables('Prefix')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5_5": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8e61e6f1-8020-4302-9b39-8f6e208b9a0d"
+                  }
+                },
+                "Set_variable_5_6": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Prefix",
+                    "value": "K@{variables('Jahr')}@{outputs('Subunternehmer_Infos_holen')?['body/crb4b_adresseid']}_12"
+                  },
+                  "runAfter": {
+                    "Add_a_new_row_-_SUVA": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "985cfb35-a0ed-4b73-9c1c-c693c6b32656"
+                  }
+                },
+                "Add_a_new_row_-_SVA": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_deklarationens",
+                      "item/ks_sp_datei_name": "-",
+                      "item/ks_angefragt_am": "@body('Current_time')",
+                      "item/ks_antwort_erwartet": true,
+                      "item/ks_deklaration_id": "@variables('Prefix')",
+                      "item/ks_dokumententyp": "124080000",
+                      "item/ks_dokumententyp_text": "SVA",
+                      "item/ks_ist_outgoing": false,
+                      "item/ks_LookUpAuftrage@odata.bind": "/ks_auftrages(@{outputs('Neuen_Auftrag_erstellen')?['body/ks_auftrageid']})",
+                      "item/ks_status_deklaration": "Versendet",
+                      "item/ks_versendet_sp_pfad": "@{split(outputs('Create_file_PDF_-_Brief')?['body/Path'],'/K20')[0]}/@{variables('Prefix')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_variable_5_6": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ae616459-67f4-43ec-923d-e38c5c42e4ac"
+                  }
+                }
+              },
+              "runAfter": {
+                "Brief": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a3b88233-8695-4ecf-94ff-d6ffbc220100"
+              }
+            },
+            "Send_an_email_(V2)_-_to_Subunternehmer": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "emailMessage/To": "@variables('E-Mail')",
+                  "emailMessage/Subject": "Subunternehmerhaftung / Einhaltung Entsendungsgesetz",
+                  "emailMessage/Body": "<p class=\"editor-paragraph\">Sehr geehrte @{outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']}<br><br>Zur Wahrung und Einhaltung des Entsendungsgesetzes sowie allen damit verbundenen weiteren Gesetzesauflagen, sind wir gezwungen jährlich Ihre aktuelle Subunternehmer Unterlagen und Daten zu aktualisieren. <br><br>Daher bitten wir Sie die beigelegten Formulare wahrheitsgetreu und komplett auszufüllen und uns spätestens innert zwei Wochen zu retournieren.  <br><br>Bei fehlenden und/oder unvollständig ausgefüllten Unterlagen sind wir leider gezwungen ein Rückbehalt von 10% auf erbrachte Leistungen zu machen, bis sämtliche benötigte Unterlagen uns zur Verfügung stehen.<br><br>WICHTIG: Bitte alle Dokumente und ausgefüllte Formulare an folgende E-Mail-Adresse schicken: deklaration@kosterag.ch<br><br>Besten Dank. Für Fragen stehen wir Ihnen gerne zur Verfügung <br><br><br>Freundliche Grüsse <br><br>KOSTER AG        <br><br>Heizung/Lüftung <br><br> <br><br>Beilagen erwähnt</p>",
+                  "emailMessage/Attachments": [
+                    {
+                      "Name": "Deklaration zur Einhaltung der minimalen Arbeitsbedingungen.pdf",
+                      "ContentBytes": "@body('PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Arbeitsbedingungen')"
+                    },
+                    {
+                      "Name": "Deklaration zur Einhaltung der minimalen Lohnbedingungen.pdf",
+                      "ContentBytes": "@body('PDF_-_Deklarationen_zur_Einhaltung_der_minimalen_Lohnbedingungen')"
+                    },
+                    {
+                      "Name": "Rahmenvertrag.pdf",
+                      "ContentBytes": "@body('PDF_-_Rahmenvertrag')"
+                    },
+                    {
+                      "Name": "Deklaration Lohn Mitarbeiter.pdf",
+                      "ContentBytes": "@body('PDF_-_Deklaration_Lohn')"
+                    },
+                    {
+                      "Name": "Weisung Arbeitssicherheit.pdf",
+                      "ContentBytes": "@body('PDF_-_Weisung_Arbeitssicherheit')"
+                    },
+                    {
+                      "Name": "Brief.pdf",
+                      "ContentBytes": "@body('PDF_-_Brief')"
+                    }
+                  ],
+                  "emailMessage/ReplyTo": "deklaration@kosterag.ch",
+                  "emailMessage/Importance": "Normal"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "operationId": "SendEmailV2",
+                  "connectionName": "shared_office365"
+                }
+              },
+              "runAfter": {
+                "Scope_-_restliche_Dataverse_Einträge": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "af5a8dd0-bb01-4036-9936-0724896c37a9"
+              }
+            }
+          },
+          "runAfter": {
+            "Create_new_folder": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "42706fd9-65f7-492c-88dc-e635d0009a5c"
+          }
+        },
+        "Initialize_variable_Prefix": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Prefix",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5b73fd5d-7248-4ed3-bf0e-d2b1876a9633"
+          }
+        },
+        "Current_time": {
+          "type": "Expression",
+          "kind": "CurrentTime",
+          "inputs": {},
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "731b70b2-9f3b-48e2-80e4-d0c9d0d8653b"
+          }
+        },
+        "List_rows": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_auftrages",
+              "$filter": "_ks_lookupsubunternehmer_value eq @{triggerBody()?['text']} and ks_status_auftrag eq 'Offen'"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Subunternehmer_Infos_holen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "eb55b046-90b8-42d0-9c82-30366849a4c9"
+          }
+        },
+        "Condition_-_gibt_es_offenen_Auftrag_für_den_Sub_schon": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@length(outputs('List_rows')?['body/value'])",
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "E-Mail_senden_(V2)": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "emailMessage/To": "@variables('E-Mail')",
+                  "emailMessage/Subject": "Offener Auftrag für @{outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']} existiert bereits",
+                  "emailMessage/Body": "<p>Ein Auftrag für @{outputs('Subunternehmer_Infos_holen')?['body/crb4b_name']} existiert bereits. <br>\n<br>\nSchliesse den bestehenden Auftrag in der Subunternehmer-App (Bildschirm: \"Auftrags-Historie\") oder arbeite mit dem offenen Auftrag weiter.</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "operationId": "SendEmailV2",
+                  "connectionName": "shared_office365"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "db8aba41-8584-4a44-92f0-5450b0478d42"
+              }
+            },
+            "Terminate": {
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              },
+              "runAfter": {
+                "E-Mail_senden_(V2)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "38da30ab-1eea-43bf-b6da-8682a58285a5"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          },
+          "runAfter": {
+            "Condition": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0ae8f48f-5d06-4056-bc41-9ad368d43f84"
+          }
+        },
+        "Send_an_email_(V2)": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "raoul@miraglia-bi.com",
+              "emailMessage/Subject": "ERROR - Flow 01- SUB - Auftrag erstellen und Dokumente versenden",
+              "emailMessage/Body": "<p class=\"editor-paragraph\">Koster AG</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "operationId": "SendEmailV2",
+              "connectionName": "shared_office365"
+            }
+          },
+          "runAfter": {
+            "Scope": [
+              "TimedOut",
+              "Skipped",
+              "Failed"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "62bf3f47-ccd1-4f4a-bd38-55e45f82a10c"
+          }
+        },
+        "Initialize_variable_1": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "E-Mail",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {
+            "Current_time": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "86f03e05-3aff-434f-bbec-2d057f17673d"
+          }
+        },
+        "Condition": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@parameters('Environment (ks_Environment)')",
+                    "Sandbox"
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Set_variable_-_prod_email": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "E-Mail",
+                "value": "H.Baumann@kosterag.ch"
+              },
+              "metadata": {
+                "operationMetadataId": "8115e1c9-f77c-42cf-9e01-3f1f9be6fe45"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Set_variable_-_raoul": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "E-Mail",
+                  "value": "raoul@miraglia-bi.com"
+                },
+                "metadata": {
+                  "operationMetadataId": "bd18aee2-32ad-4244-898a-e1131f94bfd0"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f750a998-3baf-4744-9b17-4527f8fca572"
+          }
+        },
+        "Condition_2": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@parameters('Environment (ks_Environment)')",
+                    "Sandbox"
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Set_variable_-_prod_email_2": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "E-Mail",
+                "value": "@outputs('Subunternehmer_Infos_holen')?['body/crb4b_adrkontmail1']"
+              },
+              "metadata": {
+                "operationMetadataId": "8115e1c9-f77c-42cf-9e01-3f1f9be6fe45"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Set_variable_-_raoul_2": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "E-Mail",
+                  "value": "raoul@miraglia-bi.com"
+                },
+                "metadata": {
+                  "operationMetadataId": "bd18aee2-32ad-4244-898a-e1131f94bfd0"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Condition_-_gibt_es_offenen_Auftrag_für_den_Sub_schon": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f750a998-3baf-4744-9b17-4527f8fca572"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

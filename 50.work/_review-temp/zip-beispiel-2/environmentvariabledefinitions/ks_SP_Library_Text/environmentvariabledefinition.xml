@@ -1,0 +1,13 @@
+<environmentvariabledefinition schemaname="ks_SP_Library_Text">
+  <description default="Prod: b!sT0FUceMjUybEBiNzlM8SjKGK4JnSGRPgvzjeD_j3zZ6KcfbxDSeTr1FJQPWob-g">
+    <label description="Prod: b!sT0FUceMjUybEBiNzlM8SjKGK4JnSGRPgvzjeD_j3zZ6KcfbxDSeTr1FJQPWob-g" languagecode="1031" />
+  </description>
+  <displayname default="SP_Library_Text">
+    <label description="SP_Library_Text" languagecode="1031" />
+  </displayname>
+  <introducedversion>1.0.0.1</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

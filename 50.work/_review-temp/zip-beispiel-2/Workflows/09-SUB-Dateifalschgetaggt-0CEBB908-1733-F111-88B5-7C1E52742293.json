@@ -1,0 +1,166 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedsharepointonline_dcc63"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_commondataserviceforapps-1": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_db7d5"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "SP_SiteURL (ks_SP_SiteURL)": {
+          "defaultValue": "https://kosterag.sharepoint.com/sites/Subunternehmer_Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_SP_SiteURL"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Please enter your input",
+                  "title": "Pfad",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_1": {
+                  "description": "Please enter your input",
+                  "title": "EingangsqueuID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_2": {
+                  "description": "Please enter your input",
+                  "title": "AuftragsID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "8195fd6b-5601-414f-8793-8c66d5f98186"
+          }
+        }
+      },
+      "actions": {
+        "Move_file": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+              "parameters/sourceFileId": "@outputs('Get_file_metadata_using_path')?['body/Id']",
+              "parameters/destinationDataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+              "parameters/destinationFolderPath": "/Freigegebene Dokumente/03_Eingang_Temp",
+              "parameters/nameConflictBehavior": 2
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "MoveFileAsync",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Get_file_metadata_using_path": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Get_file_metadata_using_path": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+              "path": "@triggerBody()?['text']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "GetFileMetadataByPath",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {}
+        },
+        "Update_a_row": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_eingangsqueues",
+              "recordId": "@triggerBody()?['text_1']",
+              "item/ks_eq_attachmentname": "@outputs('Move_file')?['body/Name']",
+              "item/ks_eq_dateipfad_manuell": "@outputs('Move_file')?['body/Path']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Move_file": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Run_a_Child_Flow": {
+          "type": "Workflow",
+          "inputs": {
+            "host": {
+              "workflowReferenceName": "e2237a46-1d28-f111-8341-70a8a5379437"
+            },
+            "body": {
+              "text": "@triggerBody()?['text_2']",
+              "text_1": "09 - SUB - Datei falsch getaggt"
+            }
+          },
+          "runAfter": {
+            "Update_a_row": [
+              "SUCCEEDED"
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

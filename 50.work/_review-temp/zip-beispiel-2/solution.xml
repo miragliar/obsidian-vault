@@ -1,0 +1,171 @@
+<ImportExportXml version="9.2.26051.150" SolutionPackageVersion="9.2" languagecode="1031" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26051.150" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26051.00150">
+  <SolutionManifest>
+    <UniqueName>Subunternehmer</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Subunternehmer" languagecode="1031" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.13</Version>
+    <Managed>1</Managed>
+    <Publisher>
+      <UniqueName>Koster</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Koster" languagecode="1031" />
+        <LocalizedName description="Koster" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>ks</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>12408</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="crb4b_subunternehmer" behavior="0" />
+      <RootComponent type="1" schemaName="environmentvariablevalue" behavior="0" />
+      <RootComponent type="1" schemaName="ks_auftrage" behavior="0" />
+      <RootComponent type="1" schemaName="ks_deklarationen" behavior="0" />
+      <RootComponent type="1" schemaName="ks_eingangsqueue" behavior="0" />
+      <RootComponent type="20" id="{9fa83c22-1f33-f111-88b5-7c1e52742293}" behavior="0" />
+      <RootComponent type="29" id="{00be3f3f-b934-f111-88b4-000d3a4b533b}" behavior="0" />
+      <RootComponent type="29" id="{0bb9c330-6123-f111-8341-7c1e528333e3}" behavior="0" />
+      <RootComponent type="29" id="{0cebb908-1733-f111-88b5-7c1e52742293}" behavior="0" />
+      <RootComponent type="29" id="{2825e55a-9823-f111-8341-6045bd97f468}" behavior="0" />
+      <RootComponent type="29" id="{2ebe3309-2f28-f111-8341-7c1e5227d727}" behavior="0" />
+      <RootComponent type="29" id="{5fd55be8-8f23-f111-8342-7c1e52742293}" behavior="0" />
+      <RootComponent type="29" id="{88eab742-8732-f111-88b4-002248811187}" behavior="0" />
+      <RootComponent type="29" id="{b249d572-7f23-f111-8341-7c1e528333e3}" behavior="0" />
+      <RootComponent type="29" id="{d985d111-291d-f111-8341-7c1e528333e3}" behavior="0" />
+      <RootComponent type="29" id="{e2237a46-1d28-f111-8341-70a8a5379437}" behavior="0" />
+      <RootComponent type="29" id="{f255b6e7-9d2e-f111-88b3-7c1e5226e10f}" behavior="0" />
+      <RootComponent type="300" schemaName="ks_subunternehmerapp_0aea5" behavior="0" />
+      <RootComponent type="401" id="{223fef62-3331-4c08-b4ec-004a96c3c54b}" behavior="0" />
+      <RootComponent type="401" id="{e26a340d-acfc-4d18-845f-5f27d1609587}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdby" displayName="Created By" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdonbehalfby" displayName="Created By (Delegate)" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedby" displayName="Modified By" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedonbehalfby" displayName="Modified By (Delegate)" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="ownerid" displayName="Owner" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningbusinessunit" displayName="Owning Business Unit" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningteam" displayName="Owning Team" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="owninguser" displayName="Owning User" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="2" schemaName="versionnumber" displayName="Version Number" parentSchemaName="environmentvariablevalue" parentDisplayName="Environment Variable Value" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="environmentvariablevalue" displayName="Environment Variable Value" solution="EnvironmentVariables (1.0.2406.4)">
+          <package appName="EnvironmentVariables" version="1.0.2406.4">EnvironmentVariablesSolutionAnchor (1.0.2406.4)</package>
+        </Required>
+        <Dependent type="300" schemaName="ks_subunternehmerapp_0aea5" displayName="Subunternehmer-App" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

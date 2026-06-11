@@ -1,0 +1,186 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps-1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_db7d5"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "1b2f0d9d-2634-4027-9753-44f36e0bcf40"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Please enter your input",
+                  "title": "AuftragsID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_1": {
+                  "description": "Please enter your input",
+                  "title": "TriggerOrt",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "List_Rows_-_Deklarationen": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f3c3e38a-c44e-4ed7-b7f1-1d7ac3ff0a7a"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_deklarationens",
+              "$filter": "_ks_lookupauftrage_value eq '@{triggerBody()?['text']}' and ks_antwort_erwartet eq true"
+            },
+            "host": {
+              "connectionName": "shared_commondataserviceforapps-1",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Anzahl_Ausstehend": {
+          "runAfter": {
+            "Filter_array_-_Ausstehend": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "52bf79f0-7374-475b-a75a-8aa140b589a2"
+          },
+          "type": "Compose",
+          "inputs": "@length(body('Filter_array_-_Ausstehend'))"
+        },
+        "Filter_array_-_Ausstehend": {
+          "runAfter": {
+            "List_Rows_-_Deklarationen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "10aa8d42-1ce7-493b-8900-22acbeb629b1"
+          },
+          "type": "Query",
+          "inputs": {
+            "from": "@outputs('List_rows_-_Deklarationen')?['body/value']",
+            "where": "@not(equals(item()?['ks_status_deklaration'],'OK'))"
+          }
+        },
+        "Filter_array_-_OK": {
+          "runAfter": {
+            "Anzahl_Ausstehend": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4abfa49f-bd4b-4a98-986c-72066861d689"
+          },
+          "type": "Query",
+          "inputs": {
+            "from": "@outputs('List_rows_-_Deklarationen')?['body/value']",
+            "where": "@equals(item()?['ks_status_deklaration'],'OK')"
+          }
+        },
+        "Anzahl_OK": {
+          "runAfter": {
+            "Filter_array_-_OK": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "66d3bf51-b518-4158-9e29-679647ca7f97"
+          },
+          "type": "Compose",
+          "inputs": "@length(body('Filter_array_-_OK'))"
+        },
+        "Update_a_row": {
+          "runAfter": {
+            "Anzahl_OK": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a6f3e189-5ca0-421a-a9f8-0d5d40e3acae"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_auftrages",
+              "recordId": "@triggerBody()?['text']",
+              "item/ks_anzahl_ausstehend": "@outputs('Anzahl_Ausstehend')",
+              "item/ks_anzahl_ok": "@outputs('Anzahl_OK')",
+              "item/ks_status_auftrag": "@if(equals(outputs('Anzahl_Ausstehend'), 0), 'Abgeschlossen', 'Offen')"
+            },
+            "host": {
+              "connectionName": "shared_commondataserviceforapps-1",
+              "operationId": "UpdateOnlyRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Respond_to_a_Power_App_or_flow": {
+          "runAfter": {
+            "Update_a_row": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "625d2486-10bb-4bdb-b3ef-8558085ddad8"
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "statusCode": 200,
+            "body": {},
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

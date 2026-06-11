@@ -1,0 +1,305 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps-1": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_db7d5"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_office365": {
+        "api": {
+          "name": "shared_office365"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedoffice365_cd9af"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Environment (ks_Environment)": {
+          "defaultValue": "Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_Environment",
+            "description": "Sandbox or Production"
+          }
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "type": "Recurrence",
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "startTime": "2026-03-25T09:00:00Z",
+            "schedule": {
+              "weekDays": [
+                "Monday"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "d57604ba-861b-473a-9c79-68d152207603"
+          }
+        }
+      },
+      "actions": {
+        "Verfassen": {
+          "type": "Compose",
+          "inputs": "x",
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4d854e8b-cdbd-4179-b5d2-bd80bb6dfaa5"
+          }
+        },
+        "Listenzeilen_-_offene_Aufträge": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_auftrages",
+              "$filter": "ks_status_auftrag eq 'Offen' and ks_letzterkontaktam le '@{formatDateTime(addDays(utcNow(), -14), 'yyyy-MM-dd')}'"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Verfassen": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e3c2471e-6143-4bdd-bba3-2923b653ab1f"
+          }
+        },
+        "Auf_alle_anwenden": {
+          "type": "Foreach",
+          "foreach": "@outputs('Listenzeilen_-_offene_Aufträge')?['body/value']",
+          "actions": {
+            "Listenzeilen_-_Deklarationen_holen": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "ks_deklarationens",
+                  "$filter": "_ks_lookupauftrage_value eq '@{items('Auf_alle_anwenden')?['ks_auftrageid']}' and ks_antwort_erwartet eq true and ks_status_deklaration ne 'OK' and ks_status_deklaration ne 'Eingegangen'"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "connectionName": "shared_commondataserviceforapps-1"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "41d375fa-625a-43a2-96b7-e31500a9b380"
+              }
+            },
+            "Wie_viele_Deklarationen": {
+              "type": "Compose",
+              "inputs": "@length(outputs('Listenzeilen_-_Deklarationen_holen')?['body/value'])",
+              "runAfter": {
+                "Listenzeilen_-_Deklarationen_holen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "9dcab0dd-9967-4508-aec7-c9707a4e24a5"
+              }
+            },
+            "Bedingung": {
+              "type": "If",
+              "expression": {
+                "not": {
+                  "equals": [
+                    "@outputs('Wie_viele_Deklarationen')",
+                    0
+                  ]
+                }
+              },
+              "actions": {
+                "Auswählen": {
+                  "type": "Select",
+                  "inputs": {
+                    "from": "@outputs('Listenzeilen_-_Deklarationen_holen')?['body/value']",
+                    "select": {
+                      "Dok-Bezeichnung": "@item()?['ks_dokumententyp_text']"
+                    }
+                  },
+                  "runAfter": {
+                    "Condition": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "0240dc42-acdb-41b3-a0c7-3f14abad5634"
+                  }
+                },
+                "Condition": {
+                  "type": "If",
+                  "expression": {
+                    "and": [
+                      {
+                        "not": {
+                          "equals": [
+                            "@parameters('Environment (ks_Environment)')",
+                            "Sandbox"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "actions": {
+                    "Set_variable_-_prod_email": {
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "E-Mail",
+                        "value": "@outputs('Get_a_row_by_ID')?['body/crb4b_adrkontmail1']"
+                      }
+                    }
+                  },
+                  "else": {
+                    "actions": {
+                      "Set_variable_-_raoul": {
+                        "type": "SetVariable",
+                        "inputs": {
+                          "name": "E-Mail",
+                          "value": "raoul@miraglia-bi.com"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Get_a_row_by_ID": [
+                      "Succeeded"
+                    ]
+                  }
+                },
+                "Get_a_row_by_ID": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "crb4b_subunternehmers",
+                      "recordId": "@items('Auf_alle_anwenden')?['_ks_lookupsubunternehmer_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  }
+                },
+                "Update_a_row": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "ks_auftrages",
+                      "recordId": "@items('Auf_alle_anwenden')?['ks_auftrageid']",
+                      "item/ks_letzterkontaktam": "@utcNow()"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "connectionName": "shared_commondataserviceforapps-1"
+                    }
+                  },
+                  "runAfter": {
+                    "Send_an_email_(V2)": [
+                      "Succeeded"
+                    ]
+                  }
+                },
+                "Send_an_email_(V2)": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "emailMessage/To": "@variables('E-Mail')",
+                      "emailMessage/Subject": "Dateien nicht eingereicht",
+                      "emailMessage/Body": "<p class=\"editor-paragraph\">Sehr geehrte Damen und Herren,<br><br>Wir sind von Gesetzeswegen angehalten jährlich Ihre aktuelle Subunternehmer Unterlagen und Daten zu aktualisieren. Somit kann gewährleistet werden, dass das Entsendungsgesetzes sowie allen damit verbundenen weiteren Gesetzesauflagen eingehalten und umgesetzt werden.<br><br>Hierfür haben wir Sie von 30 Tage angeschrieben und gebeten und die nötigen Unterlagen zuzusenden.<br><br>Dürfen wir Sie bitten uns noch unten aufgeführte Dokumente nachzureichen:<br>@{body('Create_HTML_table')}<br><br>Wir möchten Sie daran erinnern , dass wir leider gezwungen sind einen Zahlungsrückbehalt von 10% zu machen, bis wir sämtliche benötigte Unterlagen erhalten haben.<br><br>Sollten Sie Fragen haben, oder Hilfe benötigen, können Sie uns gerne kontaktieren.<br><br>WICHTIG: Bitte das Dokument an die folgende E-Mail-Adresse schicken: deklaration@kosterag.ch<br><br><br>Besten Dank im Voraus.<br><br>Freundliche Grüsse <br><br>KOSTER AG        <br><br>Heizung/Lüftung</p>",
+                      "emailMessage/Importance": "Normal"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                      "operationId": "SendEmailV2",
+                      "connectionName": "shared_office365"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_HTML_table": [
+                      "Succeeded"
+                    ]
+                  }
+                },
+                "Create_HTML_table": {
+                  "type": "Table",
+                  "inputs": {
+                    "from": "@body('Auswählen')",
+                    "format": "HTML"
+                  },
+                  "runAfter": {
+                    "Auswählen": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "runAfter": {
+                "Wie_viele_Deklarationen": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d8230971-1142-4dbf-9d69-bbc87833e7e9"
+              }
+            }
+          },
+          "runAfter": {
+            "Listenzeilen_-_offene_Aufträge": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1a0d2f85-ad90-4ec8-a447-77602c67fdfd"
+          }
+        },
+        "Initialize_variable": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "E-Mail",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {}
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

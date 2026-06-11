@@ -1,0 +1,13 @@
+<environmentvariabledefinition schemaname="ks_Posteingang">
+  <description default="E-Mail Postfach deklaration-test@kosterag.ch oder deklaration@kosterag.ch">
+    <label description="E-Mail Postfach deklaration-test@kosterag.ch oder deklaration@kosterag.ch" languagecode="1031" />
+  </description>
+  <displayname default="Posteingang">
+    <label description="Posteingang" languagecode="1031" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

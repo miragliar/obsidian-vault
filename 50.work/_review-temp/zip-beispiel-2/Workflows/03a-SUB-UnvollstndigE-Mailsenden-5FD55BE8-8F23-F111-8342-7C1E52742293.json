@@ -1,0 +1,312 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps-1": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_db7d5"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_office365": {
+        "api": {
+          "name": "shared_office365"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedoffice365_cd9af"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_sharepointonline": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedsharepointonline_dcc63"
+        },
+        "runtimeSource": "invoker"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Environment (ks_Environment)": {
+          "defaultValue": "Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_Environment",
+            "description": "Sandbox or Production"
+          }
+        },
+        "SP_SiteURL (ks_SP_SiteURL)": {
+          "defaultValue": "https://kosterag.sharepoint.com/sites/Subunternehmer_Sandbox",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ks_SP_SiteURL"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Please enter your input",
+                  "title": "DeklarationID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_1": {
+                  "description": "Please enter your input",
+                  "title": "AuftragsID",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_2": {
+                  "description": "Please enter your input",
+                  "title": "Grund",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "f75bcac7-7977-4983-a289-99c3f09a6437"
+          }
+        }
+      },
+      "actions": {
+        "Get_a_row_by_ID_-_Deklaration": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_deklarationens",
+              "recordId": "@triggerBody()?['text']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "320eb36e-6146-4692-9acd-07327fc79ea6"
+          }
+        },
+        "Get_a_row_by_ID__-_Aufträge": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_auftrages",
+              "recordId": "@triggerBody()?['text_1']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Get_a_row_by_ID_-_Deklaration": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "83a8a410-8ee5-4698-a740-815f2b45c381"
+          }
+        },
+        "Get_a_row_by_ID": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "crb4b_subunternehmers",
+              "recordId": "@outputs('Get_a_row_by_ID__-_Aufträge')?['body/_ks_lookupsubunternehmer_value']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Get_a_row_by_ID__-_Aufträge": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "cada0b6c-ba10-4526-8271-c7ebd09cf191"
+          }
+        },
+        "Condition": {
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@parameters('Environment (ks_Environment)')",
+                    "Sandbox"
+                  ]
+                }
+              }
+            ]
+          },
+          "actions": {
+            "Set_variable_-_prod_email": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "E-Mail",
+                "value": "@outputs('Get_a_row_by_ID')?['body/crb4b_adrkontmail1']"
+              },
+              "metadata": {
+                "operationMetadataId": "bd4fb4f6-9467-4090-98bf-8fbffb60d0d5"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Set_variable_-_raoul": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "E-Mail",
+                  "value": "raoul@miraglia-bi.com"
+                },
+                "metadata": {
+                  "operationMetadataId": "18e3485d-1de4-4b01-a9f4-21ac51fdc60d"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Get_a_row_by_ID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "828b6c71-50a3-4ce5-8ff1-2fe93f57de44"
+          }
+        },
+        "Send_an_email_(V2)": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "@variables('E-Mail')",
+              "emailMessage/Subject": "@{outputs('Get_a_row_by_ID_-_Deklaration')?['body/ks_dokumententyp_text']} abgelehnt",
+              "emailMessage/Body": "<p class=\"editor-paragraph\">Guten Tag<br><br>Wir haben von Ihnen folgendes Dokument erhalten und verarbeitet: @{outputs('Get_a_row_by_ID_-_Deklaration')?['body/ks_dokumententyp_text']}. Einer unserer Mitarbeiter*innen hat dieses Dokument aus folgendem Grund abgelehnt:<br><br>Grund: @{triggerBody()?['text_2']}<br><br>Wir bitte Sie dies zu korrigieren und uns anschliessend das Dokument erneut zu schicken.<br><br>WICHTIG: Bitte das Dokument an die folgende E-Mail-Adresse schicken: deklaration@kosterag.ch<br><br>Wir möchten Sie an dieser Stelle erneut aufmerksam machen, dass wir leider gezwungen sind einen Zahlungsrückbehalt von 10% zu machen, bis wir sämtliche benötigte Unterlagen erhalten haben.<br><br>Sollten Sie Fragen haben, oder Hilfe benötigen, können Sie uns gerne kontaktieren. &nbsp;<br><br><br>Besten Dank im Voraus.<br><br>Freundliche Grüsse <br><br>KOSTER AG        <br><br>Heizung/Lüftung &nbsp;</p>",
+              "emailMessage/Attachments": [
+                {
+                  "Name": "@{outputs('Get_a_row_by_ID_-_Deklaration')?['body/ks_dokumententyp_text']}.pdf",
+                  "ContentBytes": "@body('Get_file_content_using_path')"
+                }
+              ],
+              "emailMessage/Importance": "Normal"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "operationId": "SendEmailV2",
+              "connectionName": "shared_office365"
+            }
+          },
+          "runAfter": {
+            "Get_file_content_using_path": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6c5fc414-9b5d-4259-99d5-9f414980a4d2"
+          }
+        },
+        "Initialize_variable": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "E-Mail",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f5b09b04-4c73-41cf-be27-4a1ad830d615"
+          }
+        },
+        "Update_a_row_-_Deklaration_als_unvollständig": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "ks_deklarationens",
+              "recordId": "@triggerBody()?['text']",
+              "item/ks_angefragt_am": "@utcNow()",
+              "item/ks_status_deklaration": "Unvollständig"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps-1"
+            }
+          },
+          "runAfter": {
+            "Send_an_email_(V2)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8aded319-5107-419b-86b4-b0e52db362a3"
+          }
+        },
+        "Get_file_content_using_path": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('SP_SiteURL (ks_SP_SiteURL)')",
+              "path": "@outputs('Get_a_row_by_ID_-_Deklaration')?['body/ks_antwort_sp_pfad']",
+              "inferContentType": true
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "GetFileContentByPath",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Condition": [
+              "Succeeded"
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

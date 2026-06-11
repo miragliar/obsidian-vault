@@ -1,0 +1,16 @@
+<environmentvariabledefinition schemaname="ks_SP_Library">
+  <apiid>/providers/microsoft.powerapps/apis/shared_sharepointonline</apiid>
+  <defaultvalue>59a1d5db-13fe-4eec-93f9-f131bfa2bdf6</defaultvalue>
+  <displayname default="SP_Library">
+    <label description="SP_Library" languagecode="1031" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <parameterkey>table</parameterkey>
+  <parentdefinitionid>
+    <schemaname>ks_SP_SiteURL</schemaname>
+  </parentdefinitionid>
+  <secretstore>0</secretstore>
+  <type>100000004</type>
+</environmentvariabledefinition>

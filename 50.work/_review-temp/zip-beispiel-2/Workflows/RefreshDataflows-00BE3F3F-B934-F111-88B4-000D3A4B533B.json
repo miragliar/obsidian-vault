@@ -1,0 +1,104 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_dataflows": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "ks_shareddataflows_8c090"
+        },
+        "api": {
+          "name": "shared_dataflows"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "undefined",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Refresh_a_dataflow_-_Power_Apps": {
+          "runAfter": {
+            "Delay": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "workspaceType": "Environment",
+              "groupIdForRefreshDataflow": "b5353a83-4e5b-ee54-b610-c75ec2907942-31c688f59-europe",
+              "dataflowIdForRefreshDataflow": "88ad56cb-dc90-4c21-a4ae-bb1b2a180098"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_dataflows",
+              "connectionName": "shared_dataflows",
+              "operationId": "RefreshDataflow"
+            },
+            "authentication": {
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
+              "type": "Raw"
+            }
+          }
+        },
+        "Refresh_a_dataflow_-_Workspace": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "workspaceType": "Workspace",
+              "groupIdForRefreshDataflow": "f39b7273-6439-4e4f-9a30-1839f660b9e2",
+              "dataflowIdForRefreshDataflow": "9b9c8ece-11d9-459e-addf-6c5ebc90b21e-wshost-PowerBi"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_dataflows",
+              "connectionName": "shared_dataflows",
+              "operationId": "RefreshDataflow"
+            },
+            "authentication": {
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
+              "type": "Raw"
+            }
+          }
+        },
+        "Delay": {
+          "runAfter": {
+            "Refresh_a_dataflow_-_Workspace": [
+              "Succeeded"
+            ]
+          },
+          "type": "Wait",
+          "inputs": {
+            "interval": {
+              "count": 15,
+              "unit": "Minute"
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
