@@ -49,11 +49,30 @@ Materialbezug erfassen ────► tbl_Materialbezug ──┬──► KANB
 
 ## Aktuelle Offene Punkte (Stand 2026-06-04)
 
-### Preislogik: EP vs. Verkaufspreis intern
+### Preislogik: EP vs. Verkaufspreis intern/extern
 - **Status quo:** Rechnung verwendet **Einstandspreis (EP)** aus Materialkatalog.
-- **Plan (Remo, 2026-06-02):** In KANBAN-Liste neue Spalte „Verkaufspreis intern" ergänzen (z.B. EP + Aufschlag).
-- **Umbau-Auftrag (Raoul):** Sobald Remo die Spalte angelegt hat → Rechnungs-Logik umstellen auf neue Spalte. Pauschale Aufschlag-% oder Wert pro Artikel zu klären.
-- **ToDo:** ⏳ Warten auf Remo, dann Umbau.
+- **Plan (Remo, 2026-06-02):** In KANBAN-Liste neue Spalten mit Verkaufspreisen ergänzen.
+- **Update (Remo, 2026-06-10):** Spalten sind eingebaut. Zusätzlich: Magaziner soll **vor Rechnungs-Erstellung** zwischen „VP 7% (Intern)" und „VP 15% (Extern)" wählen können (Pflichtfeld).
+
+#### Datenmodell (von Raoul bestätigt 2026-06-11)
+- Datenquelle: **Dataverse-for-Teams Tabelle**, befüllt via **Dataflow aus Excel**
+- Spalten:
+  - `cr57f_vpintern` = VP 7% (intern)
+  - `cr57f_vpextern` = VP 15% (extern)
+
+#### Umsetzungs-Konzept
+- Pre-Modal vor „Rechnung erstellen"-Button: Dropdown mit zwei Optionen, Pflicht
+- Variable `varVPModus` ("intern" / "extern") setzen
+- Im bestehenden Rechnungs-Patch: `cr57f_ep` ersetzen durch `If(varVPModus = "intern"; cr57f_vpintern; cr57f_vpextern)`
+- **Empfehlung:** Audit-Spalte `cr_vpmodus` (Choice) auf der Rechnungs-Tabelle als Snapshot
+
+#### Edge-Cases (zu klären mit Remo)
+- VP-Spalte leer für Artikel X → Vorschlag: blockieren mit Notification, nicht auf EP zurückfallen
+- Beide VP-Spalten leer → Hard-Fail mit klarer Fehlermeldung
+
+- **ToDo:** ⏳ Pre-Modal + Patch-Umbau (2–3h). Code-Snippets siehe Chat 2026-06-11.
+
+> **Wichtig:** Code in **deutscher PowerFx-Syntax** (`;` statt `,`, `;;` statt `;`). Siehe [[50.work/power-platform/powerfx-deutsche-lokalisierung]].
 
 ### KST-Spalte für Magaziner (Nicole Scherrer, 2026-06-02)
 - **Anforderung:** Magaziner soll bei jedem Materialbezug die **Kostenstelle (KST)** mitgeben.

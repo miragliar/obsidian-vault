@@ -96,8 +96,29 @@ Voll-Dokumentation: [[50.work/m365-graph/09-regel-tokens-verschluesselt-keystore
 - **`requirements.txt`** für Reproduzierbarkeit
 - **Idempotenz** (z. B. alte Drafts mit gleichem Subject löschen vor Neuanlage)
 
+## ⚡ PowerFx — IMMER deutsche Lokalisierung (Semikolon-Syntax)
+
+> **Harte Regel:** Alle PowerFx-Snippets für Raoul/Miraglia-BI Power-Apps verwenden die **deutsche Maker-Syntax**. Englische `,`/`;`-Trennzeichen werfen im deutschen Studio Syntax-Fehler.
+
+| Zweck | ❌ Englisch | ✅ Deutsch |
+|---|---|---|
+| Parameter-Trenner | `If(x, a, b)` | `If(x; a; b)` |
+| Statement-Chain | `Set(x, 1); Navigate(Y)` | `Set(x; 1);; Navigate(Y)` |
+| Record-Felder | `{a: 1, b: 2}` | `{a: 1; b: 2}` |
+| Dezimal | `1.5` | `1,5` (UI übernimmt automatisch) |
+
+**Mnemonik:** „Komma wird Strichpunkt, Strichpunkt wird Doppelstrichpunkt."
+
+**Bei Code-Lieferung an Raoul (Snippets in `.pa.yaml`, OnSelect, OnChange usw.):**
+- Direkt in deutscher Syntax schreiben — Raoul kopiert 1:1 ins Studio
+- US-Beispiele aus Web/Doku **vor Übernahme konvertieren**
+- In Records `{…}` bleibt der Trenner ein einfaches `;` (kein `;;`!) — `;;` ist nur für Statement-Chains
+
+**Voll-Dokumentation mit Beispielen:** [[50.work/power-platform/powerfx-deutsche-lokalisierung]]
+
 ## Verwandt
 
 - [[50.work/m365-graph/02-zugangsdaten-secrets]] — CLIENT_ID / TENANT_ID
 - [[50.work/m365-graph/09-regel-tokens-verschluesselt-keystore]] — Token-Regel im Detail
+- [[50.work/power-platform/powerfx-deutsche-lokalisierung]] — PowerFx Semikolon-Syntax
 - [[40.meta/claude-projekte-und-custom-ai]] — Claude-Integration generell

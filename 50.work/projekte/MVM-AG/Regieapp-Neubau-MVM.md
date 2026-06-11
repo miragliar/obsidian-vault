@@ -100,6 +100,48 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 - Fix: Solution nochmals neu eingespielt, in eine konsistente Version gebracht.
 - Stand 06.2026: stabil, abschließende Bestätigung von Manu ausstehend.
 
+### Rizzo Isacco — Offline-Sync-Fehler (10.06.2026)
+- **Symptom 1:** Banner „Fehler beim Abrufen von Daten aus dem Netzwerk" auf Home-Galerie.
+  ![[regie-app-screenshots/2026-06-10_rizzo_netzwerk-fehler-home.png]]
+- **Symptom 2:** Beim Löschen: „Netzwerkfehler bei Verwendung der Remove-Funktion: Fehler bei Regiekopf: code -2147093944 — You cannot delete this record because it doesn't exist in the offline mode".
+  ![[regie-app-screenshots/2026-06-10_rizzo_remove-offline-fehler.png]]
+- **Diagnose:** Offline-Sync-Drift. Power Apps Offline-Profil hat den zu löschenden Record nicht im Cache (Sync nicht durchgelaufen oder Record erst nach letztem Sync entstanden). Passt zu den im Review identifizierten K34 (Cascade-Delete im Client, nicht atomar) + K35 (Foto-Listen nicht offline-fähig).
+- **Sofort-Massnahme (non-code):** App komplett schliessen → bei stabilem Netz neu öffnen → 30s Sync abwarten → Operation wiederholen. Remo direkt an Rizzo weiterleiten.
+- **Hotfix (1–2h, code):** `IfError`-Wrap um Home-Delete-Block (`Home.pa.yaml` Zeilen 423–450) mit user-friendly Notification statt der kryptischen Default-Meldung.
+- **Echter Fix (mittel):** K34 umsetzen — Dataverse-Beziehungen auf `CascadeDelete = Cascade` umstellen → atomarer Single-`Remove(Regiekopf, ThisItem)`.
+- **Langfristig:** K35 — Fotos in Dataverse (`rrpt_foto` ist im Schema, ungenutzt) statt SharePoint.
+
+## Offene Anforderungen / Backlog
+
+### Kopierfunktion für Regie-Rapporte (Remo, 10.06.2026)
+- **Use-Case:** Rapport 1:1 duplizieren, danach in der neuen Instanz anpassen (z.B. Folge-Auftrag, ähnliches Setup).
+- **Priorität (Raoul, 11.06.2026):** Variante A zuerst (vor Wochentage-Plus / Variante B).
+- **Konzept:** Icon-Button auf Home-Galerie-Item → Confirmation → Patch neuer Regiekopf (Status=Entwurf) → ForAll über Detail-Tabellen (Arbeitsbeschriebzeile, Personenzeile, Materialzeile).
+- **Was wird NICHT kopiert:**
+  - Status (immer Entwurf, vermeidet K15)
+  - Rapport-ID (neue Auto-Increment-Sequenz)
+  - Unterschrift / Unterschreiber (rechtlich problematisch)
+  - Fotos (SharePoint-Liste, datums-/situationsspezifisch)
+- **Risiken-Mitigation:**
+  - K2 (Doppelklick) → `varDuplicating`-Lock
+  - K15 (PL-Status direkt) → Hardcode auf Entwurf
+  - Offline → `IfError`-Wrap
+- **Code-Snippets:** siehe Chat 2026-06-11 (deutsche PowerFx-Syntax!).
+- **Aufwand:** 3–4h
+- **ToDo:** ⏳ Implementierung.
+
+### Wochentage + Datums-Plus bei Personen (Remo, 10.06.2026) — Variante B
+- **Use-Case (Remo):** „EINE Arbeit, EINEN Regierapport" — Auftrag zieht sich über mehrere Datumsschienen.
+- **Status:** Backlog. Erst nach Variante A umsetzen, ggf. nochmals mit Remo abstimmen.
+- **Aufwand:** 3–4h (Schema-Erweiterung `rrpt_personenzeile` + UI Personen-Screen).
+
+### Anzeige Alt-Rapporte in neuer App (Remo, 10.06.2026)
+- **Frage von Remo:** Werden Rapporte aus der ALTEN App in der NEUEN angezeigt?
+- **Antwort:** Nein. Neues Datenmodell (Dataverse `rrpt_Regiekopf`), Alt-Daten nicht migriert.
+- **Empfehlung an Remo:** Alt-Rapporte bleiben in der alten App als Read-Only-Archiv. Keine Migration, kein gemischter Schema-Mix.
+
+> **Wichtig für alle Code-Snippets in diesem Projekt:** **deutsche PowerFx-Syntax** (`;` Parameter-Trenner, `;;` Statement-Chain). Siehe [[50.work/power-platform/powerfx-deutsche-lokalisierung]].
+
 ## Persönliche Notizen
 
 _Manuelle Notizen, Aufgaben, Ideen, Risiken kommen hier hin._
