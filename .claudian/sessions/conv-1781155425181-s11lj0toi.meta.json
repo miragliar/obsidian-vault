@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781155425181-s11lj0toi",
+  "providerId": "claude",
+  "title": "Greet with good morning",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781155425182,
+  "updatedAt": 1781155597843,
+  "lastResponseAt": 1781155432765,
+  "sessionId": "a6c70c9d-9e6b-48c2-93fe-e3186b5f97f5",
+  "providerState": {
+    "providerSessionId": "a6c70c9d-9e6b-48c2-93fe-e3186b5f97f5"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 21773,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 21779,
+    "percentage": 2,
+    "contextWindowIsAuthoritative": true
+  }
+}
