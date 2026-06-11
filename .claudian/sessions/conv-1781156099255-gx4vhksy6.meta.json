@@ -4,20 +4,20 @@
   "title": "Plan Magazin-App Rechnung und neue Regie App",
   "titleGenerationStatus": "success",
   "createdAt": 1781156099255,
-  "updatedAt": 1781168305452,
-  "lastResponseAt": 1781168305452,
+  "updatedAt": 1781169989726,
+  "lastResponseAt": 1781169989726,
   "sessionId": "b4b12e06-dc2a-43c0-9584-3d0c7ed1d6ab",
   "providerState": {
     "providerSessionId": "b4b12e06-dc2a-43c0-9584-3d0c7ed1d6ab"
   },
   "usage": {
     "model": "opus",
-    "inputTokens": 6,
-    "cacheCreationInputTokens": 1153,
-    "cacheReadInputTokens": 177796,
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1743,
+    "cacheReadInputTokens": 198509,
     "contextWindow": 1000000,
-    "contextTokens": 178955,
-    "percentage": 18,
+    "contextTokens": 200253,
+    "percentage": 20,
     "contextWindowIsAuthoritative": true
   }
 }
