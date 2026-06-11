@@ -64,6 +64,7 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 
 - [[50.work/power-platform/powerfx-deutsche-lokalisierung|PowerFx — Deutsche Lokalisierung (`;` / `;;`)]]
 - [[50.work/power-platform/powerfx-disambiguation-und-as-operator|PowerFx — Disambiguation `[@…]` + `As`-Operator]] 🆕 aus Kopierfunktion 2026-06-11
+- [[50.work/power-platform/powerapps-navigate-bricht-onselect-cleanup|Navigate() bricht OnSelect-Cleanup + Mobile-Touch-Falle]] 🆕 aus Mobile-Bug 2026-06-11
 - [[50.work/power-platform/powerfx-filter-search-combobox|Filter + Search + Combobox kombinieren]]
 - [[50.work/power-platform/powerfx-hidden-datacard-submitform|Hidden Datacard SubmitForm]]
 - [[50.work/power-platform/dataverse-offlineprofile|Mobile Offline-Profile]]
@@ -246,6 +247,23 @@ Set(varDuplicating; false)
 - **`As src` setzen**, sobald der ForAll-Body Felder referenziert, die sowohl auf Source als auch auf Ziel-Tabelle existieren könnten
 - **Navigation-Property bevorzugen** (`Master.Details`) vor reverse Lookup-Filter
 - Diese drei Patterns kombiniert ergeben den robusten Code
+
+#### 🐛 Mobile-Bug Inline-Edit-Modus (gefixt 11.06.2026)
+
+Beim Erstes Mobile-Test sprang die Galerie bei Tap auf Copy-Button in den Edit-Modus (statt nur zu duplizieren). Auf Desktop kein Problem.
+
+**Zwei Bug-Klassen trafen zusammen:**
+1. **Mobile Touch-Propagation:** Edit-Button und Copy-Button waren in benachbarten Touch-Zonen → ein Tap feuerte beide OnSelect-Handler sequentiell. Auf Desktop pixel-genau, auf Mobile ±10px.
+2. **`Navigate()` als terminaler Befehl:** Im Success-Pfad des Duplizier-Buttons stand `Set(visibleedit, Blank())` NACH `Navigate(Personen)` → wurde nie erreicht, `visibleedit` blieb auf der Source-Rapport-ID gesetzt → beim Re-Entry rendert das Item im Edit-Modus.
+
+**Drei-Layer-Fix:**
+1. **`Set(visibleedit, Blank())` als ALLERERSTE Zeile** im Copy-Button OnSelect (übersteuert von Touch-Propagation gesetzten Edit-Trigger)
+2. **`Set(visibleedit, Blank())` VOR `Navigate(Personen)`** im Success-Branch des IfError (statt nach dem Navigate, wo es nicht erreicht wird)
+3. **`Set(visibleedit, Blank())` in `Home.OnVisible`** als globaler Reset bei jedem Re-Entry (architektonischer Fix — alle anderen sind defensive Mitigationen)
+
+Pattern-Notiz: [[50.work/power-platform/powerapps-navigate-bricht-onselect-cleanup|Navigate() bricht OnSelect-Cleanup + Mobile-Touch-Falle]].
+
+> **Generalisierte Regel:** Jede State-Variable, die UI-Zustände in einem Screen steuert, muss im `OnVisible` des Screens zurückgesetzt werden. Sonst lecken State-Reste über Screen-Wechsel sobald irgendwo `Navigate()` nach einem `Set` steht. Gilt auch für K33 (`varSubmitting`) aus dem Schwachstellen-Review — gleiche Bug-Klasse.
 
 > **Code in deutscher PowerFx-Syntax** (`;` / `;;`). Siehe [[50.work/power-platform/powerfx-deutsche-lokalisierung]].
 > **Disambiguation-Pattern** im Detail: [[50.work/power-platform/powerfx-disambiguation-und-as-operator]].
