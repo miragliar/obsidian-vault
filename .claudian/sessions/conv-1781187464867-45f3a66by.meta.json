@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781187464867-45f3a66by",
+  "providerId": "claude",
+  "title": "Debug Power Query thousands separator issue",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781187464867,
+  "updatedAt": 1781187620232,
+  "lastResponseAt": 1781187620232,
+  "sessionId": "bfe3d01d-fda6-42de-96b3-e5c29bdda72f",
+  "providerState": {
+    "providerSessionId": "bfe3d01d-fda6-42de-96b3-e5c29bdda72f"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 9116,
+    "cacheReadInputTokens": 16819,
+    "contextWindow": 1000000,
+    "contextTokens": 25941,
+    "percentage": 3,
+    "contextWindowIsAuthoritative": true
+  }
+}
