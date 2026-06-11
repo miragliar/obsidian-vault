@@ -4,8 +4,8 @@
   "title": "Explain direct vs indirect network effects",
   "titleGenerationStatus": "success",
   "createdAt": 1781195412877,
-  "updatedAt": 1781197508723,
-  "lastResponseAt": 1781197508723,
+  "updatedAt": 1781201747944,
+  "lastResponseAt": 1781201747944,
   "sessionId": "cf23b104-bf63-4697-a3d2-d28f3ea1a8d0",
   "providerState": {
     "providerSessionId": "cf23b104-bf63-4697-a3d2-d28f3ea1a8d0"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 6,
-    "cacheCreationInputTokens": 44263,
-    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 7182,
+    "cacheReadInputTokens": 100935,
     "contextWindow": 1000000,
-    "contextTokens": 44269,
-    "percentage": 4,
+    "contextTokens": 108123,
+    "percentage": 11,
     "contextWindowIsAuthoritative": true
   }
 }
