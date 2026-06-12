@@ -4,8 +4,8 @@
   "title": "Integrate Foucault power concept into seminar p...",
   "titleGenerationStatus": "success",
   "createdAt": 1781257610342,
-  "updatedAt": 1781266568603,
-  "lastResponseAt": 1781266568603,
+  "updatedAt": 1781268104942,
+  "lastResponseAt": 1781268104942,
   "sessionId": "271d354b-4ebf-466f-a51b-01fcee907e7c",
   "providerState": {
     "providerSessionId": "271d354b-4ebf-466f-a51b-01fcee907e7c"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 6,
-    "cacheCreationInputTokens": 9957,
-    "cacheReadInputTokens": 184454,
+    "cacheCreationInputTokens": 4409,
+    "cacheReadInputTokens": 226700,
     "contextWindow": 1000000,
-    "contextTokens": 194417,
-    "percentage": 19,
+    "contextTokens": 231115,
+    "percentage": 23,
     "contextWindowIsAuthoritative": true
   }
 }
