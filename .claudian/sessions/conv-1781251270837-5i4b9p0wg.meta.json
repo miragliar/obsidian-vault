@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781251270837-5i4b9p0wg",
+  "providerId": "claude",
+  "title": "Clarify strict vs weak inequalities in econ tut...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781251270838,
+  "updatedAt": 1781251356348,
+  "lastResponseAt": 1781251356347,
+  "sessionId": "0f0b7eac-1514-4e49-aeac-0a12cbb29be5",
+  "providerState": {
+    "providerSessionId": "0f0b7eac-1514-4e49-aeac-0a12cbb29be5"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 48250,
+    "cacheReadInputTokens": 16823,
+    "contextWindow": 1000000,
+    "contextTokens": 65079,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}
