@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781272919348-6lqrwimm2",
+  "providerId": "claude",
+  "title": "Select Thursday review exercises from 4 problem...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781272919348,
+  "updatedAt": 1781273031938,
+  "lastResponseAt": 1781273031938,
+  "sessionId": "95321453-f5b6-4e36-b5f8-848126b73ab3",
+  "providerState": {
+    "providerSessionId": "95321453-f5b6-4e36-b5f8-848126b73ab3"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 12810,
+    "cacheReadInputTokens": 64571,
+    "contextWindow": 1000000,
+    "contextTokens": 77382,
+    "percentage": 8,
+    "contextWindowIsAuthoritative": true
+  }
+}
