@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781249354489-6m0svyd9j",
+  "providerId": "claude",
+  "title": "Correct platform economics exam answers in docx",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781249354490,
+  "updatedAt": 1781250290417,
+  "lastResponseAt": 1781250290417,
+  "sessionId": "99436599-6913-47c4-a687-e24d7f6aa7c6",
+  "providerState": {
+    "providerSessionId": "99436599-6913-47c4-a687-e24d7f6aa7c6"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 1233,
+    "cacheReadInputTokens": 54858,
+    "contextWindow": 1000000,
+    "contextTokens": 56097,
+    "percentage": 6,
+    "contextWindowIsAuthoritative": true
+  }
+}
