@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781257610342-hnrdjqxcm",
+  "providerId": "claude",
+  "title": "Integrate Foucault power concept into seminar p...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781257610342,
+  "updatedAt": 1781258373120,
+  "lastResponseAt": 1781258373120,
+  "sessionId": "271d354b-4ebf-466f-a51b-01fcee907e7c",
+  "providerState": {
+    "providerSessionId": "271d354b-4ebf-466f-a51b-01fcee907e7c"
+  },
+  "currentNote": "20.studies/Anneliese-Michel/06-Review-Seminararbeit-2026-06-10.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 7071,
+    "cacheReadInputTokens": 75688,
+    "contextWindow": 1000000,
+    "contextTokens": 82760,
+    "percentage": 8,
+    "contextWindowIsAuthoritative": true
+  }
+}
