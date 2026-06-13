@@ -4,21 +4,20 @@
   "title": "Explain dependent variable convention in x and y",
   "titleGenerationStatus": "success",
   "createdAt": 1781275159638,
-  "updatedAt": 1781275170142,
-  "lastResponseAt": 1781275170142,
+  "updatedAt": 1781277187023,
+  "lastResponseAt": 1781277187023,
   "sessionId": "8ed1c4a7-e843-400c-94e0-578722d71df0",
   "providerState": {
     "providerSessionId": "8ed1c4a7-e843-400c-94e0-578722d71df0"
   },
-  "currentNote": "20.studies/Organizational-Economics/paper-tables-guide.md",
   "usage": {
     "model": "opus",
     "inputTokens": 6,
-    "cacheCreationInputTokens": 5645,
-    "cacheReadInputTokens": 16823,
+    "cacheCreationInputTokens": 3078,
+    "cacheReadInputTokens": 54995,
     "contextWindow": 1000000,
-    "contextTokens": 22474,
-    "percentage": 2,
+    "contextTokens": 58079,
+    "percentage": 6,
     "contextWindowIsAuthoritative": true
   }
 }
