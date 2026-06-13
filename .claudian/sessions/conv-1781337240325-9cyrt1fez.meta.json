@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781337240325-9cyrt1fez",
+  "providerId": "claude",
+  "title": "Review seminar paper for narrative tone",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781337240325,
+  "updatedAt": 1781337632497,
+  "lastResponseAt": 1781337632497,
+  "sessionId": "5a93443d-d80d-4407-ad1c-a2a8306166b6",
+  "providerState": {
+    "providerSessionId": "5a93443d-d80d-4407-ad1c-a2a8306166b6"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1022,
+    "cacheReadInputTokens": 107021,
+    "contextWindow": 1000000,
+    "contextTokens": 108044,
+    "percentage": 11,
+    "contextWindowIsAuthoritative": true
+  }
+}
