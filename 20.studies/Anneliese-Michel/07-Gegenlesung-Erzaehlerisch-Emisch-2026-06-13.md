@@ -344,8 +344,316 @@ Damit du dich nicht verunsichern lässt: Die folgenden Stellen klingen auf den e
 
 Wenn du nach einer Stelle unsicher bist, ob mein Vorschlag wirklich besser ist: Lies den Satz **laut**. Erzählerische Sätze klingen beim Lautlesen wie ein Reportage-Anfang; wissenschaftliche Sätze klingen wie ein Befund.
 
+---
+
+# Nachtrag — Kursivsetzungen (englische, lateinische, emische Begriffe)
+
+Ergänzung vom 2026-06-13, nach erstem Korrekturdurchgang. Bezieht sich weiterhin auf `2026-06-13 SA.docx`.
+
+## Regelhintergrund (kurz)
+
+Im deutschsprachigen wissenschaftlichen Standard kursiv:
+- **fremdsprachige Wörter** (Englisch, Latein), die nicht eingedeutscht sind
+- **Werktitel** (Filme, Bücher)
+- **Fachbegriffe / emische Kategorien** beim Erstvorkommen — danach normal
+
+**Nicht kursiv:** Eigennamen, Marken (Tegretal, Cinemascope), bereits eingedeutschte Lehnwörter.
+
+## Konkrete Stellen
+
+### Englisch
+
+#### K1. *spiritual warfare*
+- **Wo:** Kap. 3.2 (anthropologischer Diskurs), Absatz „Wilkens verweist darauf, dass Besessenheitsphänomene entgegen den Erwartungen der Säkularisierungstheorie …"
+- **Aktuell:** „… im evangelikalen Spektrum hat sich unter dem Begriff des spiritual warfare ein elaboriertes Deutungssystem entwickelt …"
+- **Vorschlag:** „… im evangelikalen Spektrum hat sich unter dem Begriff des *spiritual warfare* ein elaboriertes Deutungssystem entwickelt …"
+- **Begründung:** Englischer Fachbegriff, kein deutsches Äquivalent eingebürgert.
+
+#### K2. *The Exorcism of Emily Rose* (Filmtitel, mehrfach)
+- **Wo:**
+  - Kap. 4.1, Absatz „Bauer bestätigt aus theoretischer Perspektive …"
+  - Kap. 4.2.2, Absatz „Baxendale bestätigt diesen Befund …"
+  - Fazit, Absatz „Die mediale Rezeption des Falls …"
+- **Aktuell:** „The Exorcism of Emily Rose" (gerade)
+- **Vorschlag:** *The Exorcism of Emily Rose*
+- **Begründung:** Filmtitel — Standard ist kursiv. Konsistent auch in der Bibliografie prüfen (Eintrag Friedkin 1974 *The Exorcist* analog).
+
+#### K3. *The Exorcist* (Bibliografie + ggf. Haupttext)
+- **Wo:** Bibliografie, Eintrag „Friedkin, William, Reg. 1974. The Exorcist."
+- **Aktuell:** „The Exorcist" (gerade)
+- **Vorschlag:** *The Exorcist*
+- **Im Haupttext (Kap. 4.1):** Du verwendest dort die deutsche Form „Der Exorzist (Friedkin 1974)" — auch das gehört kursiv: *Der Exorzist*.
+
+### Lateinisch
+
+#### K4. *Rituale Romanum* (mehrfach)
+- **Wo:**
+  - Kap. 3.1, Absatz „Für die Diagnostik verweist Mischo …" (1614)
+  - Kap. 3.4, Absatz „Das Rituale Romanum von 1614 bildete …"
+  - Kap. 3.4, Absatz „1985 verbot die Kongregation …" (Überarbeitung des Rituale Romanum)
+  - Kap. 3.4, Absatz „Dennoch blieb auch der neue Ritus …" (Überarbeitung des alten Rituale Romanum)
+- **Aktuell:** „Rituale Romanum" (gerade)
+- **Vorschlag:** *Rituale Romanum*
+- **Begründung:** Lateinischer Werktitel — klassisch kursiv. **Durchgängig** anwenden, nicht nur beim ersten Vorkommen, weil es ein Werktitel ist (nicht nur ein Fachbegriff).
+
+#### K5. *exorcismus probativus*
+- **Wo:** Kap. 2.2, Absatz „Annelieses Zustand verschlechterte sich im Laufe des Jahres 1975 …"
+- **Aktuell:** „Als Alt 1975 den Exorzismus probativus sprach …"
+- **Vorschlag:** „Als Alt 1975 den *exorcismus probativus* sprach …"
+- **Begründung:** Lateinischer Terminus. Beachte zusätzlich die korrekte lateinische Schreibung (klein, mit `c` statt `z` im ersten Wort).
+
+#### K6. *Compassio* (innerhalb eines Zitats)
+- **Wo:** Kap. 4.2, Absatz „Kamerastil und Schnitt …"
+- **Aktuell:** „Das bpb-Filmheft beschreibt das ästhetische Konzept als melancholische Compassio …"
+- **Vorschlag:** „Das bpb-Filmheft beschreibt das ästhetische Konzept als „melancholische *Compassio*" …"
+- **Begründung:** Lateinisches Substantiv. Wenn du gemäss Korrektur #24 das Zitat ohnehin in Anführungszeichen setzt, kann *Compassio* innerhalb der Anführungszeichen kursiv stehen.
+
+#### K7. *Requiem* (Filmtitel, mehrfach)
+- **Wo:** Mehrfach durchgängig ab Inhaltsverzeichnis (Kap. 4.2) bis Fazit und Anhang.
+- **Aktuell:** „Requiem" (gerade)
+- **Vorschlag:** *Requiem*
+- **Begründung:** Filmtitel. **Achtung:** Wenn du den lateinischen Begriff *requiem* in seiner ursprünglichen Bedeutung (Totenmesse) verwendest — wie im Anhang im Satz „Requiem bedeutet auf Latein Totenmesse" — gehört er ebenfalls kursiv, dort aber als lateinisches Wort, nicht als Filmtitel. Praktischer Hinweis: An der Stelle ist die Doppeldeutung dein Inhalt — du kannst es so lösen: „Der Titel *Requiem* (lat. *requiem* = Totenmesse) …"
+
+### Emische / theoretische Fachbegriffe (Erstvorkommen kursiv)
+
+#### K8. *Sühnebesessenheit*
+- **Wo Erstvorkommen:** Kap. 2.2, Absatz „Im Verlauf der Exorzismen entwickelte sich bei Anneliese und den Beteiligten die Deutung einer Sühnebesessenheit …"
+- **Vorschlag:** „… die Deutung einer *Sühnebesessenheit* …"
+- **Begründung:** Emische Kategorie der Beteiligten, die du analytisch wiedergibst. Bei späteren Vorkommen (Kap. 3.3, Fazit) kann der Begriff dann normal gesetzt werden.
+
+#### K9. *Umsessenheit*
+- **Wo:** Kap. 2.2, Absatz „Ernst Alt, der im Januar 1974 …"
+- **Aktuell:** „Er stellte 1974 die Diagnose einer Umsessenheit …"
+- **Vorschlag:** „Er stellte 1974 die Diagnose einer *Umsessenheit* …"
+- **Begründung:** Kirchlich-emische Diagnosekategorie (Stufe unterhalb der vollen Besessenheit). Beim Erstvorkommen markieren.
+
+#### K10. *Energumenen*
+- **Wo:** Kap. 3.1, Absatz „Aus religionshistorischer Perspektive zeigt sich …"
+- **Aktuell:** „Energumenen wurden in der Kirche häufig wie Geisteskranke behandelt und gefesselt gehalten."
+- **Vorschlag:** „*Energumenen* wurden in der Kirche häufig wie Geisteskranke behandelt und gefesselt gehalten."
+- **Begründung:** Kirchenlateinischer Fachbegriff (von gr.-lat. *energumenos*, Besessener). Lesefreundlich ggf. eine kurze Klammererklärung beim Erstvorkommen ergänzen.
+
+#### K11. *Pastoralmacht* — optional, aber konsistent prüfen
+- **Wo Erstvorkommen:** Kap. 3.3, Absatz „Diese Machtstruktur wird durch den Rückgriff …" — Satz „Im Sinne des Foucault'schen Konzepts der Pastoralmacht (Foucault 2004, 201–277) …"
+- **Vorschlag:** Hier ist der Begriff durch den expliziten Foucault-Beleg bereits als technischer Terminus markiert — Kursivsetzung ist **nicht zwingend**. Wenn du aber bei den anderen emischen/theoretischen Begriffen (K8, K9, K10) konsistent das Erstvorkommen kursivierst, dann auch hier: *Pastoralmacht*.
+
+### Nicht kursiv (zur Klarheit)
+
+Diese Begriffe **bleiben aufrecht**, auch wenn sie auf den ersten Blick fremdartig wirken:
+
+| Begriff | Warum nicht kursiv |
+|---|---|
+| Tegretal | Markenname (Medikament) |
+| Cinemascope | Verfahrens-/Markenname |
+| Heavy-Metal-Musik | weitgehend eingedeutschtes Genrelabel |
+| Pater Pio, Therese Neumann | Eigennamen |
+| etisch / emisch | im religionswissenschaftlichen Standardvokabular eingebürgert — optional bei Erstvorkommen, aber nicht zwingend |
+| Märtyrerin | eingedeutscht |
+| Selbständigkeitserklärung etc. | Standardbegriffe |
+
+## Vorgehen für diesen Nachtrag
+
+1. **Filmtitel zuerst** (K2, K3, K7) — kannst du per Suchen/Ersetzen in Word machen, geht schnell.
+2. **Rituale Romanum** (K4) — ebenfalls Suchen/Ersetzen, durchgängig.
+3. **Einzelne englische/lateinische Begriffe** (K1, K5, K6) — pro Vorkommen einmal.
+4. **Emische Fachbegriffe** (K8, K9, K10, optional K11) — nur jeweils **erstes Vorkommen** kursivieren.
+
+Aufwand: rund **15 Minuten**.
+
+---
+
+# Nachtrag 2 — Tempus-Konsistenz
+
+Ergänzung vom 2026-06-13. Du hast richtig benannt, wo es trickig wird: historische Rekonstruktion (Präteritum) ↔ eigene Argumentation / Inhaltsangabe von Texten (Präsens, sog. *praesens scientificum*). Insgesamt ist die Arbeit gut tempussortiert — es gibt eine **Handvoll konkreter Stellen**, die nicht stimmen, und **eine systematische Reibung** zwischen Kap. 2 und Kap. 3.3.
+
+## Die Heuristik (drei Spalten)
+
+| Inhalt | Tempus | Beispiel aus deiner Arbeit |
+|---|---|---|
+| **Was damals geschah** (Ereignisse, Akteurshandlungen, historische Tatsachen) | **Präteritum** | „Anneliese Michel starb am 1. Juli 1976." / „Bischof Stangl erteilte … die Erlaubnis." |
+| **Was Texte / Filme / Studien sagen oder zeigen** (Inhaltsangabe) | **Präsens** | „Mischo hält fest, dass …" / „Der Film zeigt Michaelas Epilepsie …" / „Goodmans Kernthese lautet …" |
+| **Deine eigene Argumentation, allgemeine Befunde, Definitionen** | **Präsens** | „Diese Asymmetrie folgt dem Forschungsstand." / „Besessenheit lässt sich als Zuschreibung analysieren." |
+
+**Zwei Sonderfälle:**
+- **Plusquamperfekt** nur, wenn ein Ereignis **vor einem anderen Ereignis** im gleichen Bezug steht („Er **hatte** schon 1947 gefordert, **bevor** das Konzil tagte"). Sonst: Präteritum.
+- **Konjunktiv I** für indirekte Rede / Paraphrase einer fremden Position („Müller schreibt, das Heilige Offizium **habe** … verlangt").
+
+## Wo die Heuristik bricht — und du entscheiden musst
+
+Der heikelste Fall in deiner Arbeit: **dieselbe historische Tatsache** wird einmal in Kap. 2 rekonstruiert (richtig: Präteritum) und in Kap. 3.3 analytisch wiederaufgenommen — dort steht sie im Präsens.
+
+> **Kap. 2.1:** „Die medizinische Diagnose einer Temporallappenepilepsie wurde in den Folgejahren von weiteren Ärzt*innen bestätigt. **Sie wurde** von Anneliese und ihrem Umfeld jedoch nie akzeptiert." (Präteritum ✓)
+>
+> **Kap. 3.3:** „Auch im Fall Michel werden medizinische Diagnosen religiös umcodiert. Die Epilepsiediagnose **wird** von Anneliese und ihrem Umfeld nicht akzeptiert. Antiepileptika **werden** zwar verschrieben, aber nicht konsequent eingenommen."
+
+Beides ist verteidigbar. Aber im gleichen Text wirkt es inkonsistent.
+
+**Empfehlung:** In Kap. 3.3 die historischen Tatsachen ebenfalls in Präteritum setzen, weil sie als Ereignisse vor 1976 angesprochen sind. Das **analytische Rahmenargument** bleibt im Präsens, die **Anwendung auf den konkreten Fall** wechselt ins Präteritum.
+
+→ Vorschlag für die Stelle in Kap. 3.3:
+> „Auch im Fall Michel **wurden** medizinische Diagnosen religiös umcodiert. Die Epilepsiediagnose **wurde** von Anneliese und ihrem Umfeld nicht akzeptiert (Ney-Hellmuth 2014, 27). Antiepileptika **wurden** zwar verschrieben, aber nicht konsequent eingenommen (Ney-Hellmuth 2014, 30). Symptome, die medizinisch als Temporallappenepilepsie diagnostiziert **waren**, **wurden** aus dem medizinischen Deutungsrahmen herausgelöst und in das religiöse System der Sühnebesessenheit integriert."
+
+Damit wird das **analytische Konzept Bauers** (Medikalisierung/De-Medikalisierung) im Präsens beibehalten — der **konkrete Fall** aber sprachlich klar als historisches Ereignis behandelt.
+
+## Konkrete Stellen — punktuelle Tempus-Brüche
+
+### T1. Tempuswechsel im selben Satz (Cinemascope)
+- **Wo:** Kap. 4.2, Absatz „Kamerastil und Schnitt verstärken …"
+- **Aktuell:** „Der Film **wurde** mit einer beweglichen Handkamera in Cinemascope **gedreht** und **verzichtet** fast vollständig auf Filmmusik."
+- **Problem:** Im selben Satz zweimal verschiedenes Tempus.
+- **Vorschlag:** „Der Film **ist** mit einer beweglichen Handkamera in Cinemascope **gedreht** und **verzichtet** fast vollständig auf Filmmusik."
+- **Begründung:** Präsens-Passiv beschreibt eine Eigenschaft des Films (nicht den Produktionsakt); passt zur „Der Film zeigt …"-Logik im Rest des Kapitels.
+
+### T2. Drei Tempora in einem Satz (Emily Rose / Bauer)
+- **Wo:** Kap. 4.1, Absatz „Bauer bestätigt aus theoretischer Perspektive …"
+- **Aktuell:** „Sie zeigt, dass Filme wie The Exorcism of Emily Rose (2005), der ebenfalls auf dem Fall Michel **basiert**, massgeblich zur Renaissance des Exorzismusglaubens in zeitgenössischen Gesellschaften **beigetragen haben** und römisch-katholische Narrative in der modernen Gesellschaft **verankerten** (Bauer 2021, 217)."
+- **Problem:** „basiert" (Präsens) + „beigetragen haben" (Perfekt) + „verankerten" (Präteritum) im selben Satz.
+- **Vorschlag:** „Sie zeigt, dass Filme wie *The Exorcism of Emily Rose* (2005), der ebenfalls auf dem Fall Michel **basiert**, massgeblich zur Renaissance des Exorzismusglaubens in zeitgenössischen Gesellschaften **beitragen** und römisch-katholische Narrative in der modernen Gesellschaft **verankern** (Bauer 2021, 217)."
+- **Begründung:** Wenn Bauers These ist, dass diese Filme den Diskurs **bis heute** mitgestalten, ist durchgehendes Präsens die saubere Form.
+
+### T3. Aktuell gültiger Ritus im Präteritum
+- **Wo:** Kap. 3.4, Absatz „1998 approbierte Papst Johannes Paul II. …"
+- **Aktuell:** „1998 approbierte Papst Johannes Paul II. einen neuen Exorzismusritus, der 1999 in Kraft trat. Dieser neue Ritus **stellte** die therapeutische Seite in den Vordergrund und **schrieb** die Hinzuziehung von Psychiater*innen und Medizinern bereits bei der Abklärung verbindlich vor (Müller 2002). Zudem **wurden** deprekative Gebetsformen eingeführt …"
+- **Problem:** Der Ritus ist heute noch in Kraft. Die historische Ereigniskette gehört ins Präteritum („1998 approbierte … 1999 in Kraft trat … wurden eingeführt"), aber der **Inhalt des aktuell gültigen Textes** gehört ins Präsens.
+- **Vorschlag:** „1998 approbierte Papst Johannes Paul II. einen neuen Exorzismusritus, der 1999 in Kraft **trat**. Dieser neue Ritus **stellt** die therapeutische Seite in den Vordergrund und **schreibt** die Hinzuziehung von Psychiater*innen und Medizinern bereits bei der Abklärung verbindlich vor (Müller 2002). Zudem **wurden** deprekative Gebetsformen eingeführt, die …"
+- **Begründung:** Inhaltsangabe eines gültigen Textes = Präsens; Einführung als historisches Ereignis = Präteritum.
+
+### T4. Plusquamperfekt ohne Vorzeitigkeit (Konzil)
+- **Wo:** Kap. 3.4, Absatz „Das Zweite Vatikanische Konzil hatte eine umfassende Reform …"
+- **Aktuell:** „Das Zweite Vatikanische Konzil **hatte** eine umfassende Reform der liturgischen Bücher **gefordert**."
+- **Problem:** Plusquamperfekt setzt Vorzeitigkeit zu einem anderen Ereignis voraus. Hier kommt der Bezugspunkt erst im Folgesatz („In den Folgejahren wurden …"). Das ist verteidigbar, aber sprachlich umständlich.
+- **Vorschlag:** „Das Zweite Vatikanische Konzil **forderte** eine umfassende Reform der liturgischen Bücher. In den Folgejahren **wurden** die meisten Exorzismusformeln …"
+- **Begründung:** Präteritum + Präteritum ist hier schlanker. Die Reihenfolge ergibt sich aus „In den Folgejahren …".
+- **Ausnahme:** Falls du die Vorzeitigkeit zum Fall Michel betonen möchtest („das Konzil **hatte** schon … gefordert, bevor der Fall Michel ins Rollen kam"), ist Plusquamperfekt richtig — dann aber die Vorzeitigkeit auch explizit markieren.
+
+### T5. Konjunktiv I vs. Indikativ in Paraphrase (Mischo)
+- **Wo:** Kap. 3.1, Absatz „Schon Johannes Mischo hält 1975 fest …"
+- **Aktuell:** „Was die Akteur*innen **trenne**, **seien** allein die Interpretationsansätze (Mischo 1975, 188). Diese Beobachtung **ist** für den Fall Michel zentral."
+- **Befund:** Hier wechselst du elegant: Konjunktiv I (indirekte Rede Mischos) → Indikativ Präsens (deine eigene Bewertung). Das ist **richtig** und vorbildlich — als Beispiel für andere Stellen merken.
+
+### T6. „beschreiben" für eine zeitlose Aussage Bauers
+- **Wo:** Kap. 3.3, Absatz „Bauer fasst die Machtkonstruktion …"
+- **Aktuell:** Korrekt durchgehend Präsens.
+- **Hinweis:** Im anschliessenden Absatz wechselst du dann zur Anwendung auf den Fall — dort Präteritum („Auf der individuellen Ebene **baute** Alt seine Position … **auf**"). Das ist ebenfalls vorbildlich.
+
+## Was *richtig* ist (zur Selbstvergewisserung)
+
+Damit du nicht überall neu liest: Diese Tempus-Wechsel sind richtig so:
+
+- **Kap. 2** durchgehend Präteritum für die historische Rekonstruktion ✓
+- **Mischo / Niemann / Bauer / Wilkens / Demmrich / Goodman** durchgehend Präsens als Inhaltsangabe ✓
+- **Goodman „untersuchte … deutet"** (Kap. 2.1): „untersuchte" ist Präteritum (sie tat es damals als historisches Forschungshandeln), „deutet" ist Präsens (was sie analytisch sagt) — beides richtig ✓
+- **Kap. 4.2 Film-Beschreibung** durchgehend Präsens („Der Film zeigt", „Michaela übernimmt", „Niemand fragt genau nach") ✓
+- **Fazit** Präsens für die analytische Synthese + Präteritum für historische Schlussbezüge („endete für Anneliese Michel tödlich") ✓
+- **Konjunktiv I** an mehreren Stellen sauber gesetzt (Müller-Paraphrase, Pressewiedergabe Kap. 4.1) ✓
+
+## Vorgehen für diesen Nachtrag
+
+1. Drei der vier Stellen (**T1**, **T2**, **T3**) sind in **2 Minuten** pro Stelle erledigt — klare Wortersetzung.
+2. **T4** (Plusquamperfekt) ist eine Stilfrage, kein Fehler — gehe danach, ob du die Vorzeitigkeit betonen willst.
+3. Die **Inkonsistenz Kap. 2 ↔ Kap. 3.3** (Epilepsiediagnose-Stelle) ist die wichtigste — etwa **5 Minuten**, weil drei Sätze in 3.3 ins Präteritum umzustellen sind, ohne dass das analytische Rahmenargument verloren geht. Mein Vorschlag oben ist Vorlage.
+
+Gesamtaufwand: **10–15 Minuten**.
+
+---
+
+# Nachtrag 3 — Doppelungen im Fazit (Psychologie ↔ Exorzismus)
+
+Du hast richtig vermutet: Es gibt **zwei klare Doppelungen**, beide genau im Bereich „Überlappung Psychologie ↔ religiöse Deutung". Plus eine schwächere Doppelung bei Demmrich und eine thematische Nähe zwischen Absatz 6 und 7.
+
+## Struktur des Fazits (zur Orientierung)
+
+| # | Absatz beginnt mit | Funktion |
+|---|---|---|
+| 1 | „Diese Arbeit hat den Fall …" | Einleitung / Forschungsfrage |
+| 2 | „Der psychiatrisch-medizinische Diskurs …" | Mischo + Niemann |
+| 3 | „Der anthropologische Diskurs …" | Goodman, Bauer & Doole, Wilkens |
+| 4 | „Ergänzend zu den beiden Hauptdiskursen …" | Exkurs 3.3 — Bauer + Demmrich |
+| 5 | „Die mediale Rezeption …" | Requiem |
+| 6 | „Der Fall zeigt, dass die vermeintlich klare Grenze …" | **Synthese 1: Durchlässigkeit** |
+| 7 | „Der Fall verweist auch auf die Persistenz …" | **Synthese 2: Persistenz** |
+| 8 | „Der Fall Anneliese Michel entzieht sich …" | Schluss / Mehrdimensionalität |
+
+Die Doppelungen liegen alle in **Abs. 6** — der Absatz fasst Befunde zusammen, die schon in Abs. 2 und Abs. 4 standen.
+
+## ⚠️ Doppelung D1 — Niemann fast wortidentisch
+
+### Wo
+- **Absatz 2** (psychiatrisch-medizinischer Diskurs), letzter Satz:
+  > „Die medizinische und die religiöse Deutung schliessen einander nicht aus, sondern stellen eigenständige, jeweils begrenzte Deutungsdimensionen dar (Niemann 2005, 277)."
+- **Absatz 6** (Synthese), 2. Satz:
+  > „Niemann hält spiegelbildlich fest, dass die medizinische und die religiöse Deutung einander nicht ausschliessen müssen, sondern eigenständige und jeweils begrenzte Deutungsdimensionen darstellen (Niemann 2005, 277)."
+
+### Befund
+Gleiche Aussage, gleiche Seitenzahl, fast wortidentisch.
+
+### Empfehlung
+**Behalten in Abs. 6**, weil dort die Synthese-Funktion liegt (Niemann gespiegelt zu Bauer = der eine als Brückenbauer von der psychiatrischen Seite her, der andere als Brückenbauer von der religiösen Seite her). **Streichen in Abs. 2.**
+
+Ersatz für den letzten Satz von Abs. 2: Du kannst Niemann dort einfach mit der zentralen Forderung enden lassen — etwa:
+> „Beide Autoren plädieren für eine interdisziplinäre Zusammenarbeit zwischen Psychiatrie und Seelsorge, ohne die religiöse Dimension der Betroffenen zu negieren (Niemann 1999, 783)."
+
+Damit verliert Abs. 2 nichts Inhaltliches; die Pointe „schliessen einander nicht aus" wandert exklusiv ins Synthese-Absatz 6, wo sie sich mit Bauer spiegelt.
+
+## ⚠️ Doppelung D2 — Bauer (Psychologisierung als Legitimationsstrategie)
+
+### Wo
+- **Absatz 4** (soziokultureller Exkurs), 3. Satz:
+  > „Die Psychologisierung des Exorzismus, also die Einbeziehung medizinisch-psychologischer Terminologie zur Legitimation religiöser Deutungshoheit, erweist sich dabei nicht als Annäherung an wissenschaftliche Standards, sondern als Strategie, die Autoritätsposition des Exorzisten gegenüber säkularen Konkurrenten zu stärken (Bauer 2022, 8)."
+- **Absatz 6** (Synthese), 1. Satz:
+  > „Bauer hat gezeigt, dass zeitgenössische Exorzisten medizinische und psychologische Begriffe systematisch in ihre religiösen Argumentationsstrategien integrieren, nicht um die religiöse Deutung aufzugeben, sondern um sie gegenüber säkularen Konkurrenten zu legitimieren (Bauer 2024b, 162)."
+
+### Befund
+Inhaltlich nahezu identisch. Unterschiedlich nur in: zwei verschiedene Bauer-Belege (2022 vs. 2024b) und marginal andere Formulierung.
+
+### Empfehlung
+Wie bei D1: **In Abs. 6 belassen** (Synthese-Funktion), **in Abs. 4 die Psychologisierung anders pointieren** — z. B. mit dem Aspekt der **akademischen Professionalisierung** (Rom-Kurs), den du in Kap. 3.3 ausgearbeitet hast, der aber im Fazit noch nicht vorkommt. Vorschlag:
+
+> „Die Psychologisierung des Exorzismus — also die Übernahme medizinisch-psychologischer Terminologie in religiöse Argumentationsstrategien — wird durch eine akademische Professionalisierung gestützt (Rom-Kurse für Exorzisten) und sichert dem religiösen Experten die diagnostische Letztentscheidung über Besessenheitsfälle (Bauer 2022, 8f.)."
+
+Damit hebt Abs. 4 sich klar von Abs. 6 ab: Hier institutionelle Verankerung, dort Strategiebefund.
+
+## Schwächer — Demmrich in Abs. 4 und Abs. 7
+
+### Wo
+- **Absatz 4:** fremdsuggestive Induktion bei Anneliese (Demmrich 2020, 77f.).
+- **Absatz 7:** Klerikales Bereitstellen von Exorzisten erhöht die Wahrscheinlichkeit, dass sich Gläubige als besessen wahrnehmen (Demmrich 2020, 79).
+
+### Befund
+Keine echte Doppelung — verschiedene Aspekte. Aber Demmrich wird in zwei eng beieinanderliegenden Absätzen zweimal aufgerufen, was strukturell unsauber wirkt.
+
+### Empfehlung
+Wenn du den Aufwand in Kauf nimmst: **beide Demmrich-Aspekte in Abs. 7 bündeln** (dort hast du den Gegenwartsbezug + Persistenz-Argument, dort gehört Demmrich konzeptuell hin). In Abs. 4 reicht dann der Fall-Bezug ohne Demmrich, weil Bauer dort das Hauptargument trägt.
+
+Falls du nicht umbauen willst: lassen wie es ist, das ist keine Doppelung im engen Sinn.
+
+## Thematische Nähe — Absätze 6 und 7 (optional zusammenziehen)
+
+### Befund
+- **Abs. 6** Pointe: Durchlässigkeit der Grenze religiös ↔ säkular.
+- **Abs. 7** Pointe: Persistenz religiöser Deutungsmuster in der Moderne.
+
+Zwei verschiedene Befunde, aber sie überlagern sich konzeptuell: Beide besagen, dass die religiös-säkulare Trennung **nicht stabil** ist — einmal synchronisch (Hybridformen), einmal diachronisch (Persistenz statt Verschwinden).
+
+### Empfehlung
+**Optional.** Wenn du das Fazit verdichten willst, ziehe Abs. 6 und Abs. 7 zu einem Absatz zusammen mit klarer Zweiteilung: erst Durchlässigkeit (Bauer + Niemann gespiegelt), dann Persistenz (Wilkens + Demmrich). Wenn du es lassen willst: dann markiere die Zäsur in Abs. 7 deutlicher, z. B. mit „**Eine zweite synthetische Beobachtung** betrifft die Persistenz …" — damit wird klar, dass Abs. 7 nicht das Argument von Abs. 6 wiederholt, sondern eine eigenständige Beobachtung anschliesst.
+
+## Was du *nicht* anfassen musst
+
+- **Wilkens** in Abs. 3 (konzeptuelle Position) und Abs. 7 (empirische Persistenz) sind zwei klar verschiedene Aussagen — keine Doppelung.
+- **Baxendale-Spektrum** in Abs. 5 wiederholt eine Aussage aus Kap. 4.2.2 — das ist im Fazit eine erwartbare Wiederaufnahme, keine Doppelung im problematischen Sinn.
+- **Schluss-Absatz 8** ist sauber: Mehrdimensionalität + Bauers Schlusszitat + tödliches Ende.
+
+## Aufwand
+
+- **D1** (Niemann streichen in Abs. 2 + Ersatzformulierung): **5 Min**
+- **D2** (Bauer in Abs. 4 anders pointieren): **10 Min** — braucht inhaltlich eine kleine Neuformulierung
+- **Demmrich** und **Abs. 6/7-Zusammenführung**: optional, je **10 Min**
+
+Gesamt für die zwei klaren Doppelungen: **15 Min**.
+
 ## Verwandt
 
-- [[20.studies/Anneliese-Michel/06-Review-Seminararbeit-2026-06-10|Inhaltliche Review der Vorgängerfassung]]
+- [[20.studies/Anneliese-Michel/06-Review-Seminararbeit-2026-06-10|Inhaltliche Review der Vorgängerfassung]] — hatte schon eine Demmrich-Doppelung in Kap. 3.1 ↔ 3.3 identifiziert
 - [[20.studies/Anneliese-Michel/05-Schreibwerkstatt-Konsistenz-Zitate|Schreibwerkstatt: Konsistenz & Zitate]]
 - [[20.studies/Anneliese-Michel/04-Methodische-Reflexion|Methodische Reflexion (Goodman-Asymmetrie)]]
