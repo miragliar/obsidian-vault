@@ -1,14 +1,22 @@
 ---
 source: claudian-review
 created: 2026-06-13
+completed: 2026-06-14
 type: review
 project: Anneliese Michel — Seminararbeit
-status: actionable
+status: archived
+final-version: "2026-06-13 FINAL.docx"
+submitted: 2026-06-13
 inputs:
-  - "Seminararbeit: 2026-06-13 SA.docx"
-focus: [stilkritik, erzählerisch, emisch, wissenschaftliche-sprache]
-tags: [seminararbeit, review, anneliese-michel, sprache, stil]
+  - "Seminararbeit: 2026-06-13 SA.docx (Ausgangsbasis)"
+  - "Seminararbeit: 2026-06-13 FINAL.docx (abgegebene Version)"
+focus: [stilkritik, erzählerisch, emisch, wissenschaftliche-sprache, tempus, kursivierung, gendern]
+distilled-to: "[[40.meta/schreibstil-raoul-wissenschaftlich]]"
+tags: [seminararbeit, review, anneliese-michel, sprache, stil, abgegeben]
 ---
+
+> **Abschluss (2026-06-14):** Seminararbeit abgegeben. Die hier dokumentierten Befunde sind in die Stilstandard-Notiz [[40.meta/schreibstil-raoul-wissenschaftlich]] überführt, die für alle zukünftigen UZH-Arbeiten gilt. Diese Notiz bleibt als Beleg-Dokument erhalten.
+
 
 # Gegenlesung: erzählerische und emische Stellen (Stand 2026-06-13)
 

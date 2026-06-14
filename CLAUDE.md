@@ -96,6 +96,36 @@ Voll-Dokumentation: [[50.work/m365-graph/09-regel-tokens-verschluesselt-keystore
 - **`requirements.txt`** für Reproduzierbarkeit
 - **Idempotenz** (z. B. alte Drafts mit gleichem Subject löschen vor Neuanlage)
 
+## 🎓 Wissenschaftliches Schreiben (UZH) — Raouls Stilstandard
+
+> **Regel:** Bei jeder Form von Gegenlesen, Stilkritik, Schreibhilfe für Raouls **UZH-Arbeiten** (Religionswissenschaft, Volkswirtschaftslehre, Master-Niveau) — Hausarbeiten, Seminararbeiten, MA-Arbeit — gilt der dokumentierte Stilstandard, **nicht** allgemeine wissenschaftliche Schreibregeln.
+
+**Voll-Dokumentation mit Regeln, Anti-Patterns und Vokabular:** [[40.meta/schreibstil-raoul-wissenschaftlich]]
+
+**Kurz die wichtigsten Regeln (Stand 2026-06-14, nach Seminararbeit Anneliese Michel):**
+
+| Was | Regel |
+|---|---|
+| **Grundprinzip** | Einfach und präzise, NICHT komplizierte Wörter. Nüchtern statt pointiert. |
+| **Anti-Pattern: Personifizierung** | „der Fall verrät / fiel in eine Zeit / schlug Wellen" → durch sachliche Verben ersetzen |
+| **Anti-Pattern: Pathetische Verben** | durchdrang, zwang, eingeschwenkt, hochstilisiert → nüchtern ersetzen |
+| **Anti-Pattern: Filmkritik-Sprache** | „Regisseur verzichtet auf" → „Film vermeidet" |
+| **Emische Begriffe** | Erstvorkommen kursiv oder in einfachen Anführungszeichen ‚…' |
+| **Kursiv** | Englisch (*spiritual warfare*), Latein (*Rituale Romanum*), Werktitel (*Requiem*) |
+| **Tempus** | Präteritum für Ereignisse, Präsens für Text-Inhalte und eigene Argumentation |
+| **Gendern** | *innen-Form bei akad. Berufen / Akteur\*innen — NICHT bei katholischen Ämtern (Priester, Bischof, Exorzist, Pater) |
+| **Rechtschreibung** | Schweizer Standard (ss statt ß) |
+| **Belege** | Immer mit Seitenzahl (Autor Jahr, Seite) |
+
+**Wenn Raoul fragt „wie findest du es?" nach Endkorrektur:** Gesamteindruck geben, KEINE neuen Mikrokorrekturen. Erst wieder kritisch werden, wenn er explizit darum bittet.
+
+**Workflow bei Korrekturen, den Raoul mag:**
+1. Erst Heuristik / Muster nennen, dann Fundstellen
+2. Priorisierung (Muss / Sollte / Kann)
+3. Aufwandsabschätzung pro Korrektur
+4. Konkrete Vorher/Vorschlag/Begründung pro Stelle
+5. Ehrlich würdigen, was gut ist
+
 ## ⚡ PowerFx — IMMER deutsche Lokalisierung (Semikolon-Syntax)
 
 > **Harte Regel:** Alle PowerFx-Snippets für Raoul/Miraglia-BI Power-Apps verwenden die **deutsche Maker-Syntax**. Englische `,`/`;`-Trennzeichen werfen im deutschen Studio Syntax-Fehler.
@@ -121,4 +151,5 @@ Voll-Dokumentation: [[50.work/m365-graph/09-regel-tokens-verschluesselt-keystore
 - [[50.work/m365-graph/02-zugangsdaten-secrets]] — CLIENT_ID / TENANT_ID
 - [[50.work/m365-graph/09-regel-tokens-verschluesselt-keystore]] — Token-Regel im Detail
 - [[50.work/power-platform/powerfx-deutsche-lokalisierung]] — PowerFx Semikolon-Syntax
+- [[40.meta/schreibstil-raoul-wissenschaftlich]] — Schreibstil-Standard für UZH-Arbeiten
 - [[40.meta/claude-projekte-und-custom-ai]] — Claude-Integration generell

@@ -1,13 +1,20 @@
 ---
 source: claude-import
 imported: 2026-06-01
+updated: 2026-06-14
 type: project-hub
 project: Anneliese Michel — Seminararbeit
-status: stub
-tags: [seminararbeit, religionswissenschaft, anneliese-michel]
+status: abgegeben
+submitted: 2026-06-13
+final-version: "2026-06-13 FINAL.docx"
+tags: [seminararbeit, religionswissenschaft, anneliese-michel, abgegeben]
 ---
 
 # Anneliese Michel — Seminararbeit
+
+> **Abgegeben am 2026-06-13** als `2026-06-13 FINAL.docx`. Projekt abgeschlossen.
+>
+> **Stilstandard für zukünftige Arbeiten:** [[40.meta/schreibstil-raoul-wissenschaftlich]] — destilliert aus den 4 Korrekturrunden dieser Seminararbeit.
 
 Projekt-Hub für die Seminararbeit zum Fall Anneliese Michel: Exorzismus zwischen Theologie, Justiz, Medizin, Medien.
 
