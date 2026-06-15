@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781513262275-o2bg34ije",
+  "providerId": "claude",
+  "title": "Analyze FVRZ 2. and 3. Liga teams",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781513262275,
+  "updatedAt": 1781514471536,
+  "lastResponseAt": 1781514405214,
+  "sessionId": "89bb8786-1a80-4d72-aa96-05483bc4a672",
+  "providerState": {
+    "providerSessionId": "89bb8786-1a80-4d72-aa96-05483bc4a672"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 10272,
+    "cacheReadInputTokens": 105993,
+    "contextWindow": 1000000,
+    "contextTokens": 116271,
+    "percentage": 12,
+    "contextWindowIsAuthoritative": true
+  }
+}
