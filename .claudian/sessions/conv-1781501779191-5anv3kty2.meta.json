@@ -4,8 +4,8 @@
   "title": "Create daily ToDo from Remo Pfister emails",
   "titleGenerationStatus": "success",
   "createdAt": 1781501779191,
-  "updatedAt": 1781507093969,
-  "lastResponseAt": 1781507093969,
+  "updatedAt": 1781510986565,
+  "lastResponseAt": 1781510986565,
   "sessionId": "64475af0-48fc-45d2-98ca-6a830d234d4b",
   "providerState": {
     "providerSessionId": "64475af0-48fc-45d2-98ca-6a830d234d4b",
@@ -324,10 +324,11 @@
   "usage": {
     "model": "opus[1m]",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 626,
-    "cacheReadInputTokens": 119333,
+    "cacheCreationInputTokens": 374,
+    "cacheReadInputTokens": 167400,
     "contextWindow": 1000000,
-    "contextTokens": 119960,
-    "percentage": 12
+    "contextTokens": 167775,
+    "percentage": 17,
+    "contextWindowIsAuthoritative": true
   }
 }
