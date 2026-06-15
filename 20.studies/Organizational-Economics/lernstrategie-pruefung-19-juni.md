@@ -114,6 +114,7 @@ Wenn fixe Slots blockiert sind (z.B. Training Di/Mi/Fr abends, Arbeit Mo/Do):
 
 ## Verwandt
 
+- [[20.studies/Organizational-Economics/aufzaehlungen-cheatsheet]] — **Recall-Karte** für typische Klausur-Listen (Seeding, Defensibility, Disintermediation). In den letzten 3 Tagen: täglich 10 Min mündlich durchgehen.
 - [[20.studies/Organizational-Economics/plattformen-network-effects]]
 - [[20.studies/Organizational-Economics/two-sided-markets-divide-and-conquer]]
 - [[20.studies/Organizational-Economics/identifikationsstrategien]]

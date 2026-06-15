@@ -22,7 +22,8 @@ Für die Klausur-Vorbereitung in dieser Reihenfolge durcharbeiten:
 2. **[[20.studies/Organizational-Economics/problem-set-recipes|📝 Problem-Set Recipes]]** — "Wenn die Aufgabe X fragt, mach Y." Step-by-step für jedes Exercise-Set.
 3. **[[20.studies/Organizational-Economics/paper-tables-guide|📊 Paper-Tables-Guide]]** — Wie liest man empirische Tabellen (DiD, RDD, IV, FE, RCT) + Prozent vs. Prozentpunkte + Log vs. Levels.
 4. **[[20.studies/Organizational-Economics/formelsammlung-cheatsheet|🔢 Formelsammlung Cheatsheet]]** — alle Formeln auf einen Blick.
-5. **[[20.studies/Organizational-Economics/lernstrategie-pruefung-19-juni|📅 Lernstrategie 19. Juni]]** — 3-Phasen-Plan, NotebookLM-Prompts.
+5. **[[20.studies/Organizational-Economics/aufzaehlungen-cheatsheet|🎯 Aufzählungen-Cheatsheet]]** — Recall-Karte für die typischen Klausur-Listen (Seeding-Strategien, Defensibility-Faktoren, etc.). Frage→Antwort-Format zum Selbstabfragen.
+6. **[[20.studies/Organizational-Economics/lernstrategie-pruefung-19-juni|📅 Lernstrategie 19. Juni]]** — 3-Phasen-Plan, NotebookLM-Prompts.
 
 ---
 
@@ -115,6 +116,9 @@ Für die Klausur-Vorbereitung in dieser Reihenfolge durcharbeiten:
 ---
 
 ## 🧭 Letzte Update-Info (2026-06-06)
+
+**Neu (2026-06-15):**
+- `aufzaehlungen-cheatsheet.md` — Recall-Karte für typische Klausur-Aufzählungen (Seeding-Strategien, 4 Defensibility-Faktoren, etc.), Frage→Antwort-Format
 
 **Neu erstellt (2026-06-06):**
 - `intuitionen-und-mechanismen.md` — die zentrale Lern-Story

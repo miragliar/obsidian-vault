@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781539599910-ykaazc1ox",
+  "providerId": "claude",
+  "title": "Extract key enumerations from Organizational Ec...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781539599910,
+  "updatedAt": 1781539913186,
+  "lastResponseAt": 1781539913186,
+  "sessionId": "b6a7b868-82f0-4f6b-9835-11ef8511b6be",
+  "providerState": {
+    "providerSessionId": "b6a7b868-82f0-4f6b-9835-11ef8511b6be"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 594,
+    "cacheReadInputTokens": 114372,
+    "contextWindow": 1000000,
+    "contextTokens": 114967,
+    "percentage": 11,
+    "contextWindowIsAuthoritative": true
+  }
+}
