@@ -13,6 +13,7 @@ tags: [miraglia, projekt, mvm-ag, regie-app, domus, aestico, automatisierung, re
 type: projekt-sub-hub
 created: 2026-06-15
 updated: 2026-06-15
+last_change: "2026-06-15: Lizenz Optiwork↔MVM Ziffer 6 dokumentiert (Mail Remo→Giovanni→Raoul 15.06.)"
 ---
 
 # Regie-Rapport-App → Automatisierte Rechnungserstellung im Domus (Aestico-Schnittstelle)
@@ -22,6 +23,32 @@ updated: 2026-06-15
 **Status:** Setup-Phase — Hub-Anlage, Mapping-Recherche
 **Zieldatum:** 31.10.2026 (vollautomatisierte Rechnungserstellung)
 **Meilenstein:** 30.09.2026 (Status-Update an Remo)
+
+## Lizenzrechtliche Grundlage — Optiwork ↔ MVM AG (signiert, 15.06.2026)
+
+> **Status-Update 2026-06-15:** Remo hat Giovanni eine signierte Zusatzklausel weitergeleitet (Mail *„WG: Gewährung Schnittstelle Aestico"*, 2026-06-15 11:48). Giovannis Auftrag an mich: dokumentieren und ablegen.
+
+**Unterzeichnete Klausel — Ziffer 6 „Besondere Nutzungen der Lizenzpakete":**
+
+> *„Optiwork AG erlaubt MVM AG die Nutzung der Schnittstelle Aestico zum Generieren von Offert- und Rechnungspositionen aus der Eigenentwicklung von MVM AG, solange Aestico die Nutzung erlaubt."*
+>
+> *„Der digitale Lohnabrechnungsversand ist gemäss Lizenzübersicht Teil des Lizenzpakets Lohn und kann entsprechend ohne Lizenzkostenfolge durch MVM AG genutzt werden."*
+
+![[50.work/projekte/MVM-AG/aestico-schnittstelle/2026-06-15-lizenzklausel-ziffer6-optiwork-mvm.png]]
+
+**Bedeutung für unser Projekt:**
+
+| Was | Folge |
+|---|---|
+| ✅ Lizenz-Hürde weg | Wir dürfen die Aestico-Schnittstelle aus der Regie-App heraus nutzen, um Offert-/Rechnungspositionen zu erzeugen. „Eigenentwicklung von MVM AG" deckt unsere Power-Platform-Lösung explizit ab. |
+| ⚠️ Bedingung | *„solange Aestico die Nutzung erlaubt"* — das Nutzungsrecht hängt von Aestico-Seite ab. Falls Aestico die Schnittstelle technisch oder vertraglich schliesst, fällt unser Mechanismus. Risiko nach Phase 4 mitführen (Vendor-Lock-In). |
+| 🎁 Bonus / separater Lead | Lohnabrechnungs-Versand digital → **ohne Zusatzkosten** im Paket *Lohn* enthalten. Nicht Teil dieses Projekts, aber Hinweis an Giovanni / Remo wert (potenziell eigener Mini-Use-Case). |
+| 📌 Vertragspartner | **Optiwork AG** ist Lizenzgeberin von Aestico. Sollte als Stakeholder/Eskalationspfad in der Phase-1-Klärung mit auftauchen (siehe Frage 3 unten — wer macht die Schnittstelle technisch auf). |
+
+**Offene Folge-Punkte aus der Klausel:**
+- [ ] Vollständige Lizenzvereinbarung Optiwork ↔ MVM beschaffen (nur Ziffer 6 ist sichtbar — Kontext und Geltungsbereich der weiteren Ziffern checken)
+- [ ] Klären, ob die „Erlaubnis von Aestico-Seite" formell schon vorliegt oder noch eingeholt werden muss (Optiwork hat zugestimmt; Aestico-Produkt-Eigentümer = Optiwork? → vermutlich ja, aber sauber dokumentieren)
+- [ ] Optiwork-Kontakt von Remo erfragen (für technische Doku-/API-Spec-Anfragen)
 
 ## Auftrag (wörtlich aus Remos Mail 10.06.2026)
 
@@ -53,6 +80,7 @@ In beiden Fällen: **manuelle Auslösung durch den PL** (kein Auto-Trigger), Dat
 | 🔴 Offen | Field-Mapping Regiekopf/Detail → Aestico-Schema |
 | 🔴 Offen | Konto-/KST-/Mwst-Logik (Schnittstelle zu DomusFiBu/Buchhaltung) |
 | 🔴 Offen | Test-Mandant in Domus für Roundtrip-Tests |
+| 🟢 Geklärt (15.06.) | **Lizenz Optiwork → MVM:** Nutzung Aestico-Schnittstelle für Offert-/Rechnungspositionen aus Eigenentwicklung erlaubt (Ziffer 6 unterzeichnet) |
 
 ## Mein erster Schritt-Plan
 
@@ -114,6 +142,7 @@ In beiden Fällen: **manuelle Auslösung durch den PL** (kein Auto-Trigger), Dat
 | Datum | Von | Betreff | Relevanz |
 |---|---|---|---|
 | 2026-06-10 09:21 | Remo Pfister | **Regie-Rapport → Automatisierte Rechnungserstellung im Domus** | **Hauptauftrag** |
+| 2026-06-15 10:24 | Remo Pfister → Giovanni → Raoul | **WG: Gewährung Schnittstelle Aestico** (signierte Ziffer 6: Optiwork erlaubt MVM Aestico-Nutzung) | **Lizenz-Freigabe** — siehe Abschnitt „Lizenzrechtliche Grundlage" oben |
 | 2026-06-12 12:13 | Alessandro Castelli | AW: Domus Migration am Dienstag — Zeitplan und Vorgehen | Domus-Migration 16.06.2026 |
 | 2026-06-12 10:22 | S. Zumbühl (MVM) | AW: Domus Migration am Dienstag — Zeitplan und Vorgehen | Detail-Zeitplan Migration |
 | 2026-06-12 14:07 | Alessandro Castelli | Domus: Testumgebung nach dem Go-Live am Dienstag | Test-Mandant-Verfügbarkeit |
