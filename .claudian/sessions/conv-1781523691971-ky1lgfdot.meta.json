@@ -1,0 +1,18 @@
+{
+  "id": "conv-1781523691971-ky1lgfdot",
+  "providerId": "claude",
+  "title": "15. Juni, 13:41",
+  "createdAt": 1781523691972,
+  "updatedAt": 1781523691977,
+  "sessionId": null,
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 2810,
+    "cacheReadInputTokens": 91955,
+    "contextWindow": 1000000,
+    "contextTokens": 94766,
+    "percentage": 9,
+    "contextWindowIsAuthoritative": true
+  }
+}

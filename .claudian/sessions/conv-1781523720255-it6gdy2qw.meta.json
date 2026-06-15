@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781523720255-it6gdy2qw",
+  "providerId": "claude",
+  "title": "Summarize Domus robot VM migration email",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781523720255,
+  "updatedAt": 1781524083857,
+  "lastResponseAt": 1781524083857,
+  "sessionId": "99fd8ddc-df82-474b-b2b8-9e8303b37a0f",
+  "providerState": {
+    "providerSessionId": "99fd8ddc-df82-474b-b2b8-9e8303b37a0f"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 15906,
+    "cacheReadInputTokens": 55721,
+    "contextWindow": 1000000,
+    "contextTokens": 71633,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}
