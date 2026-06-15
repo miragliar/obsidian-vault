@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781501124422-9qmboa8f9",
+  "providerId": "claude",
+  "title": "Confirm Claude availability",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781501124422,
+  "updatedAt": 1781501495970,
+  "lastResponseAt": 1781501127842,
+  "sessionId": "864b68bd-6827-4a0a-81d0-6503d320bf20",
+  "providerState": {
+    "providerSessionId": "864b68bd-6827-4a0a-81d0-6503d320bf20"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": false
+  }
+}

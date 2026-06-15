@@ -146,6 +146,30 @@ Voll-Dokumentation: [[50.work/m365-graph/09-regel-tokens-verschluesselt-keystore
 
 **Voll-Dokumentation mit Beispielen:** [[50.work/power-platform/powerfx-deutsche-lokalisierung]]
 
+## 🤝 Externe Wissensquelle: Giovannis Vault (READ-ONLY)
+
+Giovanni (Miraglia BI) ist spezialisiert auf **Power BI / DAX / Power Query / Fabric / ERP** (ich: Power Platform). Sein Vault:
+
+`/Users/raouleliasmiraglia/Library/CloudStorage/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag`
+
+**Wann konsultieren:** bei PowerBI-/DAX-/Power-Query-/Fabric-/ERP-Themen — und generell, wenn meine eigenen Notizen zu dünn sind.
+
+**Nur diese Ordner lesen:**
+- `30_Domains/` — Patterns (DAX, PowerQuery, PowerBI, Fabric, ERP, Marketing)
+- `10_Projects/` — Projektwissen (oft gemeinsame Kunden)
+- `20_Clients/` — Kunden-Hubs
+- `25_People/` — nur zum Abgleich, NICHT als meine Wahrheit
+
+**NIE lesen:** `00_Inbox`, `40_Resources` (Tooling/Scripts), `90_Archive`, `_Templates`, `_Attachments`.
+
+**Regeln:**
+1. READ-ONLY — dort niemals anlegen/ändern/löschen. Reine Referenz.
+2. Quelle kennzeichnen, wenn ich Wissen von dort nutze.
+3. Konflikte MELDEN, nicht mergen: gleicher Kunde/Person mit abweichenden Angaben in beiden Vaults — beide zeigen + Diskrepanz benennen.
+4. Mein Vault = Wahrheit für meine Arbeit; Giovannis Vault = autoritativ für PowerBI/DAX/Power Query/Fabric.
+5. Keine Klartext-Secrets aus seinem Vault zitieren.
+6. Pfade nie blind annehmen — bei unklarer/veränderter Struktur kurz verifizieren.
+
 ## Verwandt
 
 - [[50.work/m365-graph/02-zugangsdaten-secrets]] — CLIENT_ID / TENANT_ID

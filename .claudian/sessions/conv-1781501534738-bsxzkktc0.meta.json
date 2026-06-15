@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781501534738-bsxzkktc0",
+  "providerId": "claude",
+  "title": "Set up read-only access to Giovanni's vault",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781501534738,
+  "updatedAt": 1781501748124,
+  "lastResponseAt": 1781501659608,
+  "sessionId": "785b5c1e-3afc-47b5-93cd-17ec882c23bf",
+  "providerState": {
+    "providerSessionId": "785b5c1e-3afc-47b5-93cd-17ec882c23bf"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1439,
+    "cacheReadInputTokens": 35543,
+    "contextWindow": 1000000,
+    "contextTokens": 36983,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}
