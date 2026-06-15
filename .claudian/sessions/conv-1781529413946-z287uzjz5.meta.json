@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781529413946-z287uzjz5",
+  "providerId": "claude",
+  "title": "Create anonymized PDF from forwarded order email",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781529413946,
+  "updatedAt": 1781529772957,
+  "lastResponseAt": 1781529772957,
+  "sessionId": "66a83bf4-c6b8-47a7-9ef8-2734703759ea",
+  "providerState": {
+    "providerSessionId": "66a83bf4-c6b8-47a7-9ef8-2734703759ea"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 5271,
+    "cacheReadInputTokens": 62326,
+    "contextWindow": 1000000,
+    "contextTokens": 67603,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}
