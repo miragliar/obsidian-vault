@@ -2,8 +2,9 @@
   "tabManagerState": {
     "openTabs": [
       {
+        "draftModel": "opus[1m]",
         "tabId": "tab-1781251184979-nvrj3lg",
-        "conversationId": "conv-1781501779191-5anv3kty2"
+        "conversationId": null
       },
       {
         "tabId": "tab-1781272832287-knmk1o4",

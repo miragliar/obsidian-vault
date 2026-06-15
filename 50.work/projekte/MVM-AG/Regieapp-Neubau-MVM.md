@@ -10,7 +10,10 @@ tags: [miraglia, projekt, mvm-ag, power-apps, dataverse, offline, sharepoint]
 type: projekt-hub
 source: claude-import + m365-graph + chat-context 2026-06-04
 created: 2026-06-01
-updated: 2026-06-11
+updated: 2026-06-15
+sub_hubs:
+  - "[[Regieapp-Offline-Funktionalität|Offline-Funktionalität]]"
+  - "[[Regieapp-Aestico-Domus-Import|Aestico-Schnittstelle / Domus-Rechnungsautomatisierung]]"
 ---
 
 # Regie-Rapport-App (Neubau)
@@ -22,6 +25,15 @@ updated: 2026-06-11
 ## Worum geht es
 
 Neukonzeption und Aufbau einer Power-Apps-Regie-Rapport-App für die mobile Erfassung von Arbeits-, Material- und Personenzeilen auf Baustellen. Dataverse-Datenmodell mit Offline-Profile für Außendienst, Filter+Search-UI, Form-Submit-Logik.
+
+## Sub-Hubs / Teilprojekte
+
+| Hub | Status | Was |
+|---|---|---|
+| [[Regieapp-Offline-Funktionalität|Offline-Funktionalität]] | In Arbeit | Mobile Offline-Profile, Cross-Tenant (Zug), Fotos offline, Cascade-Delete-Atomarität, Sync-Fehler-Handling |
+| [[Regieapp-Aestico-Domus-Import|Aestico-Schnittstelle / Domus-Rechnungsautomatisierung]] | Setup | Regie-Rapport → Domus-Rechnung via Aestico, Auftrag Remo 10.06., Ziel 31.10.2026 |
+| [[Regieapp-Schwachstellen-Review|Schwachstellen-Review]] | Lebendes Doku | K1–K35 Code-Review, Severity-Sortierung |
+| [[Regieapp-v1-0-0-26-Diff-Review|v1.0.0.26 Diff-Review]] | Snapshot | Diff-Doku zum letzten Solution-Upgrade |
 
 ## Beteiligte
 
