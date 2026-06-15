@@ -4,20 +4,20 @@
   "title": "Prepare Kickoff-Fragen für Reto Limacher",
   "titleGenerationStatus": "success",
   "createdAt": 1781521546487,
-  "updatedAt": 1781523684951,
-  "lastResponseAt": 1781523060186,
+  "updatedAt": 1781525900118,
+  "lastResponseAt": 1781525777049,
   "sessionId": "f8ce43f7-b99d-4b02-aacb-309345fbcea4",
   "providerState": {
     "providerSessionId": "f8ce43f7-b99d-4b02-aacb-309345fbcea4"
   },
   "usage": {
     "model": "opus[1m]",
-    "inputTokens": 1,
-    "cacheCreationInputTokens": 1332,
-    "cacheReadInputTokens": 87575,
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 1247,
+    "cacheReadInputTokens": 94765,
     "contextWindow": 1000000,
-    "contextTokens": 88908,
-    "percentage": 9,
+    "contextTokens": 96018,
+    "percentage": 10,
     "contextWindowIsAuthoritative": true
   }
 }
