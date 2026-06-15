@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781515128382-mvp59ve16",
+  "providerId": "claude",
+  "title": "Assess Stark email on order integration feasibi...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781515128382,
+  "updatedAt": 1781516352960,
+  "lastResponseAt": 1781516352960,
+  "sessionId": "d7369cdc-9a91-46d8-ba3d-873b31b3ccef",
+  "providerState": {
+    "providerSessionId": "d7369cdc-9a91-46d8-ba3d-873b31b3ccef"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 339,
+    "cacheReadInputTokens": 89874,
+    "contextWindow": 1000000,
+    "contextTokens": 90214,
+    "percentage": 9,
+    "contextWindowIsAuthoritative": true
+  }
+}
