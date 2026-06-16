@@ -78,7 +78,7 @@
     "claude": "yolo"
   },
   "lastCustomModel": "claude-fable-5",
-  "maxTabs": 3,
+  "maxTabs": 5,
   "tabBarPosition": "input",
   "enableAutoScroll": true,
   "deferMathRenderingDuringStreaming": true,
