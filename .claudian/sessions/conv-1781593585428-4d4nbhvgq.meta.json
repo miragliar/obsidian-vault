@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781593585428-4d4nbhvgq",
+  "providerId": "claude",
+  "title": "Draft email to Rafael Mottl re BRZ interface",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781593585428,
+  "updatedAt": 1781593769889,
+  "lastResponseAt": 1781593769889,
+  "sessionId": "f8bfd297-9159-4724-b8b4-043f9cba5c18",
+  "providerState": {
+    "providerSessionId": "f8bfd297-9159-4724-b8b4-043f9cba5c18"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 531,
+    "cacheReadInputTokens": 64607,
+    "contextWindow": 1000000,
+    "contextTokens": 65139,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}
