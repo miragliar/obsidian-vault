@@ -99,24 +99,40 @@ Beenden
 | **Von** (`From`)     | `@outputs('Personenzeile')?['body/value']`                      |
 | **Zuordnen** (`Map`) | im **Modus „Schlüssel/Wert"** (Key/Value) — siehe Tabelle unten |
 
-**Key-Value-Zuordnung** (jede Zeile ist ein eigenes Key/Value-Paar im Map-Editor):
+**Empfohlen: Code-Ansicht** (rechts oben am Select-Block → „Code-Ansicht" / „In erweiterten Modus wechseln"). Dann füge dieses Objekt ein:
 
-```
-EntryType    PositionEntry
-Text         @item()?['rrpt_mitarbeiter']
-Title        @item()?['rrpt_mitarbeiter']
-Description  @concat('Std-Total: ', string(item()?['cr19a_stundentotal']))
-Subtext1     @item()?['rrpt_mitarbeiter']
-Subtext2     
-Unit         Std
-UnitPrice    @float(formatNumber(item()?['rrpt_regieansatz'], 'N2'))
-Quantity     @float(formatNumber(item()?['cr19a_stundentotal'], 'N2'))
-Value        @float(formatNumber(item()?['rrpt_personentotal'], 'N2'))
-MetaInfo     
-Optional     @false
+```json
+{
+  "EntryType": "PositionEntry",
+  "Text": "@{item()?['rrpt_mitarbeiter']}",
+  "Title": "@{item()?['rrpt_mitarbeiter']}",
+  "Description": "@{concat('Std-Total: ', string(item()?['cr19a_stundentotal']))}",
+  "Subtext1": "@{item()?['rrpt_mitarbeiter']}",
+  "Subtext2": null,
+  "Unit": "Std",
+  "UnitPrice": @{float(formatNumber(item()?['rrpt_regieansatz'], 'N2'))},
+  "Quantity": @{float(formatNumber(item()?['cr19a_stundentotal'], 'N2'))},
+  "Value": @{float(formatNumber(item()?['rrpt_personentotal'], 'N2'))},
+  "MetaInfo": null,
+  "Optional": false
+}
 ```
 
-> **Hinweis:** `EntryType` und `Unit` sind als **statische Strings** einzutragen (ohne `@`). Alle anderen Werte mit `@` (= Expression). Bei `Subtext2` / `MetaInfo` lass das Wert-Feld **leer** — Aestico akzeptiert dort `null`.
+> ⚠️ **Quotes-Regel** (gilt für ALLE Selects und Composes):
+>
+> | Aestico-Typ | Syntax | Beispiel |
+> |---|---|---|
+> | `string` (Expression) | `"@{…}"` — mit Quotes | `"Text": "@{item()?['x']}"` |
+> | `string` (konstant) | `"…"` — mit Quotes | `"Unit": "Std"` |
+> | `number` | `@{…}` — **ohne** Quotes | `"Value": @{float(…)}` |
+> | `boolean` | `true` / `false` — ohne Quotes | `"Optional": false` |
+> | `null` | `null` — ohne Quotes | `"MetaInfo": null` |
+> | `array` | `@{…}` — **ohne** Quotes | `"Entries": @{union(…)}` |
+>
+> **Häufigste Fallen:**
+> - `"Optional": "false"` → wird String. Schema-Verletzung. Richtig: `"Optional": false`.
+> - `"Value": "@{variables('x')}"` → wird String `"0"`. Richtig: `"Value": @{variables('x')}`.
+> - `"MetaInfo": ""` (leerer String) → Aestico-Schema verlangt `object|null`, kein leerer String erlaubt. Immer explizit `null`.
 
 ---
 
@@ -136,41 +152,120 @@ Optional     @false
 | **Von**      | `@outputs('Materialzeile')?['body/value']` |
 | **Zuordnen** | Schlüssel/Wert-Modus — siehe Tabelle       |
 
-**Key-Value-Zuordnung:**
-
-```
-EntryType    PositionEntry
-Text         @item()?['rrpt_materialname']
-Title        @item()?['rrpt_materialname']
-Description  
-Subtext1     
-Subtext2     
-Unit         @item()?['rrpt_einheit']
-UnitPrice    @float(formatNumber(item()?['rrpt_einheitspreis'], 'N2'))
-Quantity     @float(formatNumber(item()?['rrpt_menge'], 'N2'))
-Value        @float(formatNumber(item()?['rrpt_materialtotal'], 'N2'))
-MetaInfo     
-Optional     @false
-```
-
----
-
-## Schritt 3 — Compose „Aestico-JSON-Test"
-
-**Position im Flow:** **innerhalb `For_each_1`**, **nach** der Action `Variable_festlegen_-_total_auf_0_mat` (= als letzte Action der Iteration, direkt vor dem Ende der Schleife).
-
-**So fügst du ein:**
-1. Unter `Variable_festlegen_-_total_auf_0_mat` auf `+` → **Aktion hinzufügen**
-2. Suche **„Verfassen"** (engl. *Compose*) — *Data Operation → Compose*
-3. Umbenennen auf: **`Aestico_JSON_Test`**
-
-**Konfiguration — Eingaben (Inputs):**
-
-Klick rechts oben in der Compose-Box auf **„Ausdruck"** (oder schalt sie via „Code-Ansicht" um) und füge folgenden **JSON-Block** ein. Die `@{…}`-Ausdrücke werden von Power Automate beim Lauf evaluiert.
+**Empfohlen: Code-Ansicht.** Code-Block einfügen:
 
 ```json
 {
-  "Title": "@{concat('Regie-Rapport ', outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer'], ' — ', outputs('Baustelle_holen')?['body/rrpt_bezeichnung'])}",
+  "EntryType": "PositionEntry",
+  "Text": "@{item()?['rrpt_materialname']}",
+  "Title": "@{item()?['rrpt_materialname']}",
+  "Description": null,
+  "Subtext1": null,
+  "Subtext2": null,
+  "Unit": "@{item()?['rrpt_einheit']}",
+  "UnitPrice": @{float(formatNumber(item()?['rrpt_einheitspreis'], 'N2'))},
+  "Quantity": @{float(formatNumber(item()?['rrpt_menge'], 'N2'))},
+  "Value": @{float(formatNumber(item()?['rrpt_materialtotal'], 'N2'))},
+  "MetaInfo": null,
+  "Optional": false
+}
+```
+
+> Gleiche Quotes-Regel wie bei Schritt 1 — siehe Tabelle oben. Strings mit Quotes, Numbers/Boolean/Null/Arrays ohne.
+
+---
+
+## Schritt 3 — „An Array-Variable anfügen" — GroupEntry pro Rapport
+
+**Position im Flow:** **innerhalb `For_each_1`**, **direkt nach** `Verfassen_JSON_für_Excel`, **vor** `Variable_festlegen_-_total_auf_0`.
+
+> ⚠️ **Wichtig — sonst wird `Value` immer 0:** Die drei Resets `Variable_festlegen_-_total_auf_0`, `…_pers`, `…_mat` setzen die Total-Variablen am Ende der Iteration zurück. Wenn dein Append-Schritt **nach** den Resets sitzt, liest er `total_rap = 0`. Append-Action muss **vorher** stehen.
+>
+> Korrekte Reihenfolge:
+> ```
+> Compose Verfassen_JSON_für_Excel
+> Append_-_GroupEntry_Rapport            ← HIER, vor den Resets
+> Variable_festlegen_-_total_auf_0
+> Variable_festlegen_-_total_auf_0_pers
+> Variable_festlegen_-_total_auf_0_mat
+> ```
+
+**So fügst du ein:**
+1. Unter `Verfassen_JSON_für_Excel` auf `+` → **Aktion hinzufügen**
+2. Suche **„An Array-Variable anfügen"** (engl. *Append to array variable*)
+3. Umbenennen auf: **`Append_-_GroupEntry_Rapport`**
+
+**Konfiguration:**
+
+| Feld | Wert |
+|---|---|
+| **Name** | `Aestico_Entries` |
+| **Wert** | siehe JSON-Block unten — komplettes GroupEntry-Objekt |
+
+Klick im „Wert"-Feld rechts oben auf **Code-Ansicht** / **Ausdruck** und füge ein:
+
+```json
+{
+  "EntryType": "GroupEntry",
+  "Name": "@{concat('Rapport ', outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer'], ' — ', outputs('Baustelle_holen')?['body/rrpt_bezeichnung'])}",
+  "ShowTotal": true,
+  "Value": @{variables('total_rap')},
+  "Entries": @{union(body('Select_-_Aestico_Personen'), body('Select_-_Aestico_Material'))}
+}
+```
+
+> ⚠️ **Quotes-Regel beachten:** `Value` (Number) und `Entries` (Array) stehen **ohne** Quotes drum, nur als `@{…}`. **Mit** Quotes wäre `"Value":"0"` und `"Entries":"[{…}]"` (String-Strings) — Schema-Verletzung. Strings wie `Name` haben `"@{…}"` mit Quotes, weil das Resultat ein String sein soll.
+
+> **`union()` statt `concat()`:** WDL hat `union(arr1, arr2)` für Array-Verkettung. `concat` funktioniert für Strings, **nicht** für Arrays. Für Personen + Material sicher (keine Duplikate).
+
+---
+
+## Schritt 4 — „An Array-Variable anfügen" — VATEntry (einmalig nach Schleife)
+
+**Position im Flow:** **nach `For_each_1`**, **vor `Beenden`**. Diese Action läuft genau **einmal** — egal wie viele Rapporte verarbeitet wurden.
+
+**So fügst du ein:**
+1. Zwischen `For_each_1` und `Beenden` auf `+` → **Aktion hinzufügen**
+2. Suche **„An Array-Variable anfügen"**
+3. Umbenennen auf: **`Append_-_VATEntry`**
+
+**Konfiguration:**
+
+| Feld | Wert |
+|---|---|
+| **Name** | `Aestico_Entries` |
+| **Wert** | siehe unten |
+
+```json
+{
+  "EntryType": "VATEntry",
+  "Text": "MwSt 8.1 %",
+  "IsPercentual": true,
+  "ConditionValue": 8.1,
+  "IsVat": true
+}
+```
+
+> **MwSt-Logik:** Hartcodierte 8.1 % als Platzhalter. Ob Aestico/Domus den `VATEntry` überhaupt liest oder selbst rechnet, ist offen — siehe [[aestico-v2-spec#Offene Punkte (nicht in der Doku)|Spec offene Punkte]]. Notfalls diesen Append-Block einfach weglassen, Aestico verträgt das laut README.
+
+---
+
+## Schritt 5 — Compose „`Aestico_JSON_Final`" (die finale JSON)
+
+**Position im Flow:** **direkt nach `Append_-_VATEntry`**, **vor `Beenden`**.
+
+**So fügst du ein:**
+1. Unter `Append_-_VATEntry` auf `+` → **Aktion hinzufügen**
+2. Suche **„Verfassen"** (engl. *Compose*)
+3. Umbenennen auf: **`Aestico_JSON_Final`**
+
+**Konfiguration — Eingaben (Inputs):**
+
+Code-Ansicht öffnen und folgenden JSON-Block einfügen. Die `@{…}`-Ausdrücke werden von Power Automate beim Lauf evaluiert.
+
+```json
+{
+  "Title": "@{concat('Regie-Abrechnung — ', formatDateTime(utcNow(), 'dd.MM.yyyy'))}",
   "Notes": null,
   "Header": {
     "GeneratedAt": "@{utcNow()}",
@@ -208,28 +303,19 @@ Klick rechts oben in der Compose-Box auf **„Ausdruck"** (oder schalt sie via �
     "RemarksField": null
   },
   "InvoiceContact": null,
-  "Entries": [
-    {
-      "EntryType": "GroupEntry",
-      "Name": "@{concat('Rapport ', outputs('Regiekopf_holen')?['body/cr19a_mvmrapportnummer'], ' — ', outputs('Baustelle_holen')?['body/rrpt_bezeichnung'])}",
-      "ShowTotal": true,
-      "Value": "@{variables('total_rap')}",
-      "Entries": "@{union(body('Select_-_Aestico_Personen'), body('Select_-_Aestico_Material'))}"
-    },
-    {
-      "EntryType": "VATEntry",
-      "Text": "MwSt 8.1 %",
-      "IsPercentual": true,
-      "ConditionValue": 8.1,
-      "IsVat": true
-    }
-  ]
+  "Entries": @{variables('Aestico_Entries')}
 }
 ```
 
-> **`union()` statt `concat()`:** WDL hat `union(arr1, arr2)` für Array-Verkettung. `concat` funktioniert für Strings, **nicht** für Arrays. Falls du Duplikate erwartest (sollte hier nicht passieren, weil Personen ≠ Material), nutze `addProperty`/`createArray`-Tricks — für unseren Fall reicht `union` sauber.
+> ⚠️ **Quotes weg bei `Entries`:** `Entries` ist ein **Array**, also `@{…}` **ohne** Quotes drum. Mit Quotes (`"@{…}"`) macht WDL einen escapeten JSON-String draus — Aestico-Schema fällt durch. Gleiche Logik wie bei `Value: @{…}` in Schritt 3.
 
-> **Quotes um `@{variables('total_rap')}`:** Power Automate parst `@{…}` innerhalb von Quotes als String. Beim **Speichern als JSON** rendert es aber als Zahl, **wenn** die Variable vom Typ `float` ist (was sie ist — siehe Init-Block). Wenn du beim Output siehst, dass `Value` als String reinkommt, ersetze `"@{variables('total_rap')}"` durch `@variables('total_rap')` (ohne Quotes, ohne geschweifte Klammern) — dann sendet Power Automate die Variable als nativer Float.
+> **Warum so kurz?** Die ganze Arbeit ist schon in der Array-Variable `Aestico_Entries` erledigt: N GroupEntries aus dem For_each + 1 VATEntry aus Schritt 4. Hier wird sie nur noch in die Root-Struktur eingehängt.
+
+> **Title bei Einzelrechnung:** Wenn du es schöner möchtest, ersetze den `Title`-Ausdruck durch:
+> ```
+> @{if(equals(length(variables('Aestico_Entries')), 2), concat('Regie-Rapport — ', formatDateTime(utcNow(), 'dd.MM.yyyy')), concat('Sammelrechnung Regie — ', string(sub(length(variables('Aestico_Entries')), 1)), ' Rapporte'))}
+> ```
+> Logik: Länge `= 2` heisst 1 GroupEntry + 1 VATEntry = Einzelrechnung. Sonst Sammelrechnung mit `N-1` Rapporten.
 
 ---
 
@@ -243,17 +329,20 @@ Klick rechts oben in der Compose-Box auf **„Ausdruck"** (oder schalt sie via �
    - **text_2**: irgendwas (ArbeitsbeschriebID)
    - **text_3**: deine E-Mail z. B. `raoul@miraglia-bi.com`
 4. **„Flow ausführen"** → warte den Lauf ab
-5. Run-Detail öffnen → in **For_each_1** klicken → die Iteration aufklappen → **Aestico_JSON_Test** anklicken
-6. Im Bereich **„Ausgaben"** liegt deine fertige Aestico-JSON
+5. Run-Detail öffnen → ganz **unten** unter dem `For_each_1` die Action **`Aestico_JSON_Final`** anklicken
+6. Im Bereich **„Ausgaben"** liegt deine fertige Aestico-JSON — **eine einzige**, egal wie viele Rapporte
 
 **Sammelrechnung testen:** im Trigger-Input `text` mehrere Objekte reingeben:
 ```json
 [
   {"rrpt_regiekopfid": "<guid-1>"},
-  {"rrpt_regiekopfid": "<guid-2>"}
+  {"rrpt_regiekopfid": "<guid-2>"},
+  {"rrpt_regiekopfid": "<guid-3>"}
 ]
 ```
-Im Run-Inspector hat `For_each_1` dann zwei Iterationen — pro Iteration eine eigene `Aestico_JSON_Test`-Output. Für ein **einziges** zusammengefasstes Aestico-JSON (alle Rapporte in einem File) brauchst du den Ausbau weiter unten.
+Im Run-Inspector hat `For_each_1` jetzt drei Iterationen, in jeder ein `Append_-_GroupEntry_Rapport`. Am Ende landet **eine** `Aestico_JSON_Final`-Compose mit 3 GroupEntries + 1 VATEntry im `Entries`-Array.
+
+**Diagnose-Tipp:** Falls die finale JSON komisch aussieht, klick die Action **`Append_-_GroupEntry_Rapport`** pro Iteration durch und schau, was Schritt-für-Schritt in die Array-Variable wandert. Im Run-Inspector zeigt Power Automate auch den aktuellen Stand der Variable nach jedem Append.
 
 ---
 
@@ -280,7 +369,7 @@ Bei Schema-Fehlern → siehe „Häufige Stolpersteine" unten.
 
 | Aestico-Feld | Quelle im Flow | Status |
 |---|---|---|
-| `Title` | `cr19a_mvmrapportnummer` + `rrpt_bezeichnung` | ✅ |
+| `Title` | dynamisch via `utcNow()` (Einzel/Sammel optional) | ✅ |
 | `Header.GeneratedAt` | `utcNow()` | ✅ |
 | `Header.Version` | konstant `2` | ✅ |
 | `Header.UserEmail` | `triggerBody()?['text_3']` | ✅ |
@@ -288,45 +377,10 @@ Bei Schema-Fehlern → siehe „Häufige Stolpersteine" unten.
 | `Customer` | — | ❌ **offen** — Baustelle/Domus-Kundenstamm-Mapping fehlt |
 | `Owner` | hartcodiert MVM AG | ✅ (statisch, könnte aus Env-Var kommen) |
 | `InvoiceContact` | — | ❌ offen — meist = Customer |
-| `Entries[].GroupEntry` | pro Iteration | ✅ |
+| `Entries[].GroupEntry` (1..N) | Array-Variable `Aestico_Entries` (Append im For_each) | ✅ |
 | `Entries[].PositionEntry` Personen | `Select_-_Aestico_Personen` | ✅ |
 | `Entries[].PositionEntry` Material | `Select_-_Aestico_Material` | ✅ |
-| `VATEntry` | hartcodiert 8.1 % | ⚠️ MwSt-Logik mit Domus klären (siehe [[aestico-v2-spec#Offene Punkte (nicht in der Doku)|Spec offene Punkte]]) |
-
----
-
-## Erweiterung Phase 2 — Sammelrechnung als EINE JSON
-
-Wenn du später aus mehreren Regie-Rapporten **eine einzige** Aestico-JSON willst, statt N getrennten:
-
-### Vorbereitung
-1. **Neue Variable initialisieren** „**`Aestico_Entries`**" als **Array** — ans Ende des Init-Blocks am Flow-Anfang, **nach** `Variable_initialisieren_-_Total_Rapport`, **vor** `JSON_analysieren`:
-   ```
-   Name:  Aestico_Entries
-   Typ:   Array
-   Wert:  []
-   ```
-
-### Im For_each_1
-2. Statt `Aestico_JSON_Test` als Compose → **Aktion „An Array-Variable anfügen"** (`Append to array variable`):
-   - **Name:** `Aestico_Entries`
-   - **Wert:** das `GroupEntry`-Objekt (= der innere `GroupEntry`-Block aus Schritt 3, ohne das umgebende Root-Objekt)
-
-### Nach For_each_1, vor `Beenden`
-3. **Verfassen** „**`Aestico_JSON_Final`**" mit der Root-Struktur — `Entries` ist jetzt `@variables('Aestico_Entries')` plus angehängter `VATEntry`:
-
-```json
-{
-  "Title": "Sammelrechnung Regie",
-  "Header": { … wie oben … },
-  "Customer": null,
-  "Owner": { … wie oben … },
-  "InvoiceContact": null,
-  "Entries": "@{union(variables('Aestico_Entries'), createArray(json('{\"EntryType\":\"VATEntry\",\"Text\":\"MwSt 8.1 %\",\"IsPercentual\":true,\"ConditionValue\":8.1,\"IsVat\":true}')))}"
-}
-```
-
-Diese Compose siehst du im Run-Inspector **einmal** mit dem fertigen Sammel-JSON.
+| `Entries[].VATEntry` | Append nach For_each, hartcodiert 8.1 % | ⚠️ MwSt-Logik mit Domus klären (siehe [[aestico-v2-spec#Offene Punkte (nicht in der Doku)|Spec offene Punkte]]) |
 
 ---
 
@@ -334,12 +388,14 @@ Diese Compose siehst du im Run-Inspector **einmal** mit dem fertigen Sammel-JSON
 
 | Symptom | Ursache & Fix |
 |---|---|
-| Compose zeigt `Value` als String `"1234.5"` statt Zahl `1234.5` | Quotes um `@{variables('total_rap')}` weg. Variable ist `float`, Output dann nativer Number. |
-| `union(...)` schlägt fehl mit *„cannot union null"* | `Select_-_Aestico_Personen` oder `…_Material` hat ein leeres `from`. Setze `from: @{coalesce(outputs('Personenzeile')?['body/value'], json('[]'))}`. |
-| Schema-Validierung: *„'PositionEntry' is required field 'Text' missing"* | In Map vergessen — `Text` ist Pflicht in `PositionEntry`. Auf Tippfehler im Key prüfen (`Text` ≠ `text`). |
-| Schema: *„additional property … not allowed"* | Du hast `MetaInfo` o. Ä. mit leerem String statt `null`. Lass den Wert komplett leer (UI rendert dann `null`). |
-| Im Run-Output sehe ich **kein** `Aestico_JSON_Test` | Action liegt ausserhalb von `For_each_1`. Sie muss **innerhalb** sein, weil sie `outputs('Regiekopf_holen')` etc. referenziert (= scoped). |
-| `body('Select_-_Aestico_Personen')` liefert nichts im Compose | In WDL ist's `body('…')` für `Select`-Actions, **nicht** `outputs('…')?['body/value']` wie bei List Rows. Bei Select reicht `body('Select_-_Aestico_Personen')`. |
+| `Aestico_JSON_Final` zeigt `Entries` leer `[]` trotz Test mit echten Rapporten | Schritt 3 (`Append_-_GroupEntry_Rapport`) liegt **ausserhalb** `For_each_1` oder hat falschen Variable-Namen. Muss exakt `Aestico_Entries` heissen und **innerhalb** der Schleife sein. |
+| `GroupEntry.Value` ist String `"1234.5"` statt Zahl | Quotes um `@{variables('total_rap')}` entfernen → `@variables('total_rap')` ohne `{}`. Variable ist `float`, Output dann nativer Number. |
+| `Append_-_GroupEntry_Rapport` wirft *„cannot union null"* | `Select_-_Aestico_Personen` oder `…_Material` hat leeres `from`. Setze `from: @{coalesce(outputs('Personenzeile')?['body/value'], json('[]'))}`. |
+| Finale JSON zeigt `Entries` als String statt Array | Quotes um `@{variables('Aestico_Entries')}` entfernen → `@variables('Aestico_Entries')`. |
+| Schema-Validierung: *„'PositionEntry' required field 'Text' missing"* | In Select-Map vergessen — `Text` ist Pflicht in `PositionEntry`. Auf Tippfehler im Key prüfen (`Text` ≠ `text`). |
+| Schema: *„additional property … not allowed"* | Du hast `MetaInfo` o. Ä. mit leerem String statt `null`. Wert komplett leer lassen (UI rendert dann `null`). |
+| `body('Select_-_Aestico_Personen')` liefert nichts | In WDL ist's `body('…')` für `Select`-Actions, **nicht** `outputs('…')?['body/value']` wie bei List Rows. Bei Select reicht `body('Select_-_Aestico_Personen')`. |
+| VATEntry erscheint **mehrfach** im Output | Schritt 4 (`Append_-_VATEntry`) liegt **innerhalb** `For_each_1` statt davor/danach. Korrekt ist: **nach** der Schleife, **vor** Schritt 5. |
 
 ---
 
