@@ -1,0 +1,51 @@
+{
+  "Tatjana Holzmann.md": "**Rolle:** Operative Ansprechpartnerin — Heike Hunnenberg GmbH (DE).\n**Beziehung:** Kunde [[Hunnenberg]].\n**Themen:** Power BI Touren-/Manufaktur-Cockpit, wiederkehrende Aktualisierungsfehler (eingerichtetes **stündliches Monitoring** zeigt Wirkung), Terminkoordination.\n**Notiz:** Häufige Support-Fälle rund um Veröffentlichung/Refresh.",
+
+  "3A Bodenbeläge GmbH.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Bodenleger für Giovannis **Wohnung in Locarno** (Via ai Monti 159a). Ansprechpartner „Mathias\".\n**Themen:** Bodenflächen/Masse, Schiebetüren, Fugen vs. Sockelleisten, Montagetermine.\n**Notiz:** Privates Bauprojekt — nicht im Kundenkontext führen.",
+
+  "Paolo Thoma.md": "**Rolle:** Inhaber/Chef — **Thoma Group** (TPS Servizi SA, goccia.ch; Tessin, ital.).\n**Beziehung:** Kunde auf Eigentümerebene (Rechnung via TPS Servizi SA) → [[Thoma_Group]].\n**Themen:** Power BI Dashboard je Gesellschaft → Wunsch nach **App über alle Firmen**, Zvoove-Daten & Zugriffe, La Goccia / Castione.\n**Notiz:** Vgl. [[Serhiy Ushchapivskyy]] (deren IT).",
+
+  "Saša Butina.md": "**Rolle:** Head of Controlling — Green.ch.\n**Beziehung:** Controlling-Hauptkontakt Kunde [[Green]].\n**Themen:** Financial Cockpit (falsche Customer-Nr. via Dataflow, Owner Florian), ICS Sales Orders neue Felder, regelmässige Power-BI-Sessions.\n**Notiz:** Treibt Datenqualität/Reporting-Korrekturen.",
+
+  "Züllig Robin.md": "**Rolle:** SACAC AG.\n**Beziehung:** Fach-/Projektkontakt Kunde [[SACAC]].\n**Themen:** **OPOS ↔ Business-Central Parallel-Abgleich** (AttributeValue), CrossCheck der BI-Reports (mit Till Schulte-Coerne), Lagerliste/Pivot.\n**Notiz:** Tiefe Daten-Reconciliation OPOS/BC.",
+
+  "Kiser Daniel.md": "**Rolle:** CEO / Geschäftsführer — SACAC AG.\n**Beziehung:** Entscheider Kunde [[SACAC]].\n**Themen:** Reporting-Anpassungen (Treppen/Podeste, „Staircase\", gewandelte Treppen), Pivot-Joins (mit Elfat/Till), Projekt **SARGAS 2.0** Power BI.\n**Notiz:** GL-Ebene; inhaltlich nah an den Auswertungen.",
+
+  "Manocha Saveen.md": "**Rolle:** IT Project Manager — DOBI-INTER AG.\n**Beziehung:** Projekt-Hauptkontakt Kunde [[DOBI]].\n**Themen:** **Preismonitoring** (RPA, Markenerweiterung, friseurtotal/parfumdreams/TipTop-Preise), SharePoint-Ablage, PowerPlatform News.\n**Notiz:** Monatliches Preismonitoring läuft als RPA.",
+
+  "Roger von Ah.md": "**Rolle:** Partner / Geschäftsleitung — bepartner ag.\n**Beziehung:** GL-Kontakt Kunde [[bepartner]].\n**Themen:** Power-BI-Sitzungen (Beständigkeit der Zahlen, Definition Präsenzproduktivität), Vor-Ort-Termine; brachte zudem Lead **Verder AG** (er ist dort im VR).\n**Notiz:** Beziehungs-/Entscheidungsebene bei bePartner.",
+
+  "Torben Malte Bendt.md": "**Rolle:** Sachbearbeiter Revision — bepartner ag.\n**Beziehung:** Fachkontakt Kunde [[bepartner]].\n**Themen:** Power-BI-Zugriffe & **Row Level Security** (Denise Amstutz als Admin), Anzeige/Erklärung von Measures, Berechtigungsfiles.\n**Notiz:** Operativer Umgang mit Berechtigungen/Reports.",
+
+  "Franc Lechthaler.md": "**Rolle:** Koster AG, Gebäudetechnik.\n**Beziehung:** Fachkontakt Kunde [[Koster_BAB]] (neben [[Monika Kuhn]]).\n**Themen:** Power BI Offerten, Excel↔Power-BI-Aktualisierungsfehler (Makros), PowerPlatform News.\n**Notiz:** Operative Offerten-/Datenthemen.",
+
+  "Alexander Eberle.md": "**Rolle:** CFO — SecuSuisse AG.\n**Beziehung:** **Prospect / Kunde im Aufbau** → [[SecuSuisse]] — Offerte vom 1.4.2026 noch nicht unterzeichnet.\n**Themen:** Vorbereitung Power-BI-Projekt (Systeme/Bedürfnisse), amagno, Termin 3./4.6.\n**Notiz:** Bei Zuschlag Client-Status auf aktiv setzen.",
+
+  "Pasinelli SA.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Maler (impresa pittore) für die **Wohnung in Locarno** (Via ai Monti). Ansprechpartnerin Luisa.\n**Themen:** Ausbesserungen/Ritocchi, abgelöster Wandbelag, Termine.\n**Notiz:** Privates Bauprojekt.",
+
+  "Jan Kottucz.md": "**Rolle:** **Inhaber** der Firmengruppe — [[SME_Technik]] · [[Robotec]] · [[Sefag]] · [[Hans_Meier_AG]] (daher mehrere Mailadressen, u.a. robotec.ch + meierag.ch).\n**Beziehung:** Auftraggeber auf Eigentümerebene; Finanzen/Operatives meist über seine rechte Hand [[Schuler Bernhard]].\n**Themen:** Budget 2026-Report (Zielerreichung RVL2, „heute\"-Filter/Kontext, Arbeitszeitkalender, Monatssaisonalität); Power-BI-Zugang/Bilanz/ER (Hans Meier AG via SEFAG-Account).\n**Notiz:** Mehrere Adressen = eine Person; Dublette `jan.kottucz@meierag.ch` zusammengeführt (2026-05-30).",
+
+  "GIANPIERO FORZONI.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Nachbar / Mitglied Technischer Ausschuss, **Condominio „Le Palme\"**, Locarno-Monti (Via ai Monti 159a). Ital.\n**Themen:** Eigentümerversammlung 24.4., Steuerunterlagen 2025, Einspruch gegen Einschreiben.\n**Notiz:** Privater/immobilienrechtlicher Kontext (gemeinsam mit Elvira).",
+
+  "'Sylvie Jeannerat'.md": "**Rolle:** Lachat SA (FR-sprachig).\n**Beziehung:** Kundenkontakt → [[Lachat]].\n**Themen:** BI-Cockpit Lachat, Dataflow **„BAU WEB\"** (Umbau Power Query), Kontrolle Factures clients; mit „Toni\" & Matthieu Comte.\n**Notiz:** Hauptkontakt bei Lachat SA.",
+
+  "Tatjana Mettler.md": "**Rolle:** ANiFiT AG.\n**Beziehung:** Kundenkontakt → [[ANiFit]].\n**Themen:** Power-BI-Auswertung **Neukunden & Zweitbestellungen**; viel Terminkoordination.\n**Notiz:** Fachansprechpartnerin ANiFiT.",
+
+  "Fabian Haindl.md": "**Rolle:** Partner — bepartner ag.\n**Beziehung:** Partner/Entscheider Kunde [[bepartner]].\n**Themen:** Monatliche Rechnungen, RLS-Test, Org-/Trial-Fragen.\n**Notiz:** Eher administrative/strategische Ebene bei bePartner.",
+
+  "Verena Trachsler.md": "**Rolle:** SharkGroup — Controlling/Fachbereich.\n**Beziehung:** Wichtige Fachansprechpartnerin Kunde [[SHARKGROUP]].\n**Themen:** **Enia Vertrieb 2026 DB1-Analyse**, **KI-ShowCase mit Claude** (Live-Auswertung von PBI-Daten), **Kreditorenworkshop** (mit [[Alessandro Castelli]]), Power-BI-Workshops via TeamViewer, konsolidierte Bilanz.\n**Notiz:** Treibt die anspruchsvollen Analyse- & KI-Themen bei SHG.",
+
+  "Christian Burri.md": "**Rolle:** Christian Burri — Weibel AG.\n**Beziehung:** Kundenkontakt; Engagement **BauBit-Offertenauswertung** → [[BauBit_Offertenauswertung]].\n**Themen:** Offertenauswertung BauBit (View-Erstellung), Power BI Weibel AG (Offerten-Weiterarbeit).\n**Notiz:** Notiz am 2026-05-30 von Mailadresse auf Klarnamen umbenannt.",
+
+  "Schätti Rolf.md": "**Rolle:** Staiger Rechtsanwälte AG.\n**Beziehung:** Fachkontakt Kunde [[Staiger_Rechtsanwaelte]] (mit Marlis).\n**Themen:** Power BI Testload, Sollstunden-Tabelle (Fehler „couldn't parse … as Date\"), Pendenzenliste, Terminkoordination.\n**Notiz:** Wiederkehrende Reserve-/Pendenzentermine.",
+
+  "Oliver Bader.md": "**Rolle:** **Eigentümer Bader Immobilien (Marke DOMBA)** → Kunde [[Bader]].\n**Beziehung:** Kunde **und** ⭐ **Inspirator dieses Setups** — hat Giovanni ursprünglich die Idee **Obsidian + Claude** gezeigt. AI-/tech-affin, gibt Tipps (z.B. „Claude-Code-CLI statt MCP spart Overhead\").\n**Themen:** Power BI Bader Immobilien (vor Ort), Austausch über Anthropic/AI-Tools/APIs. 🍎 macOS, Teil des Obsidian-Rollouts.\n**Notiz:** Beziehungspflege auf Augenhöhe (Tech/AI), nicht nur Kundenprojekt.",
+
+  "Tzanos John.md": "**Rolle:** IT-Techniker — **Bithawk AG** (IT-Dienstleister).\n**Beziehung:** **IT-Partner/Dienstleister** (nicht Kunde) — stellt Zugänge bereit.\n**Themen:** TeamViewer/Server-Zugriff (q-Mentor Server, Black-Screen), technischer DB-Zugriff für Power-BI-Projekt **Hans Meier AG**.\n**Notiz:** Technischer Enabler bei Infrastruktur/Zugriffen.",
+
+  "Giovanni Verna.md": "**Rolle:** IT Services — tibits ag BackOffice.\n**Beziehung:** IT-Kontakt Kunde [[tibits]] (neben [[Antonio Canonica]]). „Namensvetter\".\n**Themen:** **TCPOS-Server/Mirroring** (DRINGEND, Transaction-Tabelle), Power-BI-Berechtigungen, Export TCPOS-DB für neues Datenmodell, BC-Anbindung.\n**Notiz:** Technische Schnittstelle für tibits-Infrastruktur.",
+
+  "Erik Wirz.md": "**Rolle:** CFO-Umfeld — W-Gruppe / Wirz Partner.\n**Beziehung:** Fach-/Entscheidungskontakt Kunde [[Wirz_Partners]].\n**Themen:** **Liquiditätsplanung** Power BI, Mandate-Hochrechnung (offene/unbezahlte Rechnungen), Stunden-pro-Monat-Visualisierung; teilte HubSpot-MCP-Setup-Tipp für Claude.\n**Notiz:** Enger, themenbreiter Austausch (auch AI/Tooling).",
+
+  "Sven Herger.md": "**Rolle:** UPGREAT AG.\n**Beziehung:** Technischer Kontakt Kunde [[Upgreat]].\n**Themen:** **Copilot in Power BI** (Fabric F64 Test, mit Enis + Global Admin), Survista PowerAutomate/Power-Platform (Trial→Fabric-Lizenz-Beratung).\n**Notiz:** Fokus Fabric/Copilot-Aktivierung & Lizenzen."
+}

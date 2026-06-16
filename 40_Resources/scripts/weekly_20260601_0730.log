@@ -1,0 +1,1027 @@
+=== Weekly refresh START Mon Jun  1 07:30:05 CEST 2026 ===
+
+--- m365_people_sync.py ---
+→ /me/people …
+→ /me/contacts …
+
+✓ Fertig. 282 Personen gefunden — 1 geschrieben, 281 übersprungen (existierten).
+  Ordner: /Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/25_People
+
+--- mail_digest.py --top 0 --max 6000 --min-total 1 --sort sent ---
+Eigene Adresse: giovanni@miraglia-bi.com
+  … 50 Mails gescannt  … 100 Mails gescannt  … 150 Mails gescannt  … 200 Mails gescannt  … 250 Mails gescannt  … 300 Mails gescannt  … 350 Mails gescannt  … 400 Mails gescannt  … 450 Mails gescannt  … 500 Mails gescannt  … 550 Mails gescannt  … 600 Mails gescannt  … 650 Mails gescannt  … 700 Mails gescannt  … 750 Mails gescannt  … 800 Mails gescannt  … 850 Mails gescannt  … 900 Mails gescannt  … 950 Mails gescannt  … 1000 Mails gescannt  … 1050 Mails gescannt  … 1100 Mails gescannt  … 1150 Mails gescannt  … 1200 Mails gescannt  … 1250 Mails gescannt  … 1300 Mails gescannt  … 1350 Mails gescannt  … 1400 Mails gescannt  … 1450 Mails gescannt  … 1500 Mails gescannt  … 1550 Mails gescannt  … 1600 Mails gescannt  … 1650 Mails gescannt  … 1700 Mails gescannt  … 1750 Mails gescannt  … 1800 Mails gescannt  … 1850 Mails gescannt  … 1900 Mails gescannt  … 1950 Mails gescannt  … 2000 Mails gescannt  … 2050 Mails gescannt  … 2100 Mails gescannt  … 2150 Mails gescannt  … 2200 Mails gescannt  … 2250 Mails gescannt  … 2300 Mails gescannt  … 2350 Mails gescannt  … 2400 Mails gescannt  … 2450 Mails gescannt  … 2500 Mails gescannt  … 2550 Mails gescannt  … 2600 Mails gescannt  … 2650 Mails gescannt  … 2700 Mails gescannt  … 2750 Mails gescannt  … 2800 Mails gescannt  … 2850 Mails gescannt  … 2900 Mails gescannt  … 2950 Mails gescannt  … 3000 Mails gescannt  … 3050 Mails gescannt  … 3100 Mails gescannt  … 3150 Mails gescannt  … 3200 Mails gescannt  … 3250 Mails gescannt  … 3300 Mails gescannt  … 3350 Mails gescannt  … 3400 Mails gescannt  … 3450 Mails gescannt  … 3500 Mails gescannt  … 3550 Mails gescannt  … 3600 Mails gescannt  … 3650 Mails gescannt  … 3700 Mails gescannt  … 3750 Mails gescannt  … 3800 Mails gescannt  … 3850 Mails gescannt  … 3900 Mails gescannt  … 3950 Mails gescannt  … 4000 Mails gescannt  … 4050 Mails gescannt  … 4100 Mails gescannt  … 4150 Mails gescannt  … 4200 Mails gescannt  … 4250 Mails gescannt  … 4300 Mails gescannt  … 4350 Mails gescannt  … 4400 Mails gescannt  … 4450 Mails gescannt  … 4500 Mails gescannt  … 4550 Mails gescannt  … 4600 Mails gescannt  … 4650 Mails gescannt  … 4700 Mails gescannt  … 4750 Mails gescannt  … 4800 Mails gescannt  … 4850 Mails gescannt  … 4900 Mails gescannt  … 4950 Mails gescannt  … 5000 Mails gescannt  … 5050 Mails gescannt  … 5100 Mails gescannt  … 5150 Mails gescannt  … 5200 Mails gescannt  … 5250 Mails gescannt  … 5300 Mails gescannt  … 5350 Mails gescannt  … 5400 Mails gescannt  … 5450 Mails gescannt  … 5500 Mails gescannt  … 5550 Mails gescannt  … 5600 Mails gescannt  … 5650 Mails gescannt  … 5700 Mails gescannt  … 5750 Mails gescannt  … 5800 Mails gescannt  … 5850 Mails gescannt  … 5900 Mails gescannt  … 5950 Mails gescannt  … 6000 Mails gescannt
+✓ 6000 Mails gescannt, 556 Korrespondenten.
+
+✓ 130 Kontakte (mit Notiz) → mail_digest.json
+
+Ausgewählt (sortiert nach sent):
+  130  (34↓/96↑)  Elvira Miraglia                 letzter: 2026-06-01
+  144  (80↓/64↑)  Alessandro Castelli             letzter: 2026-05-31
+   78  (30↓/48↑)  Michael Kipfer                  letzter: 2026-05-31
+   94  (50↓/44↑)  Raoul Elias Miraglia            letzter: 2026-05-29
+   79  (46↓/33↑)  Mirko Lanzi                     letzter: 2026-05-31
+   56  (23↓/33↑)  Ringwald, Stefanie              letzter: 2026-05-26
+  102  (70↓/32↑)  Antonio Canonica                letzter: 2026-05-28
+   62  (37↓/25↑)  Anna Affolter                   letzter: 2026-05-20
+   50  (27↓/23↑)  Monika Kuhn                     letzter: 2026-05-11
+   37  (19↓/18↑)  Paolo Thoma                     letzter: 2026-05-31
+   38  (21↓/17↑)  Roger von Ah                    letzter: 2026-05-08
+   45  (29↓/16↑)  Saša Butina                    letzter: 2026-05-26
+   27  (11↓/16↑)  3A Bodenbeläge GmbH            letzter: 2026-03-21
+   35  (20↓/15↑)  Markus Berger Intern            letzter: 2026-05-18
+   34  (19↓/15↑)  Schuler Bernhard                letzter: 2026-05-31
+   33  (19↓/14↑)  Tatjana Holzmann                letzter: 2026-05-19
+   27  (14↓/13↑)  Steffen Gross                   letzter: 2026-05-31
+   26  (13↓/13↑)  Serhiy Ushchapivskyy            letzter: 2026-05-28
+   19  (6↓/13↑)  Fabian Haindl                   letzter: 2026-05-31
+   41  (29↓/12↑)  Remo Pfister                    letzter: 2026-05-27
+   26  (15↓/11↑)  Manocha Saveen                  letzter: 2026-05-26
+   22  (11↓/11↑)  Franc Lechthaler                letzter: 2026-05-19
+   22  (11↓/11↑)  Barbara Leutert                 letzter: 2026-05-06
+   23  (13↓/10↑)  Torben Malte Bendt              letzter: 2026-05-08
+   20  (10↓/10↑)  Züllig Robin                   letzter: 2026-05-15
+   22  (13↓/9↑)  Erik Wirz                       letzter: 2026-04-16
+   20  (11↓/9↑)  Kiser Daniel                    letzter: 2026-05-21
+   18  (9↓/9↑)  Amort Mathias                   letzter: 2026-05-05
+   17  (9↓/8↑)  Funke Andreas                   letzter: 2026-04-27
+   16  (8↓/8↑)  Jan Kottucz                     letzter: 2026-02-28
+   15  (7↓/8↑)  Alexander Eberle                letzter: 2026-05-29
+   15  (7↓/8↑)  Pasinelli SA                    letzter: 2026-05-06
+   14  (6↓/8↑)  Chiara Zurini                   letzter: 2026-05-28
+   26  (19↓/7↑)  IT Sharkgroup                   letzter: 2026-05-12
+   23  (16↓/7↑)  Ahmed M                         letzter: 2026-05-29
+   20  (13↓/7↑)  Zumbühl Stefan                 letzter: 2026-05-28
+   19  (12↓/7↑)  GIANPIERO FORZONI               letzter: 2026-05-22
+   19  (12↓/7↑)  'Sylvie Jeannerat'              letzter: 2026-05-18
+   16  (9↓/7↑)  Karin Schmidt                   letzter: 2026-05-26
+   16  (9↓/7↑)  Tatjana Mettler                 letzter: 2026-04-15
+    9  (2↓/7↑)  Hadi Alaeddine                  letzter: 2026-03-18
+   19  (13↓/6↑)  Verena Trachsler                letzter: 2026-05-26
+   15  (9↓/6↑)  Christian Burri                 letzter: 2026-05-26
+   13  (7↓/6↑)  Schätti Rolf                   letzter: 2026-05-12
+   12  (6↓/6↑)  Oliver Bader                    letzter: 2026-05-29
+   12  (6↓/6↑)  Giorgia Cali                    letzter: 2026-05-28
+   10  (4↓/6↑)  Tzanos John                     letzter: 2026-04-07
+    9  (3↓/6↑)  Giovanni Verna                  letzter: 2026-04-24
+   15  (10↓/5↑)  Nicole Cannellotto ANiFiT       letzter: 2026-03-02
+   13  (8↓/5↑)  Moritz Mühlebach               letzter: 2026-05-22
+   11  (6↓/5↑)  Maurizio Tonizzo                letzter: 2026-03-11
+   11  (6↓/5↑)  Manuel Moor                     letzter: 2026-01-28
+   10  (5↓/5↑)  Sven Herger                     letzter: 2026-03-05
+    5  (0↓/5↑)  Mailbox Finance                 letzter: 2026-05-31
+    5  (0↓/5↑)  rechnung@sharkgroup.swiss       letzter: 2026-05-31
+    5  (0↓/5↑)  invoice@dobi.ch                 letzter: 2026-05-31
+    5  (0↓/5↑)  Andrea Vesti                    letzter: 2026-05-31
+    5  (0↓/5↑)  buchhaltung@domba.ch            letzter: 2026-05-31
+    5  (0↓/5↑)  Heike Hunnenberg - Eller        letzter: 2026-05-31
+    5  (0↓/5↑)  finance                         letzter: 2026-05-31
+    5  (0↓/5↑)  Kreditoren                      letzter: 2026-05-31
+    5  (0↓/5↑)  rechnung@tibits.ch              letzter: 2026-05-31
+    5  (0↓/5↑)  e-rechnung@kosterag.ch          letzter: 2026-05-31
+    5  (0↓/5↑)  Giovanni Miraglia               letzter: 2026-03-17
+   12  (8↓/4↑)  Andreas Frei                    letzter: 2026-02-16
+   10  (6↓/4↑)  Daniel Gehrig                   letzter: 2026-04-20
+    9  (5↓/4↑)  Daniela Lutz-Holdener           letzter: 2026-03-09
+    9  (5↓/4↑)  michael.kipfer@brandenberger.ch  letzter: 2026-02-27
+    8  (4↓/4↑)  michael.boebner@itpoint.ch      letzter: 2026-05-28
+    8  (4↓/4↑)  Remy Bärlocher                 letzter: 2026-04-28
+    8  (4↓/4↑)  Hildegard Weisskopf             letzter: 2026-04-08
+    8  (4↓/4↑)  Kübler, Christoph              letzter: 2026-04-07
+    7  (3↓/4↑)  Davide Marabese                 letzter: 2026-05-28
+    6  (2↓/4↑)  Andreas Walker                  letzter: 2026-05-01
+    6  (2↓/4↑)  Lötscher Patrick               letzter: 2026-04-02
+    4  (0↓/4↑)  kreditoren@sacac.ch             letzter: 2026-05-31
+    4  (0↓/4↑)  invoice.indirect - Mailbox      letzter: 2026-05-31
+   11  (8↓/3↑)  Jasmin Malla                    letzter: 2026-05-11
+   11  (8↓/3↑)  Flavio Waser                    letzter: 2026-04-09
+   10  (7↓/3↑)  Zoric Katarina                  letzter: 2026-05-13
+    8  (5↓/3↑)  Sandro Hernandez                letzter: 2026-04-13
+    8  (5↓/3↑)  Sascha Ziswiler                 letzter: 2026-04-07
+    7  (4↓/3↑)  Dominik Hüsser                 letzter: 2026-05-24
+    7  (4↓/3↑)  Patrick Cruz                    letzter: 2026-03-23
+    7  (4↓/3↑)  Asanka Withanaarachchi          letzter: 2026-03-16
+    5  (2↓/3↑)  Bamberger Urs (ZLB)             letzter: 2026-05-11
+    5  (2↓/3↑)  Kröger, Jan                    letzter: 2026-04-24
+    4  (1↓/3↑)  till.schulte-coerne             letzter: 2026-05-21
+    3  (0↓/3↑)  kreditoren@weibelag.com         letzter: 2026-05-31
+    3  (0↓/3↑)  Alfons Loepfe                   letzter: 2026-05-21
+    3  (0↓/3↑)  rechnungen@w-gruppe.com         letzter: 2026-04-30
+   16  (14↓/2↑)  Microsoft Support               letzter: 2026-04-24
+   14  (12↓/2↑)  Lucky Bassi                     letzter: 2026-03-19
+    7  (5↓/2↑)  Stefan Renggli                  letzter: 2026-04-01
+    5  (3↓/2↑)  Stocker Roman                   letzter: 2026-05-22
+    5  (3↓/2↑)  Stojanovic Nenad                letzter: 2026-05-11
+    5  (3↓/2↑)  Markus Rüede                   letzter: 2026-03-03
+    5  (3↓/2↑)  Nydegger Mbai                   letzter: 2026-02-11
+    4  (2↓/2↑)  Omar Rodoni                     letzter: 2026-03-24
+    4  (2↓/2↑)  giovanni.miraglia@green.ch      letzter: 2026-03-09
+    4  (2↓/2↑)  FiMA Support                    letzter: 2026-02-07
+    3  (1↓/2↑)  Barbara Maas                    letzter: 2026-05-22
+    3  (1↓/2↑)  Amiti Elfat                     letzter: 2026-05-22
+    3  (1↓/2↑)  Reporting                       letzter: 2026-05-13
+    3  (1↓/2↑)  Michael Novotny                 letzter: 2026-04-20
+    3  (1↓/2↑)  Jérôme CHABLOZ                letzter: 2026-04-07
+    3  (1↓/2↑)  Solange Silva                   letzter: 2026-04-01
+    3  (1↓/2↑)  Sven Müller                    letzter: 2026-03-24
+    2  (0↓/2↑)  Manuel Leo                      letzter: 2026-05-18
+    2  (0↓/2↑)  Johann Kralewski                letzter: 2026-03-15
+    2  (0↓/2↑)  Walter Fritschi                 letzter: 2026-03-15
+    2  (0↓/2↑)  Uwe Proch                       letzter: 2026-03-15
+    2  (0↓/2↑)  Regina Wolf                     letzter: 2026-03-15
+    2  (0↓/2↑)  Livio Graf                      letzter: 2026-03-15
+    2  (0↓/2↑)  Ludwig Spross                   letzter: 2026-03-15
+    2  (0↓/2↑)  Bernhard Struchen               letzter: 2026-03-15
+    5  (4↓/1↑)  Daniel Frei                     letzter: 2026-03-30
+    4  (3↓/1↑)  Willi Patrick                   letzter: 2026-03-07
+    3  (2↓/1↑)  Hartmann Christian              letzter: 2026-03-31
+    3  (2↓/1↑)  Gorgi Malinov                   letzter: 2026-03-04
+    3  (2↓/1↑)  Favre Christian                 letzter: 2026-02-05
+    2  (1↓/1↑)  Niederberger Christoph          letzter: 2026-05-22
+    2  (1↓/1↑)  Jolanda Riesen                  letzter: 2026-03-02
+    2  (1↓/1↑)  Juliana Araujo                  letzter: 2026-02-07
+    1  (0↓/1↑)  Daniele Thoma                   letzter: 2026-05-28
+    1  (0↓/1↑)  Lence Graf                      letzter: 2026-02-16
+    1  (0↓/1↑)  r.marzan                        letzter: 2026-01-14
+    1  (1↓/0↑)  Robert Haas                     letzter: 2026-03-31
+    1  (1↓/0↑)  Rüttimann Stefan               letzter: 2026-03-30
+    1  (1↓/0↑)  Urs Berchtold                   letzter: 2026-02-06
+
+Häufig, aber OHNE Notiz (evtl. anlegen?):
+  1017  no-reply-powerbi@microsoft.com
+  160  noreply@abaninja.ch
+  154  abadue@bdo.ch
+   99  newsletter@thedeepview.co
+   96  rpa@miraglia-bi.com
+   84  servicequeue-noreply@teamviewer.com
+   69  messages-noreply@linkedin.com
+   68  powerbi@nahrin.ch
+   56  daniel@cloudchampion.ch
+   55  swisscom.info@swisscom.com
+   55  powerbi@domba.ch
+   53  mailrobot@mail.xing.com
+
+--- teams_digest.py --max-chats 600 ---
+Eigene Adresse: giovanni@miraglia-bi.com
+600 Chats gefunden. Lese Nachrichten …
+  … 25/600 Chats, 905 Nachrichten
+  … 50/600 Chats, 2009 Nachrichten
+  … 75/600 Chats, 2354 Nachrichten
+  … 100/600 Chats, 2840 Nachrichten
+  … 125/600 Chats, 3265 Nachrichten
+  … 150/600 Chats, 3505 Nachrichten
+  … 175/600 Chats, 3820 Nachrichten
+  … 200/600 Chats, 4418 Nachrichten
+  … 225/600 Chats, 4765 Nachrichten
+  … 250/600 Chats, 5017 Nachrichten
+  … 275/600 Chats, 5109 Nachrichten
+  … 300/600 Chats, 5331 Nachrichten
+  … 325/600 Chats, 5585 Nachrichten
+  … 350/600 Chats, 5994 Nachrichten
+  … 375/600 Chats, 6376 Nachrichten
+  … 400/600 Chats, 6638 Nachrichten
+  … 425/600 Chats, 7068 Nachrichten
+  … 450/600 Chats, 7250 Nachrichten
+  … 475/600 Chats, 7491 Nachrichten
+  … 500/600 Chats, 7614 Nachrichten
+  … 525/600 Chats, 7761 Nachrichten
+  … 550/600 Chats, 7817 Nachrichten
+  … 575/600 Chats, 8350 Nachrichten
+  … 600/600 Chats, 8540 Nachrichten
+
+✓ 8540 Nachrichten · 293 Chat-Partner · 57 Gruppenchats · 5 Chats übersprungen (403/404) → teams_digest.json
+
+Top Chat-Partner:
+   211  (65×1:1 / 82×Gruppe)  Alessandro Castelli           castelli-solutions.ch  letzter 2026-05-29
+   206  (123×1:1 / 34×Gruppe)  Antonio Canonica              tibits.ch              letzter 2026-05-28
+   170  (41×1:1 / 71×Gruppe)  Michael Kipfer                kipfer-dp.com          letzter 2026-05-31
+   164  (35×1:1 / 64×Gruppe)  Raoul Elias Miraglia          miraglia-bi.com        letzter 2026-05-27
+   147  (42×1:1 / 40×Gruppe)  Stefanie Ringwald             nahrin.ch              letzter 2026-05-27
+   143  (56×1:1 / 25×Gruppe)  Gallo Marco                   zindel-united.swiss    letzter 2025-11-17
+   142  (48×1:1 / 42×Gruppe)  Pfister Remo                  mvm-ag.ch              letzter 2026-04-30
+   138  (76×1:1 / 37×Gruppe)  Mark Bordoni                  bordoni-solutions.com  letzter 2025-10-06
+   124  (40×1:1 / 22×Gruppe)  Christoph Kübler              nahrin.ch              letzter 2026-03-12
+   123  (44×1:1 / 44×Gruppe)  Till Schulte-Coerne           innoq.com              letzter 2025-12-08
+   122  (64×1:1 / 0×Gruppe)  Patrick Cruz                  green.ch               letzter 2026-05-12
+   114  (61×1:1 / 6×Gruppe)  Stojanovic Nenad              dobi.ch                letzter 2026-05-11
+   113  (48×1:1 / 7×Gruppe)  Manocha Saveen                dobi.ch                letzter 2026-05-26
+   111  (51×1:1 / 6×Gruppe)  Amort Mathias                 zindel-united.swiss    letzter 2026-05-28
+   107  (30×1:1 / 4×Gruppe)  Saša Butina                   green.ch               letzter 2026-05-22
+   105  (45×1:1 / 2×Gruppe)  Florian Barben                green.ch               letzter 2026-03-24
+   104  (61×1:1 / 0×Gruppe)  Daniela Lutz-Holdener         green.ch               letzter 2026-03-10
+   103  (45×1:1 / 0×Gruppe)  Lötscher Patrick              4-b.ch                 letzter 2026-05-12
+   103  (50×1:1 / 0×Gruppe)  Duttala Reddy (LTIMINDTREE L  microsoft.com          letzter 2025-09-24
+   100  (50×1:1 / 0×Gruppe)  Amiti Elfat                   sacac.ch               letzter 2026-05-20
+   100  (36×1:1 / 0×Gruppe)  Lechthaler Franc              kosterag.ch            letzter 2026-05-18
+   100  (54×1:1 / 0×Gruppe)  Niederberger Christoph        ewo.ch                 letzter 2026-05-13
+   100  (38×1:1 / 0×Gruppe)  Markus Berger                 upgreat.ch             letzter 2026-04-24
+   100  (43×1:1 / 0×Gruppe)  Melanie Bigler                tibits.ch              letzter 2026-04-08
+   100  (40×1:1 / 0×Gruppe)  Kunduru Vyshnavi (MINDTREE L  microsoft.com          letzter 2025-10-16
+   100  (39×1:1 / 0×Gruppe)  Benjamin Morger               upgreat.ch             letzter 2025-03-20
+    96  (30×1:1 / 23×Gruppe)  Giovanni Verna                tibits.ch              letzter 2026-04-30
+    90  (35×1:1 / 0×Gruppe)  Erik Wirz                     w-gruppe.com           letzter 2026-04-16
+    87  (29×1:1 / 0×Gruppe)  Sara Meierhofer               tibits.ch              letzter 2024-09-04
+    86  (33×1:1 / 0×Gruppe)  Züllig Robin                  sacac.ch               letzter 2026-05-13
+
+--- first_contact.py --apply ---
+294 Personen mit Email. Scanne Postfach (aufsteigend) …
+  … 1000 Mails gescannt, 18/294 Erstkontakte
+  … 2000 Mails gescannt, 32/294 Erstkontakte
+  … 3000 Mails gescannt, 45/294 Erstkontakte
+  … 4000 Mails gescannt, 50/294 Erstkontakte
+  … 5000 Mails gescannt, 58/294 Erstkontakte
+  … 6000 Mails gescannt, 61/294 Erstkontakte
+  … 7000 Mails gescannt, 63/294 Erstkontakte
+  … 8000 Mails gescannt, 72/294 Erstkontakte
+  … 9000 Mails gescannt, 79/294 Erstkontakte
+  … 10000 Mails gescannt, 86/294 Erstkontakte
+  … 11000 Mails gescannt, 88/294 Erstkontakte
+  … 12000 Mails gescannt, 91/294 Erstkontakte
+  … 13000 Mails gescannt, 93/294 Erstkontakte
+  … 14000 Mails gescannt, 93/294 Erstkontakte
+  … 15000 Mails gescannt, 95/294 Erstkontakte
+  … 16000 Mails gescannt, 95/294 Erstkontakte
+  … 17000 Mails gescannt, 95/294 Erstkontakte
+  … 18000 Mails gescannt, 97/294 Erstkontakte
+  … 19000 Mails gescannt, 104/294 Erstkontakte
+  … 20000 Mails gescannt, 107/294 Erstkontakte
+  … 21000 Mails gescannt, 109/294 Erstkontakte
+  … 22000 Mails gescannt, 111/294 Erstkontakte
+  … 23000 Mails gescannt, 113/294 Erstkontakte
+  … 24000 Mails gescannt, 116/294 Erstkontakte
+  … 25000 Mails gescannt, 119/294 Erstkontakte
+  … 26000 Mails gescannt, 119/294 Erstkontakte
+  … 27000 Mails gescannt, 121/294 Erstkontakte
+  … 28000 Mails gescannt, 126/294 Erstkontakte
+  … 29000 Mails gescannt, 129/294 Erstkontakte
+  … 30000 Mails gescannt, 138/294 Erstkontakte
+  … 31000 Mails gescannt, 140/294 Erstkontakte
+  … 32000 Mails gescannt, 142/294 Erstkontakte
+  … 33000 Mails gescannt, 147/294 Erstkontakte
+  … 34000 Mails gescannt, 148/294 Erstkontakte
+  … 35000 Mails gescannt, 150/294 Erstkontakte
+  … 36000 Mails gescannt, 151/294 Erstkontakte
+  … 37000 Mails gescannt, 152/294 Erstkontakte
+  … 38000 Mails gescannt, 152/294 Erstkontakte
+  … 39000 Mails gescannt, 156/294 Erstkontakte
+  … 40000 Mails gescannt, 162/294 Erstkontakte
+  … 41000 Mails gescannt, 165/294 Erstkontakte
+  … 42000 Mails gescannt, 167/294 Erstkontakte
+  … 43000 Mails gescannt, 168/294 Erstkontakte
+  … 44000 Mails gescannt, 170/294 Erstkontakte
+  … 45000 Mails gescannt, 172/294 Erstkontakte
+  … 46000 Mails gescannt, 173/294 Erstkontakte
+  … 47000 Mails gescannt, 173/294 Erstkontakte
+  … 48000 Mails gescannt, 174/294 Erstkontakte
+  … 49000 Mails gescannt, 177/294 Erstkontakte
+  … 50000 Mails gescannt, 182/294 Erstkontakte
+  … 51000 Mails gescannt, 184/294 Erstkontakte
+  … 52000 Mails gescannt, 186/294 Erstkontakte
+  … 53000 Mails gescannt, 187/294 Erstkontakte
+  … 54000 Mails gescannt, 188/294 Erstkontakte
+  … 55000 Mails gescannt, 190/294 Erstkontakte
+  … 56000 Mails gescannt, 195/294 Erstkontakte
+  … 57000 Mails gescannt, 197/294 Erstkontakte
+  … 58000 Mails gescannt, 201/294 Erstkontakte
+  … 59000 Mails gescannt, 201/294 Erstkontakte
+  … 60000 Mails gescannt, 201/294 Erstkontakte
+  … 61000 Mails gescannt, 203/294 Erstkontakte
+  … 62000 Mails gescannt, 203/294 Erstkontakte
+  … 63000 Mails gescannt, 204/294 Erstkontakte
+  … 64000 Mails gescannt, 207/294 Erstkontakte
+  … 65000 Mails gescannt, 210/294 Erstkontakte
+  … 66000 Mails gescannt, 212/294 Erstkontakte
+  … 67000 Mails gescannt, 213/294 Erstkontakte
+  … 68000 Mails gescannt, 213/294 Erstkontakte
+  … 69000 Mails gescannt, 214/294 Erstkontakte
+  … 70000 Mails gescannt, 216/294 Erstkontakte
+  … 71000 Mails gescannt, 216/294 Erstkontakte
+  … 72000 Mails gescannt, 216/294 Erstkontakte
+  … 73000 Mails gescannt, 218/294 Erstkontakte
+  … 74000 Mails gescannt, 219/294 Erstkontakte
+  … 75000 Mails gescannt, 220/294 Erstkontakte
+  … 76000 Mails gescannt, 225/294 Erstkontakte
+  … 77000 Mails gescannt, 230/294 Erstkontakte
+  … 78000 Mails gescannt, 231/294 Erstkontakte
+  … 79000 Mails gescannt, 238/294 Erstkontakte
+  … 80000 Mails gescannt, 238/294 Erstkontakte
+  … 81000 Mails gescannt, 241/294 Erstkontakte
+  … 82000 Mails gescannt, 244/294 Erstkontakte
+  … 83000 Mails gescannt, 244/294 Erstkontakte
+  … 84000 Mails gescannt, 249/294 Erstkontakte
+  … 85000 Mails gescannt, 251/294 Erstkontakte
+  … 86000 Mails gescannt, 254/294 Erstkontakte
+  … 87000 Mails gescannt, 263/294 Erstkontakte
+  … 88000 Mails gescannt, 271/294 Erstkontakte
+  … 89000 Mails gescannt, 274/294 Erstkontakte
+  … 90000 Mails gescannt, 276/294 Erstkontakte
+  … 91000 Mails gescannt, 278/294 Erstkontakte
+
+✓ 91817 Mails gescannt, 278/294 Personen mit Erstkontakt-Datum.
+  2017-07-04  Herr Giovanni Miraglia              giovanni@miraglia-bi.com
+  2017-07-09  Markus Lüttin                      markus.luettin@ubs.com
+  2017-07-15  Bastian Schmidig Intern             bastian.schmidig@upgreat.ch
+  2017-07-24  Markus Berger Intern                markus.berger@upgreat.ch
+  2017-08-14  Michael Koller Intern               michael.koller@upgreat.ch
+  2017-08-24  Giovanni Miraglia                   gmiraglia@up-great.ch
+  2017-08-28  Christoph Müller                   christoph.mueller@green.ch
+  2017-09-06  Silvan Killer                       silvan.killer@green.ch
+  2017-09-20  Alena Magliano                      alena.magliano@ubs.com
+  2017-10-10  Emmerich Horvath                    emmerich.horvath@zentralbahn.ch
+  2018-02-21  Beni Frei                           beni.frei@green.ch
+  2018-03-06  John Winter                         john.winter@green.ch
+  2018-03-12  Marc Gasser                         marc.gasser@activinnovation.ch
+  2018-05-26  Florian Schmidt Zindel Marketing -  florian.schmidt@upgreat.ch
+  2018-06-26  Andreas Manske                      andreas.manske@activ-innovation.ch
+  2018-08-21  Patrick Meyer                       patrick.meyer@upgreat.ch
+  2018-08-22  Adrian Elmiger                      adrian.elmiger@six-group.com
+  2018-08-26  Sergio Bortolin                     sergio.bortolin@asga.ch
+  2018-10-09  Michael Vetterli                    michael.vetterli@allianz.ch
+  2018-10-11  MEIER Michael (HR)                  michael.e.meier@axa-winterthur.ch
+  2018-10-30  WENDT Andreas                       andreas.wendt@axa-groupsolutions.com
+  2018-10-30  Hösli, Oliver                      oliver.hoesli@sage.com
+  2018-11-01  Karin Schmidt - Einkaufspartner AG  karin.schmidt@einkaufspartner.ch
+  2018-12-21  Mirella Jolliet                     mirella.jolliet@pkrueck.com
+  2019-01-08  Martin Hauser                       martin.hauser@sage.com
+  2019-01-23  Studer Hans-Ueli                    hans-ueli.studer@sefag-ag.ch
+  2019-01-24  Marco Sieber                        marco.sieber@siga.swiss
+  2019-01-24  Peter Scherrer                      peter.scherrer@siga.swiss
+  2019-01-31  Hecht Nicole                        nicole.hecht@siga.swiss
+  2019-02-21  Mark Brunner                        mbrunner@zynex.ch
+  2019-03-02  Albert Gut                          albert.gut@sage.com
+  2019-03-21  Eymann Andreas                      andreas.eymann@siga.swiss
+  2019-03-28  Schuler Bernhard                    bernhard.schuler@sefag-ag.ch
+  2019-04-02  Martin Lang                         martin.lang@lazzarini.ch
+  2019-04-15  Stefan Renggli                      stefan.renggli@hslu.ch
+  2019-04-16  Christoph Curtius                   christoph.curtius@pkrueck.com
+  2019-04-16  Richard Furrer                      richard.furrer@fcl.ch
+  2019-04-26  Philipp Flury                       philipp.flury@fcl.ch
+  2019-05-24  Marlis Manser                       marlis.manser@lazzarini.ch
+  2019-05-31  Werner Schwerzmann                  werner.schwerzmann@sefag-ag.ch
+  2019-06-03  Fähndrich Heinz                    heinz.faehndrich@sefag-ag.ch
+  2019-06-04  Dominik Schweizer                   dominik.schweizer@worldvision.ch
+  2019-06-04  Pascal Jablonski                    pascal.jablonski@robotec.ch
+  2019-07-03  Jan Kottucz                         jan.kottucz@robotec.ch
+  2019-07-05  Manuel Moor                         manuel.moor@fcl.ch
+  2019-08-10  Thomas Wapp                         thomas.wapp@allreal.ch
+  2019-08-22  Wolfgang Reuerter                   wolfgang.reuter@sigs-datacom.de
+  2019-08-28  Christoph Ryan                      christoph.ryan@siga.swiss
+  2019-09-13  Fabian Meisser                      meisser@datavision.ch
+  2019-09-30  3A Bodenbeläge GmbH                info@3ab.ch
+  2019-10-14  Hausheer Jonathan                   jonathan.hausheer@sefag-ag.ch
+  2019-10-17  Daniel Hostettler                   daniel.hostettler@six-group.com
+  2019-10-22  André Meier tibits - TSK145334     andre.meier@upgreat.ch
+  2019-10-24  Walter Bolliger                     walter.bolliger@prolan.ch
+  2019-10-29  Andreas Walker                      andreas.walker@abbvie.com
+  2019-11-07  Manuel Leo                          manuel.leo@fima-informatik.ch
+  2019-11-11  Rüffer, Nico                       nico.rueffer@advisoryhouse.com
+  2019-11-14  Sandro Kocher                       s.kocher@creanet.ch
+  2019-12-18  Sascha Ziswiler                     s.ziswiler@mvm-ag.ch
+  2019-12-29  Urs Locher                          u.locher@zindel-united.swiss
+  2020-01-02  Remo Pfister                        r.pfister@mvm-ag.ch
+  2020-02-19  Kiser Daniel                        kiser@sacac.ch
+  2020-02-19  Willi Patrick                       willi@sacac.ch
+  2020-03-12  Gysin, Rolf                         rolf.gysin@sage.com
+  2020-03-13  Giancarlo Weingart                  weingart@calanda.ch
+  2020-03-16  Maik Capeder                        capeder@calanda.ch
+  2020-03-16  Thomas Germann                      thomas.germann@informaticon.com
+  2020-03-25  Martin Haudenschild                 martin.haudenschild@itexa.ch
+  2020-03-27  Rahel Bachmann                      rahel.bachmann@directhandling.ch
+  2020-04-02  Heike Hunnenberg - Eller            hh@hunnenberg.de
+  2020-04-09  Support Microsoft                   cvg_car_css_ismoh@office365support.com
+  2020-04-16  Tatjana Holzmann                    th@hunnenberg.de
+  2020-04-20  Busetti Adriano                     abusetti@firentis.ch
+  2020-04-21  Adrian Mathys                       adrian.mathys@sage.com
+  2020-04-21  till.schulte-coerne                 till.schulte-coerne@innoq.com
+  2020-04-22  Pascal Amando                       pascal.armando@indutrade.ch
+  2020-04-24  Jérôme CHABLOZ                    jchabloz@avintos.ch
+  2020-05-12  Tonizzo Maurizio                    maurizio.tonizzo@brz-ch.eu
+  2020-05-20  Oliver Bader                        oliver.bader@domba.ch
+  2020-06-03  Jan Svabenik                        jan@svabi.ch
+  2020-06-05  Silvan Becker                       s.becker@logico.ch
+  2020-06-08  Marcel Jeker                        marcel.jeker@robotec.ch
+  2020-06-11  Philipp Walter Steinfels - TSK0146  philipp.walter@upgreat.ch
+  2020-06-12  Andreas Bär                        andreas.baer@pkrueck.com
+  2020-06-17  Patric Schielke                     patric.schielke@upgreat.ch
+  2020-06-25  Tatjana Germann                     tatjana.germann@pkrueck.com
+  2020-07-19  Raoul Elias Miraglia                raoul@miraglia-bi.com
+  2020-07-28  Franc Lechthaler                    f.lechthaler@kosterag.ch
+  2020-09-10  Miguel Barros                       miguel@hiltl.ch
+  2020-09-10  Julian Holzapfel                    julian.holzapfel@dobi.ch
+  2020-09-11  Manocha Saveen                      saveen.manocha@dobi.ch
+  2020-10-25  michael.kipfer@brandenberger.ch     michael.kipfer@brandenberger.ch
+  2020-11-03  Studhalter Alexander                as@studhalter.ch
+  2021-01-06  kreditoren@sacac.ch                 kreditoren@sacac.ch
+  2021-01-07  Elvira Miraglia                     elvira@miraglia-bi.com
+  2021-03-18  Amgwerd Patrik                      patrik.amgwerd@ewo.ch
+  2021-03-22  Mike Erne                           mike.erne@green.ch
+  2021-04-29  Drita Laskaj                        d.laskaj@mvm-ag.ch
+  2021-05-01  Verena Trachsler                    verena.trachsler@sharkgroup.swiss
+  2021-05-04  Moritz Mühlebach                   moritz.muehlebach@sharkgroup.swiss
+  2021-05-05  Bissig Sandro                       sandro.bissig@siga.swiss
+  2021-05-06  Karin Schmidt                       karin.schmidt@sharkgroup.swiss
+  2021-05-12  Orofino Alessio                     alessio.orofino@siga.swiss
+  2021-05-12  Studerus Dominique                  d.studerus@obrist-interior.ch
+  2021-06-02  Ferro Ricardo                       ricardo.ferro@brz-ch.eu
+  2021-06-21  Andreas Frei                        andreas.frei@tibits.ch
+  2021-06-22  Henry Fallegger                     hfa@inspirant.ch
+  2021-07-16  Oliver Lüthi                       o.luethi@mvm-ag.ch
+  2021-07-26  FiMA Support                        ch@fima.support
+  2021-08-30  Lötscher Patrick                   patrick.loetscher@4-b.ch
+  2021-09-01  Rüttimann Stefan                   stefan.ruettimann@4-b.ch
+  2021-09-19  Roland Kampmeyer                    rk@kampmeyer.com
+  2021-10-19  Didier Grichting                    didier.grichting@nahrin.ch
+  2021-11-02  Kreditoren                          kreditoren@mvm-ag.ch
+  2021-11-09  Alessandro Castelli                 alessandro@castelli-solutions.ch
+  2021-11-10  Robert Haas                         robert.haas@4-b.ch
+  2021-12-15  Hunn Simon                          simon.hunn@spaixx.ch
+  2021-12-16  Hunn, Simon                         simon.hunn@nahrin.ch
+  2021-12-21  Silke Kemnitz                       silke.kemnitz@upgreat.ch
+  2022-02-18  Kübler, Christoph                  christoph.kuebler@nahrin.ch
+  2022-03-06  Daniel Frei                         daniel.frei@tibits.ch
+  2022-03-14  Linda Ammann                        linda.ammann@fcl.ch
+  2022-03-15  Strebel, Martin                     martin.strebel@nahrin.ch
+  2022-03-18  Kröger, Jan                        jan.kroeger@lake.ch
+  2022-03-28  Tino Torelli                        tino.torelli@steinfels-swiss.ch
+  2022-03-28  Sven Mostert                        sven.mostert@steinfels-swiss.ch
+  2022-04-25  Ringwald, Stefanie                  stefanie.ringwald@nahrin.ch
+  2022-05-03  finance                             finance@upgreat.ch
+  2022-05-06  Michael Greif (Michael.Greif@mirus  michael.greif@mirus.ch
+  2022-05-11  Daniela Brauckhoff                  daniela.brauckhoff@green.ch
+  2022-05-12  Erik Wirz                           erik.wirz@w-gruppe.com
+  2022-05-17  Giovanni Verna                      giovanni.verna@tibits.ch
+  2022-05-17  Gabriele Manco                      gabriele.manco@tibits.ch
+  2022-05-19  Niederberger Christoph              christoph.niederberger@ewo.ch
+  2022-05-23  Sara Meierhofer                     sara.meierhofer@tibits.ch
+  2022-05-31  buchhaltung@domba.ch                buchhaltung@domba.ch
+  2022-05-31  Mailbox Finance                     finance@green.ch
+  2022-05-31  rechnung@tibits.ch                  rechnung@tibits.ch
+  2022-06-30  giovanni.miraglia@green.ch          giovanni.miraglia@green.ch
+  2022-07-07  Graber Jessica                      jessica.graber@dobi.ch
+  2022-07-30  invoice.indirect - Mailbox          invoice.indirect@nahrin.ch
+  2022-08-11  Schätti Rolf                       rolf.schaetti@staiger.law
+  2022-08-31  invoice@dobi.ch                     invoice@dobi.ch
+  2022-08-31  rechnungen@w-gruppe.com             rechnungen@w-gruppe.com
+  2022-08-31  Marco Stadler                       marco.stadler@green.ch
+  2022-09-01  Melanie Bigler                      melanie.bigler@tibits.ch
+  2022-09-12  Gallo Marco                         m.gallo@zindel-united.swiss
+  2022-09-26  Ralph Baumgartner Stadt Winterthur  ralph.baumgartner@upgreat.ch
+  2022-10-20  Samuel Rentsch                      srentsch@it-logix.ch
+  2022-10-27  Stocker Roman                       roman.stocker@ewo.ch
+  2022-11-04  v-harinadhb@microsoft.com           v-harinadhb@microsoft.com
+  2022-12-21  Christian Baumann                   christian.baumann@wallee.com
+  2023-01-31  IT Sharkgroup                       it@sharkgroup.swiss
+  2023-02-06  Stojanovic Nenad                    nenad.stojanovic@dobi.ch
+  2023-02-07  Tim Toulas                          efthimios.toulas@wallee.com
+  2023-02-13  Microsoft Support                   support-eu@mail.support.microsoft.com
+  2023-02-15  Sascha Krüsi                       sascha.kruesi@wallee.com
+  2023-02-16  Andrea Vesti                        andrea.vesti@anifit.ch
+  2023-02-16  Irma Roth                           irma.roth@anifit.ch
+  2023-02-20  Daniel Gehrig                       daniel.gehrig@green.ch
+  2023-02-21  Alperen Yillikci                    alperen.yillikci@wallee.com
+  2023-03-04  Michael Kipfer                      michael@kipfer-dp.com
+  2023-03-16  aldo cacchioli                      cacchioli@aldocacchioli.com
+  2023-03-17  c.bianchetti                        c.bianchetti@weber-legal.ch
+  2023-03-22  Michael Novotny                     m.novotny@fuchs-soehne.de
+  2023-04-04  Barbara Kühnlein                   b.kuehnlein@fuchs-soehne.de
+  2023-04-14  Alexander Hintermeyer               a.hintermeyer@fuchs-soehne.de
+  2023-05-08  Engler Urs                          urs.engler@schnelltreuhand.ch
+  2023-05-15  Sven Müller                        sven.mueller@sacac-holding.com
+  2023-05-15  Amiti Elfat                         amiti@sacac.ch
+  2023-06-21  Hartmann Christian                  c.hartmann@bwgeneralbau.ch
+  2023-07-06  Sven Herger                         sven.herger@upgreat.ch
+  2023-07-12  Marco Zwyssig                       marco.zwyssig@nahrin.ch
+  2023-09-06  GIANPIERO FORZONI                   g.forzoni@bluewin.ch
+  2023-09-27  Marco Trunzo                        m.trunzo@bazzi.ch
+  2023-10-02  Pasinelli SA                        info@pasinelli.ch
+  2023-10-04  Pablo Eismann                       pablo.eismann@dorean.ch
+  2023-10-25  Rossella Vena                       rossellavena@gmail.com
+  2023-10-26  Markus Rüede                       markus.rueede@fcl.ch
+  2023-10-27  Nicole Cannellotto ANiFiT           nicole.cannellotto@anifit.ch
+  2023-10-29  Roger von Ah                        roger.vonah@bepartner.ch
+  2023-10-29  Fabian Haindl                       fabian.haindl@bepartner.ch
+  2023-11-03  Pascal Sernatinger                  pascal.sernatinger@wallee.com
+  2023-11-22  l.saletta                           l.saletta@vision-inside.ch
+  2023-11-29  Michael Arnold Stahel               michael.stahel@lgtcp.com
+  2023-12-06  Saša Butina                        sasa.butina@green.ch
+  2023-12-19  Luca Meier                          meier@romeroziegler.ch
+  2024-01-18  Julia Karp                          julia.karp@w-gruppe.com
+  2024-02-05  Solange Silva                       solange.silva@green.ch
+  2024-02-06  e-rechnung@kosterag.ch              e-rechnung@kosterag.ch
+  2024-03-20  Walter Fritschi                     w.fritschi@gmx.ch
+  2024-03-20  Uwe Proch                           uwe.proch@gmail.com
+  2024-03-20  Alfons Loepfe                       alfonsloepfe55@gmail.com
+  2024-03-20  Barbara Maas                        barbara.maas@kralewski.com
+  2024-03-20  Ludwig Spross                       spross@gmx.de
+  2024-03-27  Stüssi Jonas                       jonas.stuessi@staiger.law
+  2024-04-04  Regina Wolf                         reginawolf@bluewin.ch
+  2024-04-25  Rieger, Frank                       frri@delta-sport.com
+  2024-04-28  Patrik Muoser                       patrik.muoser@gmx.ch
+  2024-04-29  Bruno Ruegg                         bruno.rueegg@xtrapharm.ch
+  2024-04-30  Natalie Wolfensberger               natalie.wolfensberger@xtrapharm.ch
+  2024-06-14  Lence Graf                          lence.v@gmail.com
+  2024-06-14  Johann Kralewski                    jk@kralewski.com
+  2024-07-22  Bamberger Urs (ZLB)                 urs.bamberger@zlb.ch
+  2024-08-19  Nydegger Mbai                       mbai.nydegger@dobi.ch
+  2024-08-19  Jacqueline Bossart                  jacqueline.bossart@dobi.ch
+  2024-08-28  Daniela Lutz-Holdener               daniela.lutz-holdener@green.ch
+  2024-09-11  Favre Christian                     c.favre@bwt.ch
+  2024-09-16  Züllig Robin                       zuellig@sacac.ch
+  2024-09-17  Müller Timothy                     timothy.mueller@staiger.law
+  2024-10-09  Flühler Oliver                     oliver.fluehler@utzgroup.com
+  2024-10-18  supportmail-eu@microsoft.com        supportmail-eu@microsoft.com
+  2024-11-18  Markus Brunner                      markus.brunner@integralag.ch
+  2024-12-20  Dominik Hüsser                     dominik.huesser@turnkey.ch
+  2025-01-20  Fabian Sidler                       fabian.sidler@mhmpartner.com
+  2025-01-21  Alexander Scheiflinger Intern       alexander.scheiflinger@upgreat.ch
+  2025-03-27  Jolanda Riesen                      jolanda.riesen@opo.ch
+  2025-03-28  Patrick Cruz                        patrick.cruz@green.ch
+  2025-04-24  Myna Osiman                         myna.osman@integralag.ch
+  2025-05-29  Flavio Waser                        flavio.waser@arcade.ch
+  2025-06-05  Simon Hanselmann                    simon.hanselmann@upgreat.ch
+  2025-06-17  Barbara Gilli                       b.gilli@obrist-interior.ch
+  2025-06-17  Marc Baggenstos                     marc.baggenstos@tibits.ch
+  2025-06-17  Walter Furrer                       w.furrer@obrist-interior.ch
+  2025-06-19  Toni Schärer                       ts@systemworx.ch
+  2025-06-27  Sandro Hernandez                    sandro.hernandez@anifit.ch
+  2025-06-28  Roland Schärer                     rs@systemworx.ch
+  2025-07-02  Antonio Canonica                    antonio.canonica@tibits.ch
+  2025-07-03  Zumbühl Stefan                     s.zumbuehl@mvm-ag.ch
+  2025-07-05  Urs Berchtold                       urs.berchtold@weibelag.com
+  2025-07-28  Kacper Mizdal                       kacper.mizdal@green.ch
+  2025-08-18  Caspar Corinne                      c.caspar@invias.swiss
+  2025-08-19  Sebastian Huber                     sebastian.huber@divario.ch
+  2025-08-22  Matthias Walter                     matthias.walter@upgreat.ch
+  2025-08-29  Tatjana Mettler                     tatjana.mettler@anifit.ch
+  2025-08-30  kreditoren@weibelag.com             kreditoren@weibelag.com
+  2025-08-31  Christian Burri                     christian.burri@weibelag.com
+  2025-08-31  'Sylvie Jeannerat'                  sylvie.jeannerat@lachatsa.ch
+  2025-09-30  Anna Affolter                       anna.affolter@bertschi-baeckerei.ch
+  2025-10-01  Steffen Gross                       steffen.gross@bertschi-baeckerei.ch
+  2025-10-02  v-jsstanley@microsoft.com           v-jsstanley@microsoft.com
+  2025-10-10  v-masreddy@microsoft.com            v-masreddy@microsoft.com
+  2025-10-13  Amort Mathias                       m.amort@zindel-united.swiss
+  2025-10-16  Lucky Bassi                         lucky@jobdone.app
+  2025-11-18  Jasmin Malla                        jasmin.malla@barandun-law.ch
+  2025-11-20  Remy Bärlocher                     remy.baerlocher@barandun-law.ch
+  2025-11-21  Torben Malte Bendt                  torben.bendt@bepartner.ch
+  2025-11-29  rechnung@sharkgroup.swiss           rechnung@sharkgroup.swiss
+  2025-12-02  Monika Kuhn                         m.kuhn@kosterag.ch
+  2025-12-11  Mirko Lanzi                         mirko.lanzi@ennio-ferrari.ch
+  2025-12-16  Maurizio Tonizzo                    maurizio.tonizzo@optiwork.ch
+  2026-01-07  Barbara Leutert                     barbara.leutert@bepartner.ch
+  2026-01-10  r.marzan                            r.marzan@kosterag.ch
+  2026-01-15  Hadi Alaeddine                      hadi.alaeddine@nahrin.ch
+  2026-01-27  Gorgi Malinov                       gorgi.malinov@franco-rossi.ch
+  2026-01-27  Matteo Ferrari                      matteo.ferrari@ennio-ferrari.ch
+  2026-01-27  Omar Rodoni                         omar.rodoni@ennio-ferrari.ch
+  2026-01-27  Juliana Araujo                      juliana.araujo@ennio-ferrari.ch
+  2026-01-27  Petar Jovic                         petar.jovic@ennio-ferrari.ch
+  2026-01-30  Chiara Zurini                       chiara@tps-sa.ch
+  2026-01-30  Paolo Thoma                         paolo@thoma.group
+  2026-01-30  Davide Marabese                     davide@tps-sa.ch
+  2026-02-01  Daniele Thoma                       daniele@thoma.group
+  2026-02-11  michael.boebner@itpoint.ch          michael.boebner@itpoint.ch
+  2026-02-16  Hildegard Weisskopf                 bweisskopf@sunrise.ch
+  2026-02-16  Livio Graf                          livio@gmx.li
+  2026-02-16  Bernhard Struchen                   bernhardstruchen@gmail.com
+  2026-02-17  Serhiy Ushchapivskyy                serhiy@tps-sa.ch
+  2026-02-20  Giorgia Cali                        g.cali@martellomanutenzione.com
+  2026-02-25  Asanka Withanaarachchi              asanka@paloalto.swiss
+  2026-03-02  Funke Andreas                       andreas.funke@hauswaeckerling.ch
+  2026-03-20  Zoric Katarina                      katarina.zoric@weber-wattwil.ch
+  2026-03-23  Hanspeter Meier                     hanspeter.meier@meierag.ch
+  2026-03-27  Alexander Eberle                    alexander.eberle@secusuisse.ch
+  2026-04-02  Tzanos John                         john.tzanos@bithawk.ch
+  2026-04-07  Pascal Wicht                        pwicht@avintos.ch
+  2026-04-24  Reporting                           reporting@bertschi-baeckerei.ch
+  2026-04-28  Ahmed M                             supportmail-eu@techsupport.microsoft.com
+
+✓ kontakt_seit: 2 neu, 17 verfrüht-aktualisiert, 259 unverändert.
+
+--- teams_first_contact.py --apply ---
+407 Chats. Suche je Chat die älteste Nachricht …
+  … 25/407 Chats, 12 Teams-Erstkontakte
+  … 50/407 Chats, 22 Teams-Erstkontakte
+  … 75/407 Chats, 31 Teams-Erstkontakte
+  … 100/407 Chats, 39 Teams-Erstkontakte
+  … 125/407 Chats, 45 Teams-Erstkontakte
+  … 150/407 Chats, 51 Teams-Erstkontakte
+  … 175/407 Chats, 55 Teams-Erstkontakte
+  … 200/407 Chats, 59 Teams-Erstkontakte
+  … 225/407 Chats, 63 Teams-Erstkontakte
+  … 250/407 Chats, 66 Teams-Erstkontakte
+  … 275/407 Chats, 70 Teams-Erstkontakte
+  … 300/407 Chats, 72 Teams-Erstkontakte
+  … 325/407 Chats, 72 Teams-Erstkontakte
+  … 350/407 Chats, 75 Teams-Erstkontakte
+  … 375/407 Chats, 75 Teams-Erstkontakte
+  … 400/407 Chats, 76 Teams-Erstkontakte
+
+✓ 76 Personen mit Teams-Erstkontakt (0 Chats übersprungen).
+  2020-01-10  [—     ] Herr Giovanni Miraglia         giovanni@miraglia-bi.com
+  2020-01-14  [—     ] Jérôme CHABLOZ               jchabloz@avintos.ch
+  2020-05-26  [—     ] Mirella Jolliet                mirella.jolliet@pkrueck.com
+  2020-09-03  [—     ] Raoul Elias Miraglia           raoul@miraglia-bi.com
+  2022-01-06  [—     ] Remo Pfister                   r.pfister@mvm-ag.ch
+  2022-02-14  [—     ] till.schulte-coerne            till.schulte-coerne@innoq.com
+  2022-03-21  [—     ] Alessandro Castelli            alessandro@castelli-solutions.ch
+  2022-05-06  [—     ] Franc Lechthaler               f.lechthaler@kosterag.ch
+  2022-05-10  [—     ] Ringwald, Stefanie             stefanie.ringwald@nahrin.ch
+  2022-07-14  [—     ] Erik Wirz                      erik.wirz@w-gruppe.com
+  2022-08-24  [—     ] Markus Berger Intern           markus.berger@upgreat.ch
+  2023-01-26  [—     ] Lötscher Patrick              patrick.loetscher@4-b.ch
+  2023-01-26  [—     ] Robert Haas                    robert.haas@4-b.ch
+  2023-04-24  [—     ] Michael Kipfer                 michael@kipfer-dp.com
+  2023-04-25  [—     ] Manocha Saveen                 saveen.manocha@dobi.ch
+  2023-05-08  [—     ] Stojanovic Nenad               nenad.stojanovic@dobi.ch
+  2023-05-25  [—     ] Giovanni Verna                 giovanni.verna@tibits.ch
+  2023-05-30  [—     ] Sven Herger                    sven.herger@upgreat.ch
+  2023-06-09  [—     ] Stocker Roman                  roman.stocker@ewo.ch
+  2023-09-06  [—     ] Kübler, Christoph             christoph.kuebler@nahrin.ch
+  2023-09-14  [FRÜHER] Favre Christian                c.favre@bwt.ch
+  2023-10-06  [—     ] Niederberger Christoph         christoph.niederberger@ewo.ch
+  2023-10-19  [—     ] Elvira Miraglia                elvira@miraglia-bi.com
+  2023-11-30  [—     ] Karin Schmidt                  karin.schmidt@sharkgroup.swiss
+  2024-01-25  [—     ] Silke Kemnitz                  silke.kemnitz@upgreat.ch
+  2024-03-04  [—     ] Solange Silva                  solange.silva@green.ch
+  2024-04-16  [—     ] Stüssi Jonas                  jonas.stuessi@staiger.law
+  2024-06-19  [—     ] Amiti Elfat                    amiti@sacac.ch
+  2024-08-21  [—     ] Verena Trachsler               verena.trachsler@sharkgroup.swiss
+  2024-09-16  [—     ] Daniela Lutz-Holdener          daniela.lutz-holdener@green.ch
+  2024-09-16  [—     ] Daniel Gehrig                  daniel.gehrig@green.ch
+  2024-09-18  [—     ] Melanie Bigler                 melanie.bigler@tibits.ch
+  2024-10-23  [—     ] Gallo Marco                    m.gallo@zindel-united.swiss
+  2024-12-12  [—     ] Kröger, Jan                   jan.kroeger@lake.ch
+  2025-01-20  [—     ] Manuel Moor                    manuel.moor@fcl.ch
+  2025-02-03  [—     ] Fabian Sidler                  fabian.sidler@mhmpartner.com
+  2025-02-28  [—     ] Miguel Barros                  miguel@hiltl.ch
+  2025-03-30  [—     ] Patrick Cruz                   patrick.cruz@green.ch
+  2025-04-14  [—     ] Saša Butina                   sasa.butina@green.ch
+  2025-06-03  [—     ] Marco Zwyssig                  marco.zwyssig@nahrin.ch
+  2025-07-04  [—     ] Antonio Canonica               antonio.canonica@tibits.ch
+  2025-07-28  [—     ] Züllig Robin                  zuellig@sacac.ch
+  2025-07-28  [—     ] Flavio Waser                   flavio.waser@arcade.ch
+  2025-08-04  [—     ] Gabriele Manco                 gabriele.manco@tibits.ch
+  2025-08-08  [—     ] Schätti Rolf                  rolf.schaetti@staiger.law
+  2025-08-26  [—     ] Sandro Hernandez               sandro.hernandez@anifit.ch
+  2025-10-02  [—     ] Amort Mathias                  m.amort@zindel-united.swiss
+  2025-10-02  [—     ] v-jsstanley@microsoft.com      v-jsstanley@microsoft.com
+  2025-10-10  [—     ] Anna Affolter                  anna.affolter@bertschi-baeckerei.ch
+  2025-10-14  [—     ] v-masreddy@microsoft.com       v-masreddy@microsoft.com
+  2025-11-25  [—     ] v-harinadhb@microsoft.com      v-harinadhb@microsoft.com
+  2025-12-01  [—     ] Lucky Bassi                    lucky@jobdone.app
+  2025-12-17  [—     ] Mirko Lanzi                    mirko.lanzi@ennio-ferrari.ch
+  2025-12-23  [—     ] Nydegger Mbai                  mbai.nydegger@dobi.ch
+  2026-01-13  [—     ] Caspar Corinne                 c.caspar@invias.swiss
+  2026-01-13  [—     ] Urs Locher                     u.locher@zindel-united.swiss
+  2026-01-23  [—     ] Zoric Katarina                 katarina.zoric@weber-wattwil.ch
+  2026-01-29  [—     ] Hadi Alaeddine                 hadi.alaeddine@nahrin.ch
+  2026-02-05  [—     ] Simon Hanselmann               simon.hanselmann@upgreat.ch
+  2026-02-06  [—     ] Juliana Araujo                 juliana.araujo@ennio-ferrari.ch
+  2026-02-16  [—     ] Markus Rüede                  markus.rueede@fcl.ch
+  2026-02-20  [—     ] Monika Kuhn                    m.kuhn@kosterag.ch
+  2026-02-25  [—     ] michael.boebner@itpoint.ch     michael.boebner@itpoint.ch
+  2026-02-25  [—     ] Omar Rodoni                    omar.rodoni@ennio-ferrari.ch
+  2026-02-25  [—     ] Asanka Withanaarachchi         asanka@paloalto.swiss
+  2026-02-27  [—     ] Serhiy Ushchapivskyy           serhiy@tps-sa.ch
+  2026-02-27  [—     ] Paolo Thoma                    paolo@thoma.group
+  2026-03-19  [—     ] Tatjana Mettler                tatjana.mettler@anifit.ch
+  2026-03-27  [—     ] Christian Burri                christian.burri@weibelag.com
+  2026-03-30  [—     ] Chiara Zurini                  chiara@tps-sa.ch
+  2026-03-30  [—     ] Alexander Eberle               alexander.eberle@secusuisse.ch
+  2026-04-01  [—     ] Kacper Mizdal                  kacper.mizdal@green.ch
+  2026-04-03  [—     ] Tzanos John                    john.tzanos@bithawk.ch
+  2026-04-27  [—     ] Funke Andreas                  andreas.funke@hauswaeckerling.ch
+  2026-05-01  [—     ] Steffen Gross                  steffen.gross@bertschi-baeckerei.ch
+  2026-05-07  [—     ] Giorgia Cali                   g.cali@martellomanutenzione.com
+
+✓ kontakt_seit: 0 neu gesetzt, 1 auf früheres Teams-Datum korrigiert, 75 unverändert.
+
+--- link_people_to_clients.py --apply ---
+
+### SICHER (high) (80) ###
+  Upgreat AG                                 → [[Upgreat]]   (Alexander Scheiflinger Intern.md)
+  SACAC AG                                   → [[SACAC]]   (Amiti Elfat.md)
+  Zindel United                              → [[Zindel_United]]   (Amort Mathias.md)
+  ANiFit AG                                  → [[ANiFit]]   (Andrea Vesti.md)
+  Upgreat AG                                 → [[Upgreat]]   (Andreas Meier Aryzta - TSK0145304.md)
+  Upgreat AG                                 → [[Upgreat]]   (André Meier tibits - TSK145334.md)
+  Bertschi Bäckerei zum Brotkorb AG          → [[Bertschi]]   (Anna Affolter.md)
+  tibits ag                                  → [[tibits]]   (Antonio Canonica.md)
+  Upgreat AG                                 → [[Upgreat]]   (Bastian Schmidig Intern.md)
+  Green.ch                                   → [[Green]]   (Beni Frei.md)
+  Invias AG                                  → [[Invias]]   (Caspar Corinne.md)
+  TPS Servizi SA                             → [[Thoma_Group]]   (Chiara Zurini.md)
+  green.ch                                   → [[Green]]   (Christoph Müller.md)
+  green.ch AG                                → [[Green]]   (Daniela Brauckhoff.md)
+  Team Personnel Solutions SA                → [[Thoma_Group]]   (Daniele Thoma.md)
+  Team Personnel Solutions SA                → [[Thoma_Group]]   (Davide Marabese.md)
+  Nahrin AG                                  → [[Nahrin]]   (Didier Grichting.md)
+  MVM AG                                     → [[MVM_AG]]   (Drita Laskaj.md)
+  BWT                                        → [[BWT]]   (Favre Christian.md)
+  Sefag Components AG                        → [[Sefag]]   (Fähndrich Heinz.md)
+  Upgreat AG                                 → [[Upgreat]]   (Florian Schmidt Zindel Marketing - TSK0145413.md)
+  Zindel United                              → [[Zindel_United]]   (Gallo Marco.md)
+  Martello Manutenzione                      → [[Martello_Manutenzione]]   (Giorgia Cali.md)
+  Hans Meier AG                              → [[Hans_Meier_AG]]   (Hanspeter Meier.md)
+  Sefag                                      → [[Sefag]]   (Hausheer Jonathan.md)
+  Green.ch                                   → [[Green]]   (Head of Operations & Delivery Alexander Pascual.md)
+  nahrin                                     → [[Nahrin]]   (Hunn, Simon.md)
+  ANiFit AG                                  → [[ANiFit]]   (Irma Roth.md)
+  Green.ch AG                                → [[Green]]   (John Winter.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Juliana Araujo.md)
+  Green.ch AG                                → [[Green]]   (Kacper Mizdal.md)
+  Direct Handling AG                         → [[SHARKGROUP]]   (Karin Schmidt.md)
+  SACAC AG                                   → [[SACAC]]   (Kiser Daniel.md)
+  Robotec                                    → [[Robotec]]   (Marcel Jeker.md)
+  Green.ch AG                                → [[Green]]   (Marco Stadler.md)
+  Nahrin AG                                  → [[Nahrin]]   (Marco Zwyssig.md)
+  Upgreat AG                                 → [[Upgreat]]   (Markus Berger Intern.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Matteo Ferrari.md)
+  tibits ag                                  → [[tibits]]   (Melanie Bigler.md)
+  Upgreat AG                                 → [[Upgreat]]   (Michael Koller Intern.md)
+  Hiltl                                      → [[Hiltl]]   (Miguel Barros.md)
+  Green                                      → [[Green]]   (Mike Erne.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Mirko Lanzi.md)
+  Direct Handling AG                         → [[SHARKGROUP]]   (Moritz Mühlebach.md)
+  Staiger Rechtsanwälte AG                   → [[Staiger_Rechtsanwaelte]]   (Müller Timothy.md)
+  ANiFiT                                     → [[ANiFit]]   (Nicole Cannellotto ANiFiT.md)
+  Elektrizitätswerk Obwalden                 → [[EWO]]   (Niederberger Christoph.md)
+  Bader Immobilien (DOMBA)                   → [[Bader]]   (Oliver Bader.md)
+  MVM AG                                     → [[MVM_AG]]   (Oliver Lüthi.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Omar Rodoni.md)
+  TPS Servizi SA                             → [[Thoma_Group]]   (Paolo Thoma.md)
+  Robotec                                    → [[Robotec]]   (Pascal Jablonski.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Patric Schielke.md)
+  Green.ch AG                                → [[Green]]   (Patrick Cruz.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Patrick Meyer.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Petar Jovic.md)
+  Upgreat AG                                 → [[Upgreat]]   (Philipp Walter Steinfels - TSK0146197.md)
+  Direct Handling AG                         → [[SHARKGROUP]]   (Rahel Bachmann.md)
+  Upgreat AG                                 → [[Upgreat]]   (Ralph Baumgartner Stadt Winterthur.md)
+  MVM AG                                     → [[MVM_AG]]   (Remo Pfister.md)
+  4B AG                                      → [[4B_AG]]   (Robert Haas.md)
+  ANiFiT AG                                  → [[ANiFit]]   (Sandro Hernandez.md)
+  tibits ag                                  → [[tibits]]   (Sara Meierhofer.md)
+  MVM AG                                     → [[MVM_AG]]   (Sascha Ziswiler.md)
+  Green.ch AG                                → [[Green]]   (Saša Butina.md)
+  Staiger Rechtsanwälte                      → [[Staiger_Rechtsanwaelte]]   (Schätti Rolf.md)
+  Sefag Components AG                        → [[Sefag]]   (Schuler Bernhard.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Silke Kemnitz.md)
+  Green.ch AG                                → [[Green]]   (Silvan Killer.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Simon Hanselmann.md)
+  Green.ch AG                                → [[Green]]   (Solange Silva.md)
+  Bertschi Bäckerei zum Brotkorb AG          → [[Bertschi]]   (Steffen Gross.md)
+  Elektrizitätswerk Obwalden                 → [[EWO]]   (Stocker Roman.md)
+  Nahrin AG                                  → [[Nahrin]]   (Strebel, Martin.md)
+  Sefag Components AG                        → [[Sefag]]   (Studer Hans-Ueli.md)
+  Staiger Rechtsanwälte                      → [[Staiger_Rechtsanwaelte]]   (Stüssi Jonas.md)
+  Heike Hunnenberg GmbH                      → [[Hunnenberg]]   (Tatjana Holzmann.md)
+  Zindel United                              → [[Zindel_United]]   (Urs Locher.md)
+  Sefag Components AG                        → [[Sefag]]   (Werner Schwerzmann.md)
+  E. Weber AG (Wattwil)                      → [[E_Weber_AG]]   (Zoric Katarina.md)
+
+### UNSICHER – bitte prüfen (low) (1) ###
+  Andre Weber e Associati                    → [[E_Weber_AG]]   (c.bianchetti.md)
+
+✓ 0 Personen-Notizen mit client-Link ergänzt.
+
+--- fill_stakeholders.py --apply ---
+
+### 4B_AG (2) ###
+  - [[Lötscher Patrick]]
+  - [[Robert Haas]] — IT Senior System Engineer
+
+### ANiFit (5) ###
+  - [[Andrea Vesti]] — CEO
+  - [[Tatjana Mettler]]
+  - [[Irma Roth]] — Coordinator Sales / Projects
+  - [[Nicole Cannellotto ANiFiT]]
+  - [[Sandro Hernandez]]
+
+### BWT (1) ###
+  - [[Favre Christian]]
+
+### Bader (1) ###
+  - [[Oliver Bader]]
+
+### BauBit_Offertenauswertung (1) ###
+  - [[Christian Burri]]
+
+### Bertschi (2) ###
+  - [[Anna Affolter]]
+  - [[Steffen Gross]] — Leiter Finanzen&Controlling
+
+### DOBI (2) ###
+  - [[Nydegger Mbai]]
+  - [[Stojanovic Nenad]]
+
+### EWO (2) ###
+  - [[Niederberger Christoph]] — Informatiker
+  - [[Stocker Roman]]
+
+### E_Weber_AG (1) ###
+  - [[Zoric Katarina]]
+
+### Ennio_Ferrari (5) ###
+  - [[Mirko Lanzi]] — CFO
+  - [[Omar Rodoni]]
+  - [[Juliana Araujo]]
+  - [[Matteo Ferrari]]
+  - [[Petar Jovic]]
+
+### Green (13) ###
+  - [[Saša Butina]] — Head of Controlling
+  - [[Daniela Lutz-Holdener]]
+  - [[Beni Frei]]
+  - [[Christoph Müller]] — Head of Product Management + Business Solutions, Dipl Ing & EMBA
+  - [[Daniela Brauckhoff]]
+  - [[Head of Operations & Delivery Alexander Pascual]]
+  - [[John Winter]] — Product Manager
+  - [[Kacper Mizdal]]
+  - [[Marco Stadler]] — Chief Sales Officer
+  - [[Mike Erne]]
+  - [[Patrick Cruz]] — Data Analyst
+  - [[Silvan Killer]] — CFO
+  - [[Solange Silva]]
+
+### Hans_Meier_AG (1) ###
+  - [[Hanspeter Meier]]
+
+### Hiltl (1) ###
+  - [[Miguel Barros]]
+
+### Hunnenberg (1) ###
+  - [[Tatjana Holzmann]]
+
+### Invias (1) ###
+  - [[Caspar Corinne]]
+
+### Lachat (1) ###
+  - [['Sylvie Jeannerat']]
+
+### MVM_AG (4) ###
+  - [[Remo Pfister]] — Leiter Finanzen und Administration
+  - [[Drita Laskaj]] — Personalverantwortliche
+  - [[Sascha Ziswiler]] — Geschäftsführer und Mitinhaber
+  - [[Oliver Lüthi]] — Verantwortlicher Technischer Betrieb
+
+### Martello_Manutenzione (1) ###
+  - [[Giorgia Cali]]
+
+### Nahrin (6) ###
+  - [[Kübler, Christoph]]
+  - [[Ringwald, Stefanie]]
+  - [[Didier Grichting]] — COO
+  - [[Hunn, Simon]] — ICT
+  - [[Marco Zwyssig]]
+  - [[Strebel, Martin]] — CFO
+
+### Robotec (2) ###
+  - [[Marcel Jeker]]
+  - [[Pascal Jablonski]]
+
+### SACAC (3) ###
+  - [[Kiser Daniel]] — CEO / Geschäftsführer
+  - [[Züllig Robin]]
+  - [[Amiti Elfat]]
+
+### SHARKGROUP (3) ###
+  - [[Moritz Mühlebach]]
+  - [[Karin Schmidt]]
+  - [[Rahel Bachmann]]
+
+### SecuSuisse (1) ###
+  - [[Alexander Eberle]]
+
+### Sefag (6) ###
+  - [[Schuler Bernhard]]
+  - [[Jan Kottucz]]
+  - [[Fähndrich Heinz]]
+  - [[Hausheer Jonathan]]
+  - [[Studer Hans-Ueli]]
+  - [[Werner Schwerzmann]] — Supply Chain Management
+
+### Staiger_Rechtsanwaelte (3) ###
+  - [[Schätti Rolf]]
+  - [[Müller Timothy]] — Rechtsanwalt
+  - [[Stüssi Jonas]]
+
+### Thoma_Group (5) ###
+  - [[Paolo Thoma]]
+  - [[Serhiy Ushchapivskyy]]
+  - [[Davide Marabese]]
+  - [[Chiara Zurini]]
+  - [[Daniele Thoma]]
+
+### Upgreat (13) ###
+  - [[Markus Berger Intern]] — Head Finance & Central Services
+  - [[Alexander Scheiflinger Intern]]
+  - [[Andreas Meier Aryzta - TSK0145304]]
+  - [[André Meier tibits - TSK145334]] — Head of Sales
+  - [[Bastian Schmidig Intern]] — Expert Solution Advisor
+  - [[Florian Schmidt Zindel Marketing - TSK0145413]] — Head Business Solutions
+  - [[Michael Koller Intern]] — Team Head Software Engineering
+  - [[Patric Schielke]] — Software Engineer
+  - [[Patrick Meyer]] — IT Business Consultant
+  - [[Philipp Walter Steinfels - TSK0146197]] — Managing Partner
+  - [[Ralph Baumgartner Stadt Winterthur]]
+  - [[Silke Kemnitz]]
+  - [[Simon Hanselmann]]
+
+### Zindel_United (3) ###
+  - [[Amort Mathias]]
+  - [[Gallo Marco]]
+  - [[Urs Locher]]
+
+### tibits (5) ###
+  - [[Antonio Canonica]]
+  - [[Daniel Frei]]
+  - [[Andreas Frei]]
+  - [[Melanie Bigler]]
+  - [[Sara Meierhofer]]
+
+✓ 0 Kundenakten aktualisiert.
+
+--- apply_firmenprofile.py --apply ---
+✓ 4B_AG                    AG · 1896 · Hochdorf (LU)
+✓ ANiFit                   AG · 2001-10-19 · Appenzell (AI)
+✓ BWT                      AG · 1948-12-21 · Winterthur (ZH)
+✓ Bader                    AG · 1994-05-27 · Luzern (LU)
+✓ Bertschi                 AG · 1923-12-22 · Kloten (ZH)
+✓ Compul                   SA · 1988 · Osogna, Riviera (TI)
+✓ DOBI                     AG · 1963 · Suhr (AG)
+✓ EWO                      Öffentlich-rechtliche Anstalt · 1905 (seit 1955 öffentlich-rechtlich) · Kerns (OW)
+✓ E_Weber_AG               AG · None · Wattwil (SG)
+✓ Ennio_Ferrari            SA (Holding) · 2018-12-11 · Lodrino, Riviera (TI)
+✓ Green                    AG · 1995 · Lupfig (AG)
+✓ Hans_Meier_AG            AG · 1987 · Altishofen (LU)
+✓ Haus_Waeckerling         AG · 2024 · Uetikon am See (ZH)
+✓ Hiltl                    AG · 1898 (Hiltl AG: 2005) · Zürich (ZH)
+✓ Hunnenberg               GmbH · 1989 · Düsseldorf (DE)
+✓ Invias                   AG · 2017 · Maienfeld (GR)
+✓ Koster_BAB               AG · 1967-02-21 · Zürich (ZH)
+✓ OFAC_Pharmacy            Genossenschaft · 1963 · Genève (GE)
+✓ MVM_AG                   AG · 1974-05-09 · Emmen (LU)
+✓ Martello_Manutenzione    Sagl · tätig seit 1996 (HR 2019) · Balerna (TI)
+✓ Nahrin                   AG · 1953-12-18 · Sarnen (OW)
+✓ Robotec                  AG · 1964 · Birr (AG)
+✓ SACAC                    AG · 1987-01-05 (Wurzeln ab 1946) · Lenzburg (AG)
+✓ SecuSuisse               AG · 2006-09-07 · Bubikon (ZH)
+✓ SHARKGROUP               AG · 2021-01-06 · Oberhasli (ZH)
+✓ SME_Technik              AG · 2010 · Emmen (LU)
+✓ Sefag                    AG · 2016 · Malters (LU)
+✓ Staiger_Rechtsanwaelte   AG · 2007 · Zürich (ZH)
+✓ Upgreat                  AG · 1999-09-28 · Fehraltorf (ZH)
+✓ tibits                   AG · 2000 · Zürich (ZH)
+✓ Thoma_Group              SA · 2019 (TPS Servizi SA) · Arbedo-Castione (TI)
+✓ Wirz_Partners            AG · 2009 (Holding 1967) · Zug (ZG)
+✓ Zindel_United            AG (Gruppe via Holding) · Zindel + Co. AG: 1990 (8. Generation) · Maienfeld (GR)
+✓ bepartner                AG · 1969 (HR-Eintrag) · Luzern (LU)
+✓ Lachat                   SA · 1958-11-03 · Asuel (JU)
+
+✓ 35 Notizen aktualisiert, 0 fehlen.
+
+--- contact_stats.py --apply ---
+294 Personen · 12-Monats-Grenze: 2025-06-01
+  … 10000 Mails
+  … 20000 Mails
+  … 30000 Mails
+  … 40000 Mails
+  … 50000 Mails
+  … 60000 Mails
+  … 70000 Mails
+  … 80000 Mails
+  … 90000 Mails
+✓ Mail: 91819 Nachrichten gescannt.
+  … 250/1372 Chats
+  … 400/1372 Chats
+  … 600/1372 Chats
+  … 650/1372 Chats
+  … 800/1372 Chats
+  … 900/1372 Chats
+  … 1050/1372 Chats
+✓ Teams: 1372 Chats (969 Meeting-Chats übersprungen, 0 ohne Zugriff).
+
+Top 15 nach Interaktionen (lebenslang / 12M):
+   4651 /  600   Alessandro Castelli             (Mail 1275<-/2427-> · Teams 949)
+   3627 /  623   Raoul Elias Miraglia            (Mail 1647<-/1129-> · Teams 851)
+   1860 /  924   Michael Kipfer                  (Mail 257<-/350-> · Teams 1253)
+    985 /  290   Elvira Miraglia                 (Mail 302<-/672-> · Teams 11)
+    913 /  185   Remo Pfister                    (Mail 371<-/295-> · Teams 247)
+    821 /  821   Antonio Canonica                (Mail 184<-/103-> · Teams 534)
+    756 /  446   Ringwald, Stefanie              (Mail 245<-/207-> · Teams 304)
+    674 /  104   Franc Lechthaler                (Mail 333<-/259-> · Teams 82)
+    649 /   65   Tatjana Holzmann                (Mail 313<-/336-> · Teams 0)
+    642 /   46   Schuler Bernhard                (Mail 325<-/317-> · Teams 0)
+    585 /   73   Karin Schmidt                   (Mail 294<-/270-> · Teams 21)
+    526 /  134   Erik Wirz                       (Mail 278<-/199-> · Teams 49)
+    525 /   31   Jan Kottucz                     (Mail 259<-/266-> · Teams 0)
+    456 /   79   Verena Trachsler                (Mail 251<-/196-> · Teams 9)
+    438 /   79   Markus Berger Intern            (Mail 198<-/177-> · Teams 63)
+
+✓ 270 Notizen aktualisiert · 270 mit Interaktionen.
+
+--- weekly_report.py ---
+✓ Report: /Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/00_Inbox/M365 Wochen-Report.md  | Firmen-Kandidaten 30, unverknüpft 96, ohne Charakterisierung 94, Clients ohne Profil 6
+=== Weekly refresh DONE Mon Jun  1 08:28:24 CEST 2026 ===

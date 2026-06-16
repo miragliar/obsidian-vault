@@ -1,0 +1,43 @@
+{
+  "Daniel Frei.md": "**Rolle:** **Mitgründer & CEO**, Mitglied der Geschäftsleitung — tibits ag.\n**Beziehung:** Top-Entscheider Kunde [[tibits]] (neben [[Antonio Canonica]]).\n**Themen:** PBI-Fehler/Gateway-Ausfälle (Eskalation an Giovanni), Gesamtumsatz inkl. Catering für AZE/Arbeitsplanung.\n**Notiz:** CEO-Ebene — kontaktiert direkt bei wichtigen Störungen.",
+
+  "Andreas Frei.md": "**Rolle:** tibits ag (Finanzen/Controlling).\n**Beziehung:** Fachkontakt Kunde [[tibits]].\n**Themen:** **Umsatz-Abstimmung TCPOS ↔ PBI ↔ NAV** (Jahresabschluss 2025, ~68k Differenz, Kommissionen netto ins NAV).\n**Notiz:** Operative Umsatz-Reconciliation.",
+
+  "Sascha Ziswiler.md": "**Rolle:** Geschäftsführer & Mitinhaber — MVM (Services) AG.\n**Beziehung:** GL/Inhaber Kunde [[MVM_AG]].\n**Themen:** MVM AG Meggen Reporting (mit [[Remo Pfister]]), Mahnlauf-Prozess (keine Unterbrüche), PowerPlatform News, automatisches Ausmass-Projekt (mit [[Raoul Elias Miraglia]]).\n**Notiz:** Entscheider-/Inhaberebene MVM.",
+
+  "Patrick Cruz.md": "**Rolle:** Data Analyst — Green.ch.\n**Beziehung:** Technischer Fachkontakt Kunde [[Green]].\n**Themen:** **Marcom & PM Dashboard** (Data-Source-Access, Semantic Model), Terminkoordination (mit Daniela).\n**Notiz:** Datenseitige Umsetzung auf Kundenseite Green.",
+
+  "Daniela Lutz-Holdener.md": "**Rolle:** Green.ch.\n**Beziehung:** Fachkontakt Kunde [[Green]].\n**Themen:** Budget E-Mail-Hosting/Hosted-Exchange-Kategorien freischalten, Power-BI-Daten pro Tag/Woche.\n**Notiz:** Budget-/Kategorien-Themen.",
+
+  "Davide Marabese.md": "**Rolle:** TPS Servizi SA (Thoma Group).\n**Beziehung:** Fachkontakt Kunde [[Thoma_Group]] (ital.).\n**Themen:** Datalake-/Zvoove-Anbindung (Port 3306, Sicherheit), Gateway-/Technischer-User-Setup, Power BI Thoma Group.\n**Notiz:** Operativ-technische Datenanbindung TPS.",
+
+  "Nicole Cannellotto ANiFiT.md": "**Rolle:** ANiFiT AG.\n**Beziehung:** Fachkontakt Kunde [[ANiFit]].\n**Themen:** Power BI **Board Geschäftsleitung**, kleine Anpassungen, Kuchendiagramm/Auswertungen.\n**Notiz:** Operative Report-Anpassungen ANiFiT.",
+
+  "Lötscher Patrick.md": "**Rolle:** 4B AG.\n**Beziehung:** Kundenkontakt (4B AG).\n**Themen:** Rechnungsstellung (Referenz auf Rechnung), PowerPlatform News 4B.\n**Notiz:** Noch **keine Client-Notiz** „4B\" — bei mehr Volumen anlegen.",
+
+  "Kübler, Christoph.md": "**Rolle:** Nahrin AG (IT/Infrastruktur).\n**Beziehung:** Technischer Kontakt Kunde Nahrin (vgl. [[Ringwald, Stefanie]]).\n**Themen:** **Infrastruktur für Power Automate** (VM-Dimensionierung), F4-Kapazitätsauswertung (Geokoordinaten-Update lief 350k× wegen Retries), PowerPlatform News/Workshop.\n**Notiz:** Noch **keine Client-Notiz** „Nahrin\" — anlegen empfohlen.",
+
+  "Omar Rodoni.md": "**Rolle:** Ennio Ferrari Holding SA (ital.).\n**Beziehung:** Fachkontakt Kunde Ennio Ferrari (vgl. [[Mirko Lanzi]]).\n**Themen:** Power BI Tabelle Kostenkontrolle (controllo costi), Pivot-Daten (Nr. fattura / quantità).\n**Notiz:** Noch **keine Client-Notiz** „Ennio Ferrari\" — anlegen empfohlen (mehrere Kontakte + Mirko Lanzi).",
+
+  "Stefan Renggli.md": "**Rolle:** Dozent/Koordination — **Hochschule Luzern (HSLU)**.\n**Beziehung:** **Bildungspartner / Lehrauftrag** — Unterricht im **CAS KIDC 2026** (gemeinsam mit [[Raoul Elias Miraglia]] & [[Alessandro Castelli]]).\n**Themen:** Terminplanung Unterrichtsblöcke (Rotkreuz), IT-/Demomandant-Themen.\n**Notiz:** Wiederkehrender Lehrauftrag — kein klassischer BI-Kunde.",
+
+  "Maurizio Tonizzo.md": "**Rolle:** **Optiwork** (Hersteller/Support der ERP-Software **DOMUS**).\n**Beziehung:** **Software-/IT-Partner** (nicht Kunde) — DOMUS ist Datenquelle vieler Kunden (Ennio Ferrari, MVM, Koster).\n**Themen:** DOMUS↔Docuware-Felder, OffenePostenKredi-Tabellen, DMS-Feld (BuchungsJournalDetail), Datenexport DOMUS HaBu.\n**Notiz:** Schlüssel-Enabler für DOMUS-Datenmodelle. Vgl. [[Zumbühl Stefan]] (MVM/Optiwork).",
+
+  "michael.boebner@itpoint.ch.md": "**Rolle:** Michael Böbner — Service Manager & System Engineer, **ITpoint**.\n**Beziehung:** **IT-Dienstleister** (nicht Kunde) — IT von Bertschi Bäckerei.\n**Themen:** Microsoft Data-Agent-Freigabe (TrackingID-Case, Admin-Center-Schritte/Berechtigungen, Kollege Joel Fernandes), Terminkoordination.\n**Notiz:** Technischer Enabler im Bertschi-Support-Fall (vgl. [[Anna Affolter]], [[Steffen Gross]]).",
+
+  "Dominik Hüsser.md": "**Rolle:** **Turnkey** (IT-Infrastruktur).\n**Beziehung:** **IT-Dienstleister** (nicht Kunde) — Infrastruktur MVM-Gruppe.\n**Themen:** Server-/VM-Bereitstellung (MVMMAWVSRAP003), Power BI Gateway, **ODBC-64bit-Treiber**, Zugriffe für neue MVM-IT-Umgebung.\n**Notiz:** Technischer Enabler MVM (vgl. [[Zumbühl Stefan]]).",
+
+  "Flavio Waser.md": "**Rolle:** **Arcade** (IT-Dienstleister).\n**Beziehung:** **IT-Dienstleister** — Infrastruktur/Tenant-Themen.\n**Themen:** Auslaufendes **App-Registration-Client-Secret** (GML Fabrics App), PowerBI-Gateway-Update (NAN); Abstimmung mit [[Alessandro Castelli]].\n**Notiz:** Technischer Enabler (App-Reg/Gateway).",
+
+  "till.schulte-coerne.md": "**Rolle:** Berater — **INNOQ**.\n**Beziehung:** **Externer Berater** im Umfeld Kunde [[SACAC]] (mit [[Kiser Daniel]] & [[Züllig Robin]]).\n**Themen:** SACAC Reporting-Anpassungen (Treppen/Podeste, Joins via Elfat), CrossCheck OPOS/BC.\n**Notiz:** Dritt-Berater auf Kundenseite SACAC.",
+
+  "michael.kipfer@brandenberger.ch.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Küchenbauer (Firma **Brandenberger**) für Giovannis **Wohnung in Locarno**. Signiert „Mike\".\n**Themen:** Angebot & Installationsplan Küche Locarno, Elektroplan, LED-Beleuchtung.\n**Notiz:** ⚠️ **Nicht** der Team-Kollege [[Michael Kipfer]] (michael@kipfer-dp.com) — nur Namensgleichheit!",
+
+  "Hildegard Weisskopf.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** **Nachbarin** in Locarno (Via ai Monti 159a), Wohnung 10.\n**Themen:** Umbau/Umzug, Küchenbau, Parkplatz-Nutzung, Nachbarschafts-Infos (DE/IT).\n**Notiz:** Privater/nachbarschaftlicher Kontext.",
+
+  "Bamberger Urs (ZLB).md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Bankberater (ZLB).\n**Themen:** **SARON-Hypothek** (Marge, Wohnsitznachweis TI, Steuererklärung), fehlende e-Banking-Belege fürs Steuern-Ausfüllen.\n**Notiz:** Private Finanzen/Hypothek (gemeinsam mit Elvira).",
+
+  "Remy Bärlocher.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Anwalt — Barandun (Steuer-/Rechtsberatung).\n**Themen:** Einschätzungsentscheid/Stellungnahme, Differenz-/Abweichungsermittlung.\n**Notiz:** Privates Steuerverfahren (vgl. [[Jasmin Malla]]).",
+
+  "Jasmin Malla.md": "**🔒 Privat — kein BI-Kunde.**\n**Beziehung:** Anwältin — Barandun (Steuerberatung).\n**Themen:** **Veranlagung 2022** & weiteres Vorgehen 2023 ff., Verfahrensstand (Ref. 2025 7481161).\n**Notiz:** Privates Steuerverfahren (vgl. [[Remy Bärlocher]])."
+}

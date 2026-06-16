@@ -1,0 +1,301 @@
+{
+ "nenad.stojanovic@dobi.ch": {
+  "name": "Stojanovic Nenad",
+  "company": "DOBI-INTER AG",
+  "client": "DOBI",
+  "kind": "kunde",
+  "role": "Controlling / Einkauf",
+  "beziehung": "Sehr aktiver Fachkontakt Kunde [[DOBI]] (Teams-intensiv)",
+  "char": "**Themen:** CM-Reporting / Sortimentsübersicht, Kreditoren (z.B. Heiniger AG, EK-Ware), Fabric-Lizenz/Refresh, Power-BI-Links.\n**Charakter:** Hands-on, fragt gezielt zu Daten-/Reporting-Details; einer der intensivsten Teams-Kontakte überhaupt."
+ },
+ "m.amort@zindel-united.swiss": {
+  "name": "Amort Mathias",
+  "company": "Zindel United",
+  "client": "Zindel_United",
+  "kind": "kunde",
+  "role": "Controlling / Cockpit-Verantwortlicher",
+  "beziehung": "Operativer Hauptkontakt Kunde [[Zindel_United]] (Teams-intensiv)",
+  "char": "**Themen:** Cockpit-Sparten (neue Sparte ZI500), Berichte teilen/Einzelfreigaben, AD-Gruppen & Berechtigungen (z.B. André Frei → Ferien+Überzeit).\n**Charakter:** Treibt laufend Erweiterungen & Zugriffe; sehr häufige, kleinteilige Abstimmung."
+ },
+ "amiti@sacac.ch": {
+  "name": "Amiti Elfat",
+  "company": "SACAC AG",
+  "client": "SACAC",
+  "kind": "kunde",
+  "role": "ERP / Daten (SACAC)",
+  "beziehung": "Technischer Daten-Kontakt Kunde [[SACAC]] (ital.)",
+  "char": "**Themen:** ERP-Datenexport (erp_exported nach Datum), Produkttypen Staircase/Pedestal/Generic (Treppen/Podeste, Nr. beginnt mit 7).\n**Charakter:** Liefert die Daten-/Mapping-Grundlagen für die SACAC-Auswertungen (der in den Mails erwähnte „Elfat\")."
+ },
+ "melanie.bigler@tibits.ch": {
+  "name": "Melanie Bigler",
+  "company": "tibits ag",
+  "client": "tibits",
+  "kind": "kunde",
+  "role": "Finance / Catering",
+  "beziehung": "Operativer Finance-Kontakt Kunde [[tibits]]",
+  "char": "**Themen:** FibuSync Catering (Run-Flow-Berechtigung), tägliche Umsätze/Jobs im Power BI, Schulung mit Andreas.\n**Charakter:** Meldet Datenlücken früh, pragmatisch („Umsätze nicht ume\"); arbeitet eng am Catering-/Finance-Modell."
+ },
+ "lucky@jobdone.app": {
+  "name": "Lucky Bassi",
+  "company": "JobDone",
+  "kind": "dienstleister",
+  "role": "JobDone (Zeiterfassung) – Produkt/Integration",
+  "beziehung": "Software-/Integrations-Partner für [[tibits]] (Zeiterfassung JobDone)",
+  "char": "**Themen:** JobDone-Datenfelder für Power BI (pbiShiftToday/Future, workTeamCostCenter, workShiftCustomField1), Coople-Arbeitszeiten, Kostenstellen↔Teams.\n**Charakter:** Technischer Enabler der tibits-Zeiterfassung; liefert DB-Felder/Mappings. Kein Kunde."
+ },
+ "mbai.nydegger@dobi.ch": {
+  "name": "Nydegger Mbai",
+  "company": "DOBI-INTER AG",
+  "client": "DOBI",
+  "kind": "kunde",
+  "role": "Finance / Budget",
+  "beziehung": "Finance-Kontakt Kunde [[DOBI]]",
+  "char": "**Themen:** Umsatzbudget & Sachkonti-Budget prüfen, lineare Verteilung von Beträgen.\n**Charakter:** Telefon-affin („ruf mich an\"), prüft Budgets sorgfältig."
+ },
+ "jan.kroeger@lake.ch": {
+  "name": "Kröger, Jan",
+  "company": "Lake",
+  "kind": "dienstleister",
+  "role": "IT/Cloud (Lake)",
+  "beziehung": "IT-/Cloud-Partner im Umfeld [[tibits]]",
+  "char": "**Themen:** Azure Subscription tibits aufschalten, Backup-Konzept (Job/User-Kontext, Datensicherung).\n**Charakter:** Cloud-/Infrastruktur-Enabler; klärt Azure/Backup-Setup. Kein Kunde."
+ },
+ "silke.kemnitz@upgreat.ch": {
+  "name": "Silke Kemnitz",
+  "company": "UPGREAT AG",
+  "client": "Upgreat",
+  "kind": "kunde",
+  "role": "Koordination / Assistenz",
+  "beziehung": "Organisatorischer Kontakt Kunde [[Upgreat]]",
+  "char": "**Themen:** Terminkoordination, Aufschaltungen (verweist auf Simon Hanselmann), allg. Abstimmung.\n**Charakter:** Freundlich-organisatorisch, vermittelt zu den richtigen Technikern."
+ },
+ "kacper.mizdal@green.ch": {
+  "name": "Kacper Mizdal",
+  "company": "Green.ch AG",
+  "client": "Green",
+  "kind": "kunde",
+  "role": "IT / Infrastruktur",
+  "beziehung": "Technischer Infrastruktur-Kontakt Kunde [[Green]] (engl.)",
+  "char": "**Themen:** Setup/Bandbreite, technische Abklärungen (verweist auf Patrick Cruz für Fachfragen).\n**Charakter:** Infrastruktur-/IT-seitig, englischsprachig, lösungsorientiert."
+ },
+ "katarina.zoric@weber-wattwil.ch": {
+  "name": "Zoric Katarina",
+  "company": "E. Weber AG (Wattwil)",
+  "client": "E_Weber_AG",
+  "kind": "kunde",
+  "role": "Projekt / Fachkontakt",
+  "beziehung": "Projektkontakt Kunde [[E_Weber_AG]]",
+  "char": "**Themen:** Terminvorbereitung, Metasonic, Optiwork (joel.egli@optiwork.ch).\n**Charakter:** Gut vorbereitet, terminbewusst; Schnittstelle zur Optiwork-/Metasonic-Technik."
+ },
+ "marco.zwyssig@nahrin.ch": {
+  "name": "Marco Zwyssig",
+  "company": "Nahrin AG",
+  "client": "Nahrin",
+  "kind": "kunde",
+  "role": "Finance / IT",
+  "beziehung": "Finance-/IT-Kontakt Kunde [[Nahrin]] (neben [[Ringwald, Stefanie]])",
+  "char": "**Themen:** Gespiegelter SQL-Server & Microsoft-Konto-Anbindung an Power-BI-Dateien, Zahlungslauf der Miraglia-Rechnungen, Zugriffe/Freigaben.\n**Charakter:** Italienisch-/deutschsprachig, kümmert sich um Zahlungen & Datenanbindung."
+ },
+ "ts@swrx.ch": {
+  "name": "Toni Schärer",
+  "company": "SWRX",
+  "kind": "dienstleister",
+  "role": "IT-Dienstleister",
+  "beziehung": "IT-Partner (Conditional Access / MFA) bei einem Kunden",
+  "char": "**Themen:** Power-BI-User-Gruppen/Berechtigungen, Conditional Access & MFA angepasst, Version 2025.2.\n**Charakter:** IT-Enabler für Zugriff/Sicherheit; schnell & knapp. Kein Kunde."
+ },
+ "simon.hanselmann@upgreat.ch": {
+  "name": "Simon Hanselmann",
+  "company": "UPGREAT AG",
+  "client": "Upgreat",
+  "kind": "kunde",
+  "role": "IT / Azure",
+  "beziehung": "Technischer Kontakt Kunde [[Upgreat]]",
+  "char": "**Themen:** Azure-Rechte/Capacity (C. Favre als Capacity-Admin), Aufschaltungen, Global-Admin-vs-Azure-Rechte.\n**Charakter:** Technisch, oft in Meetings; bittet um etwas mehr Vorlauf bei Terminen."
+ },
+ "fabian.sidler@mhmpartner.com": {
+  "name": "Fabian Sidler",
+  "company": "MHM Partner",
+  "kind": "dienstleister",
+  "role": "Software-Entwicklung (für TPS/Thoma)",
+  "beziehung": "Entwicklungs-Partner rund um [[Thoma_Group]]/TPS-Provisionsdaten",
+  "char": "**Themen:** TPS-Provisionstabellen (tpsProvisionSalesDocumentItems, AmountInvoiced), OTC-Wizard, Invoiced_Until-Logik (Aboverrechnung).\n**Charakter:** Entwickler, klärt Datenfelder/Workflows mit Rolf Schmidiger; manchmal „unter Wasser\". Kein Kunde."
+ },
+ "asanka@paloalto.swiss": {
+  "name": "Asanka Withanaarachchi",
+  "company": "Palo Alto SA",
+  "kind": "dienstleister",
+  "role": "IT / DocuWare (für Ennio Ferrari)",
+  "beziehung": "IT-/DocuWare-Partner im Projekt [[Ennio_Ferrari]]",
+  "char": "**Themen:** DocuWare-Cloud-Anbindung (ennio-ferrari.docuware.cloud), Power-BI-Connector zu DocuWare.\n**Charakter:** Technischer DocuWare-Spezialist, ital./engl. Kein Kunde."
+ },
+ "g.cali@martellomanutenzione.com": {
+  "name": "Giorgia Cali",
+  "company": "Martello Manutenzione",
+  "kind": "kunde",
+  "role": "Fachkontakt (ital.)",
+  "beziehung": "Kundenkontakt Martello Manutenzione (ital.) — noch keine eigene Client-Notiz",
+  "char": "**Themen:** Cockpit Martello Manutenzione (Reddito progetto / Projektrendite), Report-Publishing, Meeting-Koordination.\n**Charakter:** Italienischsprachig, freundlich; arbeitet mit ihrem Direktor am Projektrendite-Cockpit."
+ },
+ "solange.silva@green.ch": {
+  "name": "Solange Silva",
+  "company": "Green.ch AG",
+  "client": "Green",
+  "kind": "kunde",
+  "role": "Fachkontakt (engl.)",
+  "beziehung": "Kontakt Kunde [[Green]] (mit [[Saša Butina]])",
+  "char": "**Themen:** Terminorganisation rund um Green-Auswertungen.\n**Charakter:** Englischsprachig, flexibel bei Terminen."
+ },
+ "c.caspar@invias.swiss": {
+  "name": "Caspar Corinne",
+  "company": "Invias AG",
+  "kind": "kunde",
+  "role": "Marketing",
+  "beziehung": "Marketing-Kontakt (Invias / Umfeld [[Zindel_United]]) — übernahm Marketing-Cockpit",
+  "char": "**Themen:** Marketing-Cockpit (Instagram/Social Followerzahlen je Firma), INVIAS & Logbau, Übergabe von Johanna Burgener.\n**Charakter:** Marketing-Verantwortliche; pflegt Social-/Marketing-Kennzahlen mehrerer Firmen."
+ },
+ "chiara@tps-sa.ch": {
+  "name": "Chiara Zurini",
+  "company": "TPS Servizi SA",
+  "client": "Thoma_Group",
+  "kind": "kunde",
+  "role": "Koordination / Assistenz (ital.)",
+  "beziehung": "Organisatorischer Kontakt Kunde [[Thoma_Group]] (TPS)",
+  "char": "**Themen:** Termin-/Teams-Koordination.\n**Charakter:** Italienischsprachig, freundlich-organisatorisch."
+ },
+ "m.gallo@zindel-united.swiss": {
+  "name": "Gallo Marco",
+  "company": "Zindel United",
+  "client": "Zindel_United",
+  "kind": "kunde",
+  "role": "Projekte / Bau",
+  "beziehung": "Projektkontakt Kunde [[Zindel_United]]",
+  "char": "**Themen:** Bau-/Projektdaten (KST-Nummern, NB/Sanierung, Anplaq/Bünte/Maienfeld), User-Einladungen (P-BI, FehrAdvice).\n**Charakter:** Projektnah; liefert KST-/Projektzuordnungen für die Auswertungen."
+ },
+ "sandro.hernandez@anifit.ch": {
+  "name": "Sandro Hernandez",
+  "company": "ANiFiT AG",
+  "client": "ANiFit",
+  "kind": "kunde",
+  "role": "Vertrieb / Reporting",
+  "beziehung": "Fachkontakt Kunde [[ANiFit]] (mit [[Tatjana Mettler]])",
+  "char": "**Themen:** Verkaufsreporting-Berechtigungen (z.B. für Andrea), geplante Auswertungen, Stichproben/Feedback.\n**Charakter:** Vertriebsnah, abstimmungsfreudig; kurze Tel-Calls."
+ },
+ "mark@bordoni-solutions.com": {
+  "name": "Mark Bordoni",
+  "company": "Bordoni Solutions",
+  "client": "",
+  "kind": "partner",
+  "role": "Copilot Studio / Power Platform (Umsetzungspartner)",
+  "beziehung": "Externer Umsetzungspartner Copilot Studio/Targenio beim Kunden [[Mindpearl]]",
+  "char": "**Themen:** Copilot-Studio-Projekt ‚Assistent' (Prompting, Darstellung, Veröffentlichungs-Vorsicht), laufende Zwischenstände als Screen-Recordings, Copy-Paste-Workarounds.\n**Charakter:** Experimentierfreudig und mitteilsam; Giovanni reviewt seine Arbeiten. Sehr hohes Teams-Volumen, letzter Kontakt 10/2025."
+ },
+ "v-dutreddy@microsoft.com": {
+  "name": "Duttala Reddy",
+  "company": "Microsoft Support (LTIMindtree)",
+  "client": "",
+  "kind": "dienstleister",
+  "role": "Support Engineer (Microsoft-Ticket)",
+  "beziehung": "Microsoft-Support-Engineer im Power-BI-Refresh-Case (08–09/2025)",
+  "char": "**Themen:** Refresh-Problem als Bug ans PG-Team eskaliert, Workaround-Diskussion (1 Refresh/Tag), Status-Calls und Mail-Thread zum Case.\n**Charakter:** Formelhaft-höfliche Ticketkommunikation, regelmässige Follow-ups; Fall abgeschlossen."
+ },
+ "v-kvyshnavi@microsoft.com": {
+  "name": "Kunduru Vyshnavi",
+  "company": "Microsoft Support (Mindtree)",
+  "client": "",
+  "kind": "dienstleister",
+  "role": "Support-Koordination (Microsoft-Ticket)",
+  "beziehung": "Microsoft-Support-Koordinatorin (Calls mit Engineer Chintala, 10/2025)",
+  "char": "**Themen:** Terminfindung für Support-Calls, Verfügbarkeits-Pingpong, Übergabe an Engineer Chintala.\n**Charakter:** Reine Koordinationsrolle, freundlich-hartnäckig bei Follow-ups."
+ },
+ "v-vangapooja@microsoft.com": {
+  "name": "Vanga Pooja",
+  "company": "Microsoft Support (Mindtree)",
+  "client": "",
+  "kind": "dienstleister",
+  "role": "Support Engineer (Microsoft-Ticket)",
+  "beziehung": "Microsoft-Support-Engineer Case 2510221420001874 (10–11/2025)",
+  "char": "**Themen:** File-Transfer-Sessions zum Case, Meeting-Koordination, wiederholte Status-Nachfragen nach Updates.\n**Charakter:** Geduldige, formelhafte Ticket-Betreuung über mehrere Wochen."
+ },
+ "rolf.schmidiger@mhmpartner.com": {
+  "name": "Rolf Schmidiger",
+  "company": "MHM Partner",
+  "client": "",
+  "kind": "dienstleister",
+  "role": "Software-Entwicklung / Datenbank (ICS/pSuite)",
+  "beziehung": "Entwickler beim Software-Haus MHM Partner (ICS/pSuite) — Datenklärungen für [[Green]] und [[Thoma_Group]]/TPS; Kollege von Fabian Sidler",
+  "char": "**Themen:** DB-/Datenlieferungs-Klärungen (8,2 Mio. Zeilen, evtl. gelöschte Rechnungen enthalten), Sammelrechnungen ohne Abo-Verknüpfung der Positionen, Unique Index auf der Power-BI-Tabelle.\n**Charakter:** Direkt und technisch präzise; zieht klare Verantwortungsgrenzen (Filtern auf Quellebene sei Lieferanten-Aufgabe)."
+ },
+ "sacak@sacac.ch": {
+  "name": "Sacak Ali",
+  "company": "SACAC AG",
+  "client": "SACAC",
+  "kind": "kunde",
+  "role": "Operativer Fachkontakt Auslieferung/ERP-Daten",
+  "beziehung": "Fachkontakt Kunde [[SACAC]] für Liefer-/Auftragsdaten (Stützen)",
+  "char": "**Themen:** Lieferstatus-Logik (Ausgeliefert vs. Offene Auslieferung, Lieferschein), Felddefinitionen/zusätzliche Spalten fürs Reporting, Datenbereinigung (‚sonst verfälscht uns die Daten').\n**Charakter:** Kennt die ERP-/Lieferprozesse im Detail, antwortet schnell, knapp und konkret."
+ },
+ "lukas.bucher@siga.swiss": {
+  "name": "Lukas Bucher",
+  "company": "SIGA",
+  "client": "SIGA",
+  "kind": "kunde",
+  "role": "Power Platform / IT-Koordination",
+  "beziehung": "Koordinator der Power-Platform-Termine Kunde [[SIGA]]",
+  "char": "**Themen:** Terminserie ‚Power Platform News', Interesse an der Lohnrunde-App (für Nicole), Einbezug PO DSC (Dario), Vor-Ort-Koordination.\n**Charakter:** Verbindlicher Brückenbauer zwischen Giovanni und den SIGA-Stakeholdern; kurze, klare Nachrichten."
+ },
+ "peter.hofmann@upgreat.ch": {
+  "name": "Peter Hofmann",
+  "company": "Upgreat AG",
+  "client": "Upgreat",
+  "kind": "kunde",
+  "role": "Kundenverantwortlicher (Hosting/Infrastruktur)",
+  "beziehung": "Kundenverantwortlicher bei [[Upgreat]] — Infrastruktur gemeinsamer Endkunden (u. a. [[BWT]])",
+  "char": "**Themen:** SQL-Server-Ablösung und Monitoring im BWT-Umfeld, TeamViewer-/Remote-Sessions, interne Weiterleitung ans zuständige Team, Austausch zu Christian Hartmann/Christian Favre.\n**Charakter:** Lösungsorientiert, nimmt Hinweise unkompliziert auf (‚empfinde ich auch nicht als Kritik')."
+ },
+ "thomas.frangi@laderach.com": {
+  "name": "Frangi Thomas",
+  "company": "Läderach AG",
+  "client": "Laederach",
+  "kind": "kunde",
+  "role": "Controlling / ERP-Daten (Semiramis)",
+  "beziehung": "Fachkontakt Kunde [[Laederach]] für Semiramis-/Finanzdaten",
+  "char": "**Themen:** Semiramis-/cisag-Exporte (OQL-Selects auf financials), Aufwandskonto-Klassifikation zur Food-Erkennung (Rohmaterial 1-10-100, unfertige Erzeugnisse 1-10-205), Definition Zwischenprodukte & Buchungssätze, Export-Berechtigungen.\n**Charakter:** Liefert Definitionen schrittweise nach (‚folgt demnächst in diesem Theater'); pragmatisch mit Humor."
+ },
+ "tim.schaible@tibits.ch": {
+  "name": "Tim Schaible",
+  "company": "tibits ag",
+  "client": "tibits",
+  "kind": "kunde",
+  "role": "HR",
+  "beziehung": "HR-Kontakt Kunde [[tibits]] (Mitarbeiter-Bewertungs-App)",
+  "char": "**Themen:** PowerApp Mitarbeiter-Bewertungen (Aktualisierungs-Latenz nach Änderungen, ausgeblendete Mitarbeiter, nachträglich angepasste Bewertungen), Abstimmungen mit Andreas, kurze Austausche im HR-Büro.\n**Charakter:** Prüft Befunde selbst nach und meldet sauber zurück; unkompliziert und schnell erreichbar."
+ },
+ "lilian.huonder@tibits.ch": {
+  "name": "Lilian Huonder",
+  "company": "tibits ag",
+  "client": "tibits",
+  "kind": "kunde",
+  "role": "Administration / Artikelstammdaten",
+  "beziehung": "Fachkontakt Kunde [[tibits]] für Artikel-/Sparten-Stammdaten",
+  "char": "**Themen:** Sparten-Zuordnung der Artikel (Excel-Liste vs. Software-Stand), Umgang mit deaktivierten Artikeln (filtern), telefonische Abstimmungen.\n**Charakter:** Arbeitet Listen konkret durch, hands-on und direkt."
+ },
+ "nikola.petrovic@allreal.ch": {
+  "name": "Petrovic Nikola",
+  "company": "Allreal",
+  "client": "Allreal",
+  "kind": "kunde",
+  "role": "IT / SQL-Server (DBA)",
+  "beziehung": "IT-/Datenbank-Kontakt Kunde [[Allreal]] (Fabric-Anbindung FIBU)",
+  "char": "**Themen:** CDC-Aktivierung auf FIBU-Tabellen (DB A_7000: FIBU_E25/E26/KON), Abklärung Tabelle vs. View, Gateway-Login ‚fabric_login' und sysadmin-Rechte, SQL Server Configuration Manager.\n**Charakter:** Setzt die SQL-seitigen Schritte fürs Fabric-Mirroring um, eng per Meeting-Chat angeleitet (06/2026)."
+ },
+ "sven.beuchel@upgreat.ch": {
+  "name": "Sven Beuchel",
+  "company": "Upgreat AG",
+  "client": "Upgreat",
+  "kind": "kunde",
+  "role": "Projektkoordination",
+  "beziehung": "Projektkontakt bei [[Upgreat]] (Koordination Power-BI-Sessions mit Lorena Wauer / Nextedge)",
+  "char": "**Themen:** Termin- und Session-Koordination mit Lorena Wauer (nextedge.ch), Power-BI-Report-Links, vor Ort vs. Remote.\n**Charakter:** Pragmatischer Vermittler, hinterfragt Terminbedarf (‚dann brauchen wir den heute nicht mehr'); letzter Kontakt 06/2025."
+ }
+}

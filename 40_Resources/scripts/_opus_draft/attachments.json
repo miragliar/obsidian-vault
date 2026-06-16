@@ -1,0 +1,30 @@
+[
+  {
+    "name": "miraglia-bi.png",
+    "contentType": "image/png",
+    "isInline": true,
+    "contentId": "miragliabi-logo",
+    "size": 41986
+  },
+  {
+    "name": "1_Claudian-Optionen-oeffnen.png",
+    "contentType": "image/png",
+    "isInline": false,
+    "contentId": null,
+    "size": 776564
+  },
+  {
+    "name": "2_Opus-1M-aktivieren.png",
+    "contentType": "image/png",
+    "isInline": false,
+    "contentId": null,
+    "size": 431102
+  },
+  {
+    "name": "3_Modell-Opus-1M-waehlen.png",
+    "contentType": "image/png",
+    "isInline": false,
+    "contentId": null,
+    "size": 30645
+  }
+]

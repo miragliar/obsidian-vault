@@ -1,0 +1,1110 @@
+{
+  "me": "giovanni@miraglia-bi.com",
+  "chats_scanned": 18,
+  "messages_scanned": 405,
+  "people": [
+    {
+      "name": "Alessandro Castelli",
+      "email": "alessandro@castelli-solutions.ch",
+      "msgs_from": 25,
+      "my_replies_1to1": 26,
+      "chats": 1,
+      "last": "2026-06-12",
+      "in_group": 0,
+      "in_1to1": 25,
+      "samples": [
+        {
+          "d": "2026-06-09",
+          "type": "oneOnOne",
+          "text": "Heute 45min Support bei Abbvie, Catherina Guerrisi eingetragen. Solltest du im Fabric sehen."
+        },
+        {
+          "d": "2026-06-09",
+          "type": "oneOnOne",
+          "text": "Buongiorno Giovi, Nein, am Freitag habe ich 08:15 - 08:30 eine Sicherheitsgruppe für die Power App ergänzt. Am Abend ab 19:45 habe ich was in der App angepasst. Aber nichts was Richtung Proffix einfluss hätte."
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "wenn du mal zyt häsch ich hät es slicer problem im power bi woni sit stunde scho dra bin und claude mir au nid helfe chan. muen aber nüm hüt si. wär aber pk rück."
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "DebitorenRechnungen_1_0_1_47_managed.zip"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "ja"
+        },
+        {
+          "d": "2026-06-01",
+          "type": "oneOnOne",
+          "text": "bin am Nachmittag doch nicht in Nefti. Kinder und Cory sind weg. 16:30 muss ich dann scho wieder bereitmachen um training zu geben"
+        },
+        {
+          "d": "2026-05-26",
+          "type": "oneOnOne",
+          "text": "Gemäss Monika Kuhn von Koster, wird Optiwork mis Januar 2027 eine erste Version einer Domus Weblösung bzw. Cloud-Lösung lancieren. Sie wollen wohl in den nächsten 2-3 Jahren alles auf Cloud umstellen."
+        },
+        {
+          "d": "2026-05-26",
+          "type": "oneOnOne",
+          "text": "Buongiorno Giovi. LEVOR gibt es keine Schnittstelle. Nur Kreditoren und Materialbestellungen werden via csv SChnittstelle eingelesen. LEVOR ist ein reines klicken mittels RPA, statt das es ein Mitarbeiter macht. Zeiterfassung ist eine SChnittstelle das Die Zeiterfassungssoftware mit Optiwork blateral abgebildet hat. ich meinte das läuft via FTP File imports... das ist der Knopf der gedrückt wird b"
+        },
+        {
+          "d": "2026-05-21",
+          "type": "oneOnOne",
+          "text": "Ich muss es anschauen, bin noch nicht dazugekommen. Mach es sobald möglich."
+        },
+        {
+          "d": "2026-05-21",
+          "type": "oneOnOne",
+          "text": "Hoi Giovi"
+        },
+        {
+          "d": "2026-05-20",
+          "type": "oneOnOne",
+          "text": "kannst mir ja mal die Einladung schicken, dann habe ich es etwas auf dem Radar"
+        },
+        {
+          "d": "2026-05-20",
+          "type": "oneOnOne",
+          "text": "Wenn ich kann, komme ich gerne mit, andernfalls beim nächsten mal"
+        },
+        {
+          "d": "2026-05-20",
+          "type": "oneOnOne",
+          "text": "Das Weiss ich noch nicht wie es dann abläuft. Mirka hat dann wohl keinen Kindergarten.... jemand muss allenfalls auf ihn schauen etc... muss herausfinden wie es abläuft."
+        },
+        {
+          "d": "2026-05-19",
+          "type": "oneOnOne",
+          "text": "hoi Giovi. Nein jetzt nicht mehr"
+        },
+        {
+          "d": "2026-05-16",
+          "type": "oneOnOne",
+          "text": "ja"
+        },
+        {
+          "d": "2026-05-13",
+          "type": "oneOnOne",
+          "text": "hat er schon. schaus mit ihm am dienstag an."
+        },
+        {
+          "d": "2026-05-12",
+          "type": "oneOnOne",
+          "text": "ich habe gerade einen neuen Abbvie-Journaleintrag bei dir erstellt. 30min Support."
+        },
+        {
+          "d": "2026-05-12",
+          "type": "oneOnOne",
+          "text": "ja es macht scho vieles richtig. am afang hats sogar 5 screens gha... hans müese chli abedrossle sini fantasie"
+        },
+        {
+          "d": "2026-05-12",
+          "type": "oneOnOne",
+          "text": "da gseht mer eifach en app entwurf wo entstande isch mit MCP Canvas"
+        },
+        {
+          "d": "2026-05-12",
+          "type": "oneOnOne",
+          "text": "Canvas App via MCP und Claude Code.mp4"
+        }
+      ],
+      "domain": "castelli-solutions.ch",
+      "interactions": 51
+    },
+    {
+      "name": "Amort Mathias",
+      "email": "m.amort@zindel-united.swiss",
+      "msgs_from": 27,
+      "my_replies_1to1": 23,
+      "chats": 1,
+      "last": "2026-06-12",
+      "in_group": 0,
+      "in_1to1": 27,
+      "samples": [
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "ok perfekt dann sind es eh die Sharepoint Daten die ich im blick hatte danke für die bestätigung"
+        },
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "uns hat noch die Frage aufgeworfen woher kommen die Daten vom Unfall dashboard in Care? ich hab mal versucht das rauszufinden und die Sharepointliste gefunden aber zieht er noch daten von swiss salary oder sonnst wo?"
+        },
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "Claude hat sich gerade verbessert. er würde Variante B bevorzugen weil Variante A auf sharepoint nicht so einfach ist"
+        },
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "hast du schon gesehen. claude hat gestern fabel 5 gelauncht. bin gerade am schauen was es kann"
+        },
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "würde Variante A bevorzugen dann haben wir das sauber schon von beginn an"
+        },
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "guten Morgen giovanni, wir haben ein Problem bei unserem Cockpit das die Unfallzahlen falsch dargestellt werden. Die Daten werden um einen Tag versetzt angezeigt als sie in der Liste stehen. das meint Claude dazu . Mega tool Bug-Report: Ereignisdatum um einen Tag verschoben (Krankheits-/Unfallmeldungen) Cockpit / Power BI — Tabelle K+U Krankheits+Unfallmeldungen Erstellt: 10.06.2026 Priorität: hoc"
+        },
+        {
+          "d": "2026-06-09",
+          "type": "oneOnOne",
+          "text": "passt perfekt danke"
+        },
+        {
+          "d": "2026-06-08",
+          "type": "oneOnOne",
+          "text": "Hallo Giovanni, wann hättest du die nächsten freien slots? ich würde auch für manolito anfragen"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "ich würde um zu sehen ob auch alles passt, zuerst einfach noch die Berechtigungen der alten Apps entfernen (somit sollte ja keiner mehr Zugriff drauf haben). und wenn sich n 1-2Wochen niemand meldet die alten Arbeitsbereiche + Gruppen abbauen. passt das?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "passt der link noch?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "danke für deine hilfe"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "hat sich der link noch geändert? dann würde wir jetzt umstellen https://app.powerbi.com/Redirect?action=OpenApp&appId=df8d739c-bcb9-4e82-98b9-5044236a8399&ctid=a9e…"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "perfekt danke"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "nein Klark AG ist eine neu gegründete firma. werde noch abklären was mit der geplant ist somit sollten jetzt alle in zindel und Co_AG Maienfeld gruppe alles wieder sehen?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "ja das haben wir umgestellt. alle mitglieder von zindel hoch, rück/tief und ZU sind in zindel und Co_AG Maienfeld enthalten. die sollten das also sehen"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "Klark AG gibt es muss ich aber schauen was da vorgesehen ist. sind das die AD Gruppen?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "Guten Morgen Giovanni, wie können wir das lösen?"
+        },
+        {
+          "d": "2026-06-04",
+          "type": "oneOnOne",
+          "text": "Und bei marco sieht er nur zindel nicht"
+        },
+        {
+          "d": "2026-06-04",
+          "type": "oneOnOne",
+          "text": "Carlo item, marco sieht es auch nicht"
+        },
+        {
+          "d": "2026-06-04",
+          "type": "oneOnOne",
+          "text": "konntest du schon schauen? vielen dank lg"
+        }
+      ],
+      "domain": "zindel-united.swiss",
+      "interactions": 50
+    },
+    {
+      "name": "Giovanni Verna",
+      "email": "giovanni.verna@tibits.ch",
+      "msgs_from": 22,
+      "my_replies_1to1": 28,
+      "chats": 1,
+      "last": "2026-04-02",
+      "in_group": 0,
+      "in_1to1": 22,
+      "samples": [
+        {
+          "d": "2026-04-02",
+          "type": "oneOnOne",
+          "text": "Besten Dank und Frohe Ostern"
+        },
+        {
+          "d": "2026-04-02",
+          "type": "oneOnOne",
+          "text": "Hallo Giovanni Könntest du dem GF Yann Schindler bitte analog zu Sarah Schranz die PBI Berechtigungen für Bern Bhf und Lausanne erteilen?"
+        },
+        {
+          "d": "2026-03-10",
+          "type": "oneOnOne",
+          "text": "Jasmin Fahr, GF vom Seefeld konnte gestern die AZE nicht aktualisieren. Ich werde heute nochmals mit ihr schauen, woran es liegen könnte. Kannst du mal noch alle checken bitte von deiner Seite?"
+        },
+        {
+          "d": "2026-03-10",
+          "type": "oneOnOne",
+          "text": "Guten Morgen Giovanni Ich habe gesehen, dass du es angepasst hast. Vielen Dank."
+        },
+        {
+          "d": "2026-03-06",
+          "type": "oneOnOne",
+          "text": "Giovanni"
+        },
+        {
+          "d": "2026-03-06",
+          "type": "oneOnOne",
+          "text": "Danke und Grüsse"
+        },
+        {
+          "d": "2026-03-06",
+          "type": "oneOnOne",
+          "text": "Operations kontrolliert jeweils die Umsätze pro Kasse und dabei ist folgendes aufgefallen: In Bern Bahnhof zeigt die Kasse 4006 immer noch Umsätze, obwohl die Kasse seit Ende November abgebaut wurde. Dafür fehlen die Umsätze der Kasse 4012 (Grab & Go). Kann es sein, dass einfach die Kassennummern aktualisiert werden müssen?"
+        },
+        {
+          "d": "2026-03-06",
+          "type": "oneOnOne",
+          "text": "Hallo Giovanni Ich habe noch ein Anliegen und zwar wir folgt:"
+        },
+        {
+          "d": "2026-03-02",
+          "type": "oneOnOne",
+          "text": "Ach so. Dann ist es schon okay. Luis war schon in dieser Gruppe und Artem habe ich jetzt hinzugefügt. Merci und Gruess"
+        },
+        {
+          "d": "2026-03-02",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni Könntest du bitte Artem Shcherbakov und Luis Bürgisser für die Bedienerkontrolle berechtigen? Danke dir."
+        },
+        {
+          "d": "2026-02-23",
+          "type": "oneOnOne",
+          "text": "Kein Thema. Ich schaue mit Lucky direkt. Danke für dein Feedback."
+        },
+        {
+          "d": "2026-02-23",
+          "type": "oneOnOne",
+          "text": "Dann habe ich noch festgestellt, dass JobDone keinen Cross-Tenant Access hat. Braucht es das nicht?"
+        },
+        {
+          "d": "2026-02-23",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni Im PowerBI Admin Portal war die Benutzung für Fabric für Gastbenutzer gesperrt. Das habe ich nun aktiviert."
+        },
+        {
+          "d": "2026-02-05",
+          "type": "oneOnOne",
+          "text": "Bei Selina Hasslinger (Oerlikon) fehlten noch die \"SEC Leistungsbeurteilung\" und die P-BI Pro Lizenz. Ich habe diese hinzugefügt. Im Moment werden ihr keine Reports angezeigt."
+        },
+        {
+          "d": "2026-02-05",
+          "type": "oneOnOne",
+          "text": "Ok"
+        },
+        {
+          "d": "2026-01-27",
+          "type": "oneOnOne",
+          "text": "Marc Jost, GF von Oerlikon und ab 01.02.2026 vom Zürich Bistro hat nach eigenen Angaben die ¨Sicht über alle Betriebe\". Kannst du ihm bitte die Visibility auf Oerlikon und Bistro einschränken? Grazie"
+        },
+        {
+          "d": "2026-01-27",
+          "type": "oneOnOne",
+          "text": "Buongiorno Giovanni"
+        },
+        {
+          "d": "2025-11-10",
+          "type": "oneOnOne",
+          "text": "Müssen wir noch zusätzliche \"Admin\" Lizenzen kaufen?"
+        },
+        {
+          "d": "2025-11-10",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni Monika Lechner möchte, dass Sonia Filli und Fabienne Kasser in der neuen HR-App die Daten erfassen können. Ich habe gesehen, dass Monika sehr viele Berechtigungen rund um Power-Bi, Power-Apps und Power-Automate hat."
+        },
+        {
+          "d": "2025-09-12",
+          "type": "oneOnOne",
+          "text": "Super Danke."
+        }
+      ],
+      "domain": "tibits.ch",
+      "interactions": 50
+    },
+    {
+      "name": "Melanie Bigler",
+      "email": "melanie.bigler@tibits.ch",
+      "msgs_from": 22,
+      "my_replies_1to1": 28,
+      "chats": 1,
+      "last": "2026-06-12",
+      "in_group": 0,
+      "in_1to1": 22,
+      "samples": [
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "Vielen Dank Giovanni!"
+        },
+        {
+          "d": "2026-06-11",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, hoffe dir gehts gut! Hast du von Antonio Bescheid bekommen dass die Cateringumsätze seit letzter Woche nicht mehr im Bericht der Betriebe aktualisiert werden? Gemäss Cateringteam sei das noch immer pendent. Dankeschön & liäbi Grüess, Mel"
+        },
+        {
+          "d": "2026-04-08",
+          "type": "oneOnOne",
+          "text": "funktioniert, merci!"
+        },
+        {
+          "d": "2026-04-08",
+          "type": "oneOnOne",
+          "text": "wir haben schon bei AF exportiert, kannn ich trotzdem nochmal auslösen?"
+        },
+        {
+          "d": "2026-04-08",
+          "type": "oneOnOne",
+          "text": "danke!"
+        },
+        {
+          "d": "2026-04-08",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, könntest du mir bitte Berechtigung für den \"Run Flow\" im Report FibuSync Catering geben? Ich bin grade mit Andreas an der Schulung/Übergabe des Tasks und wir haben festgestellt, dass ich wahrscheinlich noch keine Berechtigung habe. Vielen Dank!"
+        },
+        {
+          "d": "2026-03-30",
+          "type": "oneOnOne",
+          "text": "Die Zahlen kommen wieder, merci!"
+        },
+        {
+          "d": "2026-03-30",
+          "type": "oneOnOne",
+          "text": "Hoi Giovanni, alles gut, dachte mir, vielleicht ist Teams nicht der richtige Kommunikationsweg, daher noch meine Mail hinedri"
+        },
+        {
+          "d": "2026-03-30",
+          "type": "oneOnOne",
+          "text": "Guten Morgen Giovanni! Kann es sein dass ein Job nicht läuft in unser Power BI? Die Umsätze von gestern sind nicht \"ume\"..."
+        },
+        {
+          "d": "2025-07-01",
+          "type": "oneOnOne",
+          "text": "sorry!"
+        },
+        {
+          "d": "2025-07-01",
+          "type": "oneOnOne",
+          "text": "Hey Giovanni, ha ganz vergesse dich frage öbd wotsch mit eus Zmittag esse"
+        },
+        {
+          "d": "2025-05-23",
+          "type": "oneOnOne",
+          "text": "umbau"
+        },
+        {
+          "d": "2025-05-23",
+          "type": "oneOnOne",
+          "text": "ja weil seefeld geschlossen ist"
+        },
+        {
+          "d": "2025-05-23",
+          "type": "oneOnOne",
+          "text": "ich mach mal wieder 7 sachen gleichzeitig"
+        },
+        {
+          "d": "2025-05-23",
+          "type": "oneOnOne",
+          "text": "das bin ich, geh sofort raus"
+        },
+        {
+          "d": "2025-05-23",
+          "type": "oneOnOne",
+          "text": "er ist noch bis und mit nächster woche im sabbatical"
+        },
+        {
+          "d": "2025-05-23",
+          "type": "oneOnOne",
+          "text": "sorry bin grad im seich"
+        },
+        {
+          "d": "2025-05-14",
+          "type": "oneOnOne",
+          "text": "Danke Giovanni!"
+        },
+        {
+          "d": "2025-05-14",
+          "type": "oneOnOne",
+          "text": "jetzt muss es morgen noch ohne deine manuelle Intervention klappen, dann informiere ich alle"
+        },
+        {
+          "d": "2025-05-14",
+          "type": "oneOnOne",
+          "text": "danke, ich schau dann nochmal rein"
+        }
+      ],
+      "domain": "tibits.ch",
+      "interactions": 50
+    },
+    {
+      "name": "Raoul Elias Miraglia",
+      "email": "raoul@miraglia-bi.com",
+      "msgs_from": 18,
+      "my_replies_1to1": 32,
+      "chats": 1,
+      "last": "2026-06-11",
+      "in_group": 0,
+      "in_1to1": 18,
+      "samples": [
+        {
+          "d": "2026-06-11",
+          "type": "oneOnOne",
+          "text": "https://www.dropbox.com/scl/fi/9f8jkn9vyhc2c4smgms1a/Obsidian.mp4?rlkey=ialf8uj6i0w9fk2kd5h0auohu&dl=0"
+        },
+        {
+          "d": "2026-06-08",
+          "type": "oneOnOne",
+          "text": "mache heute früher schluss... hatte bisschen länger an Koster als gedacht.. dafür sauber und richtig... bug ist also gefixt... habe dann regieprozess-zip file prüfen lassen durch obsidian und 2-3 grobe haken gefunden und gefixt... der rest wäre eher kosmetik... könnte man sich überlegen zu machen... morgen dann voller fokus auf Videos und MVM KI... dann nutze ich heute aber noch die Zeit bisschen "
+        },
+        {
+          "d": "2026-06-08",
+          "type": "oneOnOne",
+          "text": "Donnerstagstermin mit Reto limacher zu KI Kickoff wurde auf Montag nachmittag verschoben da er zeitlich nicht mehr kann"
+        },
+        {
+          "d": "2026-05-27",
+          "type": "oneOnOne",
+          "text": "soll ich mich direkt bei ih melden?"
+        },
+        {
+          "d": "2026-05-21",
+          "type": "oneOnOne",
+          "text": "ich habe mal die Seite und das Auslesen neu antrainiert und eingebaut. Das alte Schema scheint in etwa dem neuen zu entsprechen. alt: 4,809.00 +10.00(+0.21%) neu: 4923.0 -69.0 (-1.38%) heisst dataflow müsste evtl. ja durchlaufen -> habe mal Dataflows angestossen... aber dauert sehr lange >30 min... ich denke er sollte es durch schaffen.. ansonsten müssten wir noch etwas in der Datentransformation "
+        },
+        {
+          "d": "2026-05-13",
+          "type": "oneOnOne",
+          "text": "jep hier die bestätigung"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "Danke!"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "ouh ja sorry ist mir heute untergegangen... sonst eigentlich nie"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "bin eh zuerst noch an MVM"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "und auch der rpa läuft durch und schickt token... evtl smg api down?"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "der flow wird von einem rpa angetriggert der manuell den token rausliest"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "nein das ist richtig"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "bin mit hunnenberg"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "schaue heute nachmittag mal rein"
+        },
+        {
+          "d": "2026-04-30",
+          "type": "oneOnOne",
+          "text": "averecura"
+        },
+        {
+          "d": "2026-04-30",
+          "type": "oneOnOne",
+          "text": "mfa code"
+        },
+        {
+          "d": "2026-04-03",
+          "type": "oneOnOne",
+          "text": "ist neu visa?"
+        }
+      ],
+      "domain": "miraglia-bi.com",
+      "interactions": 50
+    },
+    {
+      "name": "Michael Kipfer",
+      "email": "michael@kipfer-dp.com",
+      "msgs_from": 20,
+      "my_replies_1to1": 29,
+      "chats": 1,
+      "last": "2026-06-12",
+      "in_group": 0,
+      "in_1to1": 20,
+      "samples": [
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "Kein Problem beim alten. du kannst alles schliessen"
+        },
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "Ja Mahnlauf ist gestartet"
+        },
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "Auf dem alten ?"
+        },
+        {
+          "d": "2026-06-11",
+          "type": "oneOnOne",
+          "text": "Guten Morgen Giovi 2-Monats Backup Nahrin wurde erledigt"
+        },
+        {
+          "d": "2026-06-08",
+          "type": "oneOnOne",
+          "text": "Hoi Giovi Habe es gelesen Danke"
+        },
+        {
+          "d": "2026-06-07",
+          "type": "oneOnOne",
+          "text": "Endlich Dobi!! 2026-06 Price Monitoring komplett 07.06.26.xlsx 2026-06 Price Montoring_Toppreise_Komplett 04-06-2026.xlsx"
+        },
+        {
+          "d": "2026-06-06",
+          "type": "oneOnOne",
+          "text": "Ist das eine gute Idee?!"
+        },
+        {
+          "d": "2026-06-04",
+          "type": "oneOnOne",
+          "text": "Zindel: Ich habe es zur Kentniss genommen."
+        },
+        {
+          "d": "2026-06-02",
+          "type": "oneOnOne",
+          "text": "Alles gut kein Problem!"
+        },
+        {
+          "d": "2026-06-02",
+          "type": "oneOnOne",
+          "text": "Hoi Giovi Habe heute Dobi gestartet. Perfect Hair hat seine Website geändert. Es heisst jetzt Perfect Hair \"Beauty by Brack\". Ich glaube Brack kauf bald alle Läden die es gibt in der Schweiz. Musste aus diesem Grund den Desktopflow neu anlernen und wir suchen dort jetzt wieder über EAN Nummer. LG Mike"
+        },
+        {
+          "d": "2026-05-31",
+          "type": "oneOnOne",
+          "text": "NEin ich glaube nicht. Ausser der Anmeldeprozees und die INstallation von PowerAutomate usw."
+        },
+        {
+          "d": "2026-05-31",
+          "type": "oneOnOne",
+          "text": "Das sind alle"
+        },
+        {
+          "d": "2026-05-31",
+          "type": "oneOnOne",
+          "text": "Hoi Giovi Kannst du mir sagen welches Leistungspaket ich bei der MVM für die neue VM setzen muss?"
+        },
+        {
+          "d": "2026-05-29",
+          "type": "oneOnOne",
+          "text": "Viel Spaß"
+        }
+      ],
+      "domain": "kipfer-dp.com",
+      "interactions": 49
+    },
+    {
+      "name": "Norbert Suter",
+      "email": "norbert.suter@green.ch",
+      "msgs_from": 17,
+      "my_replies_1to1": 22,
+      "chats": 1,
+      "last": "2026-06-12",
+      "in_group": 0,
+      "in_1to1": 17,
+      "samples": [
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "gerne, ja. muss ja nichts tun, glaub, aber dass ich das freihalte wenn was ist. zugang und so hast du, oder?"
+        },
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "der change ist soweit durch und bewilligt, also wir können jederzeit, florians leute (die main-user von pobi) müssen einfach vorab informiert werden. aber nächste woche ist anscheinend eh (wegen abwesenheiten und weil s reporting durch ist) kein problem"
+        },
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "so... bin zurück. der wollte einfach nicht einsteigen aber ist jetzt wieder zuhause"
+        },
+        {
+          "d": "2026-06-12",
+          "type": "oneOnOne",
+          "text": "hallo giovanni, ich muss noch kurz weg (pferd ist in der klinik, rücktransport in den stall) sollte eigentlich auf den change wieder zurück sein. falls nicht, könntest du mit florian, falls notwndig, beginnen? ich glaube, mich braucht es ja sowieso technisch nicht wirklich. ich nehme den laptop mit, telefonisch bin ich unter 079 201 56 32 erreichbar, wenn ich grad nicht am fahren bin."
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "weil.. die odbc-seite hab ich, da komme ich dazu. mir fehlt nur das azurezeugs für die neue verbindung"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "hmmm... florian's user auch nicht. welcher tennant ist es? dann frag ich mal bei dani's team nach"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "ja - so halb"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "bist du auf der plattform admin?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "und... vor allem... also option... auf dem neuen pobi-server könnte ich resp. muss ich das ja auch noch einrichten, brauche dafür aber einen \"azure-service-user\" oder wie man den auch immer benennt... wer kann mir ein solcher einrichten?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "ja, ist ja schon nur standard, aber ohne passwort vom serviceuser kann ich keine weitere odbc-datenquelle anhängen"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "o oh... John Winter..."
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "hallo giovanni, kurze frage: hast du die config des OnPrem gateways auf dem pobiserver gemacht?"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "ist leider noch nicht an einem log-tool angeschlossen, da sind wir erst dran"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "jein... gefühlt kein unterschied beim powerBI (gemäss Florian) aber was ich sehe ist eine gleichmässigere memory/cpu auslastung auf dem host. ich habe die logs noch nicht analysiert, sind textlogs, da muss ich erst die query-laufzeiten extrahieren."
+        },
+        {
+          "d": "2026-04-29",
+          "type": "oneOnOne",
+          "text": "wenn ich es aufs d: lege... 19G frei... dürft reichen bis morgen"
+        },
+        {
+          "d": "2026-04-29",
+          "type": "oneOnOne",
+          "text": "ok, np: wprde gerne an der gateway pipeline config das log einschalten. und morgen (damit wir bis dann ein paar vergleichswerte haben) ein paar parameter anpassen. die config passt total nicht zu den vorhandenen ressourcen, was eine ursache für das performanceproblem sein könnte."
+        },
+        {
+          "d": "2026-04-29",
+          "type": "oneOnOne",
+          "text": "hallo giovanni, darf ich dich kurz stören betreffend dem pobi51-server?"
+        }
+      ],
+      "domain": "green.ch",
+      "interactions": 39
+    },
+    {
+      "name": "Giorgia Cali",
+      "email": "g.cali@martellomanutenzione.com",
+      "msgs_from": 12,
+      "my_replies_1to1": 27,
+      "chats": 1,
+      "last": "2026-06-10",
+      "in_group": 0,
+      "in_1to1": 12,
+      "samples": [
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, se ci colleghiamo per lunedi 22 o martedi 23 tu riesci?"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, no ora purtroppo non riesco, ho dei lavori urgenti per lunedi ... ci sentiamo nelle prossime settimane. grazie mille intanto"
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, io oggi pomeriggio riuscirei solo dalle 13:00 alle 14:00 ..."
+        },
+        {
+          "d": "2026-06-05",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, ho provato ad aggiornare il report che abbiamo realizzato insieme l'ultima volta. Ora mi dà errore. Sto cercando di capire da cosa deriva, ma non riesco a risolvere il problema."
+        },
+        {
+          "d": "2026-05-28",
+          "type": "oneOnOne",
+          "text": "Non ho questa opzione in outlook"
+        },
+        {
+          "d": "2026-05-28",
+          "type": "oneOnOne",
+          "text": "Grazie mille"
+        },
+        {
+          "d": "2026-05-28",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, ci mandi tu l'invito per la riunione?"
+        },
+        {
+          "d": "2026-05-08",
+          "type": "oneOnOne",
+          "text": "Grazie mille."
+        },
+        {
+          "d": "2026-05-08",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, si è questo il report"
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "Ciao giovanni, grazie mille per la risposta. Domani provo di nuovo insieme al mio direttore e ti dico. Forse ho sbagliato io dove pubblicarlo."
+        },
+        {
+          "d": "2026-05-07",
+          "type": "oneOnOne",
+          "text": "Ciao Giovanni, è questo: Reddito progetto - Cockpit Martello Manutenzione - Power BI"
+        }
+      ],
+      "domain": "martellomanutenzione.com",
+      "interactions": 39
+    },
+    {
+      "name": "Thierry Gilgen",
+      "email": "thierry.gilgen@upgreat.ch",
+      "msgs_from": 5,
+      "my_replies_1to1": 2,
+      "chats": 1,
+      "last": "2026-06-10",
+      "in_group": 0,
+      "in_1to1": 5,
+      "samples": [
+        {
+          "d": "2026-06-10",
+          "type": "oneOnOne",
+          "text": "Konntest du das bereits nochmals prüfen?"
+        },
+        {
+          "d": "2026-06-04",
+          "type": "oneOnOne",
+          "text": "Hey Giovanni, darf ich dich noch kurz fragen bezüglich dem Cash-Measure vom FIBU? Ist das nun verfügbar?"
+        }
+      ],
+      "domain": "upgreat.ch",
+      "interactions": 7
+    },
+    {
+      "name": "Mirella Jolliet",
+      "email": "mirella.jolliet@pkrueck.com",
+      "msgs_from": 2,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 2,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "Es lebe der PKRück Spirit!"
+        }
+      ],
+      "domain": "pkrueck.com",
+      "interactions": 2
+    },
+    {
+      "name": "Monique van Loon",
+      "email": "",
+      "msgs_from": 2,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 2,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "tschüss zämä"
+        },
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "jetzt müssen wir alle heim gehen"
+        }
+      ],
+      "domain": "",
+      "interactions": 2
+    },
+    {
+      "name": "Andreas Canziani",
+      "email": "andreas.canziani@pkrueck.com",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2021-01-20",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2021-01-20",
+          "type": "meeting",
+          "text": "OK"
+        }
+      ],
+      "domain": "pkrueck.com",
+      "interactions": 1
+    },
+    {
+      "name": "Stefan Bonk",
+      "email": "",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2021-01-20",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2021-01-20",
+          "type": "meeting",
+          "text": "falscher Chat sorry"
+        }
+      ],
+      "domain": "",
+      "interactions": 1
+    },
+    {
+      "name": "Andreas Baer",
+      "email": "",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2021-01-20",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2021-01-20",
+          "type": "meeting",
+          "text": "ok spannend"
+        }
+      ],
+      "domain": "",
+      "interactions": 1
+    },
+    {
+      "name": "Florence Pinard",
+      "email": "florence.pinard@pkrueck.com",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "Merci! 👍🏻 Joyeux Noël à tous 😘"
+        }
+      ],
+      "domain": "pkrueck.com",
+      "interactions": 1
+    },
+    {
+      "name": "Annamaria Cusano",
+      "email": "",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "Es war cool aber ich dass wir das nächste Mal live feiern können. Schöne Weihnachten an allen und bleibt gesund... PKRück spirit"
+        }
+      ],
+      "domain": "",
+      "interactions": 1
+    },
+    {
+      "name": "Gabriela Lang",
+      "email": "gabriela.lang@pkrueck.com",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "vielen Dank, war ein super X-Mas Anlass"
+        }
+      ],
+      "domain": "pkrueck.com",
+      "interactions": 1
+    },
+    {
+      "name": "Nicole Keller",
+      "email": "nicole.keller@pkrueck.com",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "vielen lichen dank, war supercool frohe feiertage und einen guten rutsch ins neue jahr"
+        }
+      ],
+      "domain": "pkrueck.com",
+      "interactions": 1
+    },
+    {
+      "name": "Stephan Lussi",
+      "email": "stephan.lussi@pkrueck.com",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "Danke für den gelungenen Event!"
+        }
+      ],
+      "domain": "pkrueck.com",
+      "interactions": 1
+    },
+    {
+      "name": "Judith Klemm",
+      "email": "",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "super. danke. es war toll"
+        }
+      ],
+      "domain": "",
+      "interactions": 1
+    },
+    {
+      "name": "Christoph Curtius",
+      "email": "",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "Merci & Happy XMAS"
+        }
+      ],
+      "domain": "",
+      "interactions": 1
+    },
+    {
+      "name": "Eren Dilber",
+      "email": "",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2020-12-16",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2020-12-16",
+          "type": "meeting",
+          "text": "PKRück... Spirit...danke"
+        }
+      ],
+      "domain": "",
+      "interactions": 1
+    },
+    {
+      "name": "Karin Schmidt",
+      "email": "karin.schmidt@sharkgroup.swiss",
+      "msgs_from": 1,
+      "my_replies_1to1": 0,
+      "chats": 0,
+      "last": "2026-06-10",
+      "in_group": 0,
+      "in_1to1": 1,
+      "samples": [
+        {
+          "d": "2026-06-10",
+          "type": "meeting",
+          "text": "#00000000"
+        }
+      ],
+      "domain": "sharkgroup.swiss",
+      "interactions": 1
+    }
+  ],
+  "group_chats": []
+}

@@ -1,0 +1,1341 @@
+=== Weekly refresh START Mon Jun  8 07:39:23 CEST 2026 ===
+
+--- m365_people_sync.py ---
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/m365_people_sync.py", line 273, in <module>
+    main()
+    ~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/m365_people_sync.py", line 231, in main
+    token = get_token(scopes)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/m365_people_sync.py", line 56, in get_token
+    return _ac_get_token(scopes)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 66, in get_token
+    app = build_app()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 59, in build_app
+    return msal.PublicClientApplication(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 2093, in __init__
+    super(PublicClientApplication, self).__init__(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        client_id, client_credential=None, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 649, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 98, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 292, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+WARN: 'm365_people_sync.py' fehlgeschlagen (weiter)
+
+--- mail_digest.py --top 0 --max 6000 --min-total 1 --sort sent ---
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/mail_digest.py", line 151, in <module>
+    main()
+    ~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/mail_digest.py", line 105, in main
+    token = get_token()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/mail_digest.py", line 34, in get_token
+    return _ac_get_token(SCOPES)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 66, in get_token
+    app = build_app()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 59, in build_app
+    return msal.PublicClientApplication(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 2093, in __init__
+    super(PublicClientApplication, self).__init__(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        client_id, client_credential=None, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 649, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 98, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 292, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+WARN: 'mail_digest.py --top 0 --max 6000 --min-total 1 --sort sent' fehlgeschlagen (weiter)
+
+--- teams_digest.py --max-chats 600 ---
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/teams_digest.py", line 191, in <module>
+    main()
+    ~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/teams_digest.py", line 78, in main
+    token = get_token()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/teams_digest.py", line 37, in get_token
+    return _ac_get_token(SCOPES)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 66, in get_token
+    app = build_app()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 59, in build_app
+    return msal.PublicClientApplication(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 2093, in __init__
+    super(PublicClientApplication, self).__init__(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        client_id, client_credential=None, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 649, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 98, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 292, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+WARN: 'teams_digest.py --max-chats 600' fehlgeschlagen (weiter)
+
+--- first_contact.py --apply ---
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/first_contact.py", line 137, in <module>
+    main()
+    ~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/first_contact.py", line 118, in main
+    token = get_token()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/first_contact.py", line 39, in get_token
+    return _ac_get_token(SCOPES)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 66, in get_token
+    app = build_app()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 59, in build_app
+    return msal.PublicClientApplication(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 2093, in __init__
+    super(PublicClientApplication, self).__init__(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        client_id, client_credential=None, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 649, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 98, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 292, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+WARN: 'first_contact.py --apply' fehlgeschlagen (weiter)
+
+--- teams_first_contact.py --apply ---
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/teams_first_contact.py", line 139, in <module>
+    main()
+    ~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/teams_first_contact.py", line 84, in main
+    token = get_token()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/teams_first_contact.py", line 34, in get_token
+    return _ac_get_token(SCOPES)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 66, in get_token
+    app = build_app()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 59, in build_app
+    return msal.PublicClientApplication(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 2093, in __init__
+    super(PublicClientApplication, self).__init__(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        client_id, client_credential=None, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 649, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 98, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 292, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+WARN: 'teams_first_contact.py --apply' fehlgeschlagen (weiter)
+
+--- link_people_to_clients.py --apply ---
+
+### SICHER (high) (195) ###
+  InnoRecycling AG                           → [[InnoRecycling]]   (Abidin Ramadani.md)
+  SIX Payment Services AG                    → [[SIX_Payment_Services]]   (Adrian Elmiger.md)
+  4B AG                                      → [[4B_AG]]   (Adrian Senn.md)
+  SAGE                                       → [[Sage]]   (Albert Gut.md)
+  Castelli Solutions                         → [[Castelli_Solutions]]   (Alessandro Castelli.md)
+  FUCHS & Söhne Service GmbH                 → [[Fuchs_Soehne]]   (Alexander Hintermeyer.md)
+  Fuchs & Söhne Service GmbH                 → [[Fuchs_Soehne]]   (Alexander Savcenko.md)
+  Upgreat AG                                 → [[Upgreat]]   (Alexander Scheiflinger Intern.md)
+  Wallee Group AG                            → [[Wallee]]   (Alperen Yillikci.md)
+  SACAC AG                                   → [[SACAC]]   (Amiti Elfat.md)
+  Zindel United                              → [[Zindel_United]]   (Amort Mathias.md)
+  InnoRecycling AG                           → [[InnoRecycling]]   (Andre Model.md)
+  Sacac AG                                   → [[SACAC]]   (Andrea Fanaj.md)
+  ANiFit AG                                  → [[ANiFit]]   (Andrea Vesti.md)
+  PKRück                                     → [[PKRueck]]   (Andreas Bär.md)
+  Upgreat AG                                 → [[Upgreat]]   (Andreas Meier Aryzta - TSK0145304.md)
+  Upgreat AG                                 → [[Upgreat]]   (André Meier tibits - TSK145334.md)
+  Green.ch AG                                → [[Green]]   (André Schmidt.md)
+  Bertschi Bäckerei zum Brotkorb AG          → [[Bertschi]]   (Anna Affolter.md)
+  tibits ag                                  → [[tibits]]   (Antonio Canonica.md)
+  OBRIST interior AG                         → [[OBRIST]]   (Barbara Gilli.md)
+  Fuchs & Söhne Service GmbH                 → [[Fuchs_Soehne]]   (Barbara Kühnlein.md)
+  Upgreat AG                                 → [[Upgreat]]   (Bastian Schmidig Intern.md)
+  Green.ch                                   → [[Green]]   (Beni Frei.md)
+  OBRIST interior AG                         → [[OBRIST]]   (Benjamin Loosli.md)
+  Zindel United                              → [[Zindel_United]]   (Beno Suter.md)
+  SIGA                                       → [[SIGA]]   (Bissig Sandro.md)
+  Firentis AG                                → [[Firentis]]   (Busetti Adriano.md)
+  Sacac AG                                   → [[SACAC]]   (Carlos Fonseca.md)
+  Invias AG                                  → [[Invias]]   (Caspar Corinne.md)
+  TPS Servizi SA                             → [[Thoma_Group]]   (Chiara Zurini.md)
+  tibits ag                                  → [[tibits]]   (Chris Troxler.md)
+  Wallee Group AG                            → [[Wallee]]   (Christian Baumann.md)
+  Weibel AG                                  → [[Weibel]]   (Christian Burri.md)
+  Green.ch AG                                → [[Green]]   (Christian Meier.md)
+  PKRück                                     → [[PKRueck]]   (Christoph Curtius.md)
+  green.ch                                   → [[Green]]   (Christoph Müller.md)
+  Siga                                       → [[SIGA]]   (Christoph Ryan.md)
+  Fuchs & Söhne Service GmbH                 → [[Fuchs_Soehne]]   (Conrad Fuchs.md)
+  Green.ch AG                                → [[Green]]   (Cyril Kym.md)
+  Nahrin AG                                  → [[Nahrin]]   (Daniel Cekic.md)
+  SIX Payment Services Ltd                   → [[SIX_Payment_Services]]   (Daniel Haas.md)
+  SIX Payment Services AG / Worldline        → [[SIX_Payment_Services]]   (Daniel Hostettler.md)
+  4B AG                                      → [[4B_AG]]   (Daniel Jänicke.md)
+  OBRIST interior AG                         → [[OBRIST]]   (Daniel Peter.md)
+  green.ch AG                                → [[Green]]   (Daniela Brauckhoff.md)
+  Team Personnel Solutions SA                → [[Thoma_Group]]   (Daniele Thoma.md)
+  Team Personnel Solutions SA                → [[Thoma_Group]]   (Davide Marabese.md)
+  Sefag Components AG                        → [[Sefag]]   (Dejan Aleksic.md)
+  Six Payment Services AG                    → [[SIX_Payment_Services]]   (Dejan Juric.md)
+  Nahrin AG                                  → [[Nahrin]]   (Didier Grichting.md)
+  MVM AG                                     → [[MVM_AG]]   (Drita Laskaj.md)
+  Sefag Components AG                        → [[Sefag]]   (Edwin Amstalden.md)
+  Siga                                       → [[SIGA]]   (Eymann Andreas.md)
+  BWT                                        → [[BWT]]   (Favre Christian.md)
+  Sefag Components AG                        → [[Sefag]]   (Fähndrich Heinz.md)
+  Robotec AG Systembaustoffe                 → [[Robotec]]   (Florent Singh.md)
+  Green.ch AG                                → [[Green]]   (Florian Barben.md)
+  Upgreat AG                                 → [[Upgreat]]   (Florian Schmidt Zindel Marketing - TSK0145413.md)
+  4B AG                                      → [[4B_AG]]   (Frank Fiedler.md)
+  Controller Akademie                        → [[Controller_Akademie]]   (Gabriele Baumann.md)
+  Zindel United                              → [[Zindel_United]]   (Gallo Marco.md)
+  Martello Manutenzione                      → [[Martello_Manutenzione]]   (Giorgia Cali.md)
+  Sacac AG                                   → [[SACAC]]   (Giovanni Squadrito.md)
+  Sage                                       → [[Sage]]   (Gysin, Rolf.md)
+  Hans Meier AG                              → [[Hans_Meier_AG]]   (Hanspeter Meier.md)
+  PKRück                                     → [[PKRueck]]   (Hanspeter Tobler.md)
+  BW Generalbau AG                           → [[BW_Generalbau]]   (Hartmann Christian.md)
+  Sefag                                      → [[Sefag]]   (Hausheer Jonathan.md)
+  Green.ch                                   → [[Green]]   (Head of Operations & Delivery Alexander Pascual.md)
+  Siga                                       → [[SIGA]]   (Hecht Nicole.md)
+  Heike Hunnenberg GmbH                      → [[Hunnenberg]]   (Heike Hunnenberg.md)
+  nahrin                                     → [[Nahrin]]   (Hunn, Simon.md)
+  ANiFit AG                                  → [[ANiFit]]   (Irma Roth.md)
+  Avintos AG                                 → [[Avintos]]   (Jérôme CHABLOZ.md)
+  swissporarena events ag                    → [[Swissporarena]]   (Joel Langenauer.md)
+  Green.ch AG                                → [[Green]]   (John Winter.md)
+  World Vision International                 → [[World_Vision]]   (John Zigi.md)
+  AbbVie AG                                  → [[AbbVie]]   (Jona Herter.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Juliana Araujo.md)
+  Green.ch AG                                → [[Green]]   (Kacper Mizdal.md)
+  Direct Handling AG                         → [[SHARKGROUP]]   (Karin Schmidt.md)
+  SACAC AG                                   → [[SACAC]]   (Kiser Daniel.md)
+  4B AG                                      → [[4B_AG]]   (Kurt Martin.md)
+  4B AG                                      → [[4B_AG]]   (Larissa Aregger.md)
+  Allreal Generalunternehmung AG             → [[Allreal]]   (Loic Tobler.md)
+  Sacac AG                                   → [[SACAC]]   (Lukas Unteregger.md)
+  Calanda Gruppe                             → [[Calanda]]   (Maik Capeder.md)
+  Allreal Generalunternehmung AG             → [[Allreal]]   (Marc Frei.md)
+  Robotec                                    → [[Robotec]]   (Marcel Jeker.md)
+  PKRück                                     → [[PKRueck]]   (Marcel Sigel.md)
+  Ernst Selmoni                              → [[Selmoni]]   (Marco Gröflin.md)
+  SIGA Holding AG                            → [[SIGA]]   (Marco Sieber.md)
+  Green.ch AG                                → [[Green]]   (Marco Stadler.md)
+  Nahrin AG                                  → [[Nahrin]]   (Marco Zwyssig.md)
+  Green.ch AG                                → [[Green]]   (Marietta Hersche.md)
+  Upgreat AG                                 → [[Upgreat]]   (Markus Berger Intern.md)
+  Integral design-build AG                   → [[Integral]]   (Markus Brunner.md)
+  Sage                                       → [[Sage]]   (Martin Hauser.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Matteo Ferrari.md)
+  Porsche Schweiz AG                         → [[Porsche_Schweiz]]   (Matthias Richner.md)
+  tibits ag                                  → [[tibits]]   (Melanie Bigler.md)
+  swissporarena events ag                    → [[Swissporarena]]   (Melanie Trüb.md)
+  Green.ch AG                                → [[Green]]   (Michael Huser.md)
+  Upgreat AG                                 → [[Upgreat]]   (Michael Koller Intern.md)
+  Fuchs & Söhne Service GmbH                 → [[Fuchs_Soehne]]   (Michael Novotny.md)
+  Hiltl                                      → [[Hiltl]]   (Miguel Barros.md)
+  Green                                      → [[Green]]   (Mike Erne.md)
+  Green.ch AG                                → [[Green]]   (Miodrag Mitric.md)
+  PKRück                                     → [[PKRueck]]   (Mirella Jolliet.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Mirko Lanzi.md)
+  tibits ag                                  → [[tibits]]   (Monika Schütz.md)
+  Direct Handling AG                         → [[SHARKGROUP]]   (Moritz Mühlebach.md)
+  Staiger Rechtsanwälte AG                   → [[Staiger_Rechtsanwaelte]]   (Müller Timothy.md)
+  Integral design-build AG                   → [[Integral]]   (Myna Osiman.md)
+  Sacac AG                                   → [[SACAC]]   (Nada Schluep.md)
+  Green.ch AG                                → [[Green]]   (Nadja Rupp.md)
+  Sacac AG                                   → [[SACAC]]   (Nicodemo D'Argento.md)
+  ANiFit AG                                  → [[ANiFit]]   (Nicole Cannellotto.md)
+  Elektrizitätswerk Obwalden                 → [[EWO]]   (Niederberger Christoph.md)
+  Kampmeyer Immobilien GmbH                  → [[Kampmeyer]]   (Nina Lenz.md)
+  Green.ch AG                                → [[Green]]   (Norbert Suter.md)
+  Bader Immobilien (DOMBA)                   → [[Bader]]   (Oliver Bader.md)
+  MVM AG                                     → [[MVM_AG]]   (Oliver Lüthi.md)
+  4B AG                                      → [[4B_AG]]   (Olliver Flühler.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Omar Rodoni.md)
+  SIGA                                       → [[SIGA]]   (Orofino Alessio.md)
+  TPS Servizi SA                             → [[Thoma_Group]]   (Paolo Thoma.md)
+  Green.ch AG                                → [[Green]]   (Pascal Fähndrich.md)
+  Robotec                                    → [[Robotec]]   (Pascal Jablonski.md)
+  Sacac AG                                   → [[SACAC]]   (Pascal Koch.md)
+  Wallee Group AG                            → [[Wallee]]   (Pascal Sernatinger.md)
+  avintos AG                                 → [[Avintos]]   (Pascal Wicht.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Patric Schielke.md)
+  Elektrizitätswerk Obwalden                 → [[EWO]]   (Patrick Amgwerd.md)
+  Green.ch AG                                → [[Green]]   (Patrick Cruz.md)
+  Genossenschaft Migros Luzern               → [[Migros_Luzern]]   (Patrick Lienhard.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Patrick Meyer.md)
+  Ennio Ferrari Holding SA                   → [[Ennio_Ferrari]]   (Petar Jovic.md)
+  SIGA Services AG                           → [[SIGA]]   (Peter Scherrer.md)
+  Sacac AG                                   → [[SACAC]]   (Petrit Berisha.md)
+  Upgreat AG                                 → [[Upgreat]]   (Philipp Walter Steinfels - TSK0146197.md)
+  InnoRecycling AG                           → [[InnoRecycling]]   (Philippe Model.md)
+  Green.ch AG                                → [[Green]]   (Punam Mazzini.md)
+  Direct Handling AG                         → [[SHARKGROUP]]   (Rahel Bachmann.md)
+  Upgreat AG                                 → [[Upgreat]]   (Ralph Baumgartner Stadt Winterthur.md)
+  MVM AG                                     → [[MVM_AG]]   (Remo Pfister.md)
+  4B AG                                      → [[4B_AG]]   (Reto Andenmatten.md)
+  tibits ag                                  → [[tibits]]   (Reto Frei.md)
+  Hochschule Luzern Wirtschaft               → [[Hochschule_Luzern]]   (Reto Huber.md)
+  swissporarena events ag                    → [[Swissporarena]]   (Richard Furrer.md)
+  Upgreat AG                                 → [[Upgreat]]   (Rinaldo Lieberherr.md)
+  4B AG                                      → [[4B_AG]]   (Robert Haas.md)
+  bepartner ag                               → [[bepartner]]   (Roger von Ah.md)
+  Kampmeyer Immobilien GmbH                  → [[Kampmeyer]]   (Roland Kampmeyer.md)
+  Memo Treuhand AG                           → [[Memo_Treuhand]]   (Rolf Sonderegger.md)
+  Zindel United                              → [[Zindel_United]]   (Romano De Giorgi.md)
+  tibits ag                                  → [[tibits]]   (Romy-Louise Messerli.md)
+  Hochschule Luzern Wirtschaft               → [[Hochschule_Luzern]]   (Sandra Joller.md)
+  ANiFiT AG                                  → [[ANiFit]]   (Sandro Hernandez.md)
+  tibits ag                                  → [[tibits]]   (Sara Meierhofer.md)
+  Wallee Group AG                            → [[Wallee]]   (Sascha Krüsi.md)
+  MVM AG                                     → [[MVM_AG]]   (Sascha Ziswiler.md)
+  Green.ch AG                                → [[Green]]   (Saša Butina.md)
+  Staiger Rechtsanwälte                      → [[Staiger_Rechtsanwaelte]]   (Schätti Rolf.md)
+  Sefag Components AG                        → [[Sefag]]   (Schuler Bernhard.md)
+  Fuchs & Söhne Service GmbH                 → [[Fuchs_Soehne]]   (Sebastian Wenisch.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Silke Kemnitz.md)
+  Green.ch AG                                → [[Green]]   (Silvan Killer.md)
+  UPGREAT AG                                 → [[Upgreat]]   (Simon Hanselmann.md)
+  swissporarena events ag                    → [[Swissporarena]]   (Simon Meier.md)
+  Green.ch AG                                → [[Green]]   (Solange Silva.md)
+  Hochschule Luzern Wirtschaft               → [[Hochschule_Luzern]]   (Stefan Behringer.md)
+  Mindpearl (ehemalig)                       → [[Mindpearl]]   (Stefan Burri.md)
+  Hochschule Luzern Wirtschaft               → [[Hochschule_Luzern]]   (Stefan Renggli.md)
+  Bertschi Bäckerei zum Brotkorb AG          → [[Bertschi]]   (Steffen Gross.md)
+  SHARKGROUP AG                              → [[SHARKGROUP]]   (Stephanie Stark.md)
+  Elektrizitätswerk Obwalden                 → [[EWO]]   (Stocker Roman.md)
+  Nahrin AG                                  → [[Nahrin]]   (Strebel, Martin.md)
+  Sefag Components AG                        → [[Sefag]]   (Studer Hans-Ueli.md)
+  OBRIST interior AG                         → [[OBRIST]]   (Studerus Dominique.md)
+  Staiger Rechtsanwälte                      → [[Staiger_Rechtsanwaelte]]   (Stüssi Jonas.md)
+  Steinfels Swiss                            → [[Steinfels]]   (Sven Mostert.md)
+  Heike Hunnenberg GmbH                      → [[Hunnenberg]]   (Tatjana Holzmann.md)
+  Six Payment Services AG                    → [[SIX_Payment_Services]]   (Thomas Eppler.md)
+  Sage                                       → [[Sage]]   (Thomas Hersche.md)
+  Allreal                                    → [[Allreal]]   (Thomas Wapp.md)
+  Wallee Group AG                            → [[Wallee]]   (Tim Toulas.md)
+  Steinfels                                  → [[Steinfels]]   (Tino Torelli.md)
+  Green.ch AG                                → [[Green]]   (Tsultrim Drongshar.md)
+  Weibel AG                                  → [[Weibel]]   (Urs Berchtold.md)
+  Zindel United                              → [[Zindel_United]]   (Urs Locher.md)
+  OBRIST interior AG                         → [[OBRIST]]   (Walter Furrer.md)
+  Sefag Components AG                        → [[Sefag]]   (Werner Schwerzmann.md)
+  E. Weber AG (Wattwil)                      → [[E_Weber_AG]]   (Zoric Katarina.md)
+
+### UNSICHER – bitte prüfen (low) (6) ###
+  UBS Business Solutions AG                  → [[UBS]]   (Alena Magliano.md)
+  Big Green Egg Head                         → [[Green]]   (Duri Campell.md)
+  Vista Augenpraxen und Kliniken             → [[Vista]]   (Isa Cansu.md)
+  Vista Augenpraxen und Kliniken             → [[Vista]]   (Lukas Kaiser.md)
+  UBS Business Solutions AG                  → [[UBS]]   (Markus Lüttin.md)
+  Andre Weber e Associati                    → [[E_Weber_AG]]   (c.bianchetti.md)
+
+✓ 49 Personen-Notizen mit client-Link ergänzt.
+
+--- fill_stakeholders.py --apply ---
+
+### 4B_AG (9) ###
+  - [[Lötscher Patrick]]
+  - [[Adrian Senn]]
+  - [[Daniel Jänicke]]
+  - [[Frank Fiedler]]
+  - [[Kurt Martin]]
+  - [[Larissa Aregger]]
+  - [[Olliver Flühler]] — CFO
+  - [[Reto Andenmatten]]
+  - [[Robert Haas]] — IT Senior System Engineer
+
+### ANiFit (5) ###
+  - [[Andrea Vesti]] — CEO
+  - [[Tatjana Mettler]]
+  - [[Irma Roth]] — Coordinator Sales / Projects
+  - [[Nicole Cannellotto]] — Produktmanagerin
+  - [[Sandro Hernandez]]
+
+### AbbVie (1) ###
+  - [[Jona Herter]] — Customer Excellence Project Specialist
+
+### Allreal (3) ###
+  - [[Loic Tobler]]
+  - [[Marc Frei]] — Leiter Controlling
+  - [[Thomas Wapp]] — CFO
+
+### Avintos (2) ###
+  - [[Jérôme CHABLOZ]] — Geschäftsleiter
+  - [[Pascal Wicht]] — Sales Manager
+
+### BWT (1) ###
+  - [[Favre Christian]]
+
+### BW_Generalbau (1) ###
+  - [[Hartmann Christian]] — CFO
+
+### Bader (1) ###
+  - [[Oliver Bader]]
+
+### BauBit_Offertenauswertung (1) ###
+  - [[Christian Burri]]
+
+### Bertschi (2) ###
+  - [[Anna Affolter]]
+  - [[Steffen Gross]] — Leiter Finanzen&Controlling
+
+### Calanda (1) ###
+  - [[Maik Capeder]]
+
+### Castelli_Solutions (1) ###
+  - [[Alessandro Castelli]]
+
+### Controller_Akademie (1) ###
+  - [[Gabriele Baumann]] — Studiengangsbetreuerin
+
+### DOBI (2) ###
+  - [[Nydegger Mbai]]
+  - [[Stojanovic Nenad]]
+
+### EWO (3) ###
+  - [[Niederberger Christoph]] — Informatiker
+  - [[Patrick Amgwerd]] — Leiter Geschäftsfeld Finanzen
+  - [[Stocker Roman]]
+
+### E_Weber_AG (1) ###
+  - [[Zoric Katarina]]
+
+### Ennio_Ferrari (5) ###
+  - [[Mirko Lanzi]] — CFO
+  - [[Omar Rodoni]]
+  - [[Juliana Araujo]]
+  - [[Matteo Ferrari]]
+  - [[Petar Jovic]]
+
+### Firentis (1) ###
+  - [[Busetti Adriano]]
+
+### Fuchs_Soehne (6) ###
+  - [[Alexander Hintermeyer]] — Leiter IT
+  - [[Alexander Savcenko]] — Controller
+  - [[Barbara Kühnlein]] — Leiterin Finanzen
+  - [[Conrad Fuchs]] — CEO
+  - [[Michael Novotny]] — Geschäftsführer
+  - [[Sebastian Wenisch]]
+
+### Green (25) ###
+  - [[Saša Butina]] — Head of Controlling
+  - [[Daniela Lutz-Holdener]]
+  - [[André Schmidt]]
+  - [[Beni Frei]]
+  - [[Christian Meier]]
+  - [[Christoph Müller]] — Head of Product Management + Business Solutions, Dipl Ing & EMBA
+  - [[Cyril Kym]]
+  - [[Daniela Brauckhoff]]
+  - [[Florian Barben]] — Junior Controller
+  - [[Head of Operations & Delivery Alexander Pascual]]
+  - [[John Winter]] — Product Manager
+  - [[Kacper Mizdal]]
+  - [[Marco Stadler]] — Chief Sales Officer
+  - [[Marietta Hersche]] — CMO
+  - [[Michael Huser]] — Head of Technical Sales
+  - [[Mike Erne]]
+  - [[Miodrag Mitric]] — Head of Business Development
+  - [[Nadja Rupp]] — System Engineer
+  - [[Norbert Suter]] — IT / Infrastruktur (On-Prem Data Gateway, Server)
+  - [[Pascal Fähndrich]]
+  - [[Patrick Cruz]] — Data Analyst
+  - [[Punam Mazzini]] — Head Customer Service Management
+  - [[Silvan Killer]] — CFO
+  - [[Solange Silva]]
+  - [[Tsultrim Drongshar]] — Supervisor Internet Support
+
+### HSLU (3) ###
+  - [[Reto Huber]] — Studienleiter CAS Digital Controlling
+  - [[Sandra Joller]] — Sekretariat
+  - [[Stefan Behringer]] — Leiter Competence Center Controlling
+
+### Hans_Meier_AG (1) ###
+  - [[Hanspeter Meier]]
+
+### HfH (4) ###
+  - [[Eckehart Messer]]
+  - [[Ekkehard Spilling]]
+  - [[Flurin Giger]] — Leiter Finanzen Controlling
+  - [[HonLuong Ly]]
+
+### Hiltl (1) ###
+  - [[Miguel Barros]]
+
+### Hochschule_Luzern (1) ###
+  - [[Stefan Renggli]] — Prof. Dozent
+
+### Hunnenberg (2) ###
+  - [[Tatjana Holzmann]]
+  - [[Heike Hunnenberg]] — Geschäftsführerin
+
+### InnoRecycling (3) ###
+  - [[Abidin Ramadani]]
+  - [[Andre Model]]
+  - [[Philippe Model]] — Geschäftsführer
+
+### Integral (2) ###
+  - [[Markus Brunner]]
+  - [[Myna Osiman]]
+
+### Invias (1) ###
+  - [[Caspar Corinne]]
+
+### Kampmeyer (2) ###
+  - [[Nina Lenz]]
+  - [[Roland Kampmeyer]]
+
+### Lachat (1) ###
+  - [['Sylvie Jeannerat']]
+
+### MVM_AG (4) ###
+  - [[Remo Pfister]] — Leiter Finanzen und Administration
+  - [[Drita Laskaj]] — Personalverantwortliche
+  - [[Sascha Ziswiler]] — Geschäftsführer und Mitinhaber
+  - [[Oliver Lüthi]] — Verantwortlicher Technischer Betrieb
+
+### Martello_Manutenzione (1) ###
+  - [[Giorgia Cali]]
+
+### Meier_Jaeggi (1) ###
+  - [[Anthony Frigerio]]
+
+### Memo_Treuhand (1) ###
+  - [[Rolf Sonderegger]]
+
+### Migros_Luzern (1) ###
+  - [[Patrick Lienhard]] — Finanzen Controlling
+
+### Mindpearl (1) ###
+  - [[Stefan Burri]] — Pensioniert (ehem. CEO & CFO, Mindpearl)
+
+### Miraglia_BI_intern (2) ###
+  - [[Elvira Miraglia-Castelli]] — Sekretärin
+  - [[Raoul Elias Miraglia]]
+
+### Nahrin (7) ###
+  - [[Kübler, Christoph]]
+  - [[Ringwald, Stefanie]]
+  - [[Daniel Cekic]]
+  - [[Didier Grichting]] — COO
+  - [[Hunn, Simon]] — ICT
+  - [[Marco Zwyssig]]
+  - [[Strebel, Martin]] — CFO
+
+### OBRIST (5) ###
+  - [[Barbara Gilli]]
+  - [[Benjamin Loosli]] — Application Manager
+  - [[Daniel Peter]]
+  - [[Studerus Dominique]]
+  - [[Walter Furrer]] — Leader ICT
+
+### PKRueck (5) ###
+  - [[Andreas Bär]]
+  - [[Christoph Curtius]]
+  - [[Hanspeter Tobler]]
+  - [[Marcel Sigel]] — IT-Verantwortlicher
+  - [[Mirella Jolliet]]
+
+### Porsche_Schweiz (1) ###
+  - [[Matthias Richner]] — IT-Manager
+
+### Robotec (3) ###
+  - [[Florent Singh]]
+  - [[Marcel Jeker]]
+  - [[Pascal Jablonski]]
+
+### SACAC (11) ###
+  - [[Kiser Daniel]] — CEO / Geschäftsführer
+  - [[Züllig Robin]]
+  - [[Amiti Elfat]]
+  - [[Andrea Fanaj]] — Leiterin Personal
+  - [[Carlos Fonseca]]
+  - [[Giovanni Squadrito]] — Prozesscoach / Projektleiter Treppen
+  - [[Lukas Unteregger]]
+  - [[Nada Schluep]]
+  - [[Nicodemo D'Argento]]
+  - [[Pascal Koch]]
+  - [[Petrit Berisha]] — Leiter IT & Digitalisierung
+
+### SHARKGROUP (4) ###
+  - [[Moritz Mühlebach]]
+  - [[Karin Schmidt]]
+  - [[Rahel Bachmann]]
+  - [[Stephanie Stark]]
+
+### SIGA (7) ###
+  - [[Bissig Sandro]] — Scrum Master Digital Supply Chain
+  - [[Christoph Ryan]]
+  - [[Eymann Andreas]]
+  - [[Hecht Nicole]]
+  - [[Marco Sieber]]
+  - [[Orofino Alessio]]
+  - [[Peter Scherrer]] — CFO
+
+### SIX_Payment_Services (5) ###
+  - [[Adrian Elmiger]] — Head Sales Switzerland
+  - [[Daniel Haas]] — Head of Product Management Acquring
+  - [[Daniel Hostettler]]
+  - [[Dejan Juric]] — Head Innovation
+  - [[Thomas Eppler]] — Senior Innovation Manager
+
+### Sage (4) ###
+  - [[Albert Gut]]
+  - [[Gysin, Rolf]]
+  - [[Martin Hauser]] — Senior Software Architect / Berufsbildner
+  - [[Thomas Hersche]] — Head of Sales C4L
+
+### SecuSuisse (1) ###
+  - [[Alexander Eberle]]
+
+### Sefag (8) ###
+  - [[Schuler Bernhard]]
+  - [[Jan Kottucz]]
+  - [[Dejan Aleksic]] — Supply Chain
+  - [[Edwin Amstalden]] — Finance & Human Resources
+  - [[Fähndrich Heinz]]
+  - [[Hausheer Jonathan]]
+  - [[Studer Hans-Ueli]]
+  - [[Werner Schwerzmann]] — Supply Chain Management
+
+### Selmoni (1) ###
+  - [[Marco Gröflin]]
+
+### Staiger_Rechtsanwaelte (3) ###
+  - [[Schätti Rolf]]
+  - [[Müller Timothy]] — Rechtsanwalt
+  - [[Stüssi Jonas]]
+
+### Steinfels (2) ###
+  - [[Sven Mostert]]
+  - [[Tino Torelli]]
+
+### Swissporarena (5) ###
+  - [[Joel Langenauer]]
+  - [[Melanie Trüb]] — Human Resources Management
+  - [[Philipp Flury]] — Leiter Finanz- und Rechnungswesen
+  - [[Richard Furrer]] — CFO
+  - [[Simon Meier]] — ad Interim Leiter IT & Digitalisierung
+
+### Thoma_Group (5) ###
+  - [[Paolo Thoma]]
+  - [[Serhiy Ushchapivskyy]]
+  - [[Davide Marabese]]
+  - [[Chiara Zurini]]
+  - [[Daniele Thoma]]
+
+### Upgreat (14) ###
+  - [[Markus Berger Intern]] — Head Finance & Central Services
+  - [[Alexander Scheiflinger Intern]]
+  - [[Andreas Meier Aryzta - TSK0145304]]
+  - [[André Meier tibits - TSK145334]] — Head of Sales
+  - [[Bastian Schmidig Intern]] — Expert Solution Advisor
+  - [[Florian Schmidt Zindel Marketing - TSK0145413]] — Head Business Solutions
+  - [[Michael Koller Intern]] — Team Head Software Engineering
+  - [[Patric Schielke]] — Software Engineer
+  - [[Patrick Meyer]] — IT Business Consultant
+  - [[Philipp Walter Steinfels - TSK0146197]] — Managing Partner
+  - [[Ralph Baumgartner Stadt Winterthur]]
+  - [[Rinaldo Lieberherr]] — Eigentümer / Inhaber Upgreat
+  - [[Silke Kemnitz]]
+  - [[Simon Hanselmann]]
+
+### Vista (2) ###
+  - [[Isa Cansu]] — CFO
+  - [[Lukas Kaiser]] — Head of IT (CIO)
+
+### Wallee (5) ###
+  - [[Alperen Yillikci]]
+  - [[Christian Baumann]] — CPO
+  - [[Pascal Sernatinger]] — CFO
+  - [[Sascha Krüsi]] — Co.Founder
+  - [[Tim Toulas]]
+
+### Weibel (1) ###
+  - [[Urs Berchtold]]
+
+### World_Vision (1) ###
+  - [[John Zigi]] — Regional Finance Director
+
+### Zindel_United (5) ###
+  - [[Amort Mathias]]
+  - [[Beno Suter]] — Leiter Finance
+  - [[Gallo Marco]]
+  - [[Romano De Giorgi]] — CFO
+  - [[Urs Locher]]
+
+### bepartner (1) ###
+  - [[Roger von Ah]]
+
+### tibits (9) ###
+  - [[Antonio Canonica]]
+  - [[Daniel Frei]]
+  - [[Andreas Frei]]
+  - [[Chris Troxler]] — Leiter Operations
+  - [[Melanie Bigler]]
+  - [[Monika Schütz]] — Leiterin Einkauf F&B
+  - [[Reto Frei]]
+  - [[Romy-Louise Messerli]] — Leiterin Personal
+  - [[Sara Meierhofer]]
+
+✓ 47 Kundenakten aktualisiert.
+
+--- apply_firmenprofile.py --apply ---
+✓ 4B_AG                    AG · 1896 · Hochdorf (LU)
+✓ ANiFit                   AG · 2001-10-19 · Appenzell (AI)
+✓ BWT                      AG · 1948-12-21 · Winterthur (ZH)
+✓ Bader                    AG · 1994-05-27 · Luzern (LU)
+✓ Bertschi                 AG · 1923-12-22 · Kloten (ZH)
+✓ Compul                   SA · 1988 · Osogna, Riviera (TI)
+✓ DOBI                     AG · 1963 · Suhr (AG)
+✓ EWO                      Öffentlich-rechtliche Anstalt · 1905 (seit 1955 öffentlich-rechtlich) · Kerns (OW)
+✓ E_Weber_AG               AG · None · Wattwil (SG)
+✓ Ennio_Ferrari            SA (Holding) · 2018-12-11 · Lodrino, Riviera (TI)
+✓ Green                    AG · 1995 · Lupfig (AG)
+✓ Hans_Meier_AG            AG · 1987 · Altishofen (LU)
+✓ Haus_Waeckerling         AG · 2024 · Uetikon am See (ZH)
+✓ Hiltl                    AG · 1898 (Hiltl AG: 2005) · Zürich (ZH)
+✓ Hunnenberg               GmbH · 1989 · Düsseldorf (DE)
+✓ Invias                   AG · 2017 · Maienfeld (GR)
+✓ Koster_BAB               AG · 1967-02-21 · Zürich (ZH)
+✓ OFAC_Pharmacy            Genossenschaft · 1963 · Genève (GE)
+✓ MVM_AG                   AG · 1974-05-09 · Emmen (LU)
+✓ Martello_Manutenzione    Sagl · tätig seit 1996 (HR 2019) · Balerna (TI)
+✓ Nahrin                   AG · 1953-12-18 · Sarnen (OW)
+✓ Robotec                  AG · 1964 · Birr (AG)
+✓ SACAC                    AG · 1987-01-05 (Wurzeln ab 1946) · Lenzburg (AG)
+✓ SecuSuisse               AG · 2006-09-07 · Bubikon (ZH)
+✓ SHARKGROUP               AG · 2021-01-06 · Oberhasli (ZH)
+✓ SME_Technik              AG · 2010 · Emmen (LU)
+✓ Sefag                    AG · 2016 · Malters (LU)
+✓ Staiger_Rechtsanwaelte   AG · 2007 · Zürich (ZH)
+✓ Upgreat                  AG · 1999-09-28 · Fehraltorf (ZH)
+✓ tibits                   AG · 2000 · Zürich (ZH)
+✓ Thoma_Group              SA · 2019 (TPS Servizi SA) · Arbedo-Castione (TI)
+✓ Wirz_Partners            AG · 2009 (Holding 1967) · Zug (ZG)
+✓ Zindel_United            AG (Gruppe via Holding) · Zindel + Co. AG: 1990 (8. Generation) · Maienfeld (GR)
+✓ bepartner                AG · 1969 (HR-Eintrag) · Luzern (LU)
+✓ Lachat                   SA · 1958-11-03 · Asuel (JU)
+
+✓ 35 Notizen aktualisiert, 0 fehlen.
+
+--- contact_stats.py --apply ---
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 872, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/contact_stats.py", line 197, in <module>
+    main()
+    ~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/contact_stats.py", line 159, in main
+    refresh_token()
+    ~~~~~~~~~~~~~^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/contact_stats.py", line 47, in refresh_token
+    _TOK = _ac_get_token(_SCOPES)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 66, in get_token
+    app = build_app()
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/auth_common.py", line 59, in build_app
+    return msal.PublicClientApplication(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 2093, in __init__
+    super(PublicClientApplication, self).__init__(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        client_id, client_credential=None, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/application.py", line 649, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 98, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/authority.py", line 292, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/msal/throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/.venv/lib/python3.14/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /ae7f72de-197d-4ba0-a852-40ee367a5150/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 8] nodename nor servname provided, or not known)"))
+WARN: 'contact_stats.py --apply' fehlgeschlagen (weiter)
+
+--- weekly_report.py ---
+✓ Report: /Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/00_Inbox/M365 Wochen-Report.md  | Firmen-Kandidaten 9, unverknüpft 72, ohne Charakterisierung 94, Clients ohne Profil 24
+=== Weekly refresh DONE Mon Jun  8 07:39:24 CEST 2026 ===

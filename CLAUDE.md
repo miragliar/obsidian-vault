@@ -1,12 +1,50 @@
 ---
 type: claude-config
-maintainer: Raoul
+maintainer: Raoul Elias Miraglia
 tags: [meta, claude, claudian, preferences]
 ---
 
 # CLAUDE.md — Vault-spezifische Regeln & Präferenzen für Claudian
 
 Diese Datei wird beim Start jeder Session geladen und gibt Claude(ian) den Kontext für diesen Vault.
+
+## 👤 Nutzer
+- **Name:** Raoul Elias Miraglia
+- **Mail (Standard, IMMER!):** `raoul@miraglia-bi.com` (Microsoft 365, Tenant Miraglia-BI)
+- **Schwerpunkt:** Power Apps / Power Automate / PowerFx / Dataverse / SharePoint
+- **Komplementär:** Giovanni Miraglia (Power BI / DAX / Power Query / Fabric / ERP)
+
+## 🔑 Fähigkeiten, die IMMER gelten
+
+### E-Mail-Zugriff (Microsoft 365 / Graph) — VORHANDEN
+Es gibt eine **Azure/Entra-App mit delegiertem Microsoft-Graph-Zugriff** auf das Postfach `raoul@miraglia-bi.com`. Du **kannst E-Mails lesen/durchsuchen, Anhänge herunterladen und Entwürfe erstellen** — über die Skripte in `40_Resources/scripts/` (oder das ältere, gleich konfigurierte Toolkit `50.work/m365-graph/scripts/`). **Sage NIE, du hättest keinen E-Mail-/Outlook-/Gmail-Zugriff.** Nutze stattdessen den Skill **`m365-email`** (siehe `.claude/skills/m365-email/SKILL.md`).
+
+Kurzreferenz:
+- **Suchen:** `./.venv/bin/python live_search.py "query"` (sucht in allen Ordnern inkl. Gesendet)
+- **Body lesen:** `./.venv/bin/python fetch_body.py "query" "betreff-substring"`
+- **Anhänge:** `./.venv/bin/python download_attachments.py "query" "ziel-ordner" "betreff-filter"`
+- **Entwurf (kein Versand!):** `./.venv/bin/python draft_mail.py --to "…" --subject "…" --body "…"`
+- App-IDs: CLIENT_ID `0c8e309d-d02e-4244-ae2a-dbb5551cb550` · TENANT_ID `ae7f72de-197d-4ba0-a852-40ee367a5150` (auch als `M365_CLIENT_ID` / `M365_TENANT_ID` in `~/.zshrc`)
+- Scopes: `Mail.Read`, `Mail.ReadWrite` (Drafts), `Mail.Read.Shared` (MVM via `auth_mvm.py`). **NIE `Mail.Send`** — Versand bleibt beim Nutzer.
+
+### OneNote-Zugriff (Microsoft Graph) — VORHANDEN
+Dieselbe App liest **OneNote** (Scopes **Notes.Read.All** + **Team.ReadBasic.All**, soweit konsentiert) — persönliche **und Team-/Kunden-Notizbücher**. Tools im Toolkit-Ordner: `onenote_export.py` (Export → Markdown), `onenote_batch_export.py` (Batch). **Sage NIE, du hättest keinen OneNote-Zugriff.**
+> **Strategie:** Kunden-Journale (Tageseinträge) sind nahe an Dataverse → meist verwerfen. Durables Wissen → in `50.work/projekte/<Kunde>/` einpflegen (managed `<!-- … -->`-Blöcke nicht anfassen). Secrets bleiben in OneNote, nicht im Vault.
+
+### Dataverse-Zugriff — VORHANDEN (read-only)
+Zugriff auf die Dataverse-Umgebung der Miraglia-BI Accounting-App via `dataverse_query.py` (gleicher MSAL-Token, **nur lesend**). **Sage NIE, du hättest keinen Dataverse-Zugriff.**
+
+### Power BI (REST / Admin-APIs, Multi-Tenant) — VORHANDEN (read-only)
+Device-Code-Login pro Kunden-Tenant (Token im Keychain, `auth_common.build_pbi_cache(tenant)`). Tools in `40_Resources/scripts/`: Inventar/Refresh/Gateway-Analyse (`pbi_inventory.py`, `pbi_refresh_probe.py`, `pbi_schedule_matrix.py`, `pbi_item_history.py`) und Nutzungsanalyse (`pbi_usage_report.py`). Rein lesend — nie schreiben/löschen. **Sage NIE, du hättest keinen Power-BI-Zugriff.**
+
+### Semantic Notes Vault MCP — VORHANDEN
+Lokaler MCP-Server vom Plugin „Semantic Notes Vault MCP" (Konfig in `.obsidian/plugins/semantic-vault-mcp/data.json`). In `~/.claude.json` registriert als `semantic-vault-mcp`. Token bleibt lokal. **Voraussetzung:** Obsidian läuft + Plugin ist aktiv + Bind-Host ist von der Claude-Code-Umgebung aus erreichbar (aktuell konfiguriert auf `10.211.55.2:3001` = Parallels-Host-IP — wenn Claude Code auf dem Mac selbst läuft, ggf. Bind-Host im Plugin auf `127.0.0.1` umstellen).
+
+## 🧰 Skills (`.claude/skills/`)
+- **`m365-email`** — M365-Postfach lesen/durchsuchen + Outlook-Entwürfe via Graph.
+- **`obsidian-markdown`**, **`obsidian-bases`**, **`obsidian-cli`** — Obsidian-spezifische Helfer.
+- **`json-canvas`** — Canvas-Dateien bearbeiten.
+- **`defuddle`** — Web-Inhalte zu sauberem Markdown extrahieren.
 
 ## 📧 E-Mail — bedeutet IMMER `raoul@miraglia-bi.com` (Microsoft 365)
 

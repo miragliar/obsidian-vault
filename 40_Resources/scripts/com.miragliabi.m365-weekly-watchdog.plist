@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.miragliabi.m365-weekly-watchdog</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/zsh</string>
+        <string>/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/weekly_watchdog.sh</string>
+    </array>
+
+    <!-- Bei jedem Login einmal prüfen ... -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- ... und zusätzlich täglich 13:00 (fängt den Fall ab, dass der Mac
+         tagelang eingeloggt bleibt und nur schläft). -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key><integer>13</integer>
+        <key>Minute</key><integer>0</integer>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/watchdog.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/miragliag/Dropbox/Miraglia-BI/0_Internal/Obsidian gimi/Miragliag/40_Resources/scripts/watchdog.err.log</string>
+</dict>
+</plist>
