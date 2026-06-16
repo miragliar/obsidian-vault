@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781616134034-pr1qiw549",
+  "providerId": "claude",
+  "title": "Connect to Microsoft Learn MCP",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781616134034,
+  "updatedAt": 1781616166314,
+  "lastResponseAt": 1781616166314,
+  "sessionId": "0dad278d-2000-4208-afd8-c1727d327b85",
+  "providerState": {
+    "providerSessionId": "0dad278d-2000-4208-afd8-c1727d327b85"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 293,
+    "cacheReadInputTokens": 25591,
+    "contextWindow": 1000000,
+    "contextTokens": 25885,
+    "percentage": 3,
+    "contextWindowIsAuthoritative": true
+  }
+}

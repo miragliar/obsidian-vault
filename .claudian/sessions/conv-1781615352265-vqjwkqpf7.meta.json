@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781615352265-vqjwkqpf7",
+  "providerId": "claude",
+  "title": "Set up MVM-AG tenant access token",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781615352265,
+  "updatedAt": 1781616775276,
+  "lastResponseAt": 1781616775276,
+  "sessionId": "dcd3b114-cde4-44ae-bbc0-27adf04aac8a",
+  "providerState": {
+    "providerSessionId": "dcd3b114-cde4-44ae-bbc0-27adf04aac8a"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 540,
+    "cacheReadInputTokens": 142093,
+    "contextWindow": 1000000,
+    "contextTokens": 142634,
+    "percentage": 14,
+    "contextWindowIsAuthoritative": true
+  }
+}
