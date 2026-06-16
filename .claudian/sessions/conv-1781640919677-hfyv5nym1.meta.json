@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781640919677-hfyv5nym1",
+  "providerId": "claude",
+  "title": "Shorten paper steckbrief with method and effect...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781640919677,
+  "updatedAt": 1781641231962,
+  "lastResponseAt": 1781641231962,
+  "sessionId": "d391b9d1-5465-4597-8184-90a2a6324963",
+  "providerState": {
+    "providerSessionId": "d391b9d1-5465-4597-8184-90a2a6324963"
+  },
+  "currentNote": "20.studies/Organizational-Economics/8-paper-steckbriefe.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 465,
+    "cacheReadInputTokens": 36876,
+    "contextWindow": 1000000,
+    "contextTokens": 37342,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}
