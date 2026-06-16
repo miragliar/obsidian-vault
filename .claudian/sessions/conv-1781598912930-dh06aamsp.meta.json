@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781598912930-dh06aamsp",
+  "providerId": "claude",
+  "title": "Debug Power BI MCP config setup",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781598912931,
+  "updatedAt": 1781599771036,
+  "lastResponseAt": 1781599676153,
+  "sessionId": "f1a58c27-4974-422a-838e-02059dd33fa3",
+  "providerState": {
+    "providerSessionId": "f1a58c27-4974-422a-838e-02059dd33fa3"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 175,
+    "cacheReadInputTokens": 55468,
+    "contextWindow": 1000000,
+    "contextTokens": 55644,
+    "percentage": 6,
+    "contextWindowIsAuthoritative": true
+  }
+}
