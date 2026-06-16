@@ -28,6 +28,9 @@ Top humane Kontakte aus dem M365-Graph-Scan vom 01.06.2026 (2'500 Mails / 1'621 
 - [[Remo-Pfister|Remo Pfister]] · Mitglied GL, Leiter Finanzen + Power Platform · Mail 28 · letzter 2026-06-03
 - [[M.-Schärli|Manuel Schärli]] („Manu") · Mitglied GL, Abteilungsleiter Gipserei · Mail 16 · letzter 2026-05-11
 
+#### MVM-IT (Infrastruktur)
+- 🆕 [[Stefan-Zumbühl|Stefan Zumbühl]] · MVM-IT — Domus-Server, T-Laufwerk, Schnittstellen-Infrastruktur (Migration Rev. 28 / Aestico)
+
 #### Sachbearbeitung (🆕 2026-06-04)
 - 🆕 [[Nicole-Scherrer|Nicole Scherrer]] · Sachbearbeiterin Rechnungswesen · letzter 2026-06-02
 - 🆕 [[Nicole-Lötscher|Nicole Lötscher]] · Sachbearbeiterin HR (über `personal@mvm-ag.ch`) · letzter 2026-05-27
@@ -44,6 +47,10 @@ Top humane Kontakte aus dem M365-Graph-Scan vom 01.06.2026 (2'500 Mails / 1'621 
 #### Mitarbeitende (operativ)
 - 🆕 [[Christoph-Räber|Christoph Räber]] · Kundendienst Fassade, Hybrid-Mitarbeiter
 - 🆕 [[Antonio-De-Finis|Antonio De Finis]] · Maler MVM Meggen, seit 01.05.2026
+
+### Lieferanten / ERP-Stack MVM
+
+- 🆕 [[Dominik-Hüsser|Dominik Hüsser]] · Turnkey AG — Domus-Anbieter / Test-Umgebung / Aestico-Schnittstelle Phase 1
 
 ### Andere Kunden
 

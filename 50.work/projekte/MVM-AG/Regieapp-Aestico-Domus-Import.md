@@ -12,8 +12,8 @@ kategorie: kunde
 tags: [miraglia, projekt, mvm-ag, regie-app, domus, aestico, automatisierung, rechnung]
 type: projekt-sub-hub
 created: 2026-06-15
-updated: 2026-06-15
-last_change: "2026-06-15: Lizenz Optiwork↔MVM Ziffer 6 dokumentiert (Mail Remo→Giovanni→Raoul 15.06.)"
+updated: 2026-06-16
+last_change: "2026-06-16: Aestico-v2-Format aus Optiwork-Doku extrahiert — JSON-Datei-Schnittstelle (keine API/CSV). Spec als [[aestico-schnittstelle/aestico-v2-spec]] abgelegt. Personen-/Firmen-Notizen Optiwork, Turnkey, Dominik Hüsser, Stefan Zumbühl angelegt."
 ---
 
 # Regie-Rapport-App → Automatisierte Rechnungserstellung im Domus (Aestico-Schnittstelle)
@@ -75,9 +75,10 @@ In beiden Fällen: **manuelle Auslösung durch den PL** (kein Auto-Trigger), Dat
 |---|---|
 | 🟢 Vorhanden | Regierapporte digital in Dataverse (`Regiekopf` + Detail-Tabellen) |
 | 🟢 Vorhanden | Power Automate Stack für Regie-App (PDF, Mail, etc.) |
-| 🟡 Ab 16.06.2026 | **Domus-Revision 28** geht live — Aestico-Schnittstelle wird damit „offen" |
-| 🔴 Offen | Aestico-Import-Format-Spezifikation (Aestico-Doku, Domus-Rev.-28-Doku) |
-| 🔴 Offen | Field-Mapping Regiekopf/Detail → Aestico-Schema |
+| 🟢 Ab 16.06.2026 | **Domus-Revision 28** live — Aestico-Schnittstelle damit „offen" |
+| 🟢 Geklärt (16.06.) | **Aestico-Import-Format = JSON v2** (`.aest`-Endung, JSON-Schema Draft-07) → [[aestico-schnittstelle/aestico-v2-spec\|Technische Spec im Vault]] |
+| 🟡 In Arbeit | Field-Mapping Regiekopf/Detail → Aestico-Schema (Skeleton in Spec, jetzt konkretisieren) |
+| 🔴 Offen | **Transport-Mechanismus** `.aest` → Domus-Server (Watch-Folder? SharePoint? T-Laufwerk?) — Klärung mit Turnkey + MVM-IT |
 | 🔴 Offen | Konto-/KST-/Mwst-Logik (Schnittstelle zu DomusFiBu/Buchhaltung) |
 | 🔴 Offen | Test-Mandant in Domus für Roundtrip-Tests |
 | 🟢 Geklärt (15.06.) | **Lizenz Optiwork → MVM:** Nutzung Aestico-Schnittstelle für Offert-/Rechnungspositionen aus Eigenentwicklung erlaubt (Ziffer 6 unterzeichnet) |
@@ -90,11 +91,13 @@ In beiden Fällen: **manuelle Auslösung durch den PL** (kein Auto-Trigger), Dat
 - [ ] Mit Giovanni Abstimmung: **Wer macht was?** Power BI/DAX vs. Power Platform vs. Domus-FiBu — Aufgabenteilung definieren
 
 ### Phase 1 — Spezifikation (KW 25–26, bis Ende Juni)
-- [ ] Aestico-Doku beschaffen (Domus-Rev. 28 — am 16.06. verfügbar)
-- [ ] Import-Format-Beispiel von Aestico besorgen (CSV? XML? JSON?)
-- [ ] Mit Domus-Anbieter (vermutlich über S. Zumbühl / MVM-IT) Kontaktdetails für Schnittstellen-Support klären
-- [ ] **Field-Mapping-Tabelle** erstellen: Regiekopf-Spalten → Aestico-Felder
+- [x] Aestico-Doku beschaffen (Optiwork-Doku v2, 2023-12-04) — vorhanden in `Dropbox/Miraglia-BI/MVM/Aestico/aestico_v2_doc/`
+- [x] Import-Format geklärt: **JSON v2** (kein CSV, kein XML, keine REST-API) — Spec im Vault: [[aestico-schnittstelle/aestico-v2-spec]]
+- [ ] Mit Domus-Anbieter ([[50.work/25_People/Dominik-Hüsser|Dominik Hüsser]] / Turnkey) Kontakt aufnehmen — Schnittstellen-Support, Transport-Mechanismus, Customer-Mapping
+- [ ] Mit [[50.work/25_People/Stefan-Zumbühl|Stefan Zumbühl]] (MVM-IT) klären: Ablage-/Watch-Folder für `.aest`-Files, Service-Account-Berechtigungen
+- [ ] **Field-Mapping-Tabelle** vervollständigen: Regiekopf-Spalten → Aestico-Felder (Skeleton in Spec, jetzt konkretisieren)
 - [ ] Sonderfälle dokumentieren (KST 500 vs. 505, Hybrid-Mitarbeiter, Räber-Spezial-Logik)
+- [ ] Test-`.aest`-Datei aus echtem Regie-Rapport bauen + gegen Schema validieren
 
 ### Phase 2 — Prototype (Juli)
 - [ ] Test-Regie-Rapport → Aestico-Import-File generieren (manueller End-to-End)
@@ -127,15 +130,23 @@ In beiden Fällen: **manuelle Auslösung durch den PL** (kein Auto-Trigger), Dat
 5. **Buchhaltungs-Logik bei Sammelrechnung:** Wie werden Regiekopf-übergreifende Positionen aggregiert? (z. B. Material aus mehreren Rapporten zur gleichen Baustelle)
 6. **Domus-Rev.-28 — am 16.06. wirklich live?** Stefan Zumbühl hat Migration für 16.06. angekündigt — siehe Threads Alessandro/Stefan Anfang Juni.
 
-## Beteiligte (vermutlich)
+## Beteiligte
 
-- [[50.work/25_People/Remo-Pfister|Remo Pfister]] — Auftraggeber, GL
-- **Giovanni Miraglia** — Power BI / Domus-Datenmodell-Spezialist (siehe Giovannis Vault, READ-ONLY)
-- **Mike Kipfer** — vermutlich Domus-/ERP-Seite, Castelli-Solutions-Strang
-- **Stefan Zumbühl** (MVM-IT) — Domus-Server-Migration
-- **Dominik Hüsser** (Turnkey) — Domus-Anbieter-Seite
-- **Alessandro Castelli** (Castelli-Solutions) — Power-Platform-Architekt
+- [[50.work/25_People/Remo-Pfister|Remo Pfister]] — Auftraggeber, GL MVM
+- [[50.work/25_People/Giovanni-Miraglia|Giovanni Miraglia]] — Power BI / Domus-Datenmodell-Spezialist (siehe Giovannis Vault, READ-ONLY)
+- [[50.work/25_People/Michael-Kipfer|Michael Kipfer]] — Kipfer DP, Power-Platform-Partner
+- [[50.work/25_People/Stefan-Zumbühl|Stefan Zumbühl]] — MVM-IT, Domus-Server / Infrastruktur
+- [[50.work/25_People/Dominik-Hüsser|Dominik Hüsser]] — Turnkey AG, Domus-Anbieter-Seite
+- [[50.work/25_People/Alessandro-Castelli|Alessandro Castelli]] — Castelli Solutions, Power-Platform-Architekt
 - [[50.work/25_People/M.-Schärli|Manuel Schärli]] — PL-Pilot Vorschlag
+
+## Beteiligte Firmen / Lieferanten
+
+- [[50.work/26_Firmen/MVM-AG|MVM AG]] — Endkunde
+- [[50.work/26_Firmen/Optiwork-AG|Optiwork AG]] — Hersteller Domus + Aestico (Lizenzgeber)
+- [[50.work/26_Firmen/Turnkey|Turnkey AG]] — Domus-Anbieter / Implementierung
+- [[50.work/26_Firmen/Castelli-Solutions|Castelli Solutions]] — Power-Platform-Partner
+- [[50.work/26_Firmen/Kipfer-DP|Kipfer DP]] — Power-Platform-Partner
 
 ## Verwandte Mails (Mail-Kontext rund um Domus-Rev. 28)
 
@@ -151,7 +162,7 @@ In beiden Fällen: **manuelle Auslösung durch den PL** (kein Auto-Trigger), Dat
 
 ## Risiken
 
-- 🔴 **Aestico-Doku spät verfügbar** → Phase 1 könnte sich verzögern → Phase 4 in Q4 eng. Mitigation: bis 16.06. abend gehst du den Phase-0-Check mit Giovanni durch; bei Doku-Verzug → früh eskalieren.
+- 🟢 ~~**Aestico-Doku spät verfügbar**~~ — **erledigt 16.06.2026**: Doku ist vorhanden, Format ist JSON v2 (siehe [[aestico-schnittstelle/aestico-v2-spec]]).
 - 🟡 **Buchhaltungs-Logik komplexer als angenommen** (z. B. Mwst-Sätze, Skonti, Sondertarife). Mitigation: in Phase 2 mit konkretem Test-Rapport früh validieren.
 - 🟡 **Roundtrip-Test braucht Domus-Test-Mandant**, der erst nach Rev.-28-Live verfügbar wird. Mitigation: Reihenfolge so planen, dass Test-Mandant ab ~Anfang Juli läuft.
 - 🟡 **Giovanni-Aufgabenteilung unklar** — wenn Giovanni die Domus-/Aestico-Seite übernimmt, muss ich das früh wissen, damit ich nicht doppelt baue.
@@ -162,8 +173,25 @@ _Manuelle Notizen, Aestico-Spec-Snippets, Mapping-Drafts, Test-Ergebnisse hier e
 
 ## Verwandt
 
+### Spec / Technik
+- [[aestico-schnittstelle/aestico-v2-spec|Aestico v2 — JSON-Schnittstellen-Spec]] (16.06.2026 angelegt)
+
+### Hubs
 - [[Regieapp-Neubau-MVM|Regie-Rapport-App (Haupt-Hub)]]
 - [[Regieapp-Offline-Funktionalität|Regie-App Offline-Funktionalität (Sub-Hub)]]
-- [[50.work/26_Firmen/MVM-AG|Klient: MVM AG]]
-- [[50.work/25_People/Remo-Pfister|Remo Pfister]]
+
+### Firmen
+- [[50.work/26_Firmen/MVM-AG|MVM AG (Klient)]]
+- [[50.work/26_Firmen/Optiwork-AG|Optiwork AG (Hersteller Domus + Aestico)]]
+- [[50.work/26_Firmen/Turnkey|Turnkey AG (Domus-Anbieter)]]
+
+### Personen
+- [[50.work/25_People/Remo-Pfister|Remo Pfister (Auftraggeber)]]
+- [[50.work/25_People/Dominik-Hüsser|Dominik Hüsser (Turnkey)]]
+- [[50.work/25_People/Stefan-Zumbühl|Stefan Zumbühl (MVM-IT)]]
+- [[50.work/25_People/Alessandro-Castelli|Alessandro Castelli (Castelli Solutions)]]
+- [[50.work/25_People/Giovanni-Miraglia|Giovanni Miraglia]]
+
+### Daily
 - [[60.daily/2026-06-15|Daily 2026-06-15]] — ToDo 7
+- [[60.daily/2026-06-16|Daily 2026-06-16]] — Aestico-Doku-Auswertung

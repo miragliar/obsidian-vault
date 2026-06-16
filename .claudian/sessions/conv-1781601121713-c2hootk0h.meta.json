@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781601121713-c2hootk0h",
+  "providerId": "claude",
+  "title": "Prepare Regie app for Aestico interface integra...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781601121713,
+  "updatedAt": 1781602110638,
+  "lastResponseAt": 1781602110637,
+  "sessionId": "41766c43-0cee-4854-84a2-18390b1dee34",
+  "providerState": {
+    "providerSessionId": "41766c43-0cee-4854-84a2-18390b1dee34"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 16031,
+    "cacheReadInputTokens": 107602,
+    "contextWindow": 1000000,
+    "contextTokens": 123634,
+    "percentage": 12,
+    "contextWindowIsAuthoritative": true
+  }
+}

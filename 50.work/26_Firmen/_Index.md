@@ -13,6 +13,11 @@ Alle 12 bekannten Firmen aus dem M365-Graph-Scan vom 01.06.2026.
 
 - [[Miraglia-Business-Intelligence|Miraglia Business-Intelligence]] · Business Intelligence / Power Platform Consulting · 1 Person(en) · Mail 80 · Teams 248
 
+## Lieferanten / ERP-Stack MVM
+
+- 🆕 [[Optiwork-AG|Optiwork AG]] · ERP / Branchen-Software Bauhandwerk (Hersteller von **Domus** und **Aestico**) · Lizenzgeber Aestico-Schnittstelle MVM
+- 🆕 [[Turnkey|Turnkey AG]] · Domus-Anbieter / Implementierung MVM · 1 Person(en) · Kontakt: [[50.work/25_People/Dominik-Hüsser|Dominik Hüsser]]
+
 ## Partner
 
 - [[Kipfer-DP|Kipfer DP]] · Power Platform / Digital Power · 1 Person(en) · Mail 24 · Teams 172
