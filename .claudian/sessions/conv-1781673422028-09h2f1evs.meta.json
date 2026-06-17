@@ -4,6 +4,20 @@
   "title": "Log Hunnenberg Object Carpet work session",
   "titleGenerationStatus": "success",
   "createdAt": 1781673422028,
-  "updatedAt": 1781673431212,
-  "sessionId": null
+  "updatedAt": 1781675544208,
+  "lastResponseAt": 1781675544208,
+  "sessionId": "3fe9755d-5ab4-45ae-8ff6-ee0f714a6efa",
+  "providerState": {
+    "providerSessionId": "3fe9755d-5ab4-45ae-8ff6-ee0f714a6efa"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 5125,
+    "cacheReadInputTokens": 94184,
+    "contextWindow": 1000000,
+    "contextTokens": 99315,
+    "percentage": 10,
+    "contextWindowIsAuthoritative": true
+  }
 }

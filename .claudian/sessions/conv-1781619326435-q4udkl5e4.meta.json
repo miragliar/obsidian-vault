@@ -4,20 +4,20 @@
   "title": "Replicate Giovanni's vault scripts setup",
   "titleGenerationStatus": "success",
   "createdAt": 1781619326435,
-  "updatedAt": 1781673728228,
-  "lastResponseAt": 1781673728228,
+  "updatedAt": 1781674370778,
+  "lastResponseAt": 1781674352938,
   "sessionId": "6a96835f-4d42-48cc-a5ae-5f259115f73b",
   "providerState": {
     "providerSessionId": "6a96835f-4d42-48cc-a5ae-5f259115f73b"
   },
   "usage": {
     "model": "opus[1m]",
-    "inputTokens": 6,
-    "cacheCreationInputTokens": 4536,
-    "cacheReadInputTokens": 88961,
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 2636,
+    "cacheReadInputTokens": 121665,
     "contextWindow": 1000000,
-    "contextTokens": 93503,
-    "percentage": 9,
+    "contextTokens": 124302,
+    "percentage": 12,
     "contextWindowIsAuthoritative": true
   }
 }
