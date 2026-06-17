@@ -4,8 +4,8 @@
   "title": "Debug Power Platform solution import error",
   "titleGenerationStatus": "success",
   "createdAt": 1781707370493,
-  "updatedAt": 1781707902949,
-  "lastResponseAt": 1781707902949,
+  "updatedAt": 1781708349045,
+  "lastResponseAt": 1781708349045,
   "sessionId": "c03a0736-b8f8-424f-96f0-4759e555dd50",
   "providerState": {
     "providerSessionId": "c03a0736-b8f8-424f-96f0-4759e555dd50"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus[1m]",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 3042,
-    "cacheReadInputTokens": 53619,
+    "cacheCreationInputTokens": 8073,
+    "cacheReadInputTokens": 67306,
     "contextWindow": 1000000,
-    "contextTokens": 56662,
-    "percentage": 6,
+    "contextTokens": 75380,
+    "percentage": 8,
     "contextWindowIsAuthoritative": true
   }
 }
