@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781707370493-p3pfyv5a7",
+  "providerId": "claude",
+  "title": "Debug Power Platform solution import error",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781707370493,
+  "updatedAt": 1781707902949,
+  "lastResponseAt": 1781707902949,
+  "sessionId": "c03a0736-b8f8-424f-96f0-4759e555dd50",
+  "providerState": {
+    "providerSessionId": "c03a0736-b8f8-424f-96f0-4759e555dd50"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 3042,
+    "cacheReadInputTokens": 53619,
+    "contextWindow": 1000000,
+    "contextTokens": 56662,
+    "percentage": 6,
+    "contextWindowIsAuthoritative": true
+  }
+}
