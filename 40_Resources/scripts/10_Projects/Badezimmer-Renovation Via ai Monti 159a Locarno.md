@@ -24,14 +24,14 @@ tags: [project, immobilie, locarno, renovation, bad, privat]
 - **Offerten Bazzi datiert:** 29.04.2026 — *Gültigkeit 90 Tage → bis ca. 28.07.2026* ⚠️ (vorher freigeben/bestellen)
 
 ## Kosten (Bad) – Übersicht
-| Gewerk | Firma | Offerte | Betrag (inkl. 8.1 % MwSt) |
-|---|---|---|---|
-| Plattenarbeiten | Bazzi Piastrelle SA | 2026/155 | CHF 20'783.05 |
-| Badezimmer-Einrichtung | Bazzi Piastrelle SA | 2026/156 | CHF 22'732.90 |
-| **Total Bad (Bazzi)** | | | **CHF 43'515.95** |
-| Sanitär | Badasci Fabio Sagl | Offerte erhalten (~10.05.2026), Betrag offen | — |
-| Elektro | Elettricità De Lorenzi (DELO) | nach Bedarf | — |
-| Maler (ganze Whg.) | Pasinelli SA | 26 4021 | CHF 8'939.75 |
+| Gewerk                 | Firma                         | Offerte                                      | Betrag (inkl. 8.1 % MwSt) |
+| ---------------------- | ----------------------------- | -------------------------------------------- | ------------------------- |
+| Plattenarbeiten        | Bazzi Piastrelle SA           | 2026/155                                     | CHF 20'783.05             |
+| Badezimmer-Einrichtung | Bazzi Piastrelle SA           | 2026/156                                     | CHF 22'732.90             |
+| **Total Bad (Bazzi)**  |                               |                                              | **CHF 43'515.95**         |
+| Sanitär                | Badasci Fabio Sagl            | Offerte erhalten (~10.05.2026), Betrag offen | —                         |
+| Elektro                | Elettricità De Lorenzi (DELO) | nach Bedarf                                  | —                         |
+| Maler (ganze Whg.)     | Pasinelli SA                  | 26 4021                                      | CHF 8'939.75              |
 
 ## 📧 E-Mail „Coordinamento lavori" (Koordinations-Mail)
 - **Betreff:** *Rinnovo bagno – Via ai Monti 159a, Locarno – coordinamento lavori*

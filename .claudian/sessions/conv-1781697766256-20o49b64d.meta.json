@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781697766256-20o49b64d",
+  "providerId": "claude",
+  "title": "Summarize Locarno bathroom renovation overview",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781697766256,
+  "updatedAt": 1781698417968,
+  "lastResponseAt": 1781698417968,
+  "sessionId": "0a70fbd2-4116-4fc1-9894-01d8ff8b302b",
+  "providerState": {
+    "providerSessionId": "0a70fbd2-4116-4fc1-9894-01d8ff8b302b"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 6000,
+    "cacheReadInputTokens": 118931,
+    "contextWindow": 1000000,
+    "contextTokens": 124932,
+    "percentage": 12,
+    "contextWindowIsAuthoritative": true
+  }
+}

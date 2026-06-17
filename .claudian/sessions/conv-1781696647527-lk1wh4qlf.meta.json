@@ -3,6 +3,20 @@
   "providerId": "claude",
   "title": "17. Juni, 13:44",
   "createdAt": 1781696647527,
-  "updatedAt": 1781696658781,
-  "sessionId": null
+  "updatedAt": 1781697732083,
+  "lastResponseAt": 1781697372347,
+  "sessionId": "cc78d1d7-44f3-4b7f-b209-d09ab9915468",
+  "providerState": {
+    "providerSessionId": "cc78d1d7-44f3-4b7f-b209-d09ab9915468"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 455,
+    "cacheReadInputTokens": 85854,
+    "contextWindow": 1000000,
+    "contextTokens": 86310,
+    "percentage": 9,
+    "contextWindowIsAuthoritative": true
+  }
 }

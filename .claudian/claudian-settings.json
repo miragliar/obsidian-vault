@@ -3,7 +3,7 @@
   "permissionMode": "yolo",
   "model": "opus[1m]",
   "thinkingBudget": "medium",
-  "effortLevel": "high",
+  "effortLevel": "max",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "opus[1m]",
@@ -68,7 +68,7 @@
     "claude": "opus[1m]"
   },
   "savedProviderEffort": {
-    "claude": "high"
+    "claude": "max"
   },
   "savedProviderServiceTier": {},
   "savedProviderThinkingBudget": {
