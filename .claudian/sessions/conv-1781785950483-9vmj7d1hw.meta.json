@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781785950483-9vmj7d1hw",
+  "providerId": "claude",
+  "title": "Explain strict inequality in problem set 1",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781785950483,
+  "updatedAt": 1781787185119,
+  "lastResponseAt": 1781787185119,
+  "sessionId": "c6eb1d27-9302-4a7e-b01d-ce9417a48043",
+  "providerState": {
+    "providerSessionId": "c6eb1d27-9302-4a7e-b01d-ce9417a48043"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 4263,
+    "cacheReadInputTokens": 67450,
+    "contextWindow": 1000000,
+    "contextTokens": 71714,
+    "percentage": 7,
+    "contextWindowIsAuthoritative": true
+  }
+}

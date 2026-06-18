@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781787173605-szdze3mpq",
+  "providerId": "claude",
+  "title": "Create NotebookLM prompt for paper causal analysis",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781787173606,
+  "updatedAt": 1781787281633,
+  "lastResponseAt": 1781787281633,
+  "sessionId": "ecc89aa0-08d2-43fb-85af-f2beaf209d14",
+  "providerState": {
+    "providerSessionId": "ecc89aa0-08d2-43fb-85af-f2beaf209d14"
+  },
+  "currentNote": "20.studies/Organizational-Economics/8-paper-steckbriefe.md",
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 5225,
+    "cacheReadInputTokens": 28137,
+    "contextWindow": 1000000,
+    "contextTokens": 33363,
+    "percentage": 3,
+    "contextWindowIsAuthoritative": true
+  }
+}
