@@ -4,8 +4,8 @@
   "title": "Create econometrics practice exam from lecture ...",
   "titleGenerationStatus": "success",
   "createdAt": 1781704038894,
-  "updatedAt": 1781763186634,
-  "lastResponseAt": 1781763186634,
+  "updatedAt": 1781770321796,
+  "lastResponseAt": 1781770321796,
   "sessionId": "ead65bd6-b91c-4a81-9537-83ab6d31759d",
   "providerState": {
     "providerSessionId": "ead65bd6-b91c-4a81-9537-83ab6d31759d"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus[1m]",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 1012,
-    "cacheReadInputTokens": 368804,
+    "cacheCreationInputTokens": 369,
+    "cacheReadInputTokens": 427749,
     "contextWindow": 1000000,
-    "contextTokens": 369817,
-    "percentage": 37,
+    "contextTokens": 428119,
+    "percentage": 43,
     "contextWindowIsAuthoritative": true
   }
 }
