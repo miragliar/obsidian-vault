@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781772736683-uaa2nfetf",
+  "providerId": "claude",
+  "title": "Summarize organizational economics NE dominance...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781772736683,
+  "updatedAt": 1781772879929,
+  "lastResponseAt": 1781772879929,
+  "sessionId": "439f10ef-d643-4706-b3f8-cdd9245e2368",
+  "providerState": {
+    "providerSessionId": "439f10ef-d643-4706-b3f8-cdd9245e2368"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 7923,
+    "cacheReadInputTokens": 75569,
+    "contextWindow": 1000000,
+    "contextTokens": 83493,
+    "percentage": 8,
+    "contextWindowIsAuthoritative": true
+  }
+}
