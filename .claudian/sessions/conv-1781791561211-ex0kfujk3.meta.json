@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781791561211-ex0kfujk3",
+  "providerId": "claude",
+  "title": "Debug error in Exercise 4.3 PDF solution",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781791561212,
+  "updatedAt": 1781792875571,
+  "lastResponseAt": 1781792875571,
+  "sessionId": "921b49ca-1262-44f8-8dfb-10f9fe3f333c",
+  "providerState": {
+    "providerSessionId": "921b49ca-1262-44f8-8dfb-10f9fe3f333c"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 17139,
+    "cacheReadInputTokens": 88522,
+    "contextWindow": 1000000,
+    "contextTokens": 105667,
+    "percentage": 11,
+    "contextWindowIsAuthoritative": true
+  }
+}
