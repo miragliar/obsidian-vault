@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781795198278-2kcph28ly",
+  "providerId": "claude",
+  "title": "Create exam morning revision docx summary",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781795198278,
+  "updatedAt": 1781795608600,
+  "lastResponseAt": 1781795608600,
+  "sessionId": "025bf43f-b2cd-4c02-bd97-bc009786e230",
+  "providerState": {
+    "providerSessionId": "025bf43f-b2cd-4c02-bd97-bc009786e230"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 668,
+    "cacheReadInputTokens": 127662,
+    "contextWindow": 1000000,
+    "contextTokens": 128331,
+    "percentage": 13,
+    "contextWindowIsAuthoritative": true
+  }
+}
