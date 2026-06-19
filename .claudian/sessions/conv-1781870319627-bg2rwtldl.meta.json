@@ -4,8 +4,8 @@
   "title": "Clarify Koster AG subcontractor process logic",
   "titleGenerationStatus": "success",
   "createdAt": 1781870319628,
-  "updatedAt": 1781873209470,
-  "lastResponseAt": 1781873209470,
+  "updatedAt": 1781873672084,
+  "lastResponseAt": 1781873672084,
   "sessionId": "22ec84f4-7620-40b3-aecb-d3303b49b583",
   "providerState": {
     "providerSessionId": "22ec84f4-7620-40b3-aecb-d3303b49b583"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus[1m]",
     "inputTokens": 6,
-    "cacheCreationInputTokens": 8747,
-    "cacheReadInputTokens": 121616,
+    "cacheCreationInputTokens": 3070,
+    "cacheReadInputTokens": 162335,
     "contextWindow": 1000000,
-    "contextTokens": 130369,
-    "percentage": 13,
+    "contextTokens": 165411,
+    "percentage": 17,
     "contextWindowIsAuthoritative": true
   }
 }

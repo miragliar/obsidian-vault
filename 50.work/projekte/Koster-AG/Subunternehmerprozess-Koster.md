@@ -56,6 +56,7 @@ Aus dem Original-Claude-Export (UUID-basiert rückverfolgbar). Die destillierten
 - [[50.work/power-platform/mail-attachment-pipeline-fallen|Mail-Attachment-Pipeline — Komplette Bug-Klasse]] — Trigger-Case 2026-06-05, alle finalen Lehren
 - [[50.work/power-platform/power-automate-variable-binary-damage|Power Automate Variable Binary Damage]] — abgeleitet aus Cluster A2
 - [[50.work/power-platform/ai-builder-doppel-branch-vermeiden|AI Builder — Doppel-Branch vermeiden]] — abgeleitet aus Cluster D
+- [[50.work/power-platform/power-automate-fail-branch-strategie|Power Automate — Fail-Branch-Strategie]] — abgeleitet aus v14 → v15 Refactor 2026-06-19
 
 ## Erkenntnisse / Lessons Learned
 
@@ -98,6 +99,24 @@ Ausgangslage: H. Baumann meldet zwei Bug-Klassen — Files an falschen Orten + l
 - Variable-Type `object` als Fix — auch object geht durch UTF-8-Pipeline.
 
 → **Vollständige Anleitung mit allen Lösungs-Snippets, Diagnose-Reihenfolge und Test-Setup**: [[50.work/power-platform/mail-attachment-pipeline-fallen|Pattern-Notiz Mail-Attachment-Pipeline]].
+
+### Fail-Branch-Refactor Flow 02 — v14 → v15 (2026-06-19)
+
+Auslöser: 3 Mails am 2026-06-18 mit Subject „KI hat dieses Dokument bei Koster AG nicht verarbeiten können" — kein App-Eintrag dazu. Raoul hat manuell in Prod Status von „Fehlgeschlagen" auf „Manuell" umgestellt. Logik-Check ergab:
+
+**Status-Semantik konsolidiert** (`ks_eingangsqueue.ks_eq_status`):
+- **124080003 „Manuell"** — App-Manuell-Queue, Mensch entscheidet in der App
+- **124080002 „Fehlgeschlagen"** — toter Bucket, bewusst nur Audit-Spur, MA arbeitet aus Mail
+
+**Drei Refactor-Schritte:**
+1. **`Bereich`-Scope aufgelöst** → `Scope_KI` (Run_a_prompt + Parse_JSON) + freistehende `Condition_Split`. Zwei separate Mails statt einer Sammel-Mail. Split-Fail-Mail kann Triage-Helfer (Page-Ranges, Anzahl Docs) aus erfolgreichem Parse_JSON mitgeben.
+2. **Stelle A (Inner-Scope Failed):** Mail entfernt, Status auf „Manuell" (124080003). MA sieht Eintrag direkt in App.
+3. **Pipeline-Fails (Parse_JSON / PDF_Split):** Mail bleibt + neuer Audit-Eintrag mit Status „Fehlgeschlagen" (124080002). Bewusst nicht „Manuell" — Bearbeitung über Mail, nicht über App.
+
+**Vor Prod-Deploy zwingend prüfen:** `staticResult` auf `PDF_-_Split_Document_2` muss „Disabled" sein (sonst failt jeder Multi-Split garantiert).
+
+→ **Komplette Diff-Doku mit allen Branches und Begründungen**: [[50.work/projekte/Koster-AG/Subunternehmer-Flow02-Fail-Branch-Refactor-2026-06-19]]  
+→ **Generalisiertes Pattern**: [[50.work/power-platform/power-automate-fail-branch-strategie]]
 
 ## Persönliche Notizen
 
