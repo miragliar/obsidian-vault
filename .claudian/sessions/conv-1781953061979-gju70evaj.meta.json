@@ -4,8 +4,8 @@
   "title": "Plan Tessin-Ferienwoche in Locarno 22.-30.06",
   "titleGenerationStatus": "success",
   "createdAt": 1781953061980,
-  "updatedAt": 1781953278539,
-  "lastResponseAt": 1781953278539,
+  "updatedAt": 1781961282342,
+  "lastResponseAt": 1781961282342,
   "sessionId": "b8ea0bd1-2a77-4577-82f6-41e79cd0a864",
   "providerState": {
     "providerSessionId": "b8ea0bd1-2a77-4577-82f6-41e79cd0a864"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "opus[1m]",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 3913,
-    "cacheReadInputTokens": 32206,
+    "cacheCreationInputTokens": 2597,
+    "cacheReadInputTokens": 48921,
     "contextWindow": 1000000,
-    "contextTokens": 36120,
-    "percentage": 4,
+    "contextTokens": 51519,
+    "percentage": 5,
     "contextWindowIsAuthoritative": true
   }
 }
