@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781952660713-ytgfe6q7p",
+  "providerId": "claude",
+  "title": "Find replacement legs for Conforama Brooke chair",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781952660714,
+  "updatedAt": 1781952848428,
+  "lastResponseAt": 1781952768147,
+  "sessionId": "952b5dcc-f4d3-40b5-bc2b-4f32d54038be",
+  "providerState": {
+    "providerSessionId": "952b5dcc-f4d3-40b5-bc2b-4f32d54038be"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 2631,
+    "cacheReadInputTokens": 33097,
+    "contextWindow": 1000000,
+    "contextTokens": 35729,
+    "percentage": 4,
+    "contextWindowIsAuthoritative": true
+  }
+}
