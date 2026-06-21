@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782035668447-nxq2wq5h6",
+  "providerId": "claude",
+  "title": "Analyze Giuseppe's 2025 tax bill discrepancy",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782035668447,
+  "updatedAt": 1782035962918,
+  "lastResponseAt": 1782035962918,
+  "sessionId": "e9919be0-67c2-4e64-8b46-b60dd8f174d2",
+  "providerState": {
+    "providerSessionId": "e9919be0-67c2-4e64-8b46-b60dd8f174d2"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 15447,
+    "cacheReadInputTokens": 66642,
+    "contextWindow": 1000000,
+    "contextTokens": 82095,
+    "percentage": 8,
+    "contextWindowIsAuthoritative": true
+  }
+}

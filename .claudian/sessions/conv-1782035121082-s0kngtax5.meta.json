@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782035121082-s0kngtax5",
+  "providerId": "claude",
+  "title": "Recover lost chat history and progress",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782035121083,
+  "updatedAt": 1782035494411,
+  "lastResponseAt": 1782035494411,
+  "sessionId": "92c36f9c-10b8-4697-b291-8bf5f3e09f2c",
+  "providerState": {
+    "providerSessionId": "92c36f9c-10b8-4697-b291-8bf5f3e09f2c"
+  },
+  "usage": {
+    "model": "opus[1m]",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 11656,
+    "cacheReadInputTokens": 16332,
+    "contextWindow": 1000000,
+    "contextTokens": 27994,
+    "percentage": 3,
+    "contextWindowIsAuthoritative": true
+  }
+}
