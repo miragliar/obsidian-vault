@@ -13,19 +13,19 @@ tags: [ferien, tessin, locarno, planung]
 
 ## 📋 Übersicht
 
-| Tag | Vormittag | Mittagshitze | Abend |
-|-----|-----------|--------------|-------|
-| **Mo 22.06** Anreise | Anreise + Wohnung beziehen | Einkauf Coop/Migros | Lungolago + Cena zuhause |
-| **Di 23.06** | 🏋️ Activ Fitness Losone | Lido Locarno | Madonna del Sasso Sunset |
-| **Mi 24.06** ⚽ | Velo am See | Siesta | Mercato Losone → Public Viewing CH |
-| **Do 25.06** 👵 | flexibel | **Gotti-Besuch** | (je nach Gotti) |
-| **Fr 26.06** | Mailand-Zug | Indoor: Duomo, Brera | Aperitivo Navigli |
-| **Sa 27.06** ⭐ | 🏋️ Activ Fitness | Maggia Naturpools | ⭐ **Da Enzo Ponte Brolla** |
-| **So 28.06** | Mercato Cannobio | Schwimmen Lago | evtl. WM Sechzehntelfinal |
-| **Mo 29.06** | 🏋️ Activ Fitness | Cardada-Cimetta | Grotto Broggini |
-| **Di 30.06** Abreise | Aufbruch morgens | — | — |
+| Tag                  | Vormittag                  | Mittagshitze         | Abend                              |
+| -------------------- | -------------------------- | -------------------- | ---------------------------------- |
+| **Mo 22.06** Anreise | Anreise + Wohnung beziehen | Einkauf Coop/Migros  | Lungolago + Cena zuhause           |
+| **Di 23.06**         | 🏋️ Fitness (ab 9:30)      | Lido Locarno (Wochentag) | Madonna del Sasso Sunset (kurz) |
+| **Mi 24.06** ⚽       | Lesen Terrasse / Velo später | Siesta             | Mercato Losone → Public Viewing CH |
+| **Do 25.06** 👵      | flexibel                   | **Gotti-Besuch**     | (je nach Gotti)                    |
+| **Fr 26.06**         | Mailand-Zug                | Indoor: Duomo, Brera | Aperitivo, früherer Zug zurück     |
+| **Sa 27.06** ⭐       | Terrasse, lesen, chillen   | Siesta + Schatten    | ⭐ **Da Enzo Ponte Brolla**         |
+| **So 28.06**         | Mercato Cannobio (sehr früh) | Chillen Terrasse  | evtl. WM Sechzehntelfinal          |
+| **Mo 29.06**         | 🏋️ Fitness (ab 9:30)      | Cardada-Cimetta      | Grotto Broggini (früher)           |
+| **Di 30.06** Abreise | Aufbruch morgens           | —                    | —                                  |
 
-→ **3× Fitness** (Di/Sa/Mo) · **1 Gotti-Tag** (Do flexibel) · **1 Special-Abend** (Sa Da Enzo) · **WM** (Mi sicher + So evtl.)
+→ **2× Fitness** (Di + Mo, ab 9:30 — entspannter Start) · **1 Gotti-Tag** (Do flexibel) · **1 Special-Abend** (Sa Da Enzo) · **WM** (Mi sicher + So evtl.) · **Wochenende ohne Badi/Studio** (zu viele Leute) · **viel Terrasse + Lesen**
 
 ---
 
@@ -75,11 +75,11 @@ tags: [ferien, tessin, locarno, planung]
 
 ### Do 25.06 — Gotti-Tag 👵 (flexibel)
 
-| Wenn Gotti… | Vor Besuch | Nach Besuch |
-|---|---|---|
-| **vormittags/mittags** | Frühstück, kurz Lungolago | Siesta + leichtes Cena zuhause |
-| **nachmittags** | Morgens Lido entspannt, Brunch zuhause | Spaziergang Piazza Grande |
-| **abends zum Essen** | Velo / Madonna del Sasso / kurzer Trip | mit ihr essen |
+| Wenn Gotti…            | Vor Besuch                             | Nach Besuch                    |
+| ---------------------- | -------------------------------------- | ------------------------------ |
+| **vormittags/mittags** | Frühstück, kurz Lungolago              | Siesta + leichtes Cena zuhause |
+| **nachmittags**        | Morgens Lido entspannt, Brunch zuhause | Spaziergang Piazza Grande      |
+| **abends zum Essen**   | Velo / Madonna del Sasso / kurzer Trip | mit ihr essen                  |
 
 **Mitbring-Idee**: Blumen vom **Mercato Settimanale Locarno** (jeden Do am Piazza Grande) oder **Merlot del Ticino** vom Coop (CHF 15-20).
 
