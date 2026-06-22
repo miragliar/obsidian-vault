@@ -1,7 +1,7 @@
 {
   "userName": "Raoul",
   "permissionMode": "yolo",
-  "model": "opus[1m]",
+  "model": "claude-code/claude-opus-4-8",
   "thinkingBudget": "medium",
   "effortLevel": "max",
   "serviceTier": "default",
@@ -14,6 +14,7 @@
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
+  "customModelAliases": {},
   "keyboardNavigation": {
     "scrollUpKey": "w",
     "scrollDownKey": "s",
@@ -31,7 +32,7 @@
       "enableBangBash": false,
       "enableOpus1M": true,
       "enableSonnet1M": false,
-      "customModels": "claude-fable-5",
+      "customModels": "claude-fable-5\nclaude-opus-4-8\nclaude-opus-4-7",
       "lastModel": "opus[1m]",
       "environmentVariables": "",
       "environmentHash": ""
@@ -61,27 +62,38 @@
       "selectedMode": "",
       "thinkingOptionsByModel": {},
       "visibleModels": []
+    },
+    "pi": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "discoveredModels": [],
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "toolMode": "all",
+      "visibleModels": []
     }
   },
   "settingsProvider": "claude",
   "savedProviderModel": {
-    "claude": "opus[1m]"
+    "claude": "claude-code/claude-opus-4-8"
   },
   "savedProviderEffort": {
     "claude": "max"
   },
   "savedProviderServiceTier": {},
-  "savedProviderThinkingBudget": {
-    "claude": "medium"
-  },
+  "savedProviderThinkingBudget": {},
   "savedProviderPermissionMode": {
     "claude": "yolo"
   },
-  "lastCustomModel": "claude-fable-5",
+  "lastCustomModel": "claude-code/claude-opus-4-8",
   "maxTabs": 5,
-  "tabBarPosition": "input",
   "enableAutoScroll": true,
   "deferMathRenderingDuringStreaming": true,
+  "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
-  "hiddenProviderCommands": {}
+  "hiddenProviderCommands": {},
+  "tabBarPosition": "input"
 }
