@@ -4,13 +4,12 @@
   "title": "Find Wednesday morning mercato near Losone",
   "titleGenerationStatus": "success",
   "createdAt": 1782200660265,
-  "updatedAt": 1782201652854,
+  "updatedAt": 1782303703206,
   "lastResponseAt": 1782201652854,
   "sessionId": "d5100920-3c2c-4619-8a79-a5ef9b9e78aa",
   "providerState": {
     "providerSessionId": "d5100920-3c2c-4619-8a79-a5ef9b9e78aa"
   },
-  "currentNote": "60.daily/2026-06-22-ferien-tessin-locarno.md",
   "usage": {
     "model": "claude-opus-4-8",
     "inputTokens": 2,
