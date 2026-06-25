@@ -4,8 +4,8 @@
   "title": "Diagnose Regie-App issue in MVM production envi...",
   "titleGenerationStatus": "success",
   "createdAt": 1782375194634,
-  "updatedAt": 1782375756894,
-  "lastResponseAt": 1782375756894,
+  "updatedAt": 1782377349343,
+  "lastResponseAt": 1782377349343,
   "sessionId": "356c005c-9e22-44fa-b9d3-808706c5ac6d",
   "providerState": {
     "providerSessionId": "356c005c-9e22-44fa-b9d3-808706c5ac6d"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "claude-opus-4-8",
     "inputTokens": 2,
-    "cacheCreationInputTokens": 4021,
-    "cacheReadInputTokens": 92222,
+    "cacheCreationInputTokens": 630,
+    "cacheReadInputTokens": 163564,
     "contextWindow": 200000,
-    "contextTokens": 96245,
-    "percentage": 48,
+    "contextTokens": 164196,
+    "percentage": 82,
     "contextWindowIsAuthoritative": true
   }
 }
