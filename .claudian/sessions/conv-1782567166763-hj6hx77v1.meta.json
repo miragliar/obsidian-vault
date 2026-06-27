@@ -1,0 +1,24 @@
+{
+  "id": "conv-1782567166763-hj6hx77v1",
+  "providerId": "claude",
+  "title": "Explain Power Automate Scope failure behavior",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782567166763,
+  "updatedAt": 1782567455852,
+  "lastResponseAt": 1782567455852,
+  "sessionId": "c15dca47-82c4-4ec9-b2b3-8a8cc535efaf",
+  "providerState": {
+    "providerSessionId": "c15dca47-82c4-4ec9-b2b3-8a8cc535efaf"
+  },
+  "currentNote": "60.daily/2026-06-24.md",
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 7939,
+    "cacheReadInputTokens": 45151,
+    "contextWindow": 200000,
+    "contextTokens": 53092,
+    "percentage": 27,
+    "contextWindowIsAuthoritative": true
+  }
+}
