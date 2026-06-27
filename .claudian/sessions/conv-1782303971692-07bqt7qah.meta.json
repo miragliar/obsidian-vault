@@ -4,8 +4,8 @@
   "title": "Debug Subunternehmer app email flow errors",
   "titleGenerationStatus": "success",
   "createdAt": 1782303971692,
-  "updatedAt": 1782569502181,
-  "lastResponseAt": 1782567207088,
+  "updatedAt": 1782571700467,
+  "lastResponseAt": 1782571700467,
   "sessionId": "5061d65d-7f3b-47c6-b34d-c5ce34739db6",
   "providerState": {
     "providerSessionId": "5061d65d-7f3b-47c6-b34d-c5ce34739db6"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "claude-opus-4-8",
     "inputTokens": 2,
-    "cacheCreationInputTokens": 22701,
-    "cacheReadInputTokens": 16389,
+    "cacheCreationInputTokens": 1001,
+    "cacheReadInputTokens": 111002,
     "contextWindow": 200000,
-    "contextTokens": 39092,
-    "percentage": 20,
+    "contextTokens": 112005,
+    "percentage": 56,
     "contextWindowIsAuthoritative": true
   }
 }
