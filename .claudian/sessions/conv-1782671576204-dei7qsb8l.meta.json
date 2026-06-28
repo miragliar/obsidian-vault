@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782671576204-dei7qsb8l",
+  "providerId": "claude",
+  "title": "Prepare MVM Power Platform meeting briefing",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782671576204,
+  "updatedAt": 1782672351508,
+  "lastResponseAt": 1782672351508,
+  "sessionId": "6d7e767c-2120-427b-a059-746fae7f53ee",
+  "providerState": {
+    "providerSessionId": "6d7e767c-2120-427b-a059-746fae7f53ee"
+  },
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 9837,
+    "cacheReadInputTokens": 122101,
+    "contextWindow": 200000,
+    "contextTokens": 131940,
+    "percentage": 66,
+    "contextWindowIsAuthoritative": true
+  }
+}
