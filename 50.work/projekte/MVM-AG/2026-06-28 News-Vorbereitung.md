@@ -43,13 +43,13 @@ updated: 2026-06-28
 
 ### Die Story (so erzählst du „woran du stehst")
 
-| Phase | Was (grob) |
-|---|---|
-| **Ausgangslage** (Jan '26) | Alte Regie-App lief, aber chronische Probleme (Archiv/Anzeige, kaputte PDF-Vorlage, zusammenrutschende Rapporte) → Entscheid **Komplett-Neubau** |
-| **Bau** (Apr '26) | Neues Dataverse-Datenmodell (Regiekopf + 3 Detailtabellen), neue App, PDF-Automatisierung mit Foto-Merge |
-| **Go-Live** (01.06.) | Produktiv aufgeschaltet — neue Sicherheitsgruppen, Berechtigungen, erste User live |
-| **Seit Go-Live** | Offline-Modus aufs Handy, Kopierfunktion für Rapporte, Excel-Rapportübersicht an PL, viele Stabilisierungen |
-| **Neu & Ausblick** (16.06.) | **Aestico-Schnittstelle**: aus Rapporten automatisch **Einzel- UND Sammelrechnung** (Optiwork-Format → Domus) |
+| Phase                       | Was (grob)                                                                                                                                       |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Ausgangslage** (Jan '26)  | Alte Regie-App lief, aber chronische Probleme (Archiv/Anzeige, kaputte PDF-Vorlage, zusammenrutschende Rapporte) → Entscheid **Komplett-Neubau** |
+| **Bau** (Apr '26)           | Neues Dataverse-Datenmodell (Regiekopf + 3 Detailtabellen), neue App, PDF-Automatisierung mit Foto-Merge                                         |
+| **Go-Live** (01.06.)        | Produktiv aufgeschaltet — neue Sicherheitsgruppen, Berechtigungen, erste User live                                                               |
+| **Seit Go-Live**            | Offline-Modus aufs Handy, Kopierfunktion für Rapporte, Excel-Rapportübersicht an PL, viele Stabilisierungen                                      |
+| **Neu & Ausblick** (16.06.) | **Aestico-Schnittstelle**: aus Rapporten automatisch **Einzel- UND Sammelrechnung** (Optiwork-Format → Domus)                                    |
 
 ### ✅ Was gut lief (Talking Points)
 
