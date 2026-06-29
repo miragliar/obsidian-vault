@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782746592567-yxa0csawd",
+  "providerId": "claude",
+  "title": "Analyze Remo Pfister email on Regierapport issue",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782746592567,
+  "updatedAt": 1782747183031,
+  "lastResponseAt": 1782747183031,
+  "sessionId": "daa76c12-808d-4854-828c-dd317ed8b625",
+  "providerState": {
+    "providerSessionId": "daa76c12-808d-4854-828c-dd317ed8b625"
+  },
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 3230,
+    "cacheReadInputTokens": 120701,
+    "contextWindow": 200000,
+    "contextTokens": 123933,
+    "percentage": 62,
+    "contextWindowIsAuthoritative": true
+  }
+}

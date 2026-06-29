@@ -3,7 +3,7 @@
   "permissionMode": "yolo",
   "model": "claude-code/claude-opus-4-8",
   "thinkingBudget": "medium",
-  "effortLevel": "max",
+  "effortLevel": "high",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "opus[1m]",
@@ -33,7 +33,7 @@
       "enableOpus1M": true,
       "enableSonnet1M": false,
       "customModels": "claude-fable-5\nclaude-opus-4-8\nclaude-opus-4-7",
-      "lastModel": "opus[1m]",
+      "lastModel": "haiku",
       "environmentVariables": "",
       "environmentHash": ""
     },
@@ -81,7 +81,7 @@
     "claude": "claude-code/claude-opus-4-8"
   },
   "savedProviderEffort": {
-    "claude": "max"
+    "claude": "high"
   },
   "savedProviderServiceTier": {},
   "savedProviderThinkingBudget": {},

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782746714427-j6yjow85g",
+  "providerId": "claude",
+  "title": "Investigate failed Power BI email processing fr...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782746714427,
+  "updatedAt": 1782747751444,
+  "lastResponseAt": 1782747751444,
+  "sessionId": "40348101-b02b-4648-8a24-7a50599a6c68",
+  "providerState": {
+    "providerSessionId": "40348101-b02b-4648-8a24-7a50599a6c68"
+  },
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 5273,
+    "cacheReadInputTokens": 142728,
+    "contextWindow": 200000,
+    "contextTokens": 148003,
+    "percentage": 74,
+    "contextWindowIsAuthoritative": true
+  }
+}
