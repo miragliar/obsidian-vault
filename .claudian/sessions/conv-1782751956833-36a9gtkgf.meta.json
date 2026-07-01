@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782751956833-36a9gtkgf",
+  "providerId": "claude",
+  "title": "Compare two Swiss tax declaration PDFs",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782751956833,
+  "updatedAt": 1782752241964,
+  "lastResponseAt": 1782752241964,
+  "sessionId": "0c64fc68-01f0-4bb7-a800-94264ac03c3a",
+  "providerState": {
+    "providerSessionId": "0c64fc68-01f0-4bb7-a800-94264ac03c3a"
+  },
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 1220,
+    "cacheReadInputTokens": 83569,
+    "contextWindow": 200000,
+    "contextTokens": 84791,
+    "percentage": 42,
+    "contextWindowIsAuthoritative": true
+  }
+}
