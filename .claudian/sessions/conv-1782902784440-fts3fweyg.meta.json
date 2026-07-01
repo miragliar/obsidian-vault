@@ -4,8 +4,8 @@
   "title": "finde den Fehler im HR Zeugnistool Prozess",
   "titleGenerationStatus": "failed",
   "createdAt": 1782902784440,
-  "updatedAt": 1782903992164,
-  "lastResponseAt": 1782903992164,
+  "updatedAt": 1782904660484,
+  "lastResponseAt": 1782904660484,
   "sessionId": "b0ff2692-8321-4c32-9009-b4c945c571a0",
   "providerState": {
     "providerSessionId": "b0ff2692-8321-4c32-9009-b4c945c571a0"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "claude-opus-4-8",
     "inputTokens": 2,
-    "cacheCreationInputTokens": 340,
-    "cacheReadInputTokens": 80280,
+    "cacheCreationInputTokens": 684,
+    "cacheReadInputTokens": 94993,
     "contextWindow": 200000,
-    "contextTokens": 80622,
-    "percentage": 40,
+    "contextTokens": 95679,
+    "percentage": 48,
     "contextWindowIsAuthoritative": true
   }
 }
