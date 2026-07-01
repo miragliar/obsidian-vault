@@ -122,6 +122,7 @@ Bestätigungsmail an Innendienst:
 
 ## Verwandt
 
+- [[50.work/projekte/Sharkgroup-Enia/Planner-Aufgaben-Automatisierung|Sharkgroup / enia — Mail-zu-Aufgabe mit Planner (2. Thema Termin 14.07.)]]
 - [[50.work/proffix/proffix-rest-api|PROFFIX Px5 REST API — Übersicht & Integrationsleitfaden]]
 - [[50.work/projekte/Hunnenberg/Prompt-Auftragserstellung-2026-06-09|Hunnenberg — analoges Pattern]]
 - [[50.work/25_People/Alessandro-Castelli|Alessandro Castelli]]

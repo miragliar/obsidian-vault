@@ -1,9 +1,23 @@
 {
   "id": "conv-1782916753905-p5cpdj5wg",
   "providerId": "claude",
-  "title": "bereite in outlook als entwurf eine antwort an ste...",
-  "titleGenerationStatus": "pending",
+  "title": "Draft Outlook reply to Stephanie Stark on Planner",
+  "titleGenerationStatus": "success",
   "createdAt": 1782916753905,
-  "updatedAt": 1782916753914,
-  "sessionId": null
+  "updatedAt": 1782917685690,
+  "lastResponseAt": 1782917138235,
+  "sessionId": "598663ae-f55e-46c0-aeec-615986fd0d9e",
+  "providerState": {
+    "providerSessionId": "598663ae-f55e-46c0-aeec-615986fd0d9e"
+  },
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 823,
+    "cacheReadInputTokens": 49034,
+    "contextWindow": 200000,
+    "contextTokens": 49859,
+    "percentage": 25,
+    "contextWindowIsAuthoritative": true
+  }
 }
