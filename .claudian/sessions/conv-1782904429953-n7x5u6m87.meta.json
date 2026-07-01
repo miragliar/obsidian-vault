@@ -4,8 +4,8 @@
   "title": "Analyze bank CSVs to optimize savings",
   "titleGenerationStatus": "success",
   "createdAt": 1782904429954,
-  "updatedAt": 1782909564621,
-  "lastResponseAt": 1782909564621,
+  "updatedAt": 1782916490195,
+  "lastResponseAt": 1782915908603,
   "sessionId": "60c9a86a-1c39-4e6a-94f0-7bf352a0172d",
   "providerState": {
     "providerSessionId": "60c9a86a-1c39-4e6a-94f0-7bf352a0172d"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "claude-opus-4-8",
     "inputTokens": 2,
-    "cacheCreationInputTokens": 3155,
-    "cacheReadInputTokens": 160457,
+    "cacheCreationInputTokens": 165188,
+    "cacheReadInputTokens": 0,
     "contextWindow": 200000,
-    "contextTokens": 163614,
-    "percentage": 82,
+    "contextTokens": 165190,
+    "percentage": 83,
     "contextWindowIsAuthoritative": true
   }
 }
