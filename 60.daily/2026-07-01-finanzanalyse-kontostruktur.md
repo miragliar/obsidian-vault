@@ -67,20 +67,22 @@ Seit Januar 2026 zahlst du SWICA als **Jahresprämie**: **6'124.60 CHF am 03.02.
 
 ## 🟢 Der Plan: tragfähig auf 5'616/Monat — das ganze Jahr, ohne Bonus
 
-**Ausgangslage ehrlich:** Wenn du deinen echten Privatkonsum (~1'480) **plus** Reserven **plus** 3a **plus** Steuern budgetierst, ist dein Lohn zu 100 % weg — es bleibt **nichts** fürs freie Sparen. Also **muss der Privatkonsum runter**, sonst wächst das Sparkonto nie. Kein Drama — dein Basisbedarf liegt bei ~910, also ist ~1'200 mit etwas Disziplin machbar (v.a. wenn Ferien separat aus der Reserve laufen).
+**Ausgangslage ehrlich:** Wenn du deinen echten Privatkonsum (~1'480) **plus** Reserven **plus** 3a **plus** Steuern budgetierst, ist dein Lohn zu 100 % weg — es bleibt **nichts** fürs freie Sparen. Also **muss der Privatkonsum runter**, sonst wächst das Sparkonto nie. Kein Drama — dein Basisbedarf liegt bei ~910, also ist dein gewähltes Ziel von 1'000 mit Disziplin machbar (v.a. wenn Ferien separat aus der Reserve laufen).
 
 ### ➕ NEU: 2 Strukturänderungen
 
-1. **SWICA zurück auf monatlich** (~510/Mt) als normaler Fixkosten-Dauerauftrag direkt ab Lohnkonto. Kein Februar-Krater mehr, kein Puffer-Management nötig.
+1. **SWICA zurück auf monatlich** (~487.80/Mt) als normaler Fixkosten-Dauerauftrag direkt ab Lohnkonto. Kein Februar-Krater mehr, kein Puffer-Management nötig.
 2. **Neues Konto „Reserve / Rückstellungen"** (bei der ZKB, kostenlos) für die verbleibenden Jahres-/Sonderkosten:
 
 | Reserve-Posten | ~pro Jahr | ~pro Monat |
 |---|---:|---:|
 | Autoversicherung | ~900 | 75 |
 | Velo Service/Anschaffung | ~300 | 25 |
-| Zahnarzt/Gesundheit | ~500 | 42 |
-| Ferien | ~2'400 | 200 |
-| **Summe Reserve** | **~4'100** | **~350** |
+| Zahnarzt/Gesundheit | ~400 | 33 |
+| Ferien | ~2'000 | 167 |
+| **Summe Reserve** | **~3'600** | **~300** |
+
+> Hinweis: Die Reserve ist mit 300/Mt bewusst schlank (v.a. Ferien knapper mit ~2'000/Jahr). Wenn eine grosse Reise ansteht, kann ein kurzfristiger Zustupf nötig sein — dann bewusst aus dem Sparkonto, nicht unbemerkt.
 
 ### 🔁 Neue Lohnverteilung (5'616 CHF, geht genau auf)
 
@@ -88,21 +90,21 @@ Seit Januar 2026 zahlst du SWICA als **Jahresprämie**: **6'124.60 CHF am 03.02.
 |---|---:|---:|---|
 | ZKB Konto gemeinsam | 1'300 | 1'300 | Miete/Fixkosten gemeinsam |
 | ZLB gemeinsame Karte | 900 | 900 | Haushalt Essen/Benzin |
-| **ZKB Karte allein (Privat)** | 850 | **1'200** | ehrlich statt Fantasie — mit Disziplin |
-| **SWICA (monatlich, neu direkt)** | 0* | **510** | *heute versteckt als Sparkonto-Raubzug |
+| **ZKB Karte allein (Privat)** | 850 | **1'000** | diszipliniert — nahe deinem Basisbedarf |
+| **SWICA (monatlich, neu direkt)** | 0* | **487.80** | *heute versteckt als Sparkonto-Raubzug |
 | ZLB Steuern | 500 | 500 | Steuern (Höhe prüfen) |
 | ZKB Sparen 3a | 600 | 600 | Säule 3a |
-| **➕ Reserve (NEU)** | 0 | **350** | Auto/Velo/Zahnarzt/Ferien |
-| **ZLB Spar (echt unantastbar)** | 1'187.80 | **256** | wächst endlich für echt |
+| **➕ Reserve (NEU)** | 0 | **300** | Auto/Velo/Zahnarzt/Ferien |
+| **ZLB Spar (echt unantastbar)** | 1'187.80 | **528** | wächst endlich für echt |
 | **Summe** | 5'337.80 | **5'616** | Lohn 100 % ehrlich verplant |
 
-**Die Umverteilung in einem Satz:** Nimm die **1'188, die du heute ins Sparkonto „sparst" und wieder rausziehst, plus deine 278 Luft (= 1'466)**, und verteile sie ehrlich: **510 SWICA + 350 mehr Privat + 350 Reserve + 256 echtes Sparen.** Gleiches Geld — aber jetzt lügt kein Konto mehr, und das Sparkonto wird **nicht mehr angezapft**.
+**Die Umverteilung in einem Satz:** Nimm die **1'188, die du heute ins Sparkonto „sparst" und wieder rausziehst, plus deine 278 Luft (= 1'466)**, und verteile sie ehrlich: **487.80 SWICA + 150 mehr Privat + 300 Reserve + 528 echtes Sparen.** Gleiches Geld — aber jetzt lügt kein Konto mehr, und das Sparkonto wird **nicht mehr angezapft**.
 
 ### 📈 Was das bringt
 
-- **Sparkonto: +256/Mt = ~3'000/Jahr, echt und unantastbar** (statt netto ±0 mit Schrumpf-Spitzen).
+- **Sparkonto: +528/Mt = ~6'340/Jahr, echt und unantastbar** (statt netto ±0 mit Schrumpf-Spitzen).
 - **Säule 3a: 7'200/Jahr** — dein steuer-effizienter Hauptvermögensaufbau läuft weiter.
-- **Zusammen ~10'200/Jahr echtes Sparen** auf 5'616/Mt — solide für dieses Einkommen.
+- **Zusammen ~13'500/Jahr echtes Sparen** auf 5'616/Mt — stark für dieses Einkommen.
 - **Kein Februar-Krater, keine stillen Privat-Raubzüge mehr.**
 
 ### 🎚️ Dein Stellhebel: Privatbudget ↔ Sparwachstum
@@ -111,22 +113,56 @@ Wähl bewusst dein Niveau (alles andere bleibt gleich):
 
 | Privatbudget/Mt | → freies Sparen/Mt | → Sparkonto/Jahr |
 |---:|---:|---:|
-| 1'480 (heutiges Ist) | −24 | schrumpft |
-| **1'200 (Empfehlung)** | **+256** | **+3'000** |
-| 1'100 | +356 | +4'300 |
-| 950 (nahe Basisbedarf) | +506 | +6'100 |
+| 1'480 (heutiges Ist) | +48 | ~+580 (fast flat) |
+| 1'200 | +328 | ~+3'900 |
+| **1'000 (deine Wahl)** | **+528** | **~+6'340** |
+| 950 (nahe Basisbedarf) | +578 | ~+6'900 |
 
-Trick: **Ferien & grosse Splurges laufen aus der Reserve, nicht aus dem Privat-Dauerauftrag** — dann bleibt der Normalmonat realistisch bei ~1'200.
+Trick: **Ferien & grosse Splurges laufen aus der Reserve, nicht aus dem Privat-Dauerauftrag** — dann bleibt der Normalmonat realistisch bei ~1'000. 1'000 liegt nahe an deinem Basisbedarf (~910), verlangt also echte Disziplin bei Restaurants/Kleidern/Impulskäufen.
+
+---
+
+## 🔑 Umsetzungs-Variante (EMPFOHLEN): „Ein Ausgabekonto — der Rest ist Budget"
+
+**Die Idee:** Lohn landet auf deinem Karten-/Ausgabekonto, **alles andere geht automatisch per Dauerauftrag raus** — und **was übrig bleibt, IST dein Budget.** Du kannst gar nicht mehr „zu viel" ausgeben, weil das Konto sich selbst begrenzt. Das ist die stärkste Version des Plans: Sie killt den Raubzug-Mechanismus an der Wurzel, statt auf Disziplin zu hoffen.
+
+**Elegant einrichten — ohne neues Konto:**
+- **Lohn künftig auf „ZKB Karte allein"** (dein bestehendes Tap-/Kartenkonto, xxxx 0472).
+- **„ZKB Lohneingang" wird zur „Reserve"** umfunktioniert → kein neues Konto nötig, Kontozahl bleibt **7**.
+- Alle Daueraufträge feuern **ab „Karte allein"**:
+
+| Dauerauftrag ab Karte allein | Betrag |
+|---|---:|
+| → Konto gemeinsam | 1'300 |
+| → gemeinsame Karte (Haushalt) | 900 |
+| → SWICA | 487.80 |
+| → Steuern | 500 |
+| → Säule 3a | 600 |
+| → Reserve (= ex-Lohneingang) | 300 |
+| → Sparkonto | 528 |
+| **Summe raus** | **4'615.80** |
+| **Rest = dein Monatsbudget** | **~1'000** |
+
+**3 Guardrails — sonst kippt's:**
+1. **Timing ist alles.** Alle Daueraufträge auf den **Tag direkt nach Lohneingang** (~26./27.) legen. Sonst siehst du nach dem Lohn kurz 5'616 auf dem Konto und gibst in „fremdes" Geld (Miete/SWICA) hinein aus. Nach dem Drain stehen konstant ~1'000 für den Monat.
+2. **Kleiner Notgroschen bleibt drauf** (~300–500 CHF), damit nie eine Miet-/SWICA-Buchung platzt, wenn du ans Limit gehst. Ein leeres Konto ist ein gesundes Stopp-Signal — geplatzte Mietzahlungen sind es nicht.
+3. **Nachjustieren = EINE Zahl ändern, nicht raiden.** Wenn 1'000 zu eng ist: den **Sparkonto-Dauerauftrag** senken (z.B. 528 → 328 → dann bleiben 1'200 Budget). Bewusster Dial statt heimlicher Griff ins Sparkonto.
+
+**Budget-Monat läuft neu vom ~26. bis 25.** (Lohntag = Monatsreset) — reine Gewöhnung.
+
+**Ehrlicher Trade-off:** Lohn + tägliche Ausgaben in einem Konto = **unübersichtlichere Auszüge** (Gehalt, Verteilung, Kartenzahlungen gemischt) und das kurze „Ich-fühl-mich-reich"-Fenster nach dem Lohn. Guardrail 1 + 2 fangen beides ab. Der Verhaltens-Gewinn (kein Raid mehr möglich) überwiegt klar.
 
 ---
 
 ## 📋 Handlungsplan — priorisiert
 
-**MUSS (diese Woche):**
-1. **SWICA auf monatlich umstellen** (~510) → Dauerauftrag/eBill direkt ab Lohnkonto.
-2. ZKB-Konto **„Reserve"** eröffnen; Dauerauftrag **350/Mt** einrichten.
-3. Dauerauftrag ins **Sparkonto 1'187.80 → 256** senken.
-4. **Privat-Dauerauftrag 850 → 1'200** erhöhen — und dir committen, dass das die **Obergrenze** ist (nicht Startpunkt für Nachschüsse).
+**MUSS (diese Woche) — Variante „Ein Ausgabekonto":**
+1. **Lohn-Gutschrift umleiten** auf **ZKB Karte allein** (statt Lohneingang). → bei Miraglia BI / Lohnbuchhaltung neue IBAN hinterlegen.
+2. **„ZKB Lohneingang" zur „Reserve" umfunktionieren** (umbenennen genügt — kein neues Konto).
+3. **Alle 7 Daueraufträge ab „Karte allein" einrichten**, Zieltermin **~26./27.** (Tag nach Lohn): Konto gemeinsam 1'300 · Haushalt 900 · SWICA 487.80 · Steuern 500 · 3a 600 · Reserve 300 · Sparkonto 528.
+4. **SWICA auf monatlich umstellen** (487.80) — Jahresprämie kündigen/umstellen.
+5. **Notgroschen ~300–500 auf „Karte allein" liegen lassen** → Puffer gegen geplatzte Buchungen.
+6. **Kein Privat-Dauerauftrag mehr** — der Rest (~1'000) IST dein Budget bis zum nächsten Lohn.
 
 **SOLLTE (diesen Monat):**
 5. **Steuer-Konto nicht mehr zweckentfremden.** Prüfen, ob 500/Mt (6'000/Jahr) für deine Steuerrechnung reicht; falls nicht, auf 550–600.
@@ -141,15 +177,16 @@ Trick: **Ferien & grosse Splurges laufen aus der Reserve, nicht aus dem Privat-D
 
 ## 🧮 Kann ich ein Konto streichen?
 
-**Nein — alle 7 haben eine klare Rolle**, keins ist redundant. **Es fehlt genau eins: die Reserve.** Danach hast du 8 Konten, aber jedes mit *einem* Job — und das Sparkonto endlich in Ruhe.
+**Nein — aber es wird eins umfunktioniert.** In der empfohlenen Variante verschmelzen **Lohneingang + Karte allein** zu einem Ausgabekonto, und das freigewordene **Lohneingang-Konto wird zur Reserve**. So bleibt die Kontozahl bei **7** — jedes mit *einem* klaren Job, und das Sparkonto endlich in Ruhe.
 
 ---
 
 ## 📌 Ergebnis des Tages
 
 - Zwei Lecks gefunden: **Privatkonto unterfinanziert (850 statt real ~1'480)** — grösster Treiber — und **SWICA-Jahresprämie ohne Puffer**.
-- Ohne Bonus ist der Lohn voll verplant → **einziger Wachstumshebel = Privatkonsum senken** (auf ~1'200 machbar, Basisbedarf ~910).
-- Fix: **SWICA monatlich + Reserve-Konto (350) + Privat ehrlich auf 1'200 + Sparkonto-DA auf 256** → alles geht auf 5'616 auf, Sparkonto wächst ~3'000/Jahr echt, 3a 7'200/Jahr.
+- Ohne Bonus ist der Lohn voll verplant → **einziger Wachstumshebel = Privatkonsum senken** (deine Wahl: 1'000, nahe Basisbedarf ~910).
+- Fix: **SWICA monatlich (487.80) + Reserve-Konto (300) + Privat auf 1'000 + Sparkonto-DA auf 528** → alles geht auf 5'616 auf, Sparkonto wächst ~6'340/Jahr echt, 3a 7'200/Jahr (zusammen ~13'500/Jahr).
+- **Umsetzung (empfohlen): „Ein Ausgabekonto".** Lohn → Karte allein, alles per Dauerauftrag raus, Rest (~1'000) = Budget. Lohneingang wird zur Reserve. Guardrails: DA-Termine direkt nach Lohn, Notgroschen 300–500 drauf lassen, Nachtunen nur über den Sparkonto-DA.
 - Offen: Autoversicherung-Betrag, Steuer-Jahresbedarf.
 
 ## Verwandt
