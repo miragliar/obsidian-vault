@@ -4,8 +4,8 @@
   "title": "Investigate failed Power BI email processing fr...",
   "titleGenerationStatus": "success",
   "createdAt": 1782746714427,
-  "updatedAt": 1782919944437,
-  "lastResponseAt": 1782919944437,
+  "updatedAt": 1782921293180,
+  "lastResponseAt": 1782921159209,
   "sessionId": "40348101-b02b-4648-8a24-7a50599a6c68",
   "providerState": {
     "providerSessionId": "40348101-b02b-4648-8a24-7a50599a6c68"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "claude-opus-4-8",
     "inputTokens": 2,
-    "cacheCreationInputTokens": 2678,
-    "cacheReadInputTokens": 101195,
+    "cacheCreationInputTokens": 1253,
+    "cacheReadInputTokens": 131582,
     "contextWindow": 200000,
-    "contextTokens": 103875,
-    "percentage": 52,
+    "contextTokens": 132837,
+    "percentage": 66,
     "contextWindowIsAuthoritative": true
   }
 }
