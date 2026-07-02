@@ -1,0 +1,23 @@
+{
+  "id": "conv-1782986846422-12kp8my1z",
+  "providerId": "claude",
+  "title": "Set up Obsidian journal scripts and test entry",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782986846422,
+  "updatedAt": 1782987262718,
+  "lastResponseAt": 1782987262717,
+  "sessionId": "976d6e94-f592-4d47-826e-1e69ce7103bb",
+  "providerState": {
+    "providerSessionId": "976d6e94-f592-4d47-826e-1e69ce7103bb"
+  },
+  "usage": {
+    "model": "claude-opus-4-8",
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 527,
+    "cacheReadInputTokens": 85051,
+    "contextWindow": 200000,
+    "contextTokens": 85580,
+    "percentage": 43,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""
+auth_common.py — Gemeinsame MSAL-Authentifizierung für alle M365/Graph-Skripte.
+
+Der Token-Cache liegt im **macOS Keychain** (verschlüsselt, ACL-geschützt, KEIN
+Cloud-Sync) — nicht mehr als Klartext-Datei im Dropbox-synchronisierten Vault.
+
+Verwendung in einem Skript:
+    from auth_common import get_token, CLIENT_ID, TENANT_ID, GRAPH
+    SCOPES = ["User.Read", "Mail.Read"]
+    token = get_token(SCOPES)
+
+Erstanmeldung (einmalig, interaktiv): Fehlt ein gültiger Token im Keychain und
+läuft das Skript in einem Terminal, wird automatisch der Device-Code-Flow
+gestartet. Unbeaufsichtigte Läufe (launchd) ohne gültigen Token brechen mit
+klarer Meldung ab, statt zu hängen.
+
+Einmalige Migration / Self-Test:
+    ./.venv/bin/python auth_common.py            # migriert evtl. vorhandene .token_cache.bin → Keychain, dann Test
+    ./.venv/bin/python auth_common.py --test     # nur Funktionstest (kein Device-Flow)
+"""
+import os
+import re
+import sys
+from pathlib import Path
+
+import msal
+from msal_extensions import KeychainPersistence, PersistedTokenCache
+
+# --- Öffentliche Identifikatoren (KEINE Secrets) — per Env-Var überschreibbar ---
+CLIENT_ID = os.environ.get("M365_CLIENT_ID", "0c8e309d-d02e-4244-ae2a-dbb5551cb550")
+TENANT_ID = os.environ.get("M365_TENANT_ID", "ae7f72de-197d-4ba0-a852-40ee367a5150")
+AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
+GRAPH = "https://graph.microsoft.com/v1.0"
+
+# --- Keychain-Koordinaten des Token-Items ---
+_KEYCHAIN_SERVICE = "MiragliaBI-M365"
+_KEYCHAIN_ACCOUNT = "graph-token-cache"
+
+# Signal-/Lock-Datei für Cross-Prozess-Locking (enthält KEINE Token-Daten —
+# die liegen im Keychain). Lokal, außerhalb von Dropbox/iCloud/OneDrive.
+_SIGNAL_DIR = Path(os.environ.get("M365_CACHE_DIR", str(Path.home() / ".config" / "m365-sync")))
+_SIGNAL_FILE = _SIGNAL_DIR / "token_cache.signal"
+
+# Alt-Speicherort (Klartext im Vault/Dropbox) — nur noch für die einmalige Migration.
+_LEGACY_CACHE = Path(__file__).resolve().parent / ".token_cache.bin"
+
+
+def _persistence():
+    _SIGNAL_DIR.mkdir(parents=True, exist_ok=True)
+    return KeychainPersistence(str(_SIGNAL_FILE), _KEYCHAIN_SERVICE, _KEYCHAIN_ACCOUNT)
+
+
+def build_cache():
+    """Persistenter MSAL-Token-Cache im macOS Keychain."""
+    return PersistedTokenCache(_persistence())
+
+
+# --- Power BI / Multi-Tenant: pro (Kunden-)Tenant ein eigenes Keychain-Item ---
+# Damit landen Power-BI-Refresh-Tokens NICHT mehr als Klartext-.bin im
+# Dropbox-synchronisierten Vault, sondern verschlüsselt im macOS Keychain.
+_PBI_SERVICE = "MiragliaBI-PowerBI"
+
+
+def _slug(s):
+    return re.sub(r"[^a-z0-9]", "_", s.lower())
+
+
+def build_pbi_persistence(tenant):
+    """KeychainPersistence für einen Power-BI-Tenant (Account = Tenant-Slug)."""
+    _SIGNAL_DIR.mkdir(parents=True, exist_ok=True)
+    signal = _SIGNAL_DIR / f"pbi_{_slug(tenant)}.signal"
+    return KeychainPersistence(str(signal), _PBI_SERVICE, _slug(tenant))
+
+
+def build_pbi_cache(tenant):
+    """Persistenter MSAL-Token-Cache im Keychain, eindeutig pro Power-BI-Tenant."""
+    return PersistedTokenCache(build_pbi_persistence(tenant))
+
+
+def migrate_pbi_bin(tenant, script_dir):
+    """Einmalig: Alt-Cache .pbi_token_cache_<tenant>.bin → Keychain übernehmen.
+    Verifiziert den Transfer. Löscht die .bin NICHT (Aufrufer entscheidet).
+    Gibt True zurück, wenn migriert wurde, sonst False."""
+    bin_path = Path(script_dir) / f".pbi_token_cache_{_slug(tenant)}.bin"
+    if not bin_path.exists():
+        return False
+    data = bin_path.read_text()
+    persistence = build_pbi_persistence(tenant)
+    persistence.save(data)
+    if persistence.load() != data:
+        sys.exit("❌ PBI-Migration: Keychain-Inhalt ≠ Quelldatei.")
+    return True
+
+
+# --- Sekundäre M365-Postfächer (Fremd-Tenant), eigener Keychain-Eintrag pro Konto ---
+# Für Postfächer ausserhalb des Heim-Tenants (z. B. giovanni.miraglia@upgreat.ch).
+# Unsere eigene App (CLIENT_ID) ist Single-Tenant → taugt NICHT für Fremd-Tenants.
+# Idee: ein Microsoft-eigener, multi-tenant Public Client "leihen". ABER Tenants, die die
+# Nutzer-Zustimmung sperren (z. B. UPGREAT), lassen das nicht zu:
+#   • Azure-CLI (04b07795) und Office (d3590ed6) → Graph-Mail = AADSTS65002 (nicht
+#     vorautorisiert für Mail.Read), unbrauchbar.
+#   • "Microsoft Graph Command Line Tools" (14d82eec…) kann beliebige Graph-Scopes anfragen,
+#     verlangt dort aber Admin-Consent (Nutzer-Consent gesperrt).
+# → 14d82eec ist daher das Ziel für den EINMALIGEN Admin-Consent durch die Tenant-IT
+#   (delegiert Mail.Read + User.Read). Danach funktioniert der Device-Login silent.
+# Override per Env M365_GRAPH_CID. Token im Keychain, NIE Klartext, kein Dropbox-Sync.
+GRAPH_MT_CID = os.environ.get("M365_GRAPH_CID", "14d82eec-204b-4c2f-b7e8-296a70dab67e")
+
+# Bekannte Sekundär-Postfächer: label -> (tenant_id, upn)
+SECONDARY_MAILBOXES = {
+    "upgreat": ("ae8bdca4-950f-45e9-b07d-5b2fd6843bee", "giovanni.miraglia@upgreat.ch"),
+}
+
+
+def build_m365_persistence(label):
+    _SIGNAL_DIR.mkdir(parents=True, exist_ok=True)
+    signal = _SIGNAL_DIR / f"m365_{_slug(label)}.signal"
+    return KeychainPersistence(str(signal), _KEYCHAIN_SERVICE,
+                               f"{_KEYCHAIN_ACCOUNT}-{_slug(label)}")
+
+
+def build_m365_cache(label):
+    """Eigener persistenter MSAL-Cache im Keychain, eindeutig pro Sekundär-Postfach."""
+    return PersistedTokenCache(build_m365_persistence(label))
+
+
+def _resolve_secondary(label, tenant=None):
+    if tenant:
+        return tenant
+    if label not in SECONDARY_MAILBOXES:
+        sys.exit(f"❌ Unbekanntes Postfach-Label '{label}'. "
+                 f"Bekannt: {', '.join(SECONDARY_MAILBOXES) or '(keine)'}")
+    return SECONDARY_MAILBOXES[label][0]
+
+
+def build_app_secondary(label, tenant=None, client_id=None):
+    tenant = _resolve_secondary(label, tenant)
+    return msal.PublicClientApplication(
+        client_id or GRAPH_MT_CID,
+        authority=f"https://login.microsoftonline.com/{tenant}",
+        token_cache=build_m365_cache(label))
+
+
+def get_token_secondary(label, scopes, *, tenant=None, client_id=None,
+                        allow_device_flow=False):
+    """Access-Token fürs Sekundär-Postfach <label>: silent aus Keychain.
+    Device-Flow nur, wenn ausdrücklich erlaubt (interaktiver Login-Helfer)."""
+    app = build_app_secondary(label, tenant, client_id)
+    scopes = list(scopes)
+    result = None
+    for acc in app.get_accounts():
+        result = app.acquire_token_silent(scopes, account=acc)
+        if result:
+            break
+    if not result:
+        if not allow_device_flow:
+            sys.exit(
+                f"❌ Kein gültiger Token fürs Postfach '{label}' im Keychain.\n"
+                f"   Einmalig anmelden:\n"
+                f"       ./.venv/bin/python m365_account_login.py --mailbox {label}")
+        flow = app.initiate_device_flow(scopes=scopes)
+        if "user_code" not in flow:
+            sys.exit(f"Device-Flow fehlgeschlagen: {flow.get('error_description')}")
+        print("\n" + "=" * 60 + f"\n{flow['message']}\n" + "=" * 60 + "\n", flush=True)
+        result = app.acquire_token_by_device_flow(flow)
+    if not result or "access_token" not in result:
+        sys.exit(f"Token-Erwerb fehlgeschlagen: {result}")
+    return result["access_token"]
+
+
+def build_app(cache=None):
+    return msal.PublicClientApplication(
+        CLIENT_ID, authority=AUTHORITY, token_cache=cache or build_cache())
+
+
+def get_token(scopes, allow_device_flow=True):
+    """Access-Token holen: silent refresh aus Keychain; sonst Device-Flow (nur im TTY)."""
+    scopes = list(scopes)
+    app = build_app()
+    result = None
+    for acc in app.get_accounts():
+        result = app.acquire_token_silent(scopes, account=acc)
+        if result:
+            break
+    if not result:
+        interactive_ok = allow_device_flow and sys.stdin is not None and sys.stdin.isatty()
+        if not interactive_ok:
+            sys.exit(
+                "❌ Kein gültiger Token im Keychain und keine interaktive Sitzung.\n"
+                "   Bitte einmal manuell anmelden, z. B.:\n"
+                "       ./.venv/bin/python live_search.py test")
+        flow = app.initiate_device_flow(scopes=scopes)
+        if "user_code" not in flow:
+            sys.exit(f"Device-Flow fehlgeschlagen: {flow.get('error_description')}")
+        print("\n" + "=" * 60 + f"\n{flow['message']}\n" + "=" * 60 + "\n", flush=True)
+        result = app.acquire_token_by_device_flow(flow)
+    if not result or "access_token" not in result:
+        sys.exit(f"Token-Erwerb fehlgeschlagen: {result}")
+    return result["access_token"]
+
+
+def migrate_legacy_cache(path=_LEGACY_CACHE):
+    """Einmalig: vorhandenen Klartext-Cache (.token_cache.bin) in den Keychain übernehmen."""
+    path = Path(path)
+    if not path.exists():
+        print(f"ℹ️  Kein Alt-Cache unter {path} — nichts zu migrieren.")
+        return False
+    data = path.read_text()
+    persistence = _persistence()
+    persistence.save(data)
+    if persistence.load() != data:
+        sys.exit("❌ Verifikation fehlgeschlagen: Keychain-Inhalt ≠ Quelldatei.")
+    print(f"✅ Token-Cache aus {path.name} in den Keychain übernommen "
+          f"(Service={_KEYCHAIN_SERVICE}, Account={_KEYCHAIN_ACCOUNT}).")
+    return True
+
+
+def _self_test():
+    """Funktionstest ohne Device-Flow: holt einen Token rein aus dem Keychain-Cache."""
+    token = get_token(["User.Read"], allow_device_flow=False)
+    print(f"✅ Keychain-Auth funktioniert — Access-Token erhalten ({len(token)} Zeichen).")
+
+
+if __name__ == "__main__":
+    if "--test" in sys.argv:
+        _self_test()
+    else:
+        migrate_legacy_cache()
+        _self_test()
